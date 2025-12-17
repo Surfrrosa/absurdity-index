@@ -118,11 +118,11 @@ export const metricDetails: Record<string, MetricDetailData> = {
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 54.8,
+    crisisRatio: 17.92,
     levelDistribution: {
-      level1: 98,
-      level2: 112,
-      level3: 136,
+      level1: 236,
+      level2: 48,
+      level3: 62,
       total: 346
     },
     sampleData: [
@@ -160,9 +160,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "App Store",
-        current: 20,
+        current: 0,
         target: 200,
-        percentage: 10
+        percentage: 0
       },
       {
         platform: "TikTok",
@@ -172,9 +172,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "YouTube: 146 videos analyzing AI companion usage (54.8% crisis ratio)",
-      "Reddit: 200 posts from r/replika, r/CharacterAI (15.0% crisis ratio)",
-      "App Store: 20 reviews from Replika, Character.AI apps (in progress)",
+      "YouTube: 146 videos analyzing AI companion usage (37.0% crisis ratio)",
+      "Reddit: 200 posts from r/replika, r/CharacterAI (4.0% crisis ratio)",
+      "App Store: 0 reviews collected (pending)",
       "TikTok: AI companion content analysis (pending)",
       "Google Trends: Search volume for AI companion terms"
     ],

@@ -161,13 +161,13 @@ export default function Home() {
             label="Digital Stockholm Syndrome Setting In"
             trend="worsening"
             data={{
-              youtube: "54.8% crisis ratio (146 videos)",
-              reddit: "15.0% crisis ratio (200 posts)",
-              completion: "60% data collected"
+              youtube: "37.0% crisis ratio (146 videos)",
+              reddit: "4.0% crisis ratio (200 posts)",
+              completion: "72% data collected"
             }}
             onClick={() => setSelectedMetric("AI Psychosis")}
-            entryCount={0}
-            lastUpdated="Dec 17, 2024"
+            entryCount={346}
+            lastUpdated="Dec 16, 2024"
           />
         </div>
 
