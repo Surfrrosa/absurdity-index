@@ -14,21 +14,6 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Header />
 
-      {/* Active Research Banner */}
-      <div className="bg-red-600 border-b-4 border-white">
-        <div className="container mx-auto px-6 py-4 text-center">
-          <p className="text-white text-lg font-black uppercase tracking-wide">
-            🔬 Active Research Project
-          </p>
-          <p className="text-white text-sm font-bold mt-1">
-            Data collection ongoing • Updated weekly •{' '}
-            <a href="/status" className="underline hover:text-black transition-colors">
-              View Progress →
-            </a>
-          </p>
-        </div>
-      </div>
-
       {selectedMetric && metricDetails[selectedMetric] && (
         <MetricDetail
           data={metricDetails[selectedMetric]}

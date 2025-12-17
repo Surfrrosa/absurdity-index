@@ -12,11 +12,8 @@ export default function AbsurdityScore() {
           {absurdityScore.toFixed(2)}
           <span className="text-5xl align-super">*</span>
         </div>
-        <div className="text-3xl text-white font-black mb-2 uppercase leading-tight">
+        <div className="text-3xl text-white font-black mb-6 uppercase leading-tight">
           "{label}"
-        </div>
-        <div className="text-xs text-yellow-400 font-bold uppercase tracking-wider mb-4">
-          ⚠️ Preliminary Score
         </div>
 
         <div className="w-full bg-white h-8 border-4 border-white">
@@ -34,7 +31,7 @@ export default function AbsurdityScore() {
           8 METRICS | DEC 2025 | ~40% DATA COMPLETE
         </p>
         <p className="text-gray-400 mt-3 text-xs font-bold uppercase">
-          * Score based on available data. Collection in progress.
+          * Collection in progress
         </p>
       </div>
     </div>
