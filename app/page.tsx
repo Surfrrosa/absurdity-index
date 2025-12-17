@@ -36,20 +36,20 @@ export default function Home() {
           }}
         />
 
-        <div className="container mx-auto px-6 py-20 text-center relative z-10">
-          <p className="text-white text-3xl font-black uppercase tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-tight max-w-4xl mx-auto">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-20 text-center relative z-10">
+          <p className="text-white text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-tight max-w-4xl mx-auto px-2">
             "One must imagine Sisyphus checking his email"
           </p>
-          <p className="text-white text-base font-bold mt-4 mono drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          <p className="text-white text-sm md:text-base font-bold mt-3 md:mt-4 mono drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             — Albert Camus-ish
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
         <AbsurdityScore />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
           <MetricCard
             title="Wage Stagnation"
             score={32.56}

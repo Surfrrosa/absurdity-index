@@ -24,26 +24,26 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
 
   return (
     <div
-      className={`${bgColor} border-4 border-black p-6 hover:border-red-600 transition-all ${onClick ? 'cursor-pointer hover:scale-105 active:scale-95' : ''}`}
+      className={`${bgColor} border-4 border-black p-4 md:p-6 hover:border-red-600 transition-all ${onClick ? 'cursor-pointer hover:scale-105 active:scale-95' : ''}`}
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
       onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
     >
-      <div className="flex justify-between items-start mb-4">
-        <h3 className={`text-xl font-black ${textColor} uppercase tracking-tight leading-tight`}>
+      <div className="flex justify-between items-start mb-3 md:mb-4">
+        <h3 className={`text-lg md:text-xl font-black ${textColor} uppercase tracking-tight leading-tight`}>
           {title}
         </h3>
-        <span className={`text-3xl font-black ${textColor}`}>
+        <span className={`text-2xl md:text-3xl font-black ${textColor}`}>
           {trendIcons[trend]}
         </span>
       </div>
 
-      <div className={`text-6xl font-black ${textColor} mb-3 mono`}>
+      <div className={`text-5xl md:text-6xl font-black ${textColor} mb-2 md:mb-3 mono`}>
         {score.toFixed(2)}
       </div>
 
-      <div className={`text-xs ${textColor} font-bold mb-4 uppercase leading-tight h-10 flex items-center`}>
+      <div className={`text-xs ${textColor} font-bold mb-3 md:mb-4 uppercase leading-tight min-h-[2.5rem] flex items-center`}>
         "{label}"
       </div>
 
