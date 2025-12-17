@@ -1,12 +1,15 @@
+'use client';
+
 interface MetricCardProps {
   title: string;
   score: number;
   label: string;
   trend: 'improving' | 'worsening' | 'neutral';
   data: Record<string, string>;
+  onClick?: () => void;
 }
 
-export default function MetricCard({ title, score, label, trend, data }: MetricCardProps) {
+export default function MetricCard({ title, score, label, trend, data, onClick }: MetricCardProps) {
   const trendIcons = {
     improving: '↓',
     worsening: '↑',
@@ -18,7 +21,13 @@ export default function MetricCard({ title, score, label, trend, data }: MetricC
   const barColor = score < 20 ? 'bg-black' : score < 60 ? 'bg-red-600' : 'bg-white';
 
   return (
-    <div className={`${bgColor} border-4 border-black p-6 hover:border-red-600 transition-all`}>
+    <div
+      className={`${bgColor} border-4 border-black p-6 hover:border-red-600 transition-all ${onClick ? 'cursor-pointer hover:scale-105 active:scale-95' : ''}`}
+      onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
+    >
       <div className="flex justify-between items-start mb-4">
         <h3 className={`text-xl font-black ${textColor} uppercase tracking-tight leading-tight`}>
           {title}

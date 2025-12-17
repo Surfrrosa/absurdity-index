@@ -1,7 +1,13 @@
 {
-  "name": "disappointments-dashboard-web",
+  "name": "absurdity-index",
   "version": "0.1.0",
   "private": true,
+  "description": "A data-driven dashboard quantifying the absurdity of modern existence through 8 metrics combining official statistics with social sentiment analysis",
+  "author": "Shaina Pauley",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shainarazavi/absurdity-index"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

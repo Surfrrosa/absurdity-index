@@ -7,7 +7,7 @@ export default function Header() {
         <div className="flex justify-between items-start">
           <div>
             <h1 className="text-6xl font-black text-white tracking-tight leading-none mb-3">
-              THE ABSURDITY<br/>INDEX
+              THE ABSURDITY INDEX
             </h1>
             <p className="text-white text-lg font-bold mono">
               QUANTIFYING THE ABSURDITY OF MODERN EXISTENCE
@@ -22,8 +22,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Bosch-inspired decorative border */}
-      <div className="h-3 bg-gradient-to-r from-red-600 via-white to-red-600"></div>
     </header>
   );
 }

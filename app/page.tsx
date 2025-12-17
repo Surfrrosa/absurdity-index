@@ -1,26 +1,42 @@
+'use client';
+
+import { useState } from 'react';
 import MetricCard from '@/components/MetricCard';
 import Header from '@/components/Header';
 import AbsurdityScore from '@/components/AbsurdityScore';
+import MetricDetail from '@/components/MetricDetail';
+import { metricDetails } from '@/lib/metricDetailData';
 
 export default function Home() {
+  const [selectedMetric, setSelectedMetric] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen bg-black">
       <Header />
 
+      {selectedMetric && metricDetails[selectedMetric] && (
+        <MetricDetail
+          data={metricDetails[selectedMetric]}
+          onClose={() => setSelectedMetric(null)}
+        />
+      )}
+
       {/* Bosch-inspired banner with classical absurdist art */}
-      <div className="bg-red-600 border-b-4 border-white py-20 relative overflow-hidden min-h-[280px]">
-        {/* Background image - Bosch Garden of Earthly Delights (full triptych) */}
+      <div className="border-b-4 border-white relative overflow-hidden" style={{ backgroundColor: '#5f0f0f' }}>
+        {/* Background image - Bosch middle panel zoomed in */}
         <div
-          className="absolute inset-0 opacity-50 bg-cover bg-center"
+          className="absolute inset-0 opacity-45"
           style={{
             backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/a/ae/El_jard%C3%ADn_de_las_Delicias%2C_de_El_Bosco.jpg')",
-            filter: 'grayscale(10%) contrast(130%) brightness(70%)'
+            backgroundSize: '280%',
+            backgroundPosition: '50% 30%',
+            backgroundRepeat: 'no-repeat',
+            filter: 'grayscale(5%) contrast(140%) brightness(65%)',
+            mixBlendMode: 'overlay'
           }}
         />
-        {/* Subtle dark overlay */}
-        <div className="absolute inset-0 bg-black/10" />
 
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-6 py-20 text-center relative z-10">
           <p className="text-white text-3xl font-black uppercase tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-tight max-w-4xl mx-auto">
             "One must imagine Sisyphus checking his email"
           </p>
@@ -44,6 +60,7 @@ export default function Home() {
               inflation: "Real wages barely keeping pace",
               ceoRatio: "285:1 CEO-to-worker pay"
             }}
+            onClick={() => setSelectedMetric("Wage Stagnation")}
           />
 
           <MetricCard
@@ -56,6 +73,7 @@ export default function Home() {
               medianRent: "$2,000/mo",
               priceToIncome: "4.6x ratio"
             }}
+            onClick={() => setSelectedMetric("Housing Despair")}
           />
 
           <MetricCard
@@ -68,18 +86,20 @@ export default function Home() {
               satisfaction: "Declining trends",
               complaints: "Rising consumer frustration"
             }}
+            onClick={() => setSelectedMetric("Airline Chaos")}
           />
 
           <MetricCard
-            title="Customer Service Hell"
-            score={5.12}
-            label="Humans Helping Humans"
-            trend="improving"
+            title="What Healthcare?"
+            score={72.34}
+            label="Prior Authorization Purgatory"
+            trend="worsening"
             data={{
-              acsi: "77.3 overall satisfaction",
-              telecom: "71 (lowest sector)",
-              trends: "Moderate frustration"
+              premiumIncrease: "+7% avg annual increase",
+              denialRate: "~18% claims denied initially",
+              medicalDebt: "41% adults have medical debt"
             }}
+            onClick={() => setSelectedMetric("What Healthcare?")}
           />
 
           <MetricCard
@@ -92,6 +112,7 @@ export default function Home() {
               avgSpending: "$273/month",
               priceIncreases: "73% raised prices in 2025"
             }}
+            onClick={() => setSelectedMetric("Subscription Overload")}
           />
 
           <MetricCard
@@ -104,6 +125,7 @@ export default function Home() {
               sentiment: "Stable",
               projection: "Expected 25-45 with full data"
             }}
+            onClick={() => setSelectedMetric("Dating App Despair")}
           />
 
           <MetricCard
@@ -116,6 +138,7 @@ export default function Home() {
               companies: "551 companies",
               trend: "Ongoing instability"
             }}
+            onClick={() => setSelectedMetric("Layoff Watch")}
           />
 
           <MetricCard
@@ -128,13 +151,24 @@ export default function Home() {
               reddit: "15.0% crisis ratio (200 posts)",
               completion: "60% data collected"
             }}
+            onClick={() => setSelectedMetric("AI Psychosis")}
           />
         </div>
 
         <footer className="mt-16 text-center text-white pb-12 border-t-4 border-white pt-8">
           <p className="font-black text-2xl uppercase">THE ABSURDITY INDEX</p>
           <p className="mt-4 mono font-bold text-sm">DATA: DEC 2025 | UPDATES: WEEKLY</p>
-          <p className="mt-2 mono font-bold text-sm">BUILT BY SHAINA PAULEY</p>
+          <p className="mt-2 mono font-bold text-sm">CREATED BY SHAINA PAULEY</p>
+          <p className="mt-3 mono font-bold text-sm">
+            <a
+              href="https://buymeacoffee.com/shainapauley"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b-2 border-white hover:border-red-600 hover:text-red-600 transition-colors"
+            >
+              ♡ SUPPORT THIS PROJECT
+            </a>
+          </p>
         </footer>
       </div>
     </main>
