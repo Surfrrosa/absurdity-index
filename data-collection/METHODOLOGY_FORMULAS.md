@@ -216,7 +216,7 @@ Based on the Overall Absurdity Score:
 
 - **0-15**: "Love May Actually Be Real" (minimal absurdity)
 - **16-30**: "Manageable Existential Dread"
-- **31-50**: "Quarterly Purge Required"
+- **31-50**: "Flying Too Close To The Sun"
 - **51-70**: "Digital Stockholm Syndrome Setting In"
 - **71-85**: "Prior Authorization Purgatory"
 - **86-100**: "The Void Stares Back"

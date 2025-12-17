@@ -33,9 +33,9 @@ The **crisis ratio** (Level 3 percentage) becomes the social sentiment score. An
 
 ## 9 Layers of ~~Hell~~ Data
 
-**CIRCLE I: LIMBO** — The overall score **37.54 out of 100.** 
+**CIRCLE I: Dream Within A Dream** The overall score **37.54 out of 100.** 
 
-**CIRCLE II: Dating App Despair** (0.36—still collecting data, romance might not be dead yet).
+**CIRCLE II: Dating App Despair** (0.36 but still collecting data, romance might not be dead yet).
 
 **CIRCLE III: Subscription Overload** hits 58.99 because we're all paying for streaming services we don't watch.
 
@@ -59,11 +59,11 @@ I try to mitigate this by sampling across multiple platforms, anchoring to offic
 
 **Data collection at scale** is the bigger challenge. I need 3,440 total entries across 8 metrics. That's 30-50 hours of manual work, scrolling through Reddit threads, copying URLs, categorizing stories. I'm doing it systematically, weekly, one metric at a time. It's slow. It's tedious. It's necessary.
 
-**Launching incomplete** is risky. Do I wait until all the data is collected to go public, or do I ship transparently and show the work-in-progress? I chose transparency. The homepage shows "*37.54*" with a footnote: "*Collection in progress.*" This is going to be on-going work.
+**Launching incomplete** is risky. Do I wait until all the data is collected to go public, or do I ship transparently and show the work-in-progress? I chose transparency. The homepage shows *37.54* with a footnote: *Collection in progress.* This is going to be on-going work.
 
 ## Build
 
-This project is built with Next.js 15, React 19, and Tailwind CSS 4. The design is brutalist—heavy black borders, red accents, & stark typography because if you're quantifying modern absurdity, I think this is a great aesthetic for it.
+This project is built with Next.js 15, React 19, and Tailwind CSS 4. The design is brutalist with heavy black borders, red accents, & stark typography because if you're quantifying modern absurdity, I think this is a great aesthetic for it.
 
 The data collection scripts are written in Python and fully open-source. Anyone can verify the methodology or run analysis, and I welcome any criticism or helpful revisioning. Transparency is something very close to my heart.
 

@@ -1,6 +1,6 @@
 export default function AbsurdityScore() {
   const absurdityScore = 37.54;
-  const label = "QUARTERLY PURGE REQUIRED";
+  const label = "FLYING TOO CLOSE TO THE SUN";
 
   return (
     <div className="bg-white border-4 md:border-8 border-black p-6 md:p-10 mb-12">
