@@ -7,9 +7,11 @@ interface MetricCardProps {
   trend: 'improving' | 'worsening' | 'neutral';
   data: Record<string, string>;
   onClick?: () => void;
+  lastUpdated?: string;
+  entryCount?: number;
 }
 
-export default function MetricCard({ title, score, label, trend, data, onClick }: MetricCardProps) {
+export default function MetricCard({ title, score, label, trend, data, onClick, lastUpdated, entryCount }: MetricCardProps) {
   const trendIcons = {
     improving: '↓',
     worsening: '↑',
@@ -59,6 +61,28 @@ export default function MetricCard({ title, score, label, trend, data, onClick }
           </div>
         ))}
       </div>
+
+      {/* Data collection status */}
+      {(lastUpdated || entryCount !== undefined) && (
+        <div className={`mt-4 pt-3 border-t-2 ${textColor === 'text-black' ? 'border-gray-300' : 'border-gray-600'}`}>
+          {entryCount !== undefined && (
+            <div className={`text-xs ${entryCount === 0 ? 'text-gray-500' : textColor} font-bold uppercase tracking-wide`}>
+              {entryCount === 0 ? (
+                <span className="text-yellow-600">⚠️ No data collected</span>
+              ) : entryCount < 100 ? (
+                <span>📊 {entryCount} entries (Preliminary)</span>
+              ) : (
+                <span>✓ {entryCount} entries collected</span>
+              )}
+            </div>
+          )}
+          {lastUpdated && (
+            <div className={`text-xs ${textColor} opacity-70 font-bold mono mt-1`}>
+              Updated: {lastUpdated}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

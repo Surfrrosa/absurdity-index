@@ -281,23 +281,83 @@ export default function Methodology() {
           </p>
         </div>
 
+        {/* Current Status */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-black text-white mb-6 uppercase border-b-4 border-white pb-2">
+            Current Research Status
+          </h2>
+
+          <div className="bg-yellow-500 border-4 border-black p-8 mb-6">
+            <h3 className="text-2xl font-black text-black mb-4 uppercase">⚠️ Active Research Project</h3>
+            <p className="text-black font-bold text-lg leading-relaxed">
+              This is an <strong>ongoing research initiative</strong>. Data collection began December 2024
+              and continues weekly. Scores will fluctuate as sample sizes increase and patterns emerge.
+            </p>
+          </div>
+
+          <div className="bg-white border-4 border-black p-6 mb-6">
+            <h3 className="text-xl font-black text-black mb-4 uppercase">Data Quality Tiers</h3>
+            <div className="space-y-3">
+              <div className="border-l-4 border-red-600 pl-4">
+                <p className="text-black font-bold">
+                  <span className="text-red-600">PRELIMINARY (0-100 entries):</span> Patterns emerging but sample too small for statistical confidence
+                </p>
+              </div>
+              <div className="border-l-4 border-yellow-500 pl-4">
+                <p className="text-black font-bold">
+                  <span className="text-yellow-600">IN PROGRESS (100-300 entries):</span> Early trends visible, approaching statistical significance
+                </p>
+              </div>
+              <div className="border-l-4 border-green-600 pl-4">
+                <p className="text-black font-bold">
+                  <span className="text-green-600">COMPLETE (300+ entries):</span> Statistically meaningful sample meeting research standards
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white border-4 border-black p-6">
+            <h3 className="text-xl font-black text-black mb-4 uppercase">Collection Timeline</h3>
+            <p className="text-black font-bold mb-4">
+              Target: <strong>3,440 total entries</strong> across 8 metrics
+            </p>
+            <ul className="space-y-2 text-black font-bold text-sm mono">
+              <li>▸ PHASE 1 (Dec 2024 - Jan 2025): Initial sampling, methodology validation</li>
+              <li>▸ PHASE 2 (Jan - Mar 2025): Systematic collection, 50-100 entries per metric</li>
+              <li>▸ PHASE 3 (Mar - Jun 2025): Scale to target sample sizes, 300+ per metric</li>
+              <li>▸ ONGOING: Weekly updates, continuous monitoring for trends</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Limitations */}
         <div className="mb-12">
           <h2 className="text-3xl font-black text-white mb-6 uppercase border-b-4 border-white pb-2">
-            Limitations & Ethics
+            Limitations & Biases
           </h2>
 
-          <div className="bg-white border-4 border-black p-6">
+          <div className="bg-white border-4 border-black p-6 mb-6">
             <p className="text-black font-bold mb-4">
               This dashboard quantifies cultural sentiment and economic trends, not clinical diagnoses or policy recommendations.
             </p>
+            <h3 className="text-lg font-black text-black mb-3 uppercase">Known Limitations</h3>
             <ul className="space-y-2 text-black font-bold text-sm mono">
-              <li>▸ Platform demographics may not represent general population</li>
-              <li>▸ Self-reported sentiment may differ from actual behavior</li>
-              <li>▸ Some metrics are preliminary and require more research</li>
-              <li>▸ Scores are relative indicators, not absolute measures</li>
-              <li>▸ Data collected from public sources only - no private information</li>
+              <li>▸ <strong>Platform demographics:</strong> Reddit/TikTok users ≠ general population (skews younger, more tech-savvy)</li>
+              <li>▸ <strong>Self-selection bias:</strong> People experiencing crisis are more likely to post and share stories</li>
+              <li>▸ <strong>Temporal bias:</strong> Viral events can spike sentiment temporarily; scores normalize over time</li>
+              <li>▸ <strong>Geographic bias:</strong> US-focused data collection; international experiences underrepresented</li>
+              <li>▸ <strong>Keyword limitations:</strong> Automated categorization may miss nuance or sarcasm</li>
+              <li>▸ <strong>Sample size variations:</strong> Metrics collect at different rates; compare completion percentages</li>
             </ul>
+          </div>
+
+          <div className="bg-white border-4 border-black p-6">
+            <h3 className="text-lg font-black text-black mb-3 uppercase">Why This Still Matters</h3>
+            <p className="text-black font-bold leading-relaxed">
+              These limitations do not invalidate the methodology. Multi-platform sampling, systematic collection,
+              and anchoring to official statistics (40% weight) mitigate individual biases. The goal is not perfect
+              representation but <strong>directional insight</strong> into lived experience that traditional metrics miss.
+            </p>
           </div>
         </div>
 

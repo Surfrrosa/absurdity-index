@@ -14,6 +14,21 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Header />
 
+      {/* Active Research Banner */}
+      <div className="bg-red-600 border-b-4 border-white">
+        <div className="container mx-auto px-6 py-4 text-center">
+          <p className="text-white text-lg font-black uppercase tracking-wide">
+            🔬 Active Research Project
+          </p>
+          <p className="text-white text-sm font-bold mt-1">
+            Data collection ongoing • Updated weekly •{' '}
+            <a href="/status" className="underline hover:text-black transition-colors">
+              View Progress →
+            </a>
+          </p>
+        </div>
+      </div>
+
       {selectedMetric && metricDetails[selectedMetric] && (
         <MetricDetail
           data={metricDetails[selectedMetric]}
@@ -61,6 +76,8 @@ export default function Home() {
               ceoRatio: "285:1 CEO-to-worker pay"
             }}
             onClick={() => setSelectedMetric("Wage Stagnation")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -74,6 +91,8 @@ export default function Home() {
               priceToIncome: "4.6x ratio"
             }}
             onClick={() => setSelectedMetric("Housing Despair")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -87,6 +106,8 @@ export default function Home() {
               complaints: "Rising consumer frustration"
             }}
             onClick={() => setSelectedMetric("Airline Chaos")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -100,6 +121,8 @@ export default function Home() {
               medicalDebt: "41% adults have medical debt"
             }}
             onClick={() => setSelectedMetric("What Healthcare?")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -113,6 +136,8 @@ export default function Home() {
               priceIncreases: "73% raised prices in 2025"
             }}
             onClick={() => setSelectedMetric("Subscription Overload")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -126,6 +151,8 @@ export default function Home() {
               projection: "Expected 25-45 with full data"
             }}
             onClick={() => setSelectedMetric("Dating App Despair")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -139,6 +166,8 @@ export default function Home() {
               trend: "Ongoing instability"
             }}
             onClick={() => setSelectedMetric("Layoff Watch")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
 
           <MetricCard
@@ -152,6 +181,8 @@ export default function Home() {
               completion: "60% data collected"
             }}
             onClick={() => setSelectedMetric("AI Psychosis")}
+            entryCount={0}
+            lastUpdated="Dec 17, 2024"
           />
         </div>
 
