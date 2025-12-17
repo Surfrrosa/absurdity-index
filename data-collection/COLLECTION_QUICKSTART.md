@@ -64,7 +64,7 @@ collector.export_json("healthcare_data.json")
 ### 3. Run the Script
 
 ```bash
-cd "/Volumes/Extreme SSD/Home/projects/disappointments-dashboard-web/data-collection"
+cd "absurdity-index/data-collection"
 python3 healthcare-collector.py
 ```
 

@@ -72,7 +72,7 @@ Content is categorized using keyword-based analysis:
 ## Project Structure
 
 ```
-disappointments-dashboard-web/
+absurdity-index/
 ├── app/
 │   ├── page.tsx              # Main dashboard
 │   ├── methodology/          # Methodology documentation page
@@ -126,7 +126,7 @@ Each metric has a dedicated Python collection script in `/data-collection/`.
 1. Install Python 3
 2. Navigate to data collection directory:
    ```bash
-   cd "/Volumes/Extreme SSD/Home/projects/disappointments-dashboard-web/data-collection"
+   cd "absurdity-index/data-collection"
    ```
 3. Run a collector script:
    ```bash
