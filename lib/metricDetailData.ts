@@ -276,9 +276,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 13.25,
-    label: "Homeownership Feels Achievable",
-    trend: "improving",
+    score: 50.85,
+    label: "Multiple Organs Required",
+    trend: "worsening",
     officialScore: 20.1,
     crisisRatio: 8.7,
     levelDistribution: {
@@ -404,9 +404,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 6.95,
-    label: "Job Security Exists (???).",
-    trend: "neutral",
+    score: 48.48,
+    label: "Resume At The Ready",
+    trend: "worsening",
     officialScore: 76.5,
     crisisRatio: 0.0,
     levelDistribution: {

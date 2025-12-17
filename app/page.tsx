@@ -67,12 +67,12 @@ export default function Home() {
 
           <MetricCard
             title="Housing Despair"
-            score={13.25}
-            label="Homeownership Feels Achievable"
-            trend="improving"
+            score={50.85}
+            label="Multiple Organs Required"
+            trend="worsening"
             data={{
+              genZRentBurden: "58.2% rent-burdened",
               medianPrice: "$383,725",
-              medianRent: "$2,000/mo",
               priceToIncome: "4.6x ratio"
             }}
             onClick={() => setSelectedMetric("Housing Despair")}
@@ -142,13 +142,13 @@ export default function Home() {
 
           <MetricCard
             title="Layoff Watch"
-            score={6.95}
-            label="Job Security Exists (???)."
-            trend="neutral"
+            score={48.48}
+            label="Resume At The Ready"
+            trend="worsening"
             data={{
-              total2025: "152,922 tech workers",
-              companies: "551 companies",
-              trend: "Ongoing instability"
+              u6Unemployment: "7.5% (vs 3.7% U-3)",
+              techLayoffs: "152,922 in 2024",
+              jobSearchReality: "6+ month searches"
             }}
             onClick={() => setSelectedMetric("Layoff Watch")}
             entryCount={0}

@@ -1,6 +1,6 @@
 export default function AbsurdityScore() {
-  const absurdityScore = 16.26;
-  const label = "MANAGEABLE EXISTENTIAL DREAD";
+  const absurdityScore = 37.54;
+  const label = "QUARTERLY PURGE REQUIRED";
 
   return (
     <div className="bg-white border-4 md:border-8 border-black p-6 md:p-10 mb-12">

@@ -223,6 +223,52 @@ Based on the Overall Absurdity Score:
 
 ---
 
+## Official Data Source Limitations
+
+While official statistics provide crucial objective grounding, our research identified several systematic issues that can make aggregate data misleadingly optimistic:
+
+### 1. U-3 vs U-6 Unemployment Gap
+
+**The Problem:**
+- **U-3 (Official)**: 3.7% - excludes discouraged workers who stopped looking
+- **U-6 (Reality)**: 7.5% - includes discouraged workers and underemployed
+- **Gap**: More than 2X difference
+
+**Our Adjustment:**
+Layoff Watch now uses U-6 unemployment rate as the baseline instead of U-3, providing a more accurate picture of actual labor market distress.
+
+### 2. Age-Cohort Housing Crisis Masked by Averages
+
+**The Problem:**
+- **National rent burden**: 28.7% - includes older homeowners and stable renters
+- **Gen Z rent burden (18-25)**: 58.2% - the cohort actually trying to enter the market
+- **Gap**: Aggregate data obscures generational crisis
+
+**Our Adjustment:**
+Housing Despair now uses Gen Z age-cohort data (58.2%) instead of national averages, reflecting the lived experience of those most affected by the housing crisis.
+
+### 3. CPI Substitution Bias
+
+**The Problem:**
+- CPI assumes consumers substitute cheaper goods when prices rise
+- Understates actual inflation by 0.2-0.4 points annually
+- Overstates "real wage growth" calculations
+- Low-income households experience 0.41+ higher inflation than CPI suggests
+
+**Our Approach:**
+We acknowledge this limitation but maintain CPI-based calculations while giving CEO-to-worker pay ratio dominant weight (285:1 ratio is undeniable regardless of CPI methodology).
+
+### Impact on Scores
+
+These adjustments resulted in significant score revisions:
+- **Housing Despair**: 13.25 → 50.85 (using Gen Z data)
+- **Layoff Watch**: 6.95 → 48.48 (using U-6 unemployment)
+- **Overall Absurdity**: 16.26 → 37.54 (from "Manageable Existential Dread" to "Quarterly Purge Required")
+
+**Documentation:** Full analysis available in `/research-docs/OFFICIAL_DATA_RELIABILITY_AUDIT.md`
+
+---
+
 ## Bias Mitigation
 
 ### Multi-platform sampling
