@@ -233,24 +233,49 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 32.56,
+    score: 19.74,
     label: "Inflation Exists But Manageable",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 28.9,
+    crisisRatio: 7.3,
     levelDistribution: {
-      level1: 0,
-      level2: 0,
-      level3: 0,
-      total: 0
+      level1: 73,
+      level2: 16,
+      level3: 7,
+      total: 96
     },
-    sampleData: [],
+    sampleData: [
+      {
+        content: "When the employed are pushed into homelessness. In America we are taught hard work is the key to success. But despite having full-time jobs, many families are locked out of the American dream.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-11-16"
+      },
+      {
+        content: "Working Full-Time and Still Can't Eat. The GOP says SNAP recipients should 'just get jobs' — but 70% of recipients work full-time.",
+        platform: "youtube",
+        level: 1,
+        date: "2025-11-03"
+      },
+      {
+        content: "I STOPPED Living Paycheck to Paycheck After Learning This One Rule. Millions are living paycheck to paycheck and wondering what they're doing wrong.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-11-29"
+      },
+      {
+        content: "3 Jobs Still Homeless: The Reality of Working America. Working 3 jobs still can't afford rent... broken system.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-10-22"
+      }
+    ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 0,
+        current: 96,
         target: 100,
-        percentage: 0
+        percentage: 96
       },
       {
         platform: "Reddit",
@@ -269,10 +294,10 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "Social media analysis: PENDING COLLECTION"
+      "YouTube: 96 videos about wage stagnation and financial stress (7.3% crisis ratio)"
     ],
-    methodology: "Data collection in progress. Will combine official wage/CEO pay data (40%) with social sentiment about financial stress (60%).",
-    lastUpdated: "December 16, 2025"
+    methodology: "Official wage/CEO pay data (40% weight) combined with social sentiment about financial stress (60% weight). Content categorized as Level 3 (working poor/homeless despite employment), Level 2 (living paycheck to paycheck), Level 1 (general awareness of wage issues).",
+    lastUpdated: "December 17, 2025"
   },
   "Housing Despair": {
     title: "Housing Despair",
@@ -319,24 +344,49 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 18.67,
+    score: 16.38,
     label: "Mild Turbulence",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 17.2,
+    crisisRatio: 13.3,
     levelDistribution: {
-      level1: 0,
-      level2: 0,
-      level3: 0,
-      total: 0
+      level1: 76,
+      level2: 15,
+      level3: 14,
+      total: 105
     },
-    sampleData: [],
+    sampleData: [
+      {
+        content: "Flight Cancelled Nightmare: Stranded at airport for 3 days with no hotel voucher. Airline refused to rebook us and kept giving us the runaround.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-12-10"
+      },
+      {
+        content: "Airline Lost Luggage: They lost all our bags for our 2-week vacation. Customer service was completely unhelpful. Still waiting for compensation 2 months later.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-11-28"
+      },
+      {
+        content: "Flight Delay Horror Story: 8-hour delay with zero communication. Missed our connection, no rebooking options for 2 days.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-11-15"
+      },
+      {
+        content: "Stuck at Airport Overnight: Flight cancelled at midnight, airline refused hotel. Had to sleep on airport floor with my kids.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-10-22"
+      }
+    ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 0,
+        current: 105,
         target: 160,
-        percentage: 0
+        percentage: 66
       },
       {
         platform: "Reddit",
@@ -355,31 +405,56 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: 22% flight delay rate",
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "Social media analysis: PENDING COLLECTION"
+      "YouTube: 105 videos about airline chaos and travel nightmares (13.3% crisis ratio)"
     ],
-    methodology: "Data collection in progress. Will combine official delay/safety data (40%) with social sentiment about airline nightmares (60%).",
-    lastUpdated: "December 16, 2025"
+    methodology: "Official delay/safety data (40% weight) combined with social sentiment about airline nightmares (60% weight). Content categorized as Level 3 (stranded for days/major disruption), Level 2 (delays/lost luggage), Level 1 (general complaints).",
+    lastUpdated: "December 17, 2025"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 0.36,
+    score: 13.9,
     label: "Love May Actually Be Real",
     trend: "improving",
     officialScore: 8.5,
-    crisisRatio: 0.0,
+    crisisRatio: 17.5,
     levelDistribution: {
-      level1: 0,
-      level2: 0,
-      level3: 0,
-      total: 0
+      level1: 84,
+      level2: 10,
+      level3: 20,
+      total: 114
     },
-    sampleData: [],
+    sampleData: [
+      {
+        content: "Quit Dating Apps: After years of frustration, I finally gave up. My mental health has improved dramatically since deleting all the apps.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-12-04"
+      },
+      {
+        content: "Dating App Burnout is Real: Endless swiping, ghosting, and breadcrumbing. The algorithm is rigged and it's destroying self-esteem.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-11-29"
+      },
+      {
+        content: "Modern Dating is Broken: Dating apps ruined dating. It's turned relationships into a marketplace where most people are treated as disposable.",
+        platform: "youtube",
+        level: 1,
+        date: "2025-11-13"
+      },
+      {
+        content: "Dating App Depression: Gave up on finding someone. The constant rejection and ghosting took a serious toll on my mental health.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-10-28"
+      }
+    ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 0,
+        current: 114,
         target: 160,
-        percentage: 0
+        percentage: 71
       },
       {
         platform: "Reddit",
@@ -395,33 +470,52 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "Google Trends: Dating app search volume (baseline only)",
+      "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "Social media analysis: PENDING COLLECTION - New methodology with qualitative data"
+      "YouTube: 114 videos about dating app burnout and despair (17.5% crisis ratio)"
     ],
-    methodology: "Current score (0.36) based on limited Google Trends data only. NEW METHODOLOGY being implemented with multi-platform social sentiment analysis. Expected score range: 25-45 with complete data.",
-    lastUpdated: "December 16, 2025"
+    methodology: "Google Trends data (40% weight) combined with social sentiment analysis (60% weight). Content categorized as Level 3 (gave up/mental health impact), Level 2 (burnout/exhaustion), Level 1 (general frustration).",
+    lastUpdated: "December 17, 2025"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 48.48,
+    score: 31.44,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 0.0,
+    crisisRatio: 1.4,
     levelDistribution: {
-      level1: 0,
-      level2: 0,
-      level3: 0,
-      total: 0
+      level1: 65,
+      level2: 8,
+      level3: 1,
+      total: 74
     },
-    sampleData: [],
+    sampleData: [
+      {
+        content: "Job Search Nightmare: Hundreds of applications, no response. The job market is broken and overqualified candidates are desperately searching.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-12-11"
+      },
+      {
+        content: "Laid Off Tech 2025: What now? After years of experience, suddenly facing unemployment with hundreds of applicants for every position.",
+        platform: "youtube",
+        level: 1,
+        date: "2025-12-08"
+      },
+      {
+        content: "Why No One Can Get A Job Anymore. Despite sending hundreds of applications, qualified candidates are getting ghosted or rejected.",
+        platform: "youtube",
+        level: 1,
+        date: "2025-09-30"
+      }
+    ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 0,
+        current: 74,
         target: 100,
-        percentage: 0
+        percentage: 74
       },
       {
         platform: "Reddit",
@@ -439,9 +533,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: 152,922 tech workers laid off in 2025",
       "551 companies reported layoffs",
-      "Social media analysis: PENDING COLLECTION - Job market despair, layoff anxiety"
+      "YouTube: 74 videos about layoffs and job search struggles (1.4% crisis ratio)"
     ],
-    methodology: "Data collection in progress. Will combine official layoff numbers (40%) with social sentiment about job search struggles and layoff fear (60%).",
-    lastUpdated: "December 16, 2025"
+    methodology: "Official layoff numbers (40% weight) combined with social sentiment about job search struggles and layoff fear (60% weight). Content categorized as Level 3 (financial crisis/months unemployed), Level 2 (hundreds of applications/no response), Level 1 (general job market awareness).",
+    lastUpdated: "December 17, 2025"
   }
 };
