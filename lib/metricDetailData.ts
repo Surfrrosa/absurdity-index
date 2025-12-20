@@ -746,3 +746,29 @@ export function getAllMetricsWithLabels(): Record<string, MetricDetailData> {
 
   return metricsWithLabels;
 }
+
+/**
+ * Calculate the Overall Absurdity Score
+ * Equal-weight average of all metric final scores
+ */
+export function calculateOverallScore(): number {
+  const metrics = Object.values(metricDetails);
+  const scores = metrics.map(m => m.score);
+  const sum = scores.reduce((a, b) => a + b, 0);
+  return sum / scores.length;
+}
+
+/**
+ * Get the dynamic label for the overall absurdity score
+ */
+export function getOverallLabel(score: number): string {
+  if (score < 20) return "SURPRISINGLY FUNCTIONAL";
+  if (score < 30) return "MINOR TURBULENCE";
+  if (score < 40) return "FLYING TOO CLOSE TO THE SUN";
+  if (score < 50) return "ICARUS HAS ENTERED THE CHAT";
+  if (score < 60) return "THE WHEELS ARE COMING OFF";
+  if (score < 70) return "ACTIVELY ON FIRE";
+  if (score < 80) return "DANTE'S WAITING ROOM";
+  if (score < 90) return "BOSCH PAINTING COME TO LIFE";
+  return "PACK YOUR BAGS, SISYPHUS";
+}

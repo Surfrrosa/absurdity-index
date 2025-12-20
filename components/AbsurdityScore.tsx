@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { calculateOverallScore, getOverallLabel } from '@/lib/metricDetailData';
 
 export default function AbsurdityScore() {
-  const absurdityScore = 35.22;
-  const label = "FLYING TOO CLOSE TO THE SUN";
+  const absurdityScore = calculateOverallScore();
+  const label = getOverallLabel(absurdityScore);
 
   // Counter animation state
   const [displayScore, setDisplayScore] = useState(0);
@@ -69,10 +70,10 @@ export default function AbsurdityScore() {
         </div>
 
         <p className="text-white mt-4 md:mt-6 text-xs md:text-sm font-bold mono uppercase">
-          8 METRICS | DEC 2025 | ~50% DATA COMPLETE
+          8 METRICS | DEC 2025 | UPDATED WEEKLY
         </p>
         <p className="text-gray-400 mt-2 md:mt-3 text-xs font-bold uppercase">
-          * Collection in progress
+          * Equal-weight average · See methodology for details
         </p>
       </div>
     </div>
