@@ -9,12 +9,12 @@ import pandas as pd
 import time
 from datetime import datetime
 
-# App IDs for AI companion apps
+# App IDs for AI companion apps (using numeric App Store IDs)
 APPS = {
-    'Replika': 'replika-ai',
-    'Character.AI': 'character-ai',
-    'Chai': 'chai-chat-with-ai-bots',
-    'Anima AI': 'anima-ai-friend'
+    'Replika': '1423496346',
+    'Character.AI': '1648145636',
+    'Chai': '1544750895',
+    'Anima AI': '1506263566'
 }
 
 # Crisis keywords to look for
@@ -104,7 +104,7 @@ def main():
     df = pd.DataFrame(all_reviews)
 
     # Save to CSV
-    output_file = f'/Volumes/Extreme SSD/Home/projects/disappointments-dashboard/data/app_store_reviews_collected_{datetime.now().strftime("%Y%m%d")}.csv'
+    output_file = f'collected-data/ai_psychosis_appstore_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
     df.to_csv(output_file, index=False)
 
     print("\n" + "=" * 60)
