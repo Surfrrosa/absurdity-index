@@ -249,28 +249,40 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "When the employed are pushed into homelessness. In America we are taught hard work is the key to success. But despite having full-time jobs, many families are locked out of the American dream.",
+        content: "When the employed are pushed into homelessness",
         platform: "youtube",
         level: 3,
-        date: "2025-11-16"
+        date: "2025-11-16",
+        url: "https://www.youtube.com/watch?v=4loulWBN5Nw",
+        videoId: "4loulWBN5Nw",
+        viewCount: 909737
       },
       {
-        content: "Working Full-Time and Still Can't Eat. The GOP says SNAP recipients should 'just get jobs' — but 70% of recipients work full-time.",
+        content: "3 Jobs Still Homeless: The Reality of Working America",
         platform: "youtube",
-        level: 1,
-        date: "2025-11-03"
+        level: 3,
+        date: "2025-10-22",
+        url: "https://www.youtube.com/watch?v=NN3zMclcIVs",
+        videoId: "NN3zMclcIVs",
+        viewCount: 1176
       },
       {
-        content: "I STOPPED Living Paycheck to Paycheck After Learning This One Rule. Millions are living paycheck to paycheck and wondering what they're doing wrong.",
+        content: "I STOPPED Living Paycheck to Paycheck After Learning This One Rule",
         platform: "youtube",
         level: 2,
-        date: "2025-11-29"
+        date: "2025-11-29",
+        url: "https://www.youtube.com/watch?v=_6v1VMlkfrc",
+        videoId: "_6v1VMlkfrc",
+        viewCount: 33655
       },
       {
-        content: "3 Jobs Still Homeless: The Reality of Working America. Working 3 jobs still can't afford rent... broken system.",
+        content: "Working Full-Time and Still Can't Eat",
         platform: "youtube",
-        level: 3,
-        date: "2025-10-22"
+        level: 1,
+        date: "2025-11-03",
+        url: "https://www.youtube.com/watch?v=aBw582ctvOA",
+        videoId: "aBw582ctvOA",
+        viewCount: 495317
       }
     ],
     collectionProgress: [
@@ -397,28 +409,36 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Flight Cancelled Nightmare: Stranded at airport for 3 days with no hotel voucher. Airline refused to rebook us and kept giving us the runaround.",
+        content: "Stranded For 10+ hours, Fliers Demand Action From Indigo Airlines For Cancelled Flights",
         platform: "youtube",
         level: 3,
-        date: "2025-12-10"
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=rxXzYPDl5jc",
+        videoId: "rxXzYPDl5jc"
       },
       {
-        content: "Airline Lost Luggage: They lost all our bags for our 2-week vacation. Customer service was completely unhelpful. Still waiting for compensation 2 months later.",
-        platform: "youtube",
-        level: 2,
-        date: "2025-11-28"
-      },
-      {
-        content: "Flight Delay Horror Story: 8-hour delay with zero communication. Missed our connection, no rebooking options for 2 days.",
-        platform: "youtube",
-        level: 2,
-        date: "2025-11-15"
-      },
-      {
-        content: "Stuck at Airport Overnight: Flight cancelled at midnight, airline refused hotel. Had to sleep on airport floor with my kids.",
+        content: "I was stranded at the airport with my newborn baby, begging for help after my flight got...",
         platform: "youtube",
         level: 3,
-        date: "2025-10-22"
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=-NJwQ_I1Y_4",
+        videoId: "-NJwQ_I1Y_4"
+      },
+      {
+        content: "Black Soldier Ignored At The Airport—Then The Flight Got Delayed For Him",
+        platform: "youtube",
+        level: 2,
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=gzBWU8ICkOA",
+        videoId: "gzBWU8ICkOA"
+      },
+      {
+        content: "Flight Delays, Fees & Fights: Is Flying Getting Worse?",
+        platform: "youtube",
+        level: 1,
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=X-ElLs6Xo-c",
+        videoId: "X-ElLs6Xo-c"
       }
     ],
     collectionProgress: [
@@ -465,28 +485,36 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Quit Dating Apps: After years of frustration, I finally gave up. My mental health has improved dramatically since deleting all the apps.",
+        content: "Why Gen Z is Quitting Dating Apps",
         platform: "youtube",
         level: 3,
-        date: "2025-12-04"
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=OdjIW8IdbIM",
+        videoId: "OdjIW8IdbIM"
       },
       {
-        content: "Dating App Burnout is Real: Endless swiping, ghosting, and breadcrumbing. The algorithm is rigged and it's destroying self-esteem.",
+        content: "Dating App Fatigue & Mental Health",
+        platform: "youtube",
+        level: 3,
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=ygRO028UQUU",
+        videoId: "ygRO028UQUU"
+      },
+      {
+        content: "Dating Apps Are Exhausting: Here's What's Happening",
         platform: "youtube",
         level: 2,
-        date: "2025-11-29"
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=fLYKy51jIVc",
+        videoId: "fLYKy51jIVc"
       },
       {
-        content: "Modern Dating is Broken: Dating apps ruined dating. It's turned relationships into a marketplace where most people are treated as disposable.",
+        content: "The Gen Z Dating Apocalypse",
         platform: "youtube",
         level: 1,
-        date: "2025-11-13"
-      },
-      {
-        content: "Dating App Depression: Gave up on finding someone. The constant rejection and ghosting took a serious toll on my mental health.",
-        platform: "youtube",
-        level: 3,
-        date: "2025-10-28"
+        date: "2025-12-17",
+        url: "https://www.youtube.com/watch?v=dxxbcEGKs-c",
+        videoId: "dxxbcEGKs-c"
       }
     ],
     collectionProgress: [
@@ -532,22 +560,40 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Job Search Nightmare: Hundreds of applications, no response. The job market is broken and overqualified candidates are desperately searching.",
+        content: "Job Search Nightmare: 1,000 Applications and Failure? #shorts",
+        platform: "youtube",
+        level: 3,
+        date: "2025-11-03",
+        url: "https://www.youtube.com/watch?v=-8rg1nPv-rc",
+        videoId: "-8rg1nPv-rc",
+        viewCount: 698
+      },
+      {
+        content: "International students — 😓 200+ Job Applications, But No Response?",
         platform: "youtube",
         level: 2,
-        date: "2025-12-11"
+        date: "2025-10-17",
+        url: "https://www.youtube.com/watch?v=Xe-dHYhBwVk",
+        videoId: "Xe-dHYhBwVk",
+        viewCount: 780
       },
       {
-        content: "Laid Off Tech 2025: What now? After years of experience, suddenly facing unemployment with hundreds of applicants for every position.",
+        content: "Unemployed @ 50 & was told I was overqualified",
         platform: "youtube",
-        level: 1,
-        date: "2025-12-08"
+        level: 2,
+        date: "2025-09-26",
+        url: "https://www.youtube.com/watch?v=4-UsaQaRiyA",
+        videoId: "4-UsaQaRiyA",
+        viewCount: 436
       },
       {
-        content: "Why No One Can Get A Job Anymore. Despite sending hundreds of applications, qualified candidates are getting ghosted or rejected.",
+        content: "Why are Tech Layoffs Still Happening?",
         platform: "youtube",
         level: 1,
-        date: "2025-09-30"
+        date: "2025-11-03",
+        url: "https://www.youtube.com/watch?v=XerzK0QNhnM",
+        videoId: "XerzK0QNhnM",
+        viewCount: 45923
       }
     ],
     collectionProgress: [
