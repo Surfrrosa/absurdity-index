@@ -63,10 +63,16 @@ export default function Home() {
                 label={metric.label}
                 trend={metric.trend}
                 data={{
-                  // Create summary from data sources
-                  source1: metric.dataSources[0]?.substring(0, 50) || "",
-                  source2: metric.dataSources[1]?.substring(0, 50) || "",
-                  source3: metric.dataSources[2]?.substring(0, 50) || ""
+                  // Create summary from data sources with ellipsis if truncated
+                  source1: metric.dataSources[0]
+                    ? (metric.dataSources[0].length > 50 ? metric.dataSources[0].substring(0, 50) + ".." : metric.dataSources[0])
+                    : "",
+                  source2: metric.dataSources[1]
+                    ? (metric.dataSources[1].length > 50 ? metric.dataSources[1].substring(0, 50) + ".." : metric.dataSources[1])
+                    : "",
+                  source3: metric.dataSources[2]
+                    ? (metric.dataSources[2].length > 50 ? metric.dataSources[2].substring(0, 50) + ".." : metric.dataSources[2])
+                    : ""
                 }}
                 onClick={() => setSelectedMetric(name)}
                 entryCount={metric.levelDistribution.total}
