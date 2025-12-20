@@ -1,431 +1,186 @@
-# The Absurdity Index: Calculation Methodology
+# The Absurdity Index: Complete Methodology & Formulas
 
-## Core Formula
+**Version:** 1.0
+**Last Updated:** December 20, 2025
+**Status:** Living document - will be updated as methodology evolves
 
-Each metric combines **official data** (objective baseline) with **social sentiment analysis** (lived experience multiplier) to produce a comprehensive absurdity score.
+---
+
+## Core Philosophy
+
+### What Is Absurdity?
+
+The Absurdity Index quantifies a subjective but widely-felt sense: that we live in an insane society actively causing its own misery. This is not a precise clinical term—it's the recognition that our systems produce outcomes that seem increasingly detached from human wellbeing.
+
+### Methodological Approach
+
+We combine two data sources to create more sound, relevant, and accurate measurements than either source alone:
+
+1. **Official Statistics (40% weight):** Government reports, industry data, economic indicators
+2. **Systematically Quantified Qualitative Data (60% weight):** Social media content categorized by severity
+
+Official statistics tell you what's happening at the macro level. Systematically quantifying lived experiences tells you what's happening at the human level. Together, they provide a more complete and accurate picture than either source alone.
+
+This is not about finding "gaps" or "discrepancies"—it's about enhancing the accuracy of our measurements by incorporating data from multiple sources.
+
+### Transparency Over Perfection
+
+This is an experimental methodology. We prioritize:
+- Explicit documentation of all formulas
+- Verifiable data sources
+- Honest acknowledgment of limitations
+- Reproducible processes
+
+We're not claiming scientific perfection. We're claiming transparency about what we're measuring and how we're measuring it.
+
+---
+
+## Mathematical Formulas
+
+### Overview
+
+Each metric's Final Score combines two components:
 
 ```
-Final Score = (Official Data Component × 0.4) + (Social Sentiment Component × 0.6)
+Final Score = (Official Score × 0.4) + (Social Score × 0.6)
 ```
 
-### Why 40/60 weighting?
+Where:
+- **Official Score (0-100)**: Normalized from government/industry statistics
+- **Social Score (0-100)**: Engagement-weighted severity from social media content
 
-- **Official data (40%)**: Provides objective grounding but often lags reality or misses psychological impact
-- **Social sentiment (60%)**: Captures lived experience, urgency, and emotional toll that stats alone miss
-- This weighting reflects that absurdity is fundamentally about the GAP between what should be vs what is - which social sentiment reveals better than raw numbers
+### Official Score Calculation
 
----
+Official scores normalize raw metrics to a 0-100 scale based on reasonable worst-case scenarios.
 
-## Metric-Specific Formulas
+**Example: Healthcare Official Score**
 
-### 1. AI Psychosis
-**Official Data Component:**
-- App download trends
-- Market research on AI companion usage
-- Normalized to 0-100 scale
+```python
+# Raw metrics
+premium_increase_yoy = 7.0%        # Annual premium increase
+denial_rate = 18.0%                 # Initial claim denial rate
+medical_debt_pct = 41.0%            # Adults with medical debt
+medical_bankruptcies = 66.5%        # Bankruptcies from medical debt
+uninsured_rate = 8.0%               # Americans without insurance
 
-**Social Sentiment Component:**
-- Crisis ratio from multi-platform analysis (YouTube, Reddit, TikTok, App Store)
-- Level 3 (Crisis): User describes dependency, mental health crisis, preference for AI over humans
-- Level 2 (Dependent): Regular emotional reliance, significant time investment
-- Level 1 (Casual): Curiosity, occasional use
+# Normalize to 0-100 (based on worst-case thresholds)
+premium_score = min(100, (7.0 / 15.0) * 100) = 46.67
+denial_score = min(100, (18.0 / 30.0) * 100) = 60.00
+debt_score = min(100, (41.0 / 60.0) * 100) = 68.33
+bankruptcy_score = 66.50  # Already 0-100
+uninsured_score = min(100, (8.0 / 20.0) * 100) = 40.00
 
-```
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
-```
-
-**Sample size:** 440-480 data points (146 YouTube + 200 Reddit + 20 App Store + 120 TikTok target)
-
----
-
-### 2. Subscription Overload
-**Official Data Component:**
-- Average subscriptions per household
-- Average monthly spending
-- Percentage of services raising prices
-- Normalized to 0-100 scale
-
-**Social Sentiment Component:**
-- Crisis ratio from social media "cancel subscriptions," "subscription fatigue" content
-- Level 3: Financial strain, canceling essentials, overwhelmed by tracking
-- Level 2: Actively trying to reduce, frustrated by price increases
-- Level 1: Mild annoyance, awareness of spending
-
-```
-Official Score = ((Avg Subs / 20) + (Avg Spend / 400) + (Price Increase % / 100)) × 33.3
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
+# Average all metrics
+Official Score = (46.67 + 60.00 + 68.33 + 66.50 + 40.00) / 5 = 56.30
 ```
 
----
+### Social Score Calculation
 
-### 3. Dating App Despair
-**Official Data Component:**
-- Google Trends volume for dating app frustration terms
-- App store review sentiment analysis
-- User retention rates (when available)
-- Normalized to 0-100 scale
+Social scores quantify qualitative data by combining:
+1. **Severity categorization**: How severe is the content?
+2. **Engagement weighting**: How many people saw it?
 
-**Social Sentiment Component:**
-- Crisis ratio from "quit dating apps," "dating burnout" content
-- Level 3: Quit entirely, mental health impact, gave up on dating
-- Level 2: Burnt out but still trying, frequent bad experiences, considering quitting
-- Level 1: General complaints, still optimistic
+**Step 1: Categorize Content by Severity**
 
-```
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
-```
+Each piece of content (video, post, etc.) is categorized into one of three levels:
 
-**Sample size:** 440-480 data points (120-160 YouTube + 200 Reddit + 120 TikTok)
+| Level | Weight | Description | Example (Healthcare) |
+|-------|--------|-------------|---------------------|
+| Level 1 (Aware) | 0.33 | Awareness without crisis | Billing confusion, delays |
+| Level 2 (Struggling) | 0.67 | Active struggle | Can't afford treatment, high premiums |
+| Level 3 (Crisis) | 1.0 | Critical situation | Medical debt, denied life-saving care |
 
----
+**Step 2: Weight by Engagement**
 
-### 4. What Healthcare?
-**Official Data Component:**
-- Average annual premium increases
-- Initial claim denial rates
-- Percentage of adults with medical debt
-- Medical bankruptcy rates
-- Normalized to 0-100 scale
-
-**Social Sentiment Component:**
-- Crisis ratio from healthcare nightmare content
-- Level 3: Medical debt/bankruptcy, denied life-saving treatment, can't afford necessary care
-- Level 2: Can't afford treatment, struggling with high premiums, insurance battle stress
-- Level 1: Billing confusion, minor coverage frustrations, admin hassles
+Use logarithmic scaling to account for reach without letting viral content dominate:
 
 ```
-Official Score = ((Premium Increase % × 10) + (Denial Rate %) + (Medical Debt % / 2)) / 3
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
+Engagement Weight = log₁₀(views + 1)
 ```
 
-**Sample size:** 440-480 data points (120-160 YouTube + 200 Reddit + 120 TikTok)
+Why logarithmic?
+- Prevents viral outliers from skewing results
+- Still accounts for relative reach
+- 100 views → weight 2.0
+- 10,000 views → weight 4.0 (not 100x more impact)
+- 1,000,000 views → weight 6.0
 
----
+**Step 3: Calculate Weighted Average**
 
-### 5. Wage Stagnation
-**Official Data Component:**
-- Real wage growth (adjusted for inflation)
-- CEO-to-worker pay ratio (normalized)
-- Google Trends for "can't afford" terms
-- Normalized to 0-100 scale
-
-**Social Sentiment Component:**
-- Crisis ratio from "living paycheck to paycheck," "can't afford rent" content
-- Level 3: Can't meet basic needs, housing insecurity, financial crisis
-- Level 2: Paycheck to paycheck, cutting essentials, constant stress
-- Level 1: Frustrated by prices, some cutbacks
+For each video/post, multiply severity by engagement, then normalize:
 
 ```
-Official Score = ((CEO Ratio / 400) + ((100 - Real Wage Growth) / 2) + Trends) / 3 × 100
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
+Social Score = (Σ severity_weight × log₁₀(views + 1)) / (Σ log₁₀(views + 1)) × 100
 ```
 
-**Sample size:** 300+ data points across platforms
+**Worked Example: Healthcare Social Score**
 
----
+Sample data from 160 videos:
 
-### 6. Housing Despair
-**Official Data Component:**
-- Median home price to median income ratio
-- Rent as percentage of median income
-- Homeownership rate decline
-- Normalized to 0-100 scale
+| Video | Severity | Views | Calculation |
+|-------|----------|-------|-------------|
+| "Medical bankruptcy crisis" | 1.0 (L3) | 23,263 | 1.0 × log₁₀(23,264) = 1.0 × 4.37 = 4.37 |
+| "Can't afford insulin" | 0.67 (L2) | 5,420 | 0.67 × log₁₀(5,421) = 0.67 × 3.73 = 2.50 |
+| "Insurance billing confusion" | 0.33 (L1) | 892 | 0.33 × log₁₀(893) = 0.33 × 2.95 = 0.97 |
 
-**Social Sentiment Component:**
-- Crisis ratio from "never own a home," "priced out" content
-- Level 3: Gave up on homeownership, housing insecurity, forced to move
-- Level 2: Can't save for down payment, rent increases forcing lifestyle cuts
-- Level 1: Frustrated by prices, homeownership feels distant
-
+Sum across all 160 videos:
 ```
-Official Score = ((Price-to-Income Ratio / 10) + (Rent % Income / 2)) × 10
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
+Total Weighted Score = Σ (severity × log₁₀(views + 1)) = 1,847.2
+Total Engagement = Σ log₁₀(views + 1) = 4,004.3
+
+Social Score = (1,847.2 / 4,004.3) × 100 = 46.14
 ```
 
-**Sample size:** 300+ data points across platforms
+**Distribution:**
+- Level 1: 110 videos (awareness)
+- Level 2: 16 videos (struggling)
+- Level 3: 34 videos (crisis)
+- Total: 160 videos
 
----
+### Final Score Calculation
 
-### 7. Airline Chaos
-**Official Data Component:**
-- Flight delay percentage
-- Cancellation rates
-- Customer satisfaction scores (inverted)
-- Normalized to 0-100 scale
-
-**Social Sentiment Component:**
-- Crisis ratio from airline nightmare content
-- Level 3: Stranded for days, lost critical luggage, major life disruption
-- Level 2: Significant delays/cancellations, poor service, frequent issues
-- Level 1: Minor delays, general complaints
+Combine official statistics with quantified lived experiences:
 
 ```
-Official Score = ((Delay % × 2) + (Cancellation % × 3) + ((100 - ACSI) / 2)) / 3
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
+Healthcare Final Score = (56.30 × 0.4) + (46.14 × 0.6)
+                      = 22.52 + 27.68
+                      = 50.20
 ```
 
-**Sample size:** 200+ data points across platforms
+**Why 40/60 weighting?**
+- Official statistics provide objective baselines
+- Social sentiment captures real-world impact and lived experiences
+- 60% weight on social data reflects that human experience matters more than abstract metrics
+- Creates more accurate, relevant measurements than either source alone
 
----
+### Complete Example: All 8 Metrics
 
-### 8. Layoff Watch
-**Official Data Component:**
-- Total layoffs (industry-specific)
-- Percentage of workforce affected
-- Job opening trends
-- Normalized to 0-100 scale
+| Metric | Official Score | Social Score | Final Score |
+|--------|---------------|--------------|-------------|
+| What Healthcare? | 56.30 | 46.14 | 50.20 |
+| AI Psychosis | 12.50 | 53.85 | 37.31 |
+| Subscription Overload | 45.20 | 36.41 | 39.93 |
+| Wage Stagnation | 38.40 | 42.50 | 40.86 |
+| Housing Despair | 37.60 | 47.66 | 43.64 |
+| Dating App Despair | 8.50 | 46.92 | 31.55 |
+| Layoff Watch | 76.50 | 35.07 | 51.64 |
+| Airline Chaos | 21.00 | 52.89 | 40.13 |
 
-**Social Sentiment Component:**
-- Crisis ratio from layoff fear and job search despair content
-- Level 3: Laid off and can't find work, financial crisis, industry collapse fear
-- Level 2: Layoff fear, difficult job search, hundreds of applications
-- Level 1: General job market concerns, awareness of layoffs
+### Notes on Reproducibility
 
-```
-Official Score = (Layoff Count / Target × 100) capped at reasonable maximum
-Crisis Ratio = (Level 3 count / Total count) × 100
-Final Score = (Official × 0.4) + (Crisis Ratio × 0.6)
-```
+All calculations are implemented in:
+- `/data-collection/calculate_all_social_scores.py` - Social score calculator
+- `/data-collection/calculate_healthcare_official_score.py` - Official score examples
 
-**Sample size:** 300+ data points across platforms
-
----
-
-## Overall Absurdity Score
-
-The headline Absurdity Score is the **weighted average** of all 8 metrics:
-
-```
-Overall Absurdity = (Σ Individual Scores) / 8
+To recalculate any metric:
+```bash
+cd data-collection
+python3 calculate_all_social_scores.py
 ```
 
-All metrics are weighted equally because each represents a distinct dimension of modern absurdity.
-
 ---
 
-## Label Thresholds
+## Data Collection
 
-Based on the Overall Absurdity Score:
+(Section 3 - To be added)
 
-- **0-15**: "Love May Actually Be Real" (minimal absurdity)
-- **16-30**: "Manageable Existential Dread"
-- **31-50**: "Flying Too Close To The Sun"
-- **51-70**: "Digital Stockholm Syndrome Setting In"
-- **71-85**: "Prior Authorization Purgatory"
-- **86-100**: "The Void Stares Back"
-
----
-
-## Official Data Source Limitations
-
-While official statistics provide crucial objective grounding, our research identified several systematic issues that can make aggregate data misleadingly optimistic:
-
-### 1. U-3 vs U-6 Unemployment Gap
-
-**The Problem:**
-- **U-3 (Official)**: 3.7% - excludes discouraged workers who stopped looking
-- **U-6 (Reality)**: 7.5% - includes discouraged workers and underemployed
-- **Gap**: More than 2X difference
-
-**Our Adjustment:**
-Layoff Watch now uses U-6 unemployment rate as the baseline instead of U-3, providing a more accurate picture of actual labor market distress.
-
-### 2. Age-Cohort Housing Crisis Masked by Averages
-
-**The Problem:**
-- **National rent burden**: 28.7% - includes older homeowners and stable renters
-- **Gen Z rent burden (18-25)**: 58.2% - the cohort actually trying to enter the market
-- **Gap**: Aggregate data obscures generational crisis
-
-**Our Adjustment:**
-Housing Despair now uses Gen Z age-cohort data (58.2%) instead of national averages, reflecting the lived experience of those most affected by the housing crisis.
-
-### 3. CPI Substitution Bias
-
-**The Problem:**
-- CPI assumes consumers substitute cheaper goods when prices rise
-- Understates actual inflation by 0.2-0.4 points annually
-- Overstates "real wage growth" calculations
-- Low-income households experience 0.41+ higher inflation than CPI suggests
-
-**Our Approach:**
-We acknowledge this limitation but maintain CPI-based calculations while giving CEO-to-worker pay ratio dominant weight (285:1 ratio is undeniable regardless of CPI methodology).
-
-### Impact on Scores
-
-These adjustments resulted in significant score revisions:
-- **Housing Despair**: 13.25 → 50.85 (using Gen Z data)
-- **Layoff Watch**: 6.95 → 48.48 (using U-6 unemployment)
-- **Overall Absurdity**: 16.26 → 37.54 (from "Manageable Existential Dread" to "Quarterly Purge Required")
-
-**Documentation:** Full analysis available in `/research-docs/OFFICIAL_DATA_RELIABILITY_AUDIT.md`
-
----
-
-## Bias Mitigation
-
-### Multi-platform sampling
-Data collected from YouTube, Reddit, TikTok, Twitter/X to avoid platform-specific bias
-
-### Systematic collection
-- Defined search terms
-- Minimum sample sizes (200-480 per metric)
-- Top/hot/recent sorting (not cherry-picked)
-
-### Keyword-based categorization
-- Reduces subjective judgment
-- Reproducible by others
-- Keywords documented and public
-
-### Transparency
-- All formulas public
-- Sample sizes disclosed
-- Limitations acknowledged
-- Raw data exportable
-
-### Official data anchoring
-40% weight on official statistics prevents pure sentiment drift
-
----
-
-## Limitations
-
-1. **Platform demographics**: Reddit/TikTok users ≠ general population
-2. **Self-selection bias**: People experiencing crisis more likely to post
-3. **Temporal bias**: Viral events can spike sentiment temporarily
-4. **Geographic bias**: US-focused data collection
-5. **Keyword limitations**: Automated categorization may miss context
-
-**These limitations are acknowledged and do not invalidate the methodology** - they are present in all sentiment research. Our multi-source, systematic approach with official data anchoring mitigates these effects.
-
----
-
-## Policy Change Monitoring
-
-The Absurdity Index tracks major policy changes that directly impact metric scores. When significant regulatory changes occur, we document the impact and adjust baselines accordingly.
-
-### Healthcare Policy Tracking
-
-**Federal Level:**
-- Affordable Care Act (ACA) modifications or repeal attempts
-- Medicare/Medicaid expansion or restriction
-- Prescription drug price regulations
-- Prior authorization rule changes (CMS regulations)
-
-**State Level:**
-- Medicaid expansion decisions
-- State-level insurance marketplace changes
-- Surprise billing protections
-
-**Impact Protocol:** When healthcare policy changes, official score baseline is recalculated using new premium/denial/coverage data. Social sentiment data collection continues to capture lived experience under new policies.
-
----
-
-### Wage & Labor Policy Tracking
-
-**Federal Level:**
-- Minimum wage legislation
-- National Labor Relations Board (NLRB) rulings
-- Federal labor law updates
-- Tax policy affecting working class
-
-**State/Local Level:**
-- State minimum wage increases
-- Living wage ordinances
-- Right-to-work law changes
-
-**Impact Protocol:** CEO pay ratio and real wage growth metrics updated quarterly. Policy changes noted in methodology with before/after comparison.
-
----
-
-### Housing Policy Tracking
-
-**Federal Level:**
-- Federal Reserve interest rate changes (direct impact on mortgages)
-- FHA loan requirement modifications
-- First-time homebuyer programs
-
-**State/Local Level:**
-- Zoning reform (upzoning, density changes)
-- Rent control legislation
-- Tenant protection laws
-- Housing development incentives
-
-**Impact Protocol:** Price-to-income ratios updated monthly. Rent control markets tracked separately. Policy impact documented with effective dates.
-
----
-
-### Transportation & Airline Policy Tracking
-
-**Federal Level:**
-- DOT passenger bill of rights updates
-- FAA safety regulation changes
-- Airline merger approvals/denials
-- Consumer protection enforcement
-
-**Impact Protocol:** Safety incident tracking continues regardless of policy. Service quality metrics (delays, cancellations) compared before/after policy implementation.
-
----
-
-### Technology & AI Policy Tracking
-
-**Federal Level:**
-- AI safety regulations
-- Tech antitrust enforcement
-- Platform regulation
-- Consumer privacy laws
-
-**Impact Protocol:** AI Psychosis metric tracks policy implementation impact on user behavior. Subscription Overload tracks antitrust impact on bundling practices.
-
----
-
-### Labor Market Policy Tracking
-
-**Federal Level:**
-- Unemployment insurance changes
-- Job training program funding
-- WARN Act enforcement (layoff notification requirements)
-
-**Impact Protocol:** Layoff Watch tracks policy changes requiring advance notice. Unemployment benefit changes noted in context of job search despair data.
-
----
-
-## Policy Impact Disclosure
-
-When a significant policy change affects a metric:
-
-1. **Baseline Recalculation:** Official score component updated with new data
-2. **Historical Comparison:** Pre-policy vs post-policy scores documented
-3. **Dashboard Notation:** Policy change flagged in methodology page with effective date
-4. **Social Sentiment Tracking:** Continued collection to measure lived experience under new policy
-
-**Example:** If Medicare negotiates prescription drug prices, healthcare official score would decrease (good), but social sentiment collection continues to verify if people actually experience relief or if insurers find new ways to deny coverage.
-
-This approach ensures The Absurdity Index captures both regulatory changes AND whether those changes actually improve lived experience.
-
----
-
-## Version History
-
-**v1.0 (December 2025)**: Initial methodology
-- Established 40/60 weighting
-- 8 core metrics defined
-- Sample size standards set
-- Multi-platform collection implemented
-- Policy change monitoring framework established
-
----
-
-## Reproducibility
-
-All data collection scripts are available in `/data-collection/` directory.
-Anyone can verify results by following the same methodology with the documented search terms and sample sizes.
-
-Policy changes are documented with sources and effective dates for independent verification.

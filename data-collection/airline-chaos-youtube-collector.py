@@ -131,7 +131,7 @@ def main():
     df_unique = df.drop_duplicates(subset=['video_id'])
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = f'data-collection/collected-data/airline_chaos_youtube_{timestamp}.csv'
+    output_file = f'collected-data/airline_chaos_youtube_{timestamp}.csv'
     df_unique.to_csv(output_file, index=False)
 
     print(f"\n{'=' * 70}")

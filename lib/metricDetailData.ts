@@ -42,16 +42,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 72.34,
+    score: 50.20,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
-    officialScore: 36.17,
-    crisisRatio: 60.2,
+    officialScore: 56.30,
+    crisisRatio: 46.14,
     levelDistribution: {
-      level1: 45,
-      level2: 123,
-      level3: 198,
-      total: 366
+      level1: 110,
+      level2: 16,
+      level3: 34,
+      total: 160
     },
     sampleData: [
       {
@@ -98,9 +98,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 142,
+        current: 160,
         target: 160,
-        percentage: 89
+        percentage: 100
       },
       {
         platform: "Reddit",
@@ -116,28 +116,28 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics",
+      "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 142 videos analyzing healthcare system failures (systematic sampling)",
+      "YouTube: 160 videos analyzing healthcare system failures (systematic sampling)",
       "Reddit: 200 posts from r/HealthInsurance, r/Insurance, r/povertyfinance (top posts, past 90 days)",
       "TikTok: 24 videos with healthcare crisis hashtags (ongoing collection)"
     ],
-    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with systematic social media sentiment analysis (60% weight). Social media content categorized into three levels: Level 3 (medical debt/denied life-saving care), Level 2 (can't afford treatment/high premiums), Level 1 (billing confusion/delays). Crisis ratio calculated as percentage of Level 3 entries.",
-    lastUpdated: "December 16, 2025"
+    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
+    lastUpdated: "December 20, 2025"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 18.05,
+    score: 37.31,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 17.92,
+    crisisRatio: 53.85,
     levelDistribution: {
-      level1: 236,
-      level2: 48,
-      level3: 62,
-      total: 346
+      level1: 66,
+      level2: 26,
+      level3: 54,
+      total: 146
     },
     sampleData: [
       {
@@ -208,27 +208,27 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "YouTube: 146 videos analyzing AI companion usage (37.0% crisis ratio)",
+      "YouTube: 146 videos analyzing AI companion usage",
       "Reddit: 200 posts from r/replika, r/CharacterAI (4.0% crisis ratio)",
       "App Store: 0 reviews collected (pending)",
       "TikTok: AI companion content analysis (pending)",
       "Google Trends: Search volume for AI companion terms"
     ],
-    methodology: "Systematic collection from multiple platforms. Content categorized as Level 3 (crisis/dependency), Level 2 (regular emotional reliance), or Level 1 (casual use). Crisis ratio weighted at 60%, official app download data at 40%.",
-    lastUpdated: "December 16, 2025"
+    methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
+    lastUpdated: "December 20, 2025"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 58.99,
+    score: 39.93,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 23.1,
+    crisisRatio: 36.41,
     levelDistribution: {
-      level1: 89,
-      level2: 124,
-      level3: 67,
-      total: 280
+      level1: 139,
+      level2: 9,
+      level3: 2,
+      total: 150
     },
     sampleData: [
       {
@@ -281,27 +281,28 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Social Media Sampling",
-        current: 280,
+        current: 150,
         target: 300,
-        percentage: 93
+        percentage: 50
       }
     ],
     dataSources: [
       "Consumer Reports: Average 12 subscriptions per household",
       "Streaming service pricing data: All major platforms tracked",
       "Google Trends: Subscription fatigue search volume",
-      "Industry reports: 73% of services raised prices in 2025"
+      "Industry reports: 73% of services raised prices in 2025",
+      "YouTube: 150 videos analyzing subscription fatigue"
     ],
-    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with social sentiment analysis of subscription fatigue (60% weight).",
-    lastUpdated: "December 16, 2025"
+    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 19.74,
+    score: 40.86,
     label: "Inflation Exists But Manageable",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 7.3,
+    crisisRatio: 42.50,
     levelDistribution: {
       level1: 73,
       level2: 16,
@@ -374,18 +375,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "YouTube: 96 videos about wage stagnation and financial stress (7.3% crisis ratio)"
+      "YouTube: 96 videos about wage stagnation and financial stress"
     ],
-    methodology: "Official wage/CEO pay data (40% weight) combined with social sentiment about financial stress (60% weight). Content categorized as Level 3 (working poor/homeless despite employment), Level 2 (living paycheck to paycheck), Level 1 (general awareness of wage issues).",
-    lastUpdated: "December 17, 2025"
+    methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 50.88,
+    score: 43.64,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 22.1,
+    crisisRatio: 47.66,
     levelDistribution: {
       level1: 91,
       level2: 4,
@@ -458,23 +459,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 122 videos about housing crisis and homeownership despair (22.1% crisis ratio)"
+      "YouTube: 122 videos about housing crisis and homeownership despair"
     ],
-    methodology: "Official housing price/rent burden data (40% weight) combined with social sentiment about housing crisis (60% weight). Content categorized as Level 3 (housing insecurity/homelessness/gave up on ownership), Level 2 (rent increases/struggling to afford), Level 1 (general housing concerns).",
-    lastUpdated: "December 19, 2025"
+    methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 16.38,
+    score: 40.13,
     label: "Mild Turbulence",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 13.3,
+    crisisRatio: 52.89,
     levelDistribution: {
-      level1: 76,
-      level2: 15,
+      level1: 92,
+      level2: 16,
       level3: 14,
-      total: 105
+      total: 122
     },
     sampleData: [
       {
@@ -521,9 +522,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 105,
+        current: 122,
         target: 160,
-        percentage: 66
+        percentage: 76
       },
       {
         platform: "Reddit",
@@ -542,18 +543,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: 22% flight delay rate",
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "YouTube: 105 videos about airline chaos and travel nightmares (13.3% crisis ratio)"
+      "YouTube: 122 videos about airline chaos and travel nightmares"
     ],
-    methodology: "Official delay/safety data (40% weight) combined with social sentiment about airline nightmares (60% weight). Content categorized as Level 3 (stranded for days/major disruption), Level 2 (delays/lost luggage), Level 1 (general complaints).",
-    lastUpdated: "December 17, 2025"
+    methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 13.9,
+    score: 31.55,
     label: "Love May Actually Be Real",
     trend: "improving",
     officialScore: 8.5,
-    crisisRatio: 17.5,
+    crisisRatio: 46.92,
     levelDistribution: {
       level1: 84,
       level2: 10,
@@ -625,18 +626,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "YouTube: 114 videos about dating app burnout and despair (17.5% crisis ratio)"
+      "YouTube: 114 videos about dating app burnout and despair"
     ],
-    methodology: "Google Trends data (40% weight) combined with social sentiment analysis (60% weight). Content categorized as Level 3 (gave up/mental health impact), Level 2 (burnout/exhaustion), Level 1 (general frustration).",
-    lastUpdated: "December 17, 2025"
+    methodology: "Google Trends data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 31.44,
+    score: 51.64,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 1.4,
+    crisisRatio: 35.07,
     levelDistribution: {
       level1: 65,
       level2: 8,
@@ -708,9 +709,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: 152,922 tech workers laid off in 2025",
       "551 companies reported layoffs",
-      "YouTube: 74 videos about layoffs and job search struggles (1.4% crisis ratio)"
+      "YouTube: 74 videos about layoffs and job search struggles"
     ],
-    methodology: "Official layoff numbers (40% weight) combined with social sentiment about job search struggles and layoff fear (60% weight). Content categorized as Level 3 (financial crisis/months unemployed), Level 2 (hundreds of applications/no response), Level 1 (general job market awareness).",
-    lastUpdated: "December 17, 2025"
+    methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 20, 2025"
   }
 };
