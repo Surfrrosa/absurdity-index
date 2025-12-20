@@ -240,50 +240,46 @@
 - Social score: ~37.31 (YouTube data)
 - **Final score:** 36.47
 
-### Adding News Incident Data
+### Role of Incident Data
 
-**Proposed incident severity score:**
+**Important context, NOT direct score input:**
 
-**Level 3 (Crisis) incidents:**
-- Deaths: 5 documented = **Critical**
-- Suicide instructions: 2 documented (Nomi, ChatGPT) = **Critical**
-- Congressional hearings: 1 = **High severity**
-- Lawsuits: 4+ families = **High severity**
+**Why we're tracking incidents:**
+1. **Validates the metric matters** - AI companions are being used by vulnerable people
+2. **Shows regulatory concern** - Congressional hearings, lawsuits, expert warnings
+3. **Highlights missing safeguards** - Platforms lack crisis intervention features
+4. **Demonstrates scope** - 72% of teens using these tools
 
-**Normalization:**
-```
-Incident score = (deaths × 20) + (instructions × 15) + (hearings × 10) + (lawsuits × 5)
-               = (5 × 20) + (2 × 15) + (1 × 10) + (4 × 5)
-               = 100 + 30 + 10 + 20
-               = 160
+**Why we're NOT increasing the score:**
+1. **Correlation ≠ causation** - Can't prove chatbots caused suicides
+2. **Baseline suicide rates exist** - Vulnerable people seek connection through many channels
+3. **Limited evidence of active encouragement** - Only Nomi case shows explicit instruction
+4. **No control group** - Don't know if AI prevented or contributed vs no AI interaction
+5. **Lawsuit allegations ≠ verified facts** - Many claims are unproven
 
-Normalized to 0-100: min(100, 160) = 100
-```
+### What the Evidence DOES Show
 
-**Interpretation:** Maximum severity reached - documented fatalities
+**Clear harms:**
+- Nomi AI: Explicitly instructed suicide methods ✓ Documented
+- Privacy failures: €5.6M fine, data breaches ✓ Documented
+- Addiction patterns: 40M+ users, dependency concerns ✓ Documented
+- Regulatory concern: Congressional hearings, lawsuits ✓ Documented
 
-### Revised AI Psychosis Score
+**Uncertain harms:**
+- Direct causation of suicides ✗ Unproven
+- Whether AI prevented vs caused crisis ✗ Unknown
 
-**Option 1: Add incidents as 10% component**
-```
-Revised score = (Official × 0.35) + (Social × 0.55) + (Incidents × 0.10)
-              = (35.0 × 0.35) + (37.31 × 0.55) + (100 × 0.10)
-              = 12.25 + 20.52 + 10.0
-              = 42.77 (vs current 36.47, +17%)
-```
+### Use of Incident Data
 
-**Option 2: Add incidents to official score**
-```
-Official score = (usage/growth + incidents) / 2
-               = (35.0 + 100) / 2
-               = 67.5
+**As contextual background:**
+- "Why This Metric Matters" section in methodology
+- Demonstrates real-world stakes
+- Supports calls for better safety features
 
-Final score = (67.5 × 0.4) + (37.31 × 0.6)
-            = 27.0 + 22.4
-            = 49.4 (vs current 36.47, +35%)
-```
-
-**Recommendation:** **Option 2** — Deaths warrant major score increase
+**Not as score component:**
+- Too much uncertainty about causation
+- Risk of sensationalizing tragedy
+- Better measured through usage/dependency metrics we can verify
 
 ---
 
