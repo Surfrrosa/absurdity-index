@@ -679,9 +679,9 @@ Based on the overall score, a contextual label is displayed:
 | 40-50 | "ICARUS HAS ENTERED THE CHAT" |
 | 50-60 | "THE WHEELS ARE COMING OFF" |
 | 60-70 | "ACTIVELY ON FIRE" |
-| 70-80 | "DANTE'S WAITING ROOM" |
-| 80-90 | "BOSCH PAINTING COME TO LIFE" |
-| 90-100 | "PACK YOUR BAGS, SISYPHUS" |
+| 70-80 | "WE'VE REACHED PEAK CIVILIZATION" |
+| 80-90 | "REALITY.EXE HAS STOPPED WORKING" |
+| 90-100 | "THE GODS ARE LAUGHING AT US" |
 
 **Current Label (41.91)**: "ICARUS HAS ENTERED THE CHAT"
 
@@ -746,9 +746,9 @@ export function getOverallLabel(score: number): string {
   if (score < 50) return "ICARUS HAS ENTERED THE CHAT";
   if (score < 60) return "THE WHEELS ARE COMING OFF";
   if (score < 70) return "ACTIVELY ON FIRE";
-  if (score < 80) return "DANTE'S WAITING ROOM";
-  if (score < 90) return "BOSCH PAINTING COME TO LIFE";
-  return "PACK YOUR BAGS, SISYPHUS";
+  if (score < 80) return "WE'VE REACHED PEAK CIVILIZATION";
+  if (score < 90) return "REALITY.EXE HAS STOPPED WORKING";
+  return "THE GODS ARE LAUGHING AT US";
 }
 ```
 

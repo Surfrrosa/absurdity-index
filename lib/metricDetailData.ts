@@ -768,7 +768,7 @@ export function getOverallLabel(score: number): string {
   if (score < 50) return "ICARUS HAS ENTERED THE CHAT";
   if (score < 60) return "THE WHEELS ARE COMING OFF";
   if (score < 70) return "ACTIVELY ON FIRE";
-  if (score < 80) return "DANTE'S WAITING ROOM";
-  if (score < 90) return "BOSCH PAINTING COME TO LIFE";
-  return "PACK YOUR BAGS, SISYPHUS";
+  if (score < 80) return "WE'VE REACHED PEAK CIVILIZATION";
+  if (score < 90) return "REALITY.EXE HAS STOPPED WORKING";
+  return "THE GODS ARE LAUGHING AT US";
 }
