@@ -7,6 +7,9 @@ interface DataPoint {
   platform: string;
   level: number;
   date: string;
+  url?: string;
+  viewCount?: number;
+  videoId?: string;
 }
 
 interface CollectionProgress {
