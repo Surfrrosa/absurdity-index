@@ -5,18 +5,19 @@ import MetricCard from '@/components/MetricCard';
 import Header from '@/components/Header';
 import AbsurdityScore from '@/components/AbsurdityScore';
 import MetricDetail from '@/components/MetricDetail';
-import { metricDetails } from '@/lib/metricDetailData';
+import { getAllMetricsWithLabels } from '@/lib/metricDetailData';
 
 export default function Home() {
   const [selectedMetric, setSelectedMetric] = useState<string | null>(null);
+  const metricsWithLabels = getAllMetricsWithLabels();
 
   return (
     <main className="min-h-screen bg-black">
       <Header />
 
-      {selectedMetric && metricDetails[selectedMetric] && (
+      {selectedMetric && metricsWithLabels[selectedMetric] && (
         <MetricDetail
-          data={metricDetails[selectedMetric]}
+          data={metricsWithLabels[selectedMetric]}
           onClose={() => setSelectedMetric(null)}
         />
       )}
@@ -50,141 +51,29 @@ export default function Home() {
         <AbsurdityScore />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
-          <div className="animate-fadeInUp" style={{ animationDelay: '100ms' }}>
-            <MetricCard
-              title="Wage Stagnation"
-              score={32.56}
-              label="Inflation Exists But Manageable"
-              trend="neutral"
-              data={{
-                wagegrowth: "+1.0% YoY (Dec 2025)",
-                inflation: "Real wages barely keeping pace",
-                ceoRatio: "285:1 CEO-to-worker pay"
-              }}
-              onClick={() => setSelectedMetric("Wage Stagnation")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '200ms' }}>
-            <MetricCard
-              title="Housing Despair"
-              score={50.85}
-              label="Multiple Organs Required"
-              trend="worsening"
-              data={{
-                genZRentBurden: "58.2% rent-burdened",
-                medianPrice: "$383,725",
-                priceToIncome: "4.6x ratio"
-              }}
-              onClick={() => setSelectedMetric("Housing Despair")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '300ms' }}>
-            <MetricCard
-              title="Airline Chaos"
-              score={18.67}
-              label="Mild Turbulence"
-              trend="neutral"
-              data={{
-                delays: "22% delayed (Dec 2025)",
-                satisfaction: "Declining trends",
-                complaints: "Rising consumer frustration"
-              }}
-              onClick={() => setSelectedMetric("Airline Chaos")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '400ms' }}>
-            <MetricCard
-              title="What Healthcare?"
-              score={72.34}
-              label="Prior Authorization Purgatory"
-              trend="worsening"
-              data={{
-                premiumIncrease: "+7% avg annual increase",
-                denialRate: "~18% claims denied initially",
-                medicalDebt: "41% adults have medical debt"
-              }}
-              onClick={() => setSelectedMetric("What Healthcare?")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '500ms' }}>
-            <MetricCard
-              title="Subscription Overload"
-              score={58.99}
-              label="Quarterly Purge Required"
-              trend="worsening"
-              data={{
-                avgSubscriptions: "12 per household",
-                avgSpending: "$273/month",
-                priceIncreases: "73% raised prices in 2025"
-              }}
-              onClick={() => setSelectedMetric("Subscription Overload")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '600ms' }}>
-            <MetricCard
-              title="Dating App Despair"
-              score={0.36}
-              label="Love May Actually Be Real"
-              trend="improving"
-              data={{
-                trends: "Low search volume",
-                sentiment: "Stable",
-                projection: "Expected 25-45 with full data"
-              }}
-              onClick={() => setSelectedMetric("Dating App Despair")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '700ms' }}>
-            <MetricCard
-              title="Layoff Watch"
-              score={48.48}
-              label="Resume At The Ready"
-              trend="worsening"
-              data={{
-                u6Unemployment: "7.5% (vs 3.7% U-3)",
-                techLayoffs: "152,922 in 2024",
-                jobSearchReality: "6+ month searches"
-              }}
-              onClick={() => setSelectedMetric("Layoff Watch")}
-              entryCount={0}
-              lastUpdated="Dec 17, 2024"
-            />
-          </div>
-
-          <div className="animate-fadeInUp" style={{ animationDelay: '800ms' }}>
-            <MetricCard
-              title="AI Psychosis"
-              score={18.05}
-              label="Digital Stockholm Syndrome Setting In"
-              trend="worsening"
-              data={{
-                youtube: "37.0% crisis ratio (146 videos)",
-                reddit: "4.0% crisis ratio (200 posts)",
-                completion: "72% data collected"
-              }}
-              onClick={() => setSelectedMetric("AI Psychosis")}
-              entryCount={346}
-              lastUpdated="Dec 16, 2024"
-            />
-          </div>
+          {Object.entries(metricsWithLabels).map(([name, metric], index) => (
+            <div
+              key={name}
+              className="animate-fadeInUp"
+              style={{ animationDelay: `${(index + 1) * 100}ms` }}
+            >
+              <MetricCard
+                title={metric.title}
+                score={metric.score}
+                label={metric.label}
+                trend={metric.trend}
+                data={{
+                  // Create summary from data sources
+                  source1: metric.dataSources[0]?.substring(0, 50) || "",
+                  source2: metric.dataSources[1]?.substring(0, 50) || "",
+                  source3: metric.dataSources[2]?.substring(0, 50) || ""
+                }}
+                onClick={() => setSelectedMetric(name)}
+                entryCount={metric.levelDistribution.total}
+                lastUpdated={metric.lastUpdated}
+              />
+            </div>
+          ))}
         </div>
 
         <footer className="mt-16 text-center text-white pb-12 border-t-4 border-white pt-8">
