@@ -10,6 +10,7 @@ interface DataPoint {
   url?: string;
   viewCount?: number;
   videoId?: string;
+  commentCount?: number;
 }
 
 interface CollectionProgress {
@@ -217,11 +218,18 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
                     <p className="text-white font-bold leading-relaxed group-hover:text-red-600 transition-colors">
                       "{point.content}"
                     </p>
-                    {point.viewCount !== undefined && (
+                    {(point.viewCount !== undefined || point.commentCount !== undefined) && (
                       <div className="flex items-center gap-3 mt-3 pt-3 border-t-2 border-white/20">
-                        <span className="text-white/60 font-bold mono text-xs">
-                          👁 {point.viewCount.toLocaleString()} views
-                        </span>
+                        {point.viewCount !== undefined && (
+                          <span className="text-white/60 font-bold mono text-xs">
+                            👁 {point.viewCount.toLocaleString()} views
+                          </span>
+                        )}
+                        {point.commentCount !== undefined && (
+                          <span className="text-white/60 font-bold mono text-xs">
+                            💬 {point.commentCount.toLocaleString()} comments
+                          </span>
+                        )}
                         <span className="text-white/40 font-bold mono text-xs">
                           → Click to watch
                         </span>

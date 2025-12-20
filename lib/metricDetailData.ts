@@ -9,6 +9,7 @@ export interface DataPoint {
   url?: string;
   viewCount?: number;
   videoId?: string;
+  commentCount?: number;
 }
 
 export interface CollectionProgress {
@@ -255,7 +256,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-16",
         url: "https://www.youtube.com/watch?v=4loulWBN5Nw",
         videoId: "4loulWBN5Nw",
-        viewCount: 909737
+        viewCount: 909737,
+        commentCount: 7097
       },
       {
         content: "3 Jobs Still Homeless: The Reality of Working America",
@@ -264,7 +266,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-10-22",
         url: "https://www.youtube.com/watch?v=NN3zMclcIVs",
         videoId: "NN3zMclcIVs",
-        viewCount: 1176
+        viewCount: 1176,
+        commentCount: 1
       },
       {
         content: "I STOPPED Living Paycheck to Paycheck After Learning This One Rule",
@@ -273,7 +276,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-29",
         url: "https://www.youtube.com/watch?v=_6v1VMlkfrc",
         videoId: "_6v1VMlkfrc",
-        viewCount: 33655
+        viewCount: 33655,
+        commentCount: 18
       },
       {
         content: "Working Full-Time and Still Can't Eat",
@@ -282,7 +286,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-03",
         url: "https://www.youtube.com/watch?v=aBw582ctvOA",
         videoId: "aBw582ctvOA",
-        viewCount: 495317
+        viewCount: 495317,
+        commentCount: 2408
       }
     ],
     collectionProgress: [
@@ -335,7 +340,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-09-24",
         url: "https://www.youtube.com/watch?v=-w_kQ-4q8cc",
         videoId: "-w_kQ-4q8cc",
-        viewCount: 62827
+        viewCount: 62827,
+        commentCount: 1253
       },
       {
         content: "YOU WILL NEVER OWN A HOME, AMERICANS HAVE LOST HOPE, THEY ILL EVER BE ABLE TO AFFORD TO BUY A HOMR",
@@ -344,7 +350,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-12-07",
         url: "https://www.youtube.com/watch?v=BdN7wVBgd6Y",
         videoId: "BdN7wVBgd6Y",
-        viewCount: 4061
+        viewCount: 4061,
+        commentCount: 130
       },
       {
         content: "The Housing Market Scam: Why You Will Never Own a Home 🏠📉",
@@ -353,7 +360,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-27",
         url: "https://www.youtube.com/watch?v=GrF1MDQ-T0g",
         videoId: "GrF1MDQ-T0g",
-        viewCount: 42
+        viewCount: 42,
+        commentCount: 2
       },
       {
         content: "Why Nobody Can Afford a Home Anymore",
@@ -362,7 +370,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-10-26",
         url: "https://www.youtube.com/watch?v=bqdPtjxzQaE",
         videoId: "bqdPtjxzQaE",
-        viewCount: 397548
+        viewCount: 397548,
+        commentCount: 1896
       }
     ],
     collectionProgress: [
@@ -414,7 +423,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 3,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=rxXzYPDl5jc",
-        videoId: "rxXzYPDl5jc"
+        videoId: "rxXzYPDl5jc",
+        viewCount: 144801,
+        commentCount: 98
       },
       {
         content: "I was stranded at the airport with my newborn baby, begging for help after my flight got...",
@@ -422,7 +433,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 3,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=-NJwQ_I1Y_4",
-        videoId: "-NJwQ_I1Y_4"
+        videoId: "-NJwQ_I1Y_4",
+        viewCount: 441045,
+        commentCount: 84
       },
       {
         content: "Black Soldier Ignored At The Airport—Then The Flight Got Delayed For Him",
@@ -430,7 +443,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 2,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=gzBWU8ICkOA",
-        videoId: "gzBWU8ICkOA"
+        videoId: "gzBWU8ICkOA",
+        viewCount: 4385,
+        commentCount: 0
       },
       {
         content: "Flight Delays, Fees & Fights: Is Flying Getting Worse?",
@@ -438,7 +453,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 1,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=X-ElLs6Xo-c",
-        videoId: "X-ElLs6Xo-c"
+        videoId: "X-ElLs6Xo-c",
+        viewCount: 12,
+        commentCount: 0
       }
     ],
     collectionProgress: [
@@ -490,7 +507,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 3,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=OdjIW8IdbIM",
-        videoId: "OdjIW8IdbIM"
+        videoId: "OdjIW8IdbIM",
+        viewCount: 199804,
+        commentCount: 994
       },
       {
         content: "Dating App Fatigue & Mental Health",
@@ -498,7 +517,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 3,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=ygRO028UQUU",
-        videoId: "ygRO028UQUU"
+        videoId: "ygRO028UQUU",
+        viewCount: 1683,
+        commentCount: 77
       },
       {
         content: "Dating Apps Are Exhausting: Here's What's Happening",
@@ -506,7 +527,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 2,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=fLYKy51jIVc",
-        videoId: "fLYKy51jIVc"
+        videoId: "fLYKy51jIVc",
+        viewCount: 6,
+        commentCount: 1
       },
       {
         content: "The Gen Z Dating Apocalypse",
@@ -514,7 +537,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 1,
         date: "2025-12-17",
         url: "https://www.youtube.com/watch?v=dxxbcEGKs-c",
-        videoId: "dxxbcEGKs-c"
+        videoId: "dxxbcEGKs-c",
+        viewCount: 104738,
+        commentCount: 585
       }
     ],
     collectionProgress: [
@@ -566,7 +591,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-03",
         url: "https://www.youtube.com/watch?v=-8rg1nPv-rc",
         videoId: "-8rg1nPv-rc",
-        viewCount: 698
+        viewCount: 698,
+        commentCount: 5
       },
       {
         content: "International students — 😓 200+ Job Applications, But No Response?",
@@ -575,7 +601,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-10-17",
         url: "https://www.youtube.com/watch?v=Xe-dHYhBwVk",
         videoId: "Xe-dHYhBwVk",
-        viewCount: 780
+        viewCount: 780,
+        commentCount: 0
       },
       {
         content: "Unemployed @ 50 & was told I was overqualified",
@@ -584,7 +611,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-09-26",
         url: "https://www.youtube.com/watch?v=4-UsaQaRiyA",
         videoId: "4-UsaQaRiyA",
-        viewCount: 436
+        viewCount: 436,
+        commentCount: 2
       },
       {
         content: "Why are Tech Layoffs Still Happening?",
@@ -593,7 +621,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-11-03",
         url: "https://www.youtube.com/watch?v=XerzK0QNhnM",
         videoId: "XerzK0QNhnM",
-        viewCount: 45923
+        viewCount: 45923,
+        commentCount: 184
       }
     ],
     collectionProgress: [
