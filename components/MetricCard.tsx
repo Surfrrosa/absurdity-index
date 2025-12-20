@@ -60,7 +60,7 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
 
       <div className="space-y-1">
         {Object.entries(data).map(([key, value]) => (
-          <div key={key} className={`text-xs ${textColor} font-bold mono`}>
+          <div key={key} className={`text-xs ${textColor} font-bold mono break-words whitespace-normal`}>
             {value}
           </div>
         ))}
@@ -70,12 +70,12 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
       {(lastUpdated || entryCount !== undefined) && (
         <div className={`mt-4 pt-3 border-t-2 ${textColor === 'text-black' ? 'border-gray-300' : 'border-gray-600'}`}>
           {entryCount !== undefined && (
-            <div className={`text-xs ${textColor} font-bold mono`}>
+            <div className={`text-xs ${textColor} font-bold mono break-words whitespace-normal`}>
               {entryCount} entries
             </div>
           )}
           {lastUpdated && (
-            <div className={`text-xs ${textColor} opacity-70 font-bold mono mt-1`}>
+            <div className={`text-xs ${textColor} opacity-70 font-bold mono mt-1 break-words whitespace-normal`}>
               {lastUpdated}
             </div>
           )}
