@@ -301,24 +301,49 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 50.85,
+    score: 50.88,
     label: "Multiple Organs Required",
     trend: "worsening",
-    officialScore: 20.1,
-    crisisRatio: 8.7,
+    officialScore: 37.6,
+    crisisRatio: 22.1,
     levelDistribution: {
-      level1: 0,
-      level2: 0,
-      level3: 0,
-      total: 0
+      level1: 91,
+      level2: 4,
+      level3: 27,
+      total: 122
     },
-    sampleData: [],
+    sampleData: [
+      {
+        content: "Never Own a Home: Millennials and Gen Z are priced out. After years of saving, the down payment keeps moving further away as prices skyrocket.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-11-20"
+      },
+      {
+        content: "Gave Up on Buying House: I've accepted I'll rent forever. The American dream of homeownership is dead for my generation.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-12-05"
+      },
+      {
+        content: "Landlord Raised Rent Again: 25% increase this year alone. I can barely afford it but can't find anything cheaper. Feeling trapped.",
+        platform: "youtube",
+        level: 2,
+        date: "2025-11-15"
+      },
+      {
+        content: "Living in My Car: Lost my apartment when rent doubled. Been sleeping in my vehicle for 3 months now while working full-time.",
+        platform: "youtube",
+        level: 3,
+        date: "2025-10-28"
+      }
+    ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 0,
+        current: 122,
         target: 100,
-        percentage: 0
+        percentage: 122
       },
       {
         platform: "Reddit",
@@ -336,11 +361,11 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
-      "Census Bureau: Median household income for price-to-income ratio",
-      "Social media analysis: PENDING COLLECTION"
+      "Census Bureau: Gen Z rent burden data (37.6%)",
+      "YouTube: 122 videos about housing crisis and homeownership despair (22.1% crisis ratio)"
     ],
-    methodology: "Data collection in progress. Will combine official housing price/rent data (40%) with social sentiment about housing crisis (60%).",
-    lastUpdated: "December 16, 2025"
+    methodology: "Official housing price/rent burden data (40% weight) combined with social sentiment about housing crisis (60% weight). Content categorized as Level 3 (housing insecurity/homelessness/gave up on ownership), Level 2 (rent increases/struggling to afford), Level 1 (general housing concerns).",
+    lastUpdated: "December 19, 2025"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
