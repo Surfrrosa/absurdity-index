@@ -24,7 +24,11 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
 
   return (
     <div
-      className={`${bgColor} border-4 border-black p-4 md:p-6 hover:border-red-600 transition-all ${onClick ? 'cursor-pointer hover:scale-105 active:scale-95' : ''}`}
+      className={`${bgColor} border-4 border-black p-4 md:p-6 transition-all duration-300 ease-out ${
+        onClick
+          ? 'cursor-pointer hover:border-red-600 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:translate-x-[-2px] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0'
+          : ''
+      }`}
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
