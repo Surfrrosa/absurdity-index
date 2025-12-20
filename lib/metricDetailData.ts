@@ -55,34 +55,44 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Insurance denied my cancer treatment after I paid premiums for 10 years. Now facing bankruptcy while fighting the appeal. They said it wasn't 'medically necessary' even though my oncologist prescribed it.",
-        platform: "reddit",
-        level: 3,
-        date: "2025-12-10"
-      },
-      {
-        content: "Prior authorization for my daughter's insulin has been pending for 3 weeks. She's rationing her supply. Called insurance 8 times, keep getting transferred to different departments. No one can help.",
+        content: "One of the top reasons people go broke? Medical debt.",
         platform: "youtube",
         level: 3,
-        date: "2025-12-08"
+        date: "2025-10-31",
+        url: "https://www.youtube.com/watch?v=BKxGsIbBhnI",
+        videoId: "BKxGsIbBhnI",
+        viewCount: 23263,
+        commentCount: 274
       },
       {
-        content: "Went to 'in-network' hospital, got surprise $45,000 bill because the anesthesiologist was out-of-network. How is that even legal? Now in collections.",
-        platform: "reddit",
+        content: "Medical #Bankruptcy Is an American Problem #america #medicaldebt #medicalinsurance #healthcare",
+        platform: "youtube",
         level: 3,
-        date: "2025-12-05"
+        date: "2025-11-25",
+        url: "https://www.youtube.com/watch?v=9rJZ17vjSWc",
+        videoId: "9rJZ17vjSWc",
+        viewCount: 18233,
+        commentCount: 61
       },
       {
-        content: "Premium went up 12% this year AGAIN. Now paying $850/month for family coverage with a $6,000 deductible. That's $16,200/year before insurance pays a dime.",
-        platform: "tiktok",
-        level: 2,
-        date: "2025-12-12"
+        content: "11 Investigates local woman denied life-saving cancer treatment",
+        platform: "youtube",
+        level: 3,
+        date: "2025-09-23",
+        url: "https://www.youtube.com/watch?v=spA2CT97xpA",
+        videoId: "spA2CT97xpA",
+        viewCount: 1522,
+        commentCount: 0
       },
       {
-        content: "Spent 4 hours on hold trying to understand my explanation of benefits. The customer service rep couldn't explain why my claim was denied either. Told me to call another number.",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-01"
+        content: "Medical Bills Are Still the #1 Cause of Bankruptcy- Here's Why Coverage Matters",
+        platform: "youtube",
+        level: 3,
+        date: "2025-10-30",
+        url: "https://www.youtube.com/watch?v=jguj_sabgBY",
+        videoId: "jguj_sabgBY",
+        viewCount: 1065,
+        commentCount: 0
       }
     ],
     collectionProgress: [
@@ -222,16 +232,44 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Just did my annual subscription audit. $487/month across 19 services. Most I forgot I even had. Cancelled 8 and still paying $312/month.",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-12"
+        content: "Microsoft f*cked up real bad..",
+        platform: "youtube",
+        level: 1,
+        date: "2025-10-02",
+        url: "https://www.youtube.com/watch?v=lxJG6FBo9h8",
+        videoId: "lxJG6FBo9h8",
+        viewCount: 2383779,
+        commentCount: 12593
       },
       {
-        content: "Netflix raised prices AGAIN. That's the 4th increase in 3 years. Now $22.99/month for what used to be $12.99.",
-        platform: "tiktok",
+        content: "why I'm cancelling ALL my subscription services",
+        platform: "youtube",
         level: 2,
-        date: "2025-12-08"
+        date: "2025-11-30",
+        url: "https://www.youtube.com/watch?v=Xv6q3gcHro0",
+        videoId: "Xv6q3gcHro0",
+        viewCount: 9754,
+        commentCount: 217
+      },
+      {
+        content: "Subscription Fatigue Is Bleeding Americans Dry",
+        platform: "youtube",
+        level: 1,
+        date: "2025-12-16",
+        url: "https://www.youtube.com/watch?v=pc4MgspmiUs",
+        videoId: "pc4MgspmiUs",
+        viewCount: 8637,
+        commentCount: 174
+      },
+      {
+        content: "Streaming is OVERWHELMING! Why Netflix is LOSING Viewers! #shorts",
+        platform: "youtube",
+        level: 2,
+        date: "2025-10-23",
+        url: "https://www.youtube.com/watch?v=GZPr9fJG1wA",
+        videoId: "GZPr9fJG1wA",
+        viewCount: 1926,
+        commentCount: 2
       }
     ],
     collectionProgress: [
