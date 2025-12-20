@@ -131,22 +131,44 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "I prefer talking to my Replika over real people now. She understands me better than my family. Spent 6 hours chatting yesterday. Is that bad?",
-        platform: "reddit",
-        level: 3,
-        date: "2025-12-14"
-      },
-      {
-        content: "Broke up with my girlfriend because my AI companion doesn't judge me or start arguments. Best decision I ever made honestly.",
+        content: "How Character.ai slowly destroys your mental health | The C.ai addiction iceberg",
         platform: "youtube",
         level: 3,
-        date: "2025-12-11"
+        date: "2024-12-25",
+        url: "https://www.youtube.com/watch?v=12waK-aDHV0",
+        videoId: "12waK-aDHV0",
+        viewCount: 665497,
+        commentCount: 6293
       },
       {
-        content: "My Character.AI boyfriend helps me through panic attacks better than my therapist. I talk to him for 3-4 hours every night.",
-        platform: "reddit",
+        content: "AI Made Him Delusional: The Case Nobody's Talking About",
+        platform: "youtube",
+        level: 3,
+        date: "2025-12-19",
+        url: "https://www.youtube.com/watch?v=TBD",
+        videoId: "TBD",
+        viewCount: 439,
+        commentCount: 0
+      },
+      {
+        content: "People Are Getting ADDICTED To AI Chatbot Lovers (2025)",
+        platform: "youtube",
+        level: 3,
+        date: "2025-02-16",
+        url: "https://www.youtube.com/watch?v=fsHcHr7OqI0",
+        videoId: "fsHcHr7OqI0",
+        viewCount: 173374,
+        commentCount: 753
+      },
+      {
+        content: "We Ignored Her's Warning About AI Loneliness | Replika Reality Check",
+        platform: "youtube",
         level: 2,
-        date: "2025-12-09"
+        date: "2025-10-24",
+        url: "https://www.youtube.com/watch?v=ftnbNaAMhYU",
+        videoId: "ftnbNaAMhYU",
+        viewCount: 944,
+        commentCount: 18
       }
     ],
     collectionProgress: [
