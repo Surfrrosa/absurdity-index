@@ -191,7 +191,7 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
           <h3 className="text-3xl font-black text-white mb-6 uppercase">Real Stories From The Data</h3>
           <div className="space-y-4">
             {data.sampleData.map((point, i) => (
-              <div key={i} className="border-4 border-white p-6 bg-black">
+              <div key={i} className="border-4 border-white p-6 bg-black hover:border-red-600 transition-colors">
                 <div className="flex justify-between items-start mb-3">
                   <span className={`font-black mono text-sm px-3 py-1 ${
                     point.level === 3 ? 'bg-red-600' :
@@ -204,9 +204,32 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
                     {point.platform.toUpperCase()} · {point.date}
                   </span>
                 </div>
-                <p className="text-white font-bold leading-relaxed">
-                  "{point.content}"
-                </p>
+                {point.url ? (
+                  <a
+                    href={point.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group"
+                  >
+                    <p className="text-white font-bold leading-relaxed group-hover:text-red-600 transition-colors">
+                      "{point.content}"
+                    </p>
+                    {point.viewCount !== undefined && (
+                      <div className="flex items-center gap-3 mt-3 pt-3 border-t-2 border-white/20">
+                        <span className="text-white/60 font-bold mono text-xs">
+                          👁 {point.viewCount.toLocaleString()} views
+                        </span>
+                        <span className="text-white/40 font-bold mono text-xs">
+                          → Click to watch
+                        </span>
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  <p className="text-white font-bold leading-relaxed">
+                    "{point.content}"
+                  </p>
+                )}
               </div>
             ))}
           </div>

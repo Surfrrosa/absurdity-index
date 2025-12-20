@@ -6,6 +6,9 @@ export interface DataPoint {
   platform: string;
   level: number;
   date: string;
+  url?: string;
+  viewCount?: number;
+  videoId?: string;
 }
 
 export interface CollectionProgress {
@@ -314,28 +317,40 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Never Own a Home: Millennials and Gen Z are priced out. After years of saving, the down payment keeps moving further away as prices skyrocket.",
+        content: "why i will never own a home (reality of being a gen Z)",
         platform: "youtube",
         level: 3,
-        date: "2025-11-20"
+        date: "2025-09-24",
+        url: "https://www.youtube.com/watch?v=-w_kQ-4q8cc",
+        videoId: "-w_kQ-4q8cc",
+        viewCount: 62827
       },
       {
-        content: "Gave Up on Buying House: I've accepted I'll rent forever. The American dream of homeownership is dead for my generation.",
+        content: "YOU WILL NEVER OWN A HOME, AMERICANS HAVE LOST HOPE, THEY ILL EVER BE ABLE TO AFFORD TO BUY A HOMR",
         platform: "youtube",
         level: 3,
-        date: "2025-12-05"
+        date: "2025-12-07",
+        url: "https://www.youtube.com/watch?v=BdN7wVBgd6Y",
+        videoId: "BdN7wVBgd6Y",
+        viewCount: 4061
       },
       {
-        content: "Landlord Raised Rent Again: 25% increase this year alone. I can barely afford it but can't find anything cheaper. Feeling trapped.",
-        platform: "youtube",
-        level: 2,
-        date: "2025-11-15"
-      },
-      {
-        content: "Living in My Car: Lost my apartment when rent doubled. Been sleeping in my vehicle for 3 months now while working full-time.",
+        content: "The Housing Market Scam: Why You Will Never Own a Home 🏠📉",
         platform: "youtube",
         level: 3,
-        date: "2025-10-28"
+        date: "2025-11-27",
+        url: "https://www.youtube.com/watch?v=GrF1MDQ-T0g",
+        videoId: "GrF1MDQ-T0g",
+        viewCount: 42
+      },
+      {
+        content: "Why Nobody Can Afford a Home Anymore",
+        platform: "youtube",
+        level: 1,
+        date: "2025-10-26",
+        url: "https://www.youtube.com/watch?v=bqdPtjxzQaE",
+        videoId: "bqdPtjxzQaE",
+        viewCount: 397548
       }
     ],
     collectionProgress: [
