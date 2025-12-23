@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Reddit JSON Collector - AI Psychosis
+Reddit JSON Collector - Airline Chaos
 Uses public Reddit JSON endpoints - NO API KEY NEEDED
 
-Collects posts from AI companion-related subreddits
+Collects posts from travel/airline subreddits
 and categorizes by severity (Level 1/2/3)
 """
 
@@ -15,39 +15,40 @@ from datetime import datetime
 
 # Subreddits to collect from
 SUBREDDITS = [
-    'replika',
-    'CharacterAI',
-    'artificial',
-    'ChatGPT',
-    'LongDistance'
+    'travel',
+    'flights',
+    'delta',
+    'united',
+    'americanairlines',
+    'TravelHacks'
 ]
 
-# Search terms for AI companion usage
+# Search terms for airline chaos
 SEARCH_TERMS = [
-    'AI companion',
-    'chatbot relationship',
-    'replika love',
-    'character.ai attachment',
-    'AI friend',
-    'emotional support AI',
-    'AI addiction',
-    'can\'t stop talking'
+    'flight canceled',
+    'stranded airport',
+    'lost luggage',
+    'missed connection',
+    'airline nightmare',
+    'no compensation',
+    'customer service hell',
+    'delayed hours'
 ]
 
 # Level 3 (Crisis) keywords
 LEVEL_3_KEYWORDS = [
-    'addiction', 'dependent', 'can\'t stop', 'obsessed', 'real relationship',
-    'prefer AI', 'only friend', 'suicidal', 'isolated', 'withdrawn',
-    'lost job', 'failing school', 'destroying life', 'intervention',
-    'therapy for', 'family worried', 'spending all time'
+    'stranded', 'medical emergency', 'funeral', 'wedding', 'interview',
+    'no hotel', 'sleeping in airport', 'stuck for days', 'lost medication',
+    'diabetic', 'insulin', 'missing life event', 'job offer',
+    'days without luggage', 'can\'t get home', 'desperate', 'breaking point'
 ]
 
 # Level 2 (Struggling) keywords
 LEVEL_2_KEYWORDS = [
-    'attached', 'hours daily', 'replacing friends', 'emotional support',
-    'better than real', 'understand me', 'lonely', 'depressed',
-    'social anxiety', 'hard to stop', 'checking constantly',
-    'miss my AI', 'real feelings', 'in love', 'jealous'
+    'canceled', 'delayed', 'lost luggage', 'missed connection', 'nightmare',
+    'hours delayed', 'no compensation', 'customer service', 'refused',
+    'stranded', 'stuck', 'ruined trip', 'wasted money', 'no refund',
+    'unresponsive', 'ignored', 'frustrated', 'exhausted'
 ]
 
 def get_reddit_json(url, params=None):
@@ -73,8 +74,8 @@ def search_subreddit(subreddit, query, limit=25):
     params = {
         'q': query,
         'restrict_sr': 1,
-        'sort': 'top',
-        't': 'all',  # Broader time for AI topics
+        'sort': 'hot',  # Recent airline issues
+        't': 'month',
         'limit': limit
     }
 
@@ -96,15 +97,17 @@ def categorize_post(title, selftext):
 
     # Level 3: 2+ crisis keywords OR critical phrases
     if level_3_count >= 2 or any(phrase in text for phrase in [
-        'destroying my life', 'only friend left', 'prefer ai to people',
-        'can\'t stop using', 'addicted to', 'intervention needed'
+        'missed funeral', 'missed wedding', 'lost medication',
+        'sleeping in airport', 'stranded for days', 'medical emergency',
+        'stuck for 3 days', 'can\'t get home', 'no insulin'
     ]):
         return 'LEVEL_3_CRISIS'
 
-    # Level 2: 2+ struggling keywords OR common attachment phrases
+    # Level 2: 2+ struggling keywords OR common frustration phrases
     elif level_2_count >= 2 or any(phrase in text for phrase in [
-        'in love with', 'emotional support', 'better than real',
-        'attached to', 'miss my ai', 'hours every day'
+        'flight canceled', 'lost luggage', 'missed connection',
+        'airline nightmare', 'no compensation', 'hours delayed',
+        'customer service hell', 'stranded'
     ]):
         return 'LEVEL_2_STRUGGLING'
 
@@ -175,7 +178,7 @@ def collect_from_subreddit(subreddit, search_terms, posts_per_term=15):
 def main():
     """Main collection process"""
     print("=" * 80)
-    print("REDDIT AI PSYCHOSIS DATA COLLECTION (JSON Endpoints)")
+    print("REDDIT AIRLINE CHAOS DATA COLLECTION (JSON Endpoints)")
     print("=" * 80)
     print("\nUsing public JSON endpoints - no API key needed!")
     print(f"\nCollecting from {len(SUBREDDITS)} subreddits:")
@@ -220,7 +223,7 @@ def main():
 
     # Save to CSV
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f'collected-data/ai_psychosis_reddit_{timestamp}.csv'
+    filename = f'collected-data/airline_chaos_reddit_{timestamp}.csv'
 
     with open(filename, 'w', newline='', encoding='utf-8') as f:
         fieldnames = ['subreddit', 'post_id', 'title', 'selftext_snippet',

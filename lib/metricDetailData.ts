@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 50.20,
+    score: 45.09,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
     officialScore: 56.30,
-    crisisRatio: 46.14,
+    crisisRatio: 37.62,
     levelDistribution: {
-      level1: 110,
-      level2: 16,
-      level3: 34,
-      total: 160
+      level1: 210,
+      level2: 51,
+      level3: 40,
+      total: 301
     },
     sampleData: [
       {
@@ -95,6 +95,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "jguj_sabgBY",
         viewCount: 1065,
         commentCount: 0
+      },
+      {
+        content: "I ignored stomach pain for 8 months because I couldn't afford to be sick. Now I'm $12,000 in debt an",
+        platform: "reddit",
+        level: 3,
+        date: "2025-12-15",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pndd3k/i_ignored_stomach_pain_for_8_months_because_i/"
+      },
+      {
+        content: "My Dad doesn't understand how poor I am.",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-10",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pjgumo/my_dad_doesnt_understand_how_poor_i_am/"
       }
     ],
     collectionProgress: [
@@ -106,8 +120,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 200,
-        target: 200,
+        current: 141,
+        target: 141,
         percentage: 100
       },
       {
@@ -121,25 +135,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 160 videos analyzing healthcare system failures (systematic sampling)",
-      "Reddit: 200 posts from r/HealthInsurance, r/Insurance, r/povertyfinance (top posts, past 90 days)",
+      "YouTube: 160 videos analyzing healthcare system failures (systematic sampling, 46.14% crisis ratio)",
+      "Reddit: 141 posts from r/HealthInsurance, r/povertyfinance, r/Insurance (29.1% crisis ratio)",
       "TikTok: 24 videos with healthcare crisis hashtags (ongoing collection)"
     ],
-    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Final social score combines severity and reach to quantify lived experiences.",
+    lastUpdated: "December 22, 2025"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 37.31,
+    score: 27.88,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 53.85,
+    crisisRatio: 38.13,
     levelDistribution: {
-      level1: 66,
-      level2: 26,
-      level3: 54,
-      total: 146
+      level1: 291,
+      level2: 63,
+      level3: 82,
+      total: 436
     },
     sampleData: [
       {
@@ -181,6 +195,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "ftnbNaAMhYU",
         viewCount: 944,
         commentCount: 18
+      },
+      {
+        content: "GPT-4 Week 3. Chatbots are yesterdays news. AI Agents are the future. The beginning of the proto-agi",
+        platform: "reddit",
+        level: 3,
+        date: "2023-04-06",
+        url: "https://www.reddit.com/r/ChatGPT/comments/12diapw/gpt4_week_3_chatbots_are_yesterdays_news_ai/"
+      },
+      {
+        content: "PSA: CHAT GPT IS A TOOL. NOT YOUR FRIEND.",
+        platform: "reddit",
+        level: 2,
+        date: "2025-03-03",
+        url: "https://www.reddit.com/r/ChatGPT/comments/1j2lebf/psa_chat_gpt_is_a_tool_not_your_friend/"
       }
     ],
     collectionProgress: [
@@ -192,8 +220,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 200,
-        target: 200,
+        current: 290,
+        target: 290,
         percentage: 100
       },
       {
@@ -210,27 +238,27 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "YouTube: 146 videos analyzing AI companion usage",
-      "Reddit: 200 posts from r/replika, r/CharacterAI (4.0% crisis ratio)",
+      "YouTube: 146 videos analyzing AI companion usage (53.85% crisis ratio)",
+      "Reddit: 290 posts from r/replika, r/CharacterAI, r/ChatGPT (22.4% crisis ratio)",
       "App Store: 0 reviews collected (pending)",
       "TikTok: AI companion content analysis (pending)",
       "Google Trends: Search volume for AI companion terms"
     ],
-    methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
-    lastUpdated: "December 20, 2025"
+    methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Social score (60% weight) combined with official app download data (40% weight).",
+    lastUpdated: "December 22, 2025"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 39.93,
+    score: 33.05,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 36.41,
+    crisisRatio: 24.96,
     levelDistribution: {
-      level1: 139,
-      level2: 9,
+      level1: 171,
+      level2: 14,
       level3: 2,
-      total: 150
+      total: 187
     },
     sampleData: [
       {
@@ -272,6 +300,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "GZPr9fJG1wA",
         viewCount: 1926,
         commentCount: 2
+      },
+      {
+        content: "Is my father saying that my insurance is more than it is?",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-07",
+        url: "https://www.reddit.com/r/personalfinance/comments/1ph3qxd/is_my_father_saying_that_my_insurance_is_more/"
+      },
+      {
+        content: "Landlords have lost their minds",
+        platform: "reddit",
+        level: 1,
+        date: "2025-12-01",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pbgrff/landlords_have_lost_their_minds/"
       }
     ],
     collectionProgress: [
@@ -282,10 +324,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
         percentage: 100
       },
       {
-        platform: "Social Media Sampling",
+        platform: "YouTube",
         current: 150,
-        target: 300,
-        percentage: 50
+        target: 150,
+        percentage: 100
+      },
+      {
+        platform: "Reddit",
+        current: 37,
+        target: 37,
+        percentage: 100
       }
     ],
     dataSources: [
@@ -293,23 +341,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Streaming service pricing data: All major platforms tracked",
       "Google Trends: Subscription fatigue search volume",
       "Industry reports: 73% of services raised prices in 2025",
-      "YouTube: 150 videos analyzing subscription fatigue"
+      "YouTube: 150 videos analyzing subscription fatigue (36.41% crisis ratio)",
+      "Reddit: 37 posts from r/Frugal, r/personalfinance, r/povertyfinance (13.5% crisis ratio)"
     ],
-    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 40.86,
+    score: 34.68,
     label: "Inflation Exists But Manageable",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 42.50,
+    crisisRatio: 32.2,
     levelDistribution: {
-      level1: 73,
-      level2: 16,
-      level3: 7,
-      total: 96
+      level1: 173,
+      level2: 38,
+      level3: 13,
+      total: 224
     },
     sampleData: [
       {
@@ -351,6 +400,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "aBw582ctvOA",
         viewCount: 495317,
         commentCount: 2408
+      },
+      {
+        content: "I ignored stomach pain for 8 months because I couldn't afford to be sick. Now I'm $12,000 in debt an",
+        platform: "reddit",
+        level: 3,
+        date: "2025-12-15",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pndd3k/i_ignored_stomach_pain_for_8_months_because_i/"
+      },
+      {
+        content: "Today my supervisor asked me to either donate food or cook food for the office holiday party",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-05",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pf5yus/today_my_supervisor_asked_me_to_either_donate/"
       }
     ],
     collectionProgress: [
@@ -362,9 +425,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 0,
-        target: 200,
-        percentage: 0
+        current: 128,
+        target: 128,
+        percentage: 100
       },
       {
         platform: "TikTok",
@@ -377,23 +440,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "YouTube: 96 videos about wage stagnation and financial stress"
+      "YouTube: 96 videos about wage stagnation and financial stress (42.50% crisis ratio)",
+      "Reddit: 128 posts from r/antiwork, r/WorkReform, r/povertyfinance (21.9% crisis ratio)"
     ],
-    methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 43.64,
+    score: 38.22,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 47.66,
+    crisisRatio: 38.63,
     levelDistribution: {
-      level1: 91,
-      level2: 4,
-      level3: 27,
-      total: 122
+      level1: 210,
+      level2: 38,
+      level3: 43,
+      total: 291
     },
     sampleData: [
       {
@@ -435,6 +499,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "bqdPtjxzQaE",
         viewCount: 397548,
         commentCount: 1896
+      },
+      {
+        content: "I ignored stomach pain for 8 months because I couldn't afford to be sick. Now I'm $12,000 in debt an",
+        platform: "reddit",
+        level: 3,
+        date: "2025-12-15",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pndd3k/i_ignored_stomach_pain_for_8_months_because_i/"
+      },
+      {
+        content: "Today my supervisor asked me to either donate food or cook food for the office holiday party",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-05",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pf5yus/today_my_supervisor_asked_me_to_either_donate/"
       }
     ],
     collectionProgress: [
@@ -446,9 +524,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 0,
-        target: 200,
-        percentage: 0
+        current: 169,
+        target: 169,
+        percentage: 100
       },
       {
         platform: "TikTok",
@@ -461,23 +539,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 122 videos about housing crisis and homeownership despair"
+      "YouTube: 122 videos about housing crisis and homeownership despair (47.66% crisis ratio)",
+      "Reddit: 169 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance (29.6% crisis ratio)"
     ],
-    methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 40.13,
+    score: 35.13,
     label: "Mild Turbulence",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 52.89,
+    crisisRatio: 44.55,
     levelDistribution: {
-      level1: 92,
-      level2: 16,
-      level3: 14,
-      total: 122
+      level1: 122,
+      level2: 31,
+      level3: 16,
+      total: 169
     },
     sampleData: [
       {
@@ -519,6 +598,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "X-ElLs6Xo-c",
         viewCount: 12,
         commentCount: 0
+      },
+      {
+        content: "Amtrak or Flying from Boston to Chicago",
+        platform: "reddit",
+        level: 3,
+        date: "2025-12-01",
+        url: "https://www.reddit.com/r/travel/comments/1pbvfap/amtrak_or_flying_from_boston_to_chicago/"
+      },
+      {
+        content: "Spirit did not let me board flight at gate. The agent at gate told me to contact Customs & Borde",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-19",
+        url: "https://www.reddit.com/r/travel/comments/1pqofs3/spirit_did_not_let_me_board_flight_at_gate_the/"
       }
     ],
     collectionProgress: [
@@ -530,9 +623,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 0,
-        target: 200,
-        percentage: 0
+        current: 47,
+        target: 47,
+        percentage: 100
       },
       {
         platform: "TikTok",
@@ -545,23 +638,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: 22% flight delay rate",
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "YouTube: 122 videos about airline chaos and travel nightmares"
+      "YouTube: 122 videos about airline chaos and travel nightmares (52.89% crisis ratio)",
+      "Reddit: 47 posts from r/travel, r/airlines (36.2% crisis ratio)"
     ],
-    methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 31.55,
+    score: 27.59,
     label: "Love May Actually Be Real",
     trend: "improving",
     officialScore: 8.5,
-    crisisRatio: 46.92,
+    crisisRatio: 40.31,
     levelDistribution: {
-      level1: 84,
-      level2: 10,
+      level1: 141,
+      level2: 39,
       level3: 20,
-      total: 114
+      total: 200
     },
     sampleData: [
       {
@@ -603,6 +697,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "dxxbcEGKs-c",
         viewCount: 104738,
         commentCount: 585
+      },
+      {
+        content: "I dated 15 men in 2025, this is what I learned.",
+        platform: "reddit",
+        level: 2,
+        date: "2025-12-15",
+        url: "https://www.reddit.com/r/dating/comments/1pngvgp/i_dated_15_men_in_2025_this_is_what_i_learned/"
+      },
+      {
+        content: "First time using any dating app, people are so strict",
+        platform: "reddit",
+        level: 1,
+        date: "2025-12-01",
+        url: "https://www.reddit.com/r/Tinder/comments/1pby2fk/first_time_using_any_dating_app_people_are_so/"
       }
     ],
     collectionProgress: [
@@ -614,9 +722,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 0,
-        target: 200,
-        percentage: 0
+        current: 86,
+        target: 86,
+        percentage: 100
       },
       {
         platform: "TikTok",
@@ -626,25 +734,27 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
+      "Pew Research: 45% frustrated, 79% burnout among dating app users",
       "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "YouTube: 114 videos about dating app burnout and despair"
+      "YouTube: 114 videos about dating app burnout and despair (46.92% crisis ratio)",
+      "Reddit: 86 posts from r/dating, r/Tinder, r/Bumble (33.7% crisis ratio)"
     ],
-    methodology: "Google Trends data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 51.64,
+    score: 53.87,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 35.07,
+    crisisRatio: 38.79,
     levelDistribution: {
-      level1: 65,
-      level2: 8,
-      level3: 1,
-      total: 74
+      level1: 126,
+      level2: 51,
+      level3: 3,
+      total: 180
     },
     sampleData: [
       {
@@ -686,6 +796,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         videoId: "XerzK0QNhnM",
         viewCount: 45923,
         commentCount: 184
+      },
+      {
+        content: "Should I ask for feedback on a ridiculous rejection I received?",
+        platform: "reddit",
+        level: 3,
+        date: "2025-12-19",
+        url: "https://www.reddit.com/r/careerguidance/comments/1pr3q8h/should_i_ask_for_feedback_on_a_ridiculous/"
+      },
+      {
+        content: "I was laid off on Monday via zoom, they asked me to write up a transition plan and sign separation d",
+        platform: "reddit",
+        level: 2,
+        date: "2025-11-26",
+        url: "https://www.reddit.com/r/careerguidance/comments/1p7mqfr/i_was_laid_off_on_monday_via_zoom_they_asked_me/"
       }
     ],
     collectionProgress: [
@@ -697,9 +821,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 0,
-        target: 200,
-        percentage: 0
+        current: 106,
+        target: 106,
+        percentage: 100
       },
       {
         platform: "TikTok",
@@ -711,10 +835,11 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: 152,922 tech workers laid off in 2025",
       "551 companies reported layoffs",
-      "YouTube: 74 videos about layoffs and job search struggles"
+      "YouTube: 74 videos about layoffs and job search struggles (35.07% crisis ratio)",
+      "Reddit: 106 posts from r/jobs, r/careerguidance, r/cscareerquestions (42.5% crisis ratio)"
     ],
-    methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "December 20, 2025"
+    methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Crisis ratios from YouTube and Reddit are blended (50/50 weight) before combining with official scores. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    lastUpdated: "December 22, 2025"
   }
 };
 

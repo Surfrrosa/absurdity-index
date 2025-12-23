@@ -1,273 +1,240 @@
 #!/usr/bin/env python3
 """
-Collect Reddit posts about housing despair and homeownership crisis
-Uses PRAW (Python Reddit API Wrapper) to systematically sample posts
+Reddit JSON Collector - Housing Despair
+Uses public Reddit JSON endpoints - NO API KEY NEEDED
+
+Collects posts from housing-related subreddits
+and categorizes by severity (Level 1/2/3)
 """
 
-import os
-import praw
-import pandas as pd
+import requests
+import time
+import csv
+import json
 from datetime import datetime
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
-
-# Reddit API setup
-REDDIT_CLIENT_ID = os.getenv('REDDIT_CLIENT_ID')
-REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
-REDDIT_USER_AGENT = os.getenv('REDDIT_USER_AGENT', 'AbsurdityIndexCollector/1.0')
 
 # Subreddits to collect from
 SUBREDDITS = [
     'FirstTimeHomeBuyer',
     'RealEstate',
     'povertyfinance',
-    'lostgeneration',
-    'renters',
-    'HousingCrisis',
-    'personalfinance'
+    'LateStageCapitalism',
+    'personalfinance',
+    'Renters'
 ]
 
-# Search queries within subreddits
-SEARCH_QUERIES = [
-    "can't afford house",
-    "priced out",
-    "gave up on homeownership",
-    "rent increase",
-    "eviction",
-    "down payment impossible",
-    "housing crisis",
-    "landlord"
+# Search terms for housing struggles
+SEARCH_TERMS = [
+    'can\'t afford house',
+    'gave up homeownership',
+    'rent increase',
+    'eviction',
+    'deposit impossible',
+    'outbid again',
+    'housing crisis',
+    'priced out'
 ]
 
-# Core housing keywords that MUST be present to avoid false positives
-HOUSING_REQUIRED_KEYWORDS = [
-    'housing', 'house', 'home', 'apartment', 'rent', 'renting', 'rental',
-    'landlord', 'evict', 'eviction', 'mortgage', 'homeowner', 'homeownership',
-    'real estate', 'property', 'market', 'afford', 'down payment',
-    'homeless', 'housing crisis', 'foreclosure', 'lease'
-]
-
-# Level 3: Crisis - Housing insecurity, gave up entirely
+# Level 3 (Crisis) keywords
 LEVEL_3_KEYWORDS = [
-    'evicted', 'eviction', 'homeless', 'living in car',
-    'couch surfing', 'lost apartment', 'foreclosure',
-    "can't pay rent", 'behind on rent',
-    'gave up on homeownership', 'will never own', 'homeownership impossible',
-    'accepted i will never', 'dream is dead', 'given up on buying',
-    'living with parents', 'moved back home', 'multi-generational',
-    'forced to relocate', 'priced out of city', 'left my hometown',
-    'depressed about housing', 'anxiety about rent', 'panic',
-    'hopeless', 'breaking point', 'suicidal'
+    'homeless', 'eviction', 'evicted', 'living in car', 'couch surfing',
+    'shelter', 'kicked out', '30 day notice', 'can\'t find anywhere',
+    'nowhere to go', 'sleeping in', 'tent', 'streets', 'losing home',
+    'foreclosure', 'bankruptcy', 'breaking point'
 ]
 
-# Level 2: Frustrated - Can't buy, rent struggles
+# Level 2 (Struggling) keywords
 LEVEL_2_KEYWORDS = [
-    "can't save for down payment", 'down payment impossible',
-    "can't afford house", 'priced out', 'outbid',
-    'lost bidding war', 'housing too expensive',
-    'rent increase', 'rent went up', 'landlord raised rent',
-    "can't afford rent increase", 'rent is 50%',
-    'paycheck goes to rent', 'nothing left after rent',
-    'smaller apartment', 'worse neighborhood', 'longer commute',
-    'roommates at 30', 'roommates at 40', 'shared housing',
-    'housing market broken', 'system is rigged', 'investors ruining',
-    'corporations buying homes', 'private equity', 'wall street landlords'
+    'can\'t afford', 'priced out', 'rent increase', 'outbid',
+    'gave up', 'impossible', 'rejected application', 'no hope',
+    'deposit too high', 'bad credit', 'income requirement',
+    'moving back home', 'roommates', 'struggling', 'desperate'
 ]
 
-def is_housing_related(title, text):
-    """
-    Validate that post is actually about housing (not false positive)
-    """
-    content = (title + " " + text).lower()
-    return any(keyword in content for keyword in HOUSING_REQUIRED_KEYWORDS)
+def get_reddit_json(url, params=None):
+    """Fetch JSON from Reddit public endpoint"""
+    headers = {
+        'User-Agent': 'AbsurdityIndexResearch/1.0 (Academic Research Project)'
+    }
 
-def categorize_post(title, text):
-    """
-    Categorize post into Level 1/2/3 based on crisis language
-    Returns None if not housing-related
-    """
-    # First check: Is this actually about housing?
-    if not is_housing_related(title, text):
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"  ✗ Error {response.status_code}: {url}")
+            return None
+    except Exception as e:
+        print(f"  ✗ Exception fetching {url}: {e}")
         return None
 
-    content = (title + " " + text).lower()
+def search_subreddit(subreddit, query, limit=25):
+    """Search a subreddit via JSON endpoint"""
+    url = f'https://www.reddit.com/r/{subreddit}/search.json'
+    params = {
+        'q': query,
+        'restrict_sr': 1,
+        'sort': 'top',
+        't': 'month',
+        'limit': limit
+    }
 
-    # Count Level 3 keywords (crisis/housing insecurity)
-    level_3_count = sum(1 for keyword in LEVEL_3_KEYWORDS if keyword in content)
+    data = get_reddit_json(url, params)
 
-    # Level 3: Crisis
-    if level_3_count >= 2 or any(phrase in content for phrase in [
-        'evicted', 'eviction', 'homeless', 'living in car',
-        'gave up on homeownership', 'will never own', 'dream is dead',
-        'living with parents', 'moved back home', 'hopeless', 'suicidal'
+    if data and 'data' in data and 'children' in data['data']:
+        return data['data']['children']
+    return []
+
+def categorize_post(title, selftext):
+    """Categorize post into Level 1/2/3"""
+    text = (title + " " + selftext).lower()
+
+    # Count Level 3 keywords
+    level_3_count = sum(1 for keyword in LEVEL_3_KEYWORDS if keyword in text)
+
+    # Count Level 2 keywords
+    level_2_count = sum(1 for keyword in LEVEL_2_KEYWORDS if keyword in text)
+
+    # Level 3: 2+ crisis keywords OR critical phrases
+    if level_3_count >= 2 or any(phrase in text for phrase in [
+        'facing eviction', 'being evicted', 'about to be homeless',
+        'living in car', 'nowhere to go', 'kicked out',
+        'sleeping in car', 'lost my home'
     ]):
         return 'LEVEL_3_CRISIS'
 
-    # Count Level 2 keywords (frustrated but still trying)
-    level_2_count = sum(1 for keyword in LEVEL_2_KEYWORDS if keyword in content)
-
-    # Level 2: Frustrated
-    if level_2_count >= 2 or any(phrase in content for phrase in [
-        "can't afford", 'priced out', 'down payment impossible',
-        'rent increase', 'landlord raised rent', 'housing market broken'
+    # Level 2: 2+ struggling keywords OR common frustration phrases
+    elif level_2_count >= 2 or any(phrase in text for phrase in [
+        'can\'t afford', 'priced out', 'gave up',
+        'rent increase', 'outbid again', 'rejected application',
+        'deposit impossible', 'moving back with parents'
     ]):
-        return 'LEVEL_2_FRUSTRATED'
+        return 'LEVEL_2_STRUGGLING'
 
-    # Level 1: Mild awareness
-    return 'LEVEL_1_AWARE'
+    # Level 1: Default
+    else:
+        return 'LEVEL_1_AWARE'
 
-def collect_from_subreddit(reddit, subreddit_name, posts_per_subreddit=30):
-    """Collect recent posts from a subreddit (last 90 days)"""
-    posts = []
+def collect_from_subreddit(subreddit, search_terms, posts_per_term=15):
+    """Collect posts from a subreddit"""
+    print(f"\n📍 Collecting from r/{subreddit}")
 
-    try:
-        subreddit = reddit.subreddit(subreddit_name)
+    all_posts = []
+    seen_ids = set()
 
-        # Calculate 90 days ago timestamp
-        from datetime import timedelta
-        ninety_days_ago = datetime.now() - timedelta(days=90)
-        ninety_days_timestamp = ninety_days_ago.timestamp()
+    for term in search_terms:
+        print(f"  Searching: '{term}'")
 
-        # Get recent posts (mix of hot and new from last 90 days)
-        submissions_collected = 0
-        for submission in subreddit.new(limit=posts_per_subreddit * 3):  # Get more to filter by date
-            # Only include posts from last 90 days
-            if submission.created_utc < ninety_days_timestamp:
+        posts = search_subreddit(subreddit, term, limit=posts_per_term)
+
+        for post_data in posts:
+            post = post_data['data']
+            post_id = post['id']
+
+            # Skip duplicates
+            if post_id in seen_ids:
                 continue
+            seen_ids.add(post_id)
 
-            submissions_collected += 1
-            if submissions_collected > posts_per_subreddit:
-                break
-            # Skip stickied posts
-            if submission.stickied:
-                continue
+            # Extract data
+            title = post.get('title', '')
+            selftext = post.get('selftext', '')
+            url = f"https://www.reddit.com{post.get('permalink', '')}"
+            score = post.get('score', 0)
+            num_comments = post.get('num_comments', 0)
+            created_utc = post.get('created_utc', 0)
+            author = post.get('author', '[deleted]')
 
-            title = submission.title
-            text = submission.selftext
+            # Convert timestamp to date
+            date = datetime.fromtimestamp(created_utc).strftime('%Y-%m-%d')
 
             # Categorize
-            category = categorize_post(title, text)
+            category = categorize_post(title, selftext)
 
-            # Skip if not housing-related
-            if category is None:
-                continue
-
-            # Find crisis keywords
-            content_lower = (title + " " + text).lower()
-            found_level_3 = [kw for kw in LEVEL_3_KEYWORDS if kw in content_lower]
-            found_level_2 = [kw for kw in LEVEL_2_KEYWORDS if kw in content_lower]
-            found_keywords = found_level_3 + found_level_2
-
-            posts.append({
-                'subreddit': f'r/{subreddit_name}',
-                'post_id': submission.id,
-                'url': f'https://reddit.com{submission.permalink}',
+            all_posts.append({
+                'subreddit': subreddit,
+                'post_id': post_id,
                 'title': title,
-                'text_snippet': text[:300] if text else '',
-                'score': submission.score,
-                'num_comments': submission.num_comments,
-                'created_date': datetime.fromtimestamp(submission.created_utc).strftime('%Y-%m-%d'),
-                'crisis_keywords': ', '.join(found_keywords[:5]),
+                'selftext_snippet': selftext[:300] if selftext else '',
+                'url': url,
+                'score': score,
+                'num_comments': num_comments,
+                'author': author,
+                'created_date': date,
+                'search_term': term,
                 'category': category
             })
 
-        print(f"  ✓ Collected {len(posts)} housing-related posts from r/{subreddit_name}")
-        return posts
+            # Show progress
+            icon = '🔴' if 'CRISIS' in category else '🟡' if 'STRUGGLING' in category else '🟢'
+            print(f"    {icon} {title[:60]}...")
 
-    except Exception as e:
-        print(f"  ✗ Error collecting from r/{subreddit_name}: {e}")
-        return []
+        # Be respectful with rate limiting
+        time.sleep(2)
+
+    print(f"  ✓ Collected {len(all_posts)} unique posts from r/{subreddit}")
+    return all_posts
 
 def main():
-    """Main execution"""
-    print("=" * 70)
-    print("HOUSING DESPAIR REDDIT POST COLLECTOR")
-    print("=" * 70)
-
-    # Check API credentials
-    if not REDDIT_CLIENT_ID or not REDDIT_CLIENT_SECRET:
-        print("\n❌ ERROR: Reddit API credentials not found!")
-        print("\nYou need to set up Reddit API access:")
-        print("1. Go to https://www.reddit.com/prefs/apps")
-        print("2. Click 'create another app...' at bottom")
-        print("3. Fill out:")
-        print("   - name: Absurdity Index Collector")
-        print("   - type: script")
-        print("   - redirect uri: http://localhost:8080")
-        print("4. Click 'create app'")
-        print("5. Copy the client ID (under 'personal use script')")
-        print("6. Copy the secret")
-        print("\nThen add to .env file:")
-        print("REDDIT_CLIENT_ID=your_client_id_here")
-        print("REDDIT_CLIENT_SECRET=your_secret_here")
-        print("REDDIT_USER_AGENT=AbsurdityIndexCollector/1.0")
-        return
-
-    # Initialize Reddit API
-    try:
-        reddit = praw.Reddit(
-            client_id=REDDIT_CLIENT_ID,
-            client_secret=REDDIT_CLIENT_SECRET,
-            user_agent=REDDIT_USER_AGENT
-        )
-        print(f"\n✓ Connected to Reddit API")
-    except Exception as e:
-        print(f"\n✗ Failed to connect to Reddit API: {e}")
-        return
+    """Main collection process"""
+    print("=" * 80)
+    print("REDDIT HOUSING DESPAIR DATA COLLECTION (JSON Endpoints)")
+    print("=" * 80)
+    print("\nUsing public JSON endpoints - no API key needed!")
+    print(f"\nCollecting from {len(SUBREDDITS)} subreddits:")
+    for sub in SUBREDDITS:
+        print(f"  - r/{sub}")
+    print(f"\nUsing {len(SEARCH_TERMS)} search terms")
 
     all_posts = []
 
     # Collect from each subreddit
-    posts_per_sub = 30  # Aim for ~200 total posts
-    for subreddit_name in SUBREDDITS:
-        print(f"\nCollecting from r/{subreddit_name}...")
-        posts = collect_from_subreddit(reddit, subreddit_name, posts_per_sub)
+    for subreddit in SUBREDDITS:
+        posts = collect_from_subreddit(subreddit, SEARCH_TERMS, posts_per_term=10)
         all_posts.extend(posts)
 
-    # Convert to DataFrame
-    df = pd.DataFrame(all_posts)
+        # Rate limiting between subreddits
+        time.sleep(3)
 
     # Remove duplicates
-    df_unique = df.drop_duplicates(subset=['post_id'])
+    unique_posts = {}
+    for post in all_posts:
+        unique_posts[post['post_id']] = post
+
+    all_posts = list(unique_posts.values())
+
+    # Calculate statistics
+    total = len(all_posts)
+    level_3 = len([p for p in all_posts if p['category'] == 'LEVEL_3_CRISIS'])
+    level_2 = len([p for p in all_posts if p['category'] == 'LEVEL_2_STRUGGLING'])
+    level_1 = len([p for p in all_posts if p['category'] == 'LEVEL_1_AWARE'])
+
+    print("\n" + "=" * 80)
+    print("COLLECTION COMPLETE")
+    print("=" * 80)
+    print(f"\nTotal unique posts: {total}")
+    print(f"\nBreakdown:")
+    print(f"  Level 3 (Crisis):      {level_3} ({level_3/total*100:.1f}%)")
+    print(f"  Level 2 (Struggling):  {level_2} ({level_2/total*100:.1f}%)")
+    print(f"  Level 1 (Aware):       {level_1} ({level_1/total*100:.1f}%)")
+
+    crisis_ratio = (level_2 + level_3) / total * 100 if total > 0 else 0
+    print(f"\n  Crisis ratio (L2+L3):  {crisis_ratio:.1f}%")
 
     # Save to CSV
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = 'data-collection/collected-data'
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = f'{output_dir}/housing_despair_reddit_{timestamp}.csv'
-    df_unique.to_csv(output_file, index=False)
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    filename = f'collected-data/housing_despair_reddit_{timestamp}.csv'
 
-    print("\n" + "=" * 70)
-    print(f"RESULTS SAVED: {output_file}")
-    print("=" * 70)
-    print(f"\nTotal posts collected: {len(df)}")
-    print(f"Unique posts (after deduplication): {len(df_unique)}")
+    with open(filename, 'w', newline='', encoding='utf-8') as f:
+        fieldnames = ['subreddit', 'post_id', 'title', 'selftext_snippet',
+                     'url', 'score', 'num_comments', 'author', 'created_date',
+                     'search_term', 'category']
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(all_posts)
 
-    if len(df_unique) > 0:
-        print(f"\nBreakdown by category:")
-        print(df_unique['category'].value_counts())
-
-        # Calculate crisis ratio
-        total = len(df_unique)
-        level_3 = len(df_unique[df_unique['category'] == 'LEVEL_3_CRISIS'])
-        level_2 = len(df_unique[df_unique['category'] == 'LEVEL_2_FRUSTRATED'])
-        level_1 = len(df_unique[df_unique['category'] == 'LEVEL_1_AWARE'])
-
-        print(f"\nLevel 1 (Aware): {level_1} ({level_1/total*100:.1f}%)")
-        print(f"Level 2 (Frustrated): {level_2} ({level_2/total*100:.1f}%)")
-        print(f"Level 3 (Crisis): {level_3} ({level_3/total*100:.1f}%)")
-        print(f"\nCrisis ratio (Level 3 only): {level_3/total*100:.1f}%")
-
-        # Top posts by engagement
-        print(f"\n\nTOP 5 MOST-ENGAGED POSTS:")
-        print("-" * 70)
-        top_5 = df_unique.nlargest(5, 'score')[['title', 'score', 'num_comments', 'category', 'url']]
-        for idx, row in top_5.iterrows():
-            print(f"\n{row['title']}")
-            print(f"  Score: {row['score']:,} | Comments: {row['num_comments']:,} | Category: {row['category']}")
-            print(f"  {row['url']}")
+    print(f"\n✓ Data saved to: {filename}")
+    print("=" * 80)
 
 if __name__ == '__main__':
     main()
