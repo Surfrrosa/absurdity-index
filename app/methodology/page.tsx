@@ -32,7 +32,7 @@ export default function Methodology() {
         <div className="bg-white border-4 border-black p-8 mb-8">
           <p className="text-black text-lg font-bold leading-relaxed">
             The Absurdity Index quantifies the absurdity of modern existence through rigorous data collection
-            and research-grade methodology. All data sources, calculations, and sampling methods are documented below.
+            and transparent methodology. All data sources, calculations, and sampling methods are documented below.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function Methodology() {
 
           <div className="space-y-4">
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-2 uppercase">1. Objectivity</h3>
+              <h3 className="text-xl font-black text-black mb-2 uppercase">Objectivity</h3>
               <p className="text-black font-bold">
                 Data is collected from official sources (BLS, Census, BTS) and public platforms without cherry-picking.
                 All sampling is systematic and documented.
@@ -52,7 +52,7 @@ export default function Methodology() {
             </div>
 
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-2 uppercase">2. Transparency</h3>
+              <h3 className="text-xl font-black text-black mb-2 uppercase">Transparency</h3>
               <p className="text-black font-bold">
                 Every data source is cited. All formulas are public. Sample sizes and collection methods are disclosed.
                 Limitations and data gaps are acknowledged.
@@ -60,14 +60,14 @@ export default function Methodology() {
             </div>
 
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-2 uppercase">3. Reproducibility</h3>
+              <h3 className="text-xl font-black text-black mb-2 uppercase">Reproducibility</h3>
               <p className="text-black font-bold">
                 All data collection scripts are available. Anyone can verify the results by following the same methodology.
               </p>
             </div>
 
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-2 uppercase">4. Statistical Rigor</h3>
+              <h3 className="text-xl font-black text-black mb-2 uppercase">Statistical Rigor</h3>
               <p className="text-black font-bold">
                 Sample sizes meet research standards (minimum 100-200 per category). Multiple platforms are sampled
                 to avoid single-source bias.
@@ -159,59 +159,89 @@ export default function Methodology() {
           </h2>
 
           <div className="bg-white border-4 border-black p-6">
-            <table className="w-full mono font-bold text-sm">
+            <table className="w-full mono font-bold text-sm text-black">
               <thead>
                 <tr className="border-b-4 border-black">
-                  <th className="text-left py-3 px-2">COMPONENT</th>
-                  <th className="text-left py-3 px-2">TARGET</th>
-                  <th className="text-left py-3 px-2">STATUS</th>
+                  <th className="text-left py-3 px-2 text-black">COMPONENT</th>
+                  <th className="text-left py-3 px-2 text-black">TARGET</th>
+                  <th className="text-left py-3 px-2 text-black">STATUS</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-black">
                 <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-bold">AI PSYCHOSIS</td>
-                  <td className="py-3 px-2"></td>
-                  <td className="py-3 px-2"></td>
+                  <td className="py-3 px-2 font-black">AI PSYCHOSIS</td>
+                  <td className="py-3 px-2">424 total</td>
+                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">120-160</td>
-                  <td className="py-3 px-2 text-green-700">146 COMPLETE</td>
+                  <td className="py-3 px-2">160</td>
+                  <td className="py-3 px-2 text-green-700">135 (84%)</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
+                  <td className="py-3 px-2">290</td>
+                  <td className="py-3 px-2 text-green-700">289 COMPLETE</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 font-black">HEALTHCARE</td>
+                  <td className="py-3 px-2">304 total</td>
+                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
+                  <td className="py-3 px-2">160</td>
+                  <td className="py-3 px-2 text-green-700">170 COMPLETE</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 pl-6">Reddit Posts</td>
                   <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-green-700">200 COMPLETE</td>
+                  <td className="py-3 px-2 text-orange-700">134 (67%)</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">App Store Reviews</td>
-                  <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-orange-700">20 (10%)</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">TikTok Videos</td>
-                  <td className="py-3 px-2">120</td>
-                  <td className="py-3 px-2 text-red-700">PENDING</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-bold">DATING APP DESPAIR</td>
-                  <td className="py-3 px-2"></td>
-                  <td className="py-3 px-2"></td>
+                  <td className="py-3 px-2 font-black">HOUSING DESPAIR</td>
+                  <td className="py-3 px-2">322 total</td>
+                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">120-160</td>
-                  <td className="py-3 px-2 text-red-700">PENDING</td>
+                  <td className="py-3 px-2">160</td>
+                  <td className="py-3 px-2 text-green-700">137 (86%)</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 pl-6">Reddit Posts</td>
                   <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-red-700">PENDING</td>
+                  <td className="py-3 px-2 text-green-700">185 (93%)</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 font-black">LAYOFF WATCH</td>
+                  <td className="py-3 px-2">356 total</td>
+                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
+                  <td className="py-3 px-2">100</td>
+                  <td className="py-3 px-2 text-orange-700">74 (74%)</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
+                  <td className="py-3 px-2">300</td>
+                  <td className="py-3 px-2 text-green-700">282 (94%)</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 font-black">DATING APP DESPAIR</td>
+                  <td className="py-3 px-2">270 total</td>
+                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
+                  <td className="py-3 px-2">160</td>
+                  <td className="py-3 px-2 text-green-700">131 (82%)</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-2 pl-6">TikTok Videos</td>
-                  <td className="py-3 px-2">120</td>
-                  <td className="py-3 px-2 text-red-700">PENDING</td>
+                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
+                  <td className="py-3 px-2">200</td>
+                  <td className="py-3 px-2 text-orange-700">139 (70%)</td>
                 </tr>
               </tbody>
             </table>
@@ -221,32 +251,16 @@ export default function Methodology() {
         {/* Bias Mitigation */}
         <div className="mb-12">
           <h2 className="text-3xl font-black text-white mb-6 uppercase border-b-4 border-white pb-2">
-            Bias Mitigation Strategies
+            Bias Mitigation
           </h2>
 
           <div className="bg-white border-4 border-black p-6">
-            <ul className="space-y-3 text-black font-bold">
-              <li className="flex items-start">
-                <span className="text-red-600 mr-3 text-xl">▸</span>
-                <span>MULTI-PLATFORM SAMPLING: Data from multiple sources to avoid platform-specific bias</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-3 text-xl">▸</span>
-                <span>SYSTEMATIC SAMPLING: Top/hot posts sampled systematically, not cherry-picked</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-3 text-xl">▸</span>
-                <span>AUTOMATED CATEGORIZATION: Keyword-based categorization reduces subjective judgment</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-3 text-xl">▸</span>
-                <span>OFFICIAL SOURCES PRIORITIZED: Government and industry data as foundation</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-3 text-xl">▸</span>
-                <span>DATA GAPS ACKNOWLEDGED: Incomplete metrics clearly labeled with completion percentages</span>
-              </li>
-            </ul>
+            <p className="text-black font-bold mb-4">
+              Data is collected from multiple platforms to avoid platform-specific bias. Top and hot posts are sampled systematically (not cherry-picked). Keyword-based categorization reduces subjective judgment.
+            </p>
+            <p className="text-black font-bold">
+              Government and industry data provides the foundation. Incomplete metrics are clearly labeled with completion percentages.
+            </p>
           </div>
         </div>
 
@@ -291,20 +305,19 @@ export default function Methodology() {
             <p className="text-black font-bold mb-4">
               This dashboard quantifies cultural sentiment and economic trends, not clinical diagnoses or policy recommendations.
             </p>
-            <ul className="space-y-2 text-black font-bold text-sm mono">
-              <li>▸ Platform demographics may not represent general population</li>
-              <li>▸ Self-reported sentiment may differ from actual behavior</li>
-              <li>▸ Some metrics are preliminary and require more research</li>
-              <li>▸ Scores are relative indicators, not absolute measures</li>
-              <li>▸ Data collected from public sources only - no private information</li>
-            </ul>
+            <p className="text-black font-bold text-sm mono mb-3">
+              Platform demographics skew young and online. Reddit and TikTok users don't represent the general population. People experiencing crisis are more likely to post about it, creating self-selection bias.
+            </p>
+            <p className="text-black font-bold text-sm mono">
+              Some metrics are preliminary and require more research. Scores are relative indicators, not absolute measures. All data is collected from public sources only.
+            </p>
           </div>
         </div>
 
         {/* Footer */}
         <div className="border-t-4 border-white pt-8">
           <p className="text-white font-black text-sm mono mb-4">
-            LAST UPDATED: DECEMBER 16, 2025 | VERSION 1.0
+            LAST UPDATED: JANUARY 6, 2026 | VERSION 1.1
           </p>
           <Link
             href="/"

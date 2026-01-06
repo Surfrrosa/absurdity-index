@@ -152,7 +152,7 @@ def main():
     df_unique = df.drop_duplicates(subset=['video_id'])
 
     # Save to CSV
-    output_file = f'/Volumes/Extreme SSD/Home/projects/disappointments-dashboard/data/youtube_videos_collected_{datetime.now().strftime("%Y%m%d")}.csv'
+    output_file = f'collected-data/ai_psychosis_youtube_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
     df_unique.to_csv(output_file, index=False)
 
     print("\n" + "=" * 70)

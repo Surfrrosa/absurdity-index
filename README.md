@@ -8,18 +8,18 @@ Live at: [absurdity-index.vercel.app](https://absurdity-index.vercel.app) *(comi
 
 ## What Is This?
 
-The Absurdity Index tracks 8 metrics of modern life through a combination of official statistics and social sentiment analysis. Each metric combines objective data (40% weight) with lived experience captured from social media (60% weight) to produce a comprehensive absurdity score.
+The Absurdity Index tracks 8 metrics of modern life through a combination of official statistics and social sentiment analysis. Each metric combines objective data (40% weight) with lived experience captured from social media (60% weight) to produce a single absurdity score.
 
 ### The 8 Metrics
 
-1. **What Healthcare?** - Insurance denials, medical debt, prior authorization purgatory
-2. **Wage Stagnation** - Real wage growth vs. CEO pay ratios
-3. **Housing Despair** - Price-to-income ratios, rent burden, homeownership dreams
-4. **Subscription Overload** - Average subscriptions, monthly spending, price increases
-5. **Dating App Despair** - App burnout, mental health impact, quit rates
-6. **Airline Chaos** - Delays, cancellations, safety incidents, service quality
-7. **Layoff Watch** - Tech layoffs, job search despair, unemployment anxiety
-8. **AI Psychosis** - AI companion dependency, emotional reliance, digital relationships
+1. **What Healthcare?** (Insurance denials, medical debt, prior authorization purgatory)
+2. **Wage Stagnation** (Real wage growth vs. CEO pay ratios)
+3. **Housing Despair** (Price-to-income ratios, rent burden, homeownership dreams)
+4. **Subscription Overload** (Average subscriptions, monthly spending, price increases)
+5. **Dating App Despair** (App burnout, mental health impact, quit rates)
+6. **Airline Chaos** (Delays, cancellations, safety incidents, service quality)
+7. **Layoff Watch** (Tech layoffs, job search despair, unemployment anxiety)
+8. **AI Psychosis** (AI companion dependency, emotional reliance, digital relationships)
 
 ---
 
@@ -37,19 +37,17 @@ Final Score = (Official Data × 0.4) + (Social Sentiment × 0.6)
 
 ### Social Sentiment Collection
 
-Each metric collects 380-480 data points from multiple platforms:
-- **YouTube**: Video content analysis (80-160 videos)
-- **Reddit**: Community posts (200 posts)
-- **TikTok**: Short-form content (100-120 videos)
+Each metric collects 380-480 data points from YouTube (80-160 videos), Reddit (200 posts), and TikTok (100-120 videos).
 
-### 3-Level Crisis Categorization
+### Crisis Categorization
 
-Content is categorized using keyword-based analysis:
-- **Level 1 (Mild)**: Awareness, minor frustrations
-- **Level 2 (Struggling)**: Significant impact, frequent challenges
-- **Level 3 (Crisis)**: Financial ruin, mental health crisis, life disruption
+Content is categorized using keyword-based analysis into three levels:
 
-**Crisis Ratio** = (Level 3 count / Total count) × 100
+**Level 1 (Mild)**: Awareness, minor frustrations
+**Level 2 (Struggling)**: Significant impact, frequent challenges
+**Level 3 (Crisis)**: Financial ruin, mental health crisis, life disruption
+
+The crisis ratio is calculated as (Level 3 count / Total count) × 100.
 
 ### Data Transparency
 
@@ -172,16 +170,9 @@ This project is optimized for deployment on Vercel:
 
 ## Policy Change Monitoring
 
-The Absurdity Index tracks major policy changes affecting metrics:
+The Absurdity Index tracks major policy changes affecting metrics. When policy changes occur, baselines are recalculated and documented with effective dates.
 
-- **Healthcare**: ACA modifications, Medicare/Medicaid changes, prior authorization rules
-- **Wage & Labor**: Minimum wage legislation, NLRB rulings, tax policy
-- **Housing**: Interest rates, zoning reform, rent control, tenant protections
-- **Airlines**: DOT passenger rights, FAA safety regulations, merger approvals
-- **Tech & AI**: AI safety regulations, antitrust enforcement, privacy laws
-- **Labor Market**: Unemployment insurance, job training, WARN Act enforcement
-
-When policy changes occur, baselines are recalculated and documented with effective dates.
+Healthcare (ACA modifications, Medicare/Medicaid changes, prior authorization rules), Wage & Labor (minimum wage legislation, NLRB rulings, tax policy), Housing (interest rates, zoning reform, rent control, tenant protections), Airlines (DOT passenger rights, FAA safety regulations, merger approvals), Tech & AI (AI safety regulations, antitrust enforcement, privacy laws), Labor Market (unemployment insurance, job training, WARN Act enforcement).
 
 ---
 
@@ -198,13 +189,9 @@ This is a personal research project by Shaina Pauley. Data collection contributi
 
 ## Limitations
 
-1. **Platform demographics**: Reddit/TikTok users ≠ general population
-2. **Self-selection bias**: People experiencing crisis more likely to post
-3. **Temporal bias**: Viral events can spike sentiment temporarily
-4. **Geographic bias**: US-focused data collection
-5. **Keyword limitations**: Automated categorization may miss context
+Platform demographics skew young and online. Reddit and TikTok users don't represent everyone. People in crisis are more likely to post about it. Viral events can spike sentiment temporarily. Data collection focuses on the US. Automated keyword categorization sometimes misses context or sarcasm.
 
-These limitations are acknowledged and do not invalidate the methodology. Multi-source sampling with official data anchoring mitigates these effects.
+We account for these through multi-source sampling and anchoring to official data.
 
 ---
 

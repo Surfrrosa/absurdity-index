@@ -10,7 +10,7 @@
 
 ### What Is Absurdity?
 
-The Absurdity Index quantifies a subjective but widely-felt sense: that we live in an insane society actively causing its own misery. This is not a precise clinical term—it's the recognition that our systems produce outcomes that seem increasingly detached from human wellbeing.
+The Absurdity Index quantifies a subjective but widely-felt sense: that we live in an insane society actively causing its own misery. This is not a precise clinical term. It's the recognition that our systems produce outcomes that seem increasingly detached from human wellbeing.
 
 ### Methodological Approach
 
@@ -21,15 +21,11 @@ We combine two data sources to create more sound, relevant, and accurate measure
 
 Official statistics tell you what's happening at the macro level. Systematically quantifying lived experiences tells you what's happening at the human level. Together, they provide a more complete and accurate picture than either source alone.
 
-This is not about finding "gaps" or "discrepancies"—it's about enhancing the accuracy of our measurements by incorporating data from multiple sources.
+This is not about finding "gaps" or "discrepancies." It's about enhancing the accuracy of our measurements by incorporating data from multiple sources.
 
 ### Transparency Over Perfection
 
-This is an experimental methodology. We prioritize:
-- Explicit documentation of all formulas
-- Verifiable data sources
-- Honest acknowledgment of limitations
-- Reproducible processes
+This is an experimental methodology. We prioritize explicit documentation of all formulas, verifiable data sources, and honest acknowledgment of limitations. All processes are designed to be reproducible.
 
 We're not claiming scientific perfection. We're claiming transparency about what we're measuring and how we're measuring it.
 

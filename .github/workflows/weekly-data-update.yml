@@ -1,0 +1,114 @@
+name: Weekly Data Collection
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC (4:00 AM EST)
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+env:
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+jobs:
+  collect-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests google-api-python-client pandas
+
+      - name: Run YouTube collectors
+        working-directory: data-collection
+        run: |
+          echo "Running YouTube collectors..."
+          python healthcare-youtube-collector.py || true
+          python ai-psychosis-youtube-collector.py || true
+          python subscription-overload-youtube-collector.py || true
+          python wage-stagnation-youtube-collector.py || true
+          python housing-despair-youtube-collector.py || true
+          python dating-app-despair-youtube-collector.py || true
+          python layoff-watch-youtube-collector.py || true
+          python airline-chaos-youtube-collector.py || true
+
+      - name: Run Reddit collectors
+        working-directory: data-collection
+        run: |
+          echo "Running Reddit collectors..."
+          sleep 10
+          python healthcare-reddit-collector.py || true
+          sleep 15
+          python ai-psychosis-reddit-collector.py || true
+          sleep 15
+          python subscription-overload-reddit-collector.py || true
+          sleep 15
+          python wage-stagnation-reddit-collector.py || true
+          sleep 15
+          python housing-despair-reddit-collector.py || true
+          sleep 15
+          python dating-app-despair-reddit-collector.py || true
+          sleep 15
+          python layoff-watch-reddit-collector.py || true
+          sleep 15
+          python airline-chaos-reddit-collector.py || true
+
+      - name: Calculate new scores
+        working-directory: data-collection
+        run: |
+          echo "Calculating social scores..."
+          python calculate_all_social_scores.py
+
+      - name: Update metricDetailData.ts
+        working-directory: data-collection
+        run: |
+          echo "Updating TypeScript data file..."
+          python update_metric_data.py
+
+      - name: List collected data
+        run: |
+          echo "Collected data files:"
+          ls -la data-collection/collected-data/
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit and push changes
+        run: |
+          git add data-collection/collected-data/
+          git add lib/metricDetailData.ts
+          git diff --staged --quiet || git commit -m "Weekly data update - $(date +'%Y-%m-%d')
+
+          Automated collection from YouTube and Reddit.
+          Updated scores and level distributions in metricDetailData.ts."
+          git push
+
+  notify-on-failure:
+    needs: collect-data
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify failure
+        run: |
+          echo "Data collection failed. Check workflow logs for details."
