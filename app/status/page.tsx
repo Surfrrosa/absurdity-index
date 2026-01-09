@@ -5,58 +5,58 @@ export default function DataCollectionStatus() {
     {
       name: "What Healthcare?",
       target: 480,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
-    },
-    {
-      name: "Dating App Despair",
-      target: 480,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
+      collected: 304,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (170), Reddit (134)"
     },
     {
       name: "AI Psychosis",
-      target: 400,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "App Store, TikTok"
-    },
-    {
-      name: "Wage Stagnation",
-      target: 400,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
+      target: 450,
+      collected: 424,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (135), Reddit (289)"
     },
     {
       name: "Housing Despair",
       target: 400,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
-    },
-    {
-      name: "Airline Chaos",
-      target: 480,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
+      collected: 322,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (137), Reddit (185)"
     },
     {
       name: "Layoff Watch",
       target: 400,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
+      collected: 356,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (74), Reddit (282)"
+    },
+    {
+      name: "Dating App Despair",
+      target: 400,
+      collected: 270,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (131), Reddit (139)"
+    },
+    {
+      name: "Airline Chaos",
+      target: 400,
+      collected: 230,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (98), Reddit (132)"
     },
     {
       name: "Subscription Overload",
       target: 400,
-      collected: 0,
-      lastUpdated: "Dec 17, 2024",
-      platforms: "Reddit, YouTube, TikTok"
+      collected: 172,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (160), Reddit (12)"
+    },
+    {
+      name: "Wage Stagnation",
+      target: 400,
+      collected: 166,
+      lastUpdated: "Jan 6, 2026",
+      platforms: "YouTube (88), Reddit (78)"
     }
   ];
 
