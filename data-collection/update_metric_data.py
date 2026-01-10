@@ -23,46 +23,57 @@ METRIC_DATA_FILE = '../lib/metricDetailData.ts'
 # Metric configurations with official scores
 METRICS = {
     'What Healthcare?': {
+        'slug': 'healthcare',
         'youtube_pattern': 'healthcare_youtube_*.csv',
         'reddit_pattern': 'healthcare_reddit_*.csv',
         'official_score': 56.30
     },
     'AI Psychosis': {
+        'slug': 'ai_psychosis',
         'youtube_pattern': 'ai_psychosis_youtube_*.csv',
         'reddit_pattern': 'ai_psychosis_reddit_*.csv',
         'official_score': 12.5
     },
     'Subscription Overload': {
+        'slug': 'subscription_overload',
         'youtube_pattern': 'subscription_overload_youtube_*.csv',
         'reddit_pattern': 'subscription_overload_reddit_*.csv',
         'official_score': 45.2
     },
     'Wage Stagnation': {
+        'slug': 'wage_stagnation',
         'youtube_pattern': 'wage_stagnation_youtube_*.csv',
         'reddit_pattern': 'wage_stagnation_reddit_*.csv',
         'official_score': 38.4
     },
     'Housing Despair': {
+        'slug': 'housing_despair',
         'youtube_pattern': 'housing_despair_youtube_*.csv',
         'reddit_pattern': 'housing_despair_reddit_*.csv',
         'official_score': 37.6
     },
     'Dating App Despair': {
+        'slug': 'dating_app_despair',
         'youtube_pattern': 'dating_app_despair_youtube_*.csv',
         'reddit_pattern': 'dating_app_despair_reddit_*.csv',
         'official_score': 8.5
     },
     'Layoff Watch': {
+        'slug': 'layoff_watch',
         'youtube_pattern': 'layoff_watch_youtube_*.csv',
         'reddit_pattern': 'layoff_watch_reddit_*.csv',
         'official_score': 76.5
     },
     'Airline Chaos': {
+        'slug': 'airline_chaos',
         'youtube_pattern': 'airline_chaos_youtube_*.csv',
         'reddit_pattern': 'airline_chaos_reddit_*.csv',
         'official_score': 21.0
     }
 }
+
+# TikTok file pattern (contains all metrics)
+TIKTOK_PATTERN = 'tiktok_youtube_*.csv'
 
 SEVERITY_WEIGHTS = {
     'LEVEL_1_AWARE': 0.33,
@@ -80,6 +91,34 @@ def get_latest_file(pattern):
     if not files:
         return None
     return max(files, key=os.path.getmtime)
+
+
+def get_tiktok_data_for_metric(metric_slug):
+    """Extract TikTok data for a specific metric from the combined file."""
+    tiktok_file = get_latest_file(TIKTOK_PATTERN)
+    if not tiktok_file:
+        return [], {'L1': 0, 'L2': 0, 'L3': 0}, 0
+
+    rows = []
+    level_counts = {'L1': 0, 'L2': 0, 'L3': 0}
+
+    try:
+        with open(tiktok_file, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row.get('metric', '') == metric_slug:
+                    rows.append(row)
+                    category = row.get('category', '')
+                    if 'LEVEL_1' in category:
+                        level_counts['L1'] += 1
+                    elif 'LEVEL_2' in category:
+                        level_counts['L2'] += 1
+                    elif 'LEVEL_3' in category:
+                        level_counts['L3'] += 1
+    except Exception as e:
+        print(f"  Error reading TikTok data: {e}")
+
+    return rows, level_counts, len(rows)
 
 
 def calculate_score_from_csv(csv_file):
@@ -139,6 +178,9 @@ def calculate_metric_scores():
         youtube_score, youtube_levels, youtube_count = calculate_score_from_csv(youtube_file)
         reddit_score, reddit_levels, reddit_count = calculate_score_from_csv(reddit_file)
 
+        # Get TikTok data for this metric
+        tiktok_rows, tiktok_levels, tiktok_count = get_tiktok_data_for_metric(config['slug'])
+
         # Combine scores
         total_weighted = 0
         total_engagement = 0
@@ -165,6 +207,15 @@ def calculate_metric_scores():
                     total_weighted += severity * engagement
                     total_engagement += engagement
 
+        # Add TikTok data
+        for row in tiktok_rows:
+            views = int(row.get('views', 0) or 0)
+            category = row.get('category', '')
+            severity = SEVERITY_WEIGHTS.get(category, 0.33)
+            engagement = math.log10(max(views, 1) + 1)
+            total_weighted += severity * engagement
+            total_engagement += engagement
+
         if total_engagement > 0:
             combined_social = (total_weighted / total_engagement) * 100
         else:
@@ -175,10 +226,10 @@ def calculate_metric_scores():
         final_score = (official * 0.4) + (combined_social * 0.6)
 
         # Combine level counts
-        total_l1 = (youtube_levels['L1'] if youtube_levels else 0) + (reddit_levels['L1'] if reddit_levels else 0)
-        total_l2 = (youtube_levels['L2'] if youtube_levels else 0) + (reddit_levels['L2'] if reddit_levels else 0)
-        total_l3 = (youtube_levels['L3'] if youtube_levels else 0) + (reddit_levels['L3'] if reddit_levels else 0)
-        total_entries = youtube_count + reddit_count
+        total_l1 = (youtube_levels['L1'] if youtube_levels else 0) + (reddit_levels['L1'] if reddit_levels else 0) + tiktok_levels['L1']
+        total_l2 = (youtube_levels['L2'] if youtube_levels else 0) + (reddit_levels['L2'] if reddit_levels else 0) + tiktok_levels['L2']
+        total_l3 = (youtube_levels['L3'] if youtube_levels else 0) + (reddit_levels['L3'] if reddit_levels else 0) + tiktok_levels['L3']
+        total_entries = youtube_count + reddit_count + tiktok_count
 
         results[metric_name] = {
             'score': round(final_score, 2),
@@ -188,10 +239,11 @@ def calculate_metric_scores():
             'level3': total_l3,
             'total': total_entries,
             'youtube_count': youtube_count,
-            'reddit_count': reddit_count
+            'reddit_count': reddit_count,
+            'tiktok_count': tiktok_count
         }
 
-        print(f"  YouTube: {youtube_count}, Reddit: {reddit_count}, Total: {total_entries}")
+        print(f"  YouTube: {youtube_count}, Reddit: {reddit_count}, TikTok: {tiktok_count}, Total: {total_entries}")
         print(f"  Score: {final_score:.2f}, Crisis Ratio: {combined_social:.2f}")
 
     return results
