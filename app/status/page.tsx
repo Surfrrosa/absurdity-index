@@ -3,60 +3,60 @@ import Link from 'next/link';
 export default function DataCollectionStatus() {
   const metrics = [
     {
-      name: "What Healthcare?",
-      target: 480,
-      collected: 304,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (170), Reddit (134)"
-    },
-    {
       name: "AI Psychosis",
       target: 450,
-      collected: 424,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (135), Reddit (289)"
-    },
-    {
-      name: "Housing Despair",
-      target: 400,
-      collected: 322,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (137), Reddit (185)"
+      collected: 512,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (135), Reddit (289), TikTok (88)"
     },
     {
       name: "Layoff Watch",
       target: 400,
-      collected: 356,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (74), Reddit (282)"
+      collected: 430,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (74), Reddit (282), TikTok (74)"
+    },
+    {
+      name: "Housing Despair",
+      target: 400,
+      collected: 413,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (137), Reddit (185), TikTok (91)"
+    },
+    {
+      name: "What Healthcare?",
+      target: 400,
+      collected: 392,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (170), Reddit (134), TikTok (88)"
     },
     {
       name: "Dating App Despair",
       target: 400,
-      collected: 270,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (131), Reddit (139)"
+      collected: 353,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (131), Reddit (139), TikTok (83)"
     },
     {
       name: "Airline Chaos",
       target: 400,
-      collected: 230,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (98), Reddit (132)"
-    },
-    {
-      name: "Subscription Overload",
-      target: 400,
-      collected: 172,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (160), Reddit (12)"
+      collected: 313,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (98), Reddit (132), TikTok (83)"
     },
     {
       name: "Wage Stagnation",
       target: 400,
-      collected: 166,
-      lastUpdated: "Jan 6, 2026",
-      platforms: "YouTube (88), Reddit (78)"
+      collected: 248,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (88), Reddit (78), TikTok (82)"
+    },
+    {
+      name: "Subscription Overload",
+      target: 400,
+      collected: 230,
+      lastUpdated: "Jan 10, 2026",
+      platforms: "YouTube (160), Reddit (12), TikTok (58)"
     }
   ];
 
@@ -125,7 +125,7 @@ export default function DataCollectionStatus() {
               />
             </div>
             <p className="text-gray-400 mt-4 text-sm font-bold uppercase">
-              Target: 3,440 total entries across all metrics
+              Target: 3,250 total entries across all metrics
             </p>
           </div>
         </div>

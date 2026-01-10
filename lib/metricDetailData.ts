@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 49.19,
+    score: 50.02,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
     officialScore: 56.30,
-    crisisRatio: 44.45,
+    crisisRatio: 45.83,
     levelDistribution: {
-      level1: 218,
-      level2: 56,
-      level3: 30,
-      total: 304
+      level1: 283,
+      level2: 60,
+      level3: 49,
+      total: 392
     },
     sampleData: [
       {
@@ -139,20 +139,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 134 posts from r/HealthInsurance, r/povertyfinance, r/Insurance"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 35.10,
+    score: 35.98,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 50.16,
+    crisisRatio: 51.63,
     levelDistribution: {
-      level1: 288,
-      level2: 55,
-      level3: 81,
-      total: 424
+      level1: 343,
+      level2: 59,
+      level3: 110,
+      total: 512
     },
     sampleData: [
       {
@@ -243,20 +243,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Google Trends: Search volume for AI companion terms"
     ],
     methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 39.36,
+    score: 41.51,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 35.47,
+    crisisRatio: 39.05,
     levelDistribution: {
-      level1: 161,
-      level2: 10,
-      level3: 1,
-      total: 172
+      level1: 209,
+      level2: 12,
+      level3: 9,
+      total: 230
     },
     sampleData: [
       {
@@ -343,20 +343,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 39.62,
-    label: "Inflation Exists But Manageable",
-    trend: "neutral",
+    score: 46.22,
+    label: "Paycheck-to-Paycheck Normal",
+    trend: "worsening",
     officialScore: 38.4,
-    crisisRatio: 40.43,
+    crisisRatio: 51.44,
     levelDistribution: {
-      level1: 133,
-      level2: 28,
-      level3: 5,
-      total: 166
+      level1: 174,
+      level2: 30,
+      level3: 44,
+      total: 248
     },
     sampleData: [
       {
@@ -442,20 +442,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 78 posts from r/antiwork, r/WorkReform, r/povertyfinance"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 46.91,
+    score: 49.85,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 53.12,
+    crisisRatio: 58.01,
     levelDistribution: {
-      level1: 206,
-      level2: 38,
-      level3: 78,
-      total: 322
+      level1: 244,
+      level2: 44,
+      level3: 125,
+      total: 413
     },
     sampleData: [
       {
@@ -541,20 +541,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 185 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 35.18,
-    label: "Mild Turbulence",
-    trend: "neutral",
+    score: 39.66,
+    label: "Expect Delays",
+    trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 44.64,
+    crisisRatio: 52.11,
     levelDistribution: {
-      level1: 163,
-      level2: 52,
-      level3: 15,
-      total: 230
+      level1: 214,
+      level2: 53,
+      level3: 46,
+      total: 313
     },
     sampleData: [
       {
@@ -640,20 +640,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 28.85,
-    label: "Love May Actually Be Real",
-    trend: "neutral",
+    score: 31.99,
+    label: "Swipe Fatigue Setting In",
+    trend: "worsening",
     officialScore: 8.5,
-    crisisRatio: 42.41,
+    crisisRatio: 47.65,
     levelDistribution: {
-      level1: 201,
-      level2: 50,
-      level3: 19,
-      total: 270
+      level1: 256,
+      level2: 61,
+      level3: 36,
+      total: 353
     },
     sampleData: [
       {
@@ -739,20 +739,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 58.44,
+    score: 60.40,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 46.40,
+    crisisRatio: 49.67,
     levelDistribution: {
-      level1: 187,
-      level2: 160,
-      level3: 9,
-      total: 356
+      level1: 229,
+      level2: 166,
+      level3: 35,
+      total: 430
     },
     sampleData: [
       {
@@ -837,7 +837,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 282 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "January 6, 2026"
+    lastUpdated: "January 10, 2026"
   }
 };
 

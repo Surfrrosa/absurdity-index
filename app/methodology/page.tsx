@@ -87,10 +87,10 @@ export default function Methodology() {
             <div className="bg-red-600 border-4 border-black p-6">
               <h3 className="text-2xl font-black text-white mb-4 uppercase">AI Psychosis</h3>
               <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 146 videos analyzed (54.8% crisis ratio)</p>
-                <p>REDDIT: 200 posts from r/replika + r/CharacterAI (15.0% crisis ratio)</p>
+                <p>YOUTUBE: 135 videos analyzed</p>
+                <p>REDDIT: 289 posts from r/replika + r/CharacterAI</p>
+                <p>TIKTOK: 88 videos via YouTube compilations</p>
                 <p>GOOGLE TRENDS: Search volume for AI companion terms</p>
-                <p>APP STORE: Manual sampling in progress</p>
                 <p className="pt-2 border-t-2 border-white/30">
                   CATEGORIZATION: Level 3 (Crisis), Level 2 (Dependent), Level 1 (Casual)
                 </p>
@@ -101,9 +101,10 @@ export default function Methodology() {
             <div className="bg-red-600 border-4 border-black p-6">
               <h3 className="text-2xl font-black text-white mb-4 uppercase">Subscription Overload</h3>
               <div className="space-y-2 text-white font-bold mono text-sm">
+                <p>YOUTUBE: 160 videos analyzed</p>
+                <p>REDDIT: 12 posts from subscription-related subreddits</p>
+                <p>TIKTOK: 58 videos via YouTube compilations</p>
                 <p>CONSUMER REPORTS: Average 12 subscriptions per household</p>
-                <p>STREAMING PRICING: All major platforms tracked</p>
-                <p>GOOGLE TRENDS: "Cancel subscriptions", "subscription fatigue"</p>
                 <p>INDUSTRY REPORTS: 73% raised prices in 2025</p>
               </div>
             </div>
@@ -112,14 +113,13 @@ export default function Methodology() {
             <div className="bg-red-600 border-4 border-black p-6">
               <h3 className="text-2xl font-black text-white mb-4 uppercase">Dating App Despair</h3>
               <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 120-160 videos analyzing "quit dating apps" content</p>
-                <p>REDDIT: 200 posts from r/dating, r/Tinder, r/Bumble, r/HingeApp</p>
-                <p>TIKTOK: 120 videos with dating app complaint/burnout hashtags</p>
+                <p>YOUTUBE: 131 videos analyzed</p>
+                <p>REDDIT: 139 posts from r/dating, r/Tinder, r/Bumble, r/HingeApp</p>
+                <p>TIKTOK: 83 videos via YouTube compilations</p>
                 <p>GOOGLE TRENDS: Baseline sentiment tracking</p>
                 <p className="pt-2 border-t-2 border-white/30">
                   CATEGORIZATION: Level 3 (Quit/Crisis), Level 2 (Frustrated/Exhausted), Level 1 (Mild Complaints)
                 </p>
-                <p>SEARCH TERMS: "quit dating apps", "dating app burnout", "dating app horror stories", "dating fatigue"</p>
               </div>
             </div>
 
@@ -127,15 +127,14 @@ export default function Methodology() {
             <div className="bg-red-600 border-4 border-black p-6">
               <h3 className="text-2xl font-black text-white mb-4 uppercase">What Healthcare?</h3>
               <div className="space-y-2 text-white font-bold mono text-sm">
+                <p>YOUTUBE: 170 videos analyzed</p>
+                <p>REDDIT: 134 posts from r/HealthInsurance, r/Insurance, r/povertyfinance</p>
+                <p>TIKTOK: 88 videos via YouTube compilations</p>
                 <p>KFF DATA: Premium increases, claim denial rates, coverage gaps</p>
                 <p>CENSUS: Medical debt statistics, bankruptcy data</p>
-                <p>YOUTUBE: 120-160 videos on denied claims, insurance nightmares</p>
-                <p>REDDIT: 200 posts from r/HealthInsurance, r/Insurance, r/povertyfinance</p>
-                <p>TIKTOK: 120 videos with healthcare crisis hashtags</p>
                 <p className="pt-2 border-t-2 border-white/30">
                   CATEGORIZATION: Level 3 (Medical debt/denied life-saving care), Level 2 (Can't afford treatment/high premiums), Level 1 (Billing confusion/delays)
                 </p>
-                <p>SEARCH TERMS: "insurance denied claim", "can't afford healthcare", "medical bankruptcy", "prior authorization nightmare"</p>
               </div>
             </div>
 
@@ -143,10 +142,10 @@ export default function Methodology() {
             <div className="bg-white border-4 border-black p-6">
               <h3 className="text-2xl font-black text-black mb-4 uppercase">Other Metrics</h3>
               <div className="space-y-3 text-black font-bold text-sm">
-                <p><strong className="mono">WAGE STAGNATION:</strong> BLS Employment Cost Index, AFL-CIO CEO Pay Database, social media financial stress analysis</p>
-                <p><strong className="mono">HOUSING DESPAIR:</strong> Redfin, Zillow Rent Index, Census Bureau median income, social media housing crisis analysis</p>
-                <p><strong className="mono">AIRLINE CHAOS:</strong> Bureau of Transportation Statistics, ACSI satisfaction scores, social media travel nightmare tracking</p>
-                <p><strong className="mono">LAYOFF WATCH:</strong> Layoffs.fyi tracking (152,922 tech workers in 2025), social media job market despair analysis</p>
+                <p><strong className="mono">WAGE STAGNATION:</strong> YouTube (88), Reddit (78), TikTok (82) + BLS Employment Cost Index, AFL-CIO CEO Pay Database</p>
+                <p><strong className="mono">HOUSING DESPAIR:</strong> YouTube (137), Reddit (185), TikTok (91) + Redfin, Zillow Rent Index, Census Bureau</p>
+                <p><strong className="mono">AIRLINE CHAOS:</strong> YouTube (98), Reddit (132), TikTok (83) + Bureau of Transportation Statistics, ACSI scores</p>
+                <p><strong className="mono">LAYOFF WATCH:</strong> YouTube (74), Reddit (282), TikTok (74) + Layoffs.fyi tracking</p>
               </div>
             </div>
           </div>
@@ -162,86 +161,76 @@ export default function Methodology() {
             <table className="w-full mono font-bold text-sm text-black">
               <thead>
                 <tr className="border-b-4 border-black">
-                  <th className="text-left py-3 px-2 text-black">COMPONENT</th>
-                  <th className="text-left py-3 px-2 text-black">TARGET</th>
-                  <th className="text-left py-3 px-2 text-black">STATUS</th>
+                  <th className="text-left py-3 px-2 text-black">METRIC</th>
+                  <th className="text-left py-3 px-2 text-black">YOUTUBE</th>
+                  <th className="text-left py-3 px-2 text-black">REDDIT</th>
+                  <th className="text-left py-3 px-2 text-black">TIKTOK</th>
+                  <th className="text-left py-3 px-2 text-black">TOTAL</th>
                 </tr>
               </thead>
               <tbody className="text-black">
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 font-black">AI PSYCHOSIS</td>
-                  <td className="py-3 px-2">424 total</td>
-                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">160</td>
-                  <td className="py-3 px-2 text-green-700">135 (84%)</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
-                  <td className="py-3 px-2">290</td>
-                  <td className="py-3 px-2 text-green-700">289 COMPLETE</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">HEALTHCARE</td>
-                  <td className="py-3 px-2">304 total</td>
-                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">160</td>
-                  <td className="py-3 px-2 text-green-700">170 COMPLETE</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
-                  <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-orange-700">134 (67%)</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">HOUSING DESPAIR</td>
-                  <td className="py-3 px-2">322 total</td>
-                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">160</td>
-                  <td className="py-3 px-2 text-green-700">137 (86%)</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
-                  <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-green-700">185 (93%)</td>
+                  <td className="py-3 px-2">135</td>
+                  <td className="py-3 px-2">289</td>
+                  <td className="py-3 px-2">88</td>
+                  <td className="py-3 px-2 text-green-700 font-black">512</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 font-black">LAYOFF WATCH</td>
-                  <td className="py-3 px-2">356 total</td>
-                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
+                  <td className="py-3 px-2">74</td>
+                  <td className="py-3 px-2">282</td>
+                  <td className="py-3 px-2">74</td>
+                  <td className="py-3 px-2 text-green-700 font-black">430</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">100</td>
-                  <td className="py-3 px-2 text-orange-700">74 (74%)</td>
+                  <td className="py-3 px-2 font-black">HOUSING DESPAIR</td>
+                  <td className="py-3 px-2">137</td>
+                  <td className="py-3 px-2">185</td>
+                  <td className="py-3 px-2">91</td>
+                  <td className="py-3 px-2 text-green-700 font-black">413</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
-                  <td className="py-3 px-2">300</td>
-                  <td className="py-3 px-2 text-green-700">282 (94%)</td>
+                  <td className="py-3 px-2 font-black">HEALTHCARE</td>
+                  <td className="py-3 px-2">170</td>
+                  <td className="py-3 px-2">134</td>
+                  <td className="py-3 px-2">88</td>
+                  <td className="py-3 px-2 text-green-700 font-black">392</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
                   <td className="py-3 px-2 font-black">DATING APP DESPAIR</td>
-                  <td className="py-3 px-2">270 total</td>
-                  <td className="py-3 px-2 text-green-700 font-black">COMPLETE</td>
+                  <td className="py-3 px-2">131</td>
+                  <td className="py-3 px-2">139</td>
+                  <td className="py-3 px-2">83</td>
+                  <td className="py-3 px-2 text-green-700 font-black">353</td>
                 </tr>
                 <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 pl-6">YouTube Videos</td>
-                  <td className="py-3 px-2">160</td>
-                  <td className="py-3 px-2 text-green-700">131 (82%)</td>
+                  <td className="py-3 px-2 font-black">AIRLINE CHAOS</td>
+                  <td className="py-3 px-2">98</td>
+                  <td className="py-3 px-2">132</td>
+                  <td className="py-3 px-2">83</td>
+                  <td className="py-3 px-2 text-green-700 font-black">313</td>
                 </tr>
-                <tr>
-                  <td className="py-3 px-2 pl-6">Reddit Posts</td>
-                  <td className="py-3 px-2">200</td>
-                  <td className="py-3 px-2 text-orange-700">139 (70%)</td>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 font-black">WAGE STAGNATION</td>
+                  <td className="py-3 px-2">88</td>
+                  <td className="py-3 px-2">78</td>
+                  <td className="py-3 px-2">82</td>
+                  <td className="py-3 px-2 text-green-700 font-black">248</td>
+                </tr>
+                <tr className="border-b-2 border-black/20">
+                  <td className="py-3 px-2 font-black">SUBSCRIPTION OVERLOAD</td>
+                  <td className="py-3 px-2">160</td>
+                  <td className="py-3 px-2">12</td>
+                  <td className="py-3 px-2">58</td>
+                  <td className="py-3 px-2 text-green-700 font-black">230</td>
+                </tr>
+                <tr className="border-t-4 border-black">
+                  <td className="py-3 px-2 font-black">TOTAL</td>
+                  <td className="py-3 px-2 font-black">993</td>
+                  <td className="py-3 px-2 font-black">1,251</td>
+                  <td className="py-3 px-2 font-black">647</td>
+                  <td className="py-3 px-2 text-green-700 font-black">2,891</td>
                 </tr>
               </tbody>
             </table>
@@ -291,7 +280,7 @@ export default function Methodology() {
             </div>
           </div>
           <p className="text-white font-bold text-sm mono mt-4">
-            CURRENT BASELINE: DECEMBER 2025 | FULL AUTOMATION: Q1 2026
+            CURRENT BASELINE: JANUARY 2026 | AUTOMATED WEEKLY UPDATES ENABLED
           </p>
         </div>
 
@@ -317,7 +306,7 @@ export default function Methodology() {
         {/* Footer */}
         <div className="border-t-4 border-white pt-8">
           <p className="text-white font-black text-sm mono mb-4">
-            LAST UPDATED: JANUARY 6, 2026 | VERSION 1.1
+            LAST UPDATED: JANUARY 10, 2026 | VERSION 1.2
           </p>
           <Link
             href="/"
