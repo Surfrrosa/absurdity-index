@@ -263,6 +263,21 @@ def main():
             total_views = sum(v['views'] for v in videos)
             print(f"\n  Total: {len(videos)} | Views: {total_views:,} | L1: {l1}, L2: {l2}, L3: {l3}")
 
+    # Deduplicate - same video can appear in multiple metric searches
+    if all_results:
+        seen_ids = set()
+        deduplicated = []
+        for video in all_results:
+            if video['video_id'] not in seen_ids:
+                seen_ids.add(video['video_id'])
+                deduplicated.append(video)
+
+        duplicates_removed = len(all_results) - len(deduplicated)
+        if duplicates_removed > 0:
+            print(f"\n  Removed {duplicates_removed} cross-metric duplicates")
+
+        all_results = deduplicated
+
     # Save results
     if all_results:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
