@@ -62,6 +62,12 @@ jobs:
           sleep 15
           python airline-chaos-reddit-collector.py || true
 
+      - name: Run TikTok collector
+        working-directory: data-collection
+        run: |
+          echo "Running TikTok collector (via YouTube compilations)..."
+          python tiktok-youtube-collector.py || true
+
       - name: Calculate new scores
         working-directory: data-collection
         run: |
