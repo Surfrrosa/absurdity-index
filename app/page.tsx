@@ -5,11 +5,12 @@ import MetricCard from '@/components/MetricCard';
 import Header from '@/components/Header';
 import AbsurdityScore from '@/components/AbsurdityScore';
 import MetricDetail from '@/components/MetricDetail';
-import { getAllMetricsWithLabels } from '@/lib/metricDetailData';
+import { getAllMetricsWithLabels, getLatestUpdateDate } from '@/lib/metricDetailData';
 
 export default function Home() {
   const [selectedMetric, setSelectedMetric] = useState<string | null>(null);
   const metricsWithLabels = getAllMetricsWithLabels();
+  const updateDate = getLatestUpdateDate();
 
   return (
     <main className="min-h-screen bg-black">
@@ -84,7 +85,7 @@ export default function Home() {
 
         <footer className="mt-16 text-center text-white pb-12 border-t-4 border-white pt-8">
           <p className="font-black text-2xl uppercase">THE ABSURDITY INDEX</p>
-          <p className="mt-4 mono font-bold text-sm">DATA: DEC 2025 | UPDATES: WEEKLY</p>
+          <p className="mt-4 mono font-bold text-sm">DATA: {updateDate} | UPDATES: WEEKLY</p>
           <p className="mt-2 mono font-bold text-sm">CREATED BY SHAINA PAULEY</p>
           <p className="mt-3 mono font-bold text-sm">
             <a

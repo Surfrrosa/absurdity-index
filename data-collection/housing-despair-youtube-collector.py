@@ -9,6 +9,7 @@ from googleapiclient.discovery import build
 import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
+from content_filters import filter_content
 
 # Load environment variables
 load_dotenv()
@@ -85,6 +86,10 @@ def categorize_video(title, description):
     # First check: Is this actually about housing?
     if not is_housing_related(title, description):
         return None  # Filter out non-housing videos
+
+    # Filter out clickbait/promotional content
+    if not filter_content(title, description):
+        return None
 
     text = (title + " " + description).lower()
 

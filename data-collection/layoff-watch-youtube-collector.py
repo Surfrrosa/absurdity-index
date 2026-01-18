@@ -9,6 +9,7 @@ from googleapiclient.discovery import build
 import pandas as pd
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
+from content_filters import filter_content
 
 load_dotenv()
 
@@ -56,6 +57,10 @@ def is_layoff_related(title, description):
 
 def categorize_video(title, description):
     if not is_layoff_related(title, description):
+        return None
+
+    # Filter out clickbait/promotional content
+    if not filter_content(title, description):
         return None
 
     text = (title + " " + description).lower()

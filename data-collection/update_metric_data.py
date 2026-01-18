@@ -291,6 +291,48 @@ def update_typescript_file(results):
         replacement = rf'\g<1>{today}'
         content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
+        # Update collectionProgress counts and percentages for YouTube
+        if data.get('youtube_count', 0) > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "YouTube",\s*current: )\d+'
+            replacement = rf'\g<1>{data["youtube_count"]}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+        # Update collectionProgress counts and percentages for Reddit
+        if data.get('reddit_count', 0) > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "Reddit",\s*current: )\d+'
+            replacement = rf'\g<1>{data["reddit_count"]}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+        # Update collectionProgress counts and percentages for TikTok
+        tiktok_count = data.get('tiktok_count', 0)
+        if tiktok_count > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "TikTok",\s*current: )\d+'
+            replacement = rf'\g<1>{tiktok_count}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+            # Also update the percentage (assuming target of 100-120)
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "TikTok",\s*current: \d+,\s*target: )(\d+)(,\s*percentage: )\d+'
+            def calc_percentage(match):
+                target = int(match.group(2))
+                pct = min(100, int(tiktok_count / target * 100))
+                return f'{match.group(1)}{target}{match.group(3)}{pct}'
+            content = re.sub(pattern, calc_percentage, content, flags=re.DOTALL)
+
+        # Update dataSources counts (e.g., "YouTube: 170 videos" -> "YouTube: 135 videos")
+        if data.get('youtube_count', 0) > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?dataSources:.*?"YouTube: )\d+( videos)'
+            replacement = rf'\g<1>{data["youtube_count"]}\g<2>'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+        if data.get('reddit_count', 0) > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?dataSources:.*?"Reddit: )\d+( posts)'
+            replacement = rf'\g<1>{data["reddit_count"]}\g<2>'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+        if data.get('tiktok_count', 0) > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?dataSources:.*?"TikTok: )\d+( videos)'
+            replacement = rf'\g<1>{data["tiktok_count"]}\g<2>'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
     with open(METRIC_DATA_FILE, 'w', encoding='utf-8') as f:
         f.write(content)
 

@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://absurdity-index.vercel.app"),
   title: "The Absurdity Index | Quantifying Modern Existence",
   description: "A data-driven dashboard tracking the absurdity of modern life through 8 metrics: wage stagnation, housing despair, subscription overload, AI psychosis, and more.",
   keywords: ["absurdity index", "modern life metrics", "social research", "wage stagnation", "housing crisis", "dating apps", "AI companions", "healthcare", "data visualization"],

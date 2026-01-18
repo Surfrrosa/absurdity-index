@@ -68,6 +68,12 @@ jobs:
           echo "Running TikTok collector (via YouTube compilations)..."
           python tiktok-youtube-collector.py || true
 
+      - name: Deduplicate Reddit posts
+        working-directory: data-collection
+        run: |
+          echo "Deduplicating Reddit posts across metrics..."
+          python deduplicate_reddit_posts.py
+
       - name: Calculate new scores
         working-directory: data-collection
         run: |
@@ -79,6 +85,12 @@ jobs:
         run: |
           echo "Updating TypeScript data file..."
           python update_metric_data.py
+
+      - name: Update sample data
+        working-directory: data-collection
+        run: |
+          echo "Updating sample data from collected entries..."
+          python update_sample_data.py
 
       - name: List collected data
         run: |

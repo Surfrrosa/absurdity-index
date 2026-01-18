@@ -20,7 +20,8 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
 
   const bgColor = score < 20 ? 'bg-white' : score < 40 ? 'bg-white' : score < 60 ? 'bg-red-600' : 'bg-red-600';
   const textColor = score < 60 ? 'text-black' : 'text-white';
-  const barColor = score < 20 ? 'bg-black' : score < 60 ? 'bg-red-600' : 'bg-white';
+  // For high-score cards (red bg), bar should be black on white track for visibility
+  const barColor = score < 20 ? 'bg-black' : score < 60 ? 'bg-red-600' : 'bg-black';
 
   return (
     <div

@@ -20,7 +20,14 @@ SUBREDDITS = [
     'personalfinance',
     'cordcutters',
     'netflix',
-    'streaming'
+    'streaming',
+    'hulu',
+    'DisneyPlus',
+    'HBOMAX',
+    'Spotify',
+    'assholedesign',
+    'mildlyinfuriating',
+    'NoStupidQuestions'
 ]
 
 # Search terms for subscription struggles
@@ -32,7 +39,17 @@ SEARCH_TERMS = [
     'can\'t afford streaming',
     'subscription trap',
     'price increase',
-    'forgot subscription'
+    'forgot subscription',
+    'streaming fatigue',
+    'cancel netflix',
+    'cancel hulu',
+    'cancel spotify',
+    'subscription creep',
+    'nickel and dime',
+    'raised prices again',
+    'paying for subscriptions',
+    'subscription hell',
+    'cutting subscriptions'
 ]
 
 # Level 3 (Crisis) keywords

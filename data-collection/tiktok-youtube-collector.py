@@ -16,6 +16,7 @@ import os
 import csv
 import math
 from datetime import datetime
+from content_filters import filter_content
 
 try:
     from googleapiclient.discovery import build
@@ -117,8 +118,12 @@ LEVEL_2_KEYWORDS = [
 ]
 
 
-def categorize_content(text):
+def categorize_content(text, description=''):
     """Categorize content by severity level."""
+    # Filter out clickbait/promotional content
+    if not filter_content(text, description):
+        return None
+
     text_lower = text.lower()
 
     for keyword in LEVEL_3_KEYWORDS:
@@ -214,7 +219,12 @@ def collect_metric_tiktoks(youtube, metric_name, queries):
             comments = int(stats.get('commentCount', 0))
 
             full_text = f"{title} {description}"
-            category = categorize_content(full_text)
+            category = categorize_content(title, description)
+
+            # Skip filtered content (clickbait/spam)
+            if category is None:
+                continue
+
             engagement = calculate_engagement_score(views, likes, comments)
 
             all_videos.append({

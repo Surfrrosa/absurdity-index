@@ -9,6 +9,7 @@ import csv
 from datetime import datetime, timedelta
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
+from content_filters import filter_content
 
 # Load environment variables
 load_dotenv(dotenv_path='../.env')
@@ -40,6 +41,10 @@ CRISIS_KEYWORDS = {
 
 def categorize_video(title, description):
     """Categorize video into Level 1, 2, or 3 based on content"""
+    # Filter out clickbait/promotional content
+    if not filter_content(title, description):
+        return None, ''
+
     title_lower = title.lower()
     desc_lower = description.lower() if description else ''
     combined = title_lower + ' ' + desc_lower
