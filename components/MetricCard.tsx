@@ -18,10 +18,11 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
     neutral: '→'
   };
 
-  const bgColor = score < 20 ? 'bg-white' : score < 40 ? 'bg-white' : score < 60 ? 'bg-red-600' : 'bg-red-600';
-  const textColor = score < 60 ? 'text-black' : 'text-white';
-  // For high-score cards (red bg), bar should be black on white track for visibility
-  const barColor = score < 20 ? 'bg-black' : score < 60 ? 'bg-red-600' : 'bg-black';
+  // 50% threshold rule: cards flip to crisis mode at 50+
+  const bgColor = score < 50 ? 'bg-white' : 'bg-red-600';
+  const textColor = score < 50 ? 'text-black' : 'text-white';
+  // Progress bar: red fill below 50%, white fill at 50%+. Track is always black.
+  const barFillColor = score < 50 ? 'bg-red-600' : 'bg-white';
 
   return (
     <div
@@ -52,9 +53,9 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
         "{label}"
       </div>
 
-      <div className={`w-full ${textColor === 'text-black' ? 'bg-black' : 'bg-white'} h-6 border-2 border-black mb-4`}>
+      <div className="w-full bg-black h-6 border-2 border-black mb-4">
         <div
-          className={`h-full ${barColor} transition-all duration-1000`}
+          className={`h-full ${barFillColor} transition-all duration-1000`}
           style={{ width: `${Math.min(score, 100)}%` }}
         />
       </div>
@@ -69,7 +70,7 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
 
       {/* Data collection status */}
       {(lastUpdated || entryCount !== undefined) && (
-        <div className={`mt-4 pt-3 border-t-2 ${textColor === 'text-black' ? 'border-gray-300' : 'border-gray-600'}`}>
+        <div className={`mt-4 pt-3 border-t-2 ${textColor === 'text-black' ? 'border-black/30' : 'border-white/30'}`}>
           {entryCount !== undefined && (
             <div className={`text-xs ${textColor} font-bold mono break-words whitespace-normal`}>
               {entryCount} entries

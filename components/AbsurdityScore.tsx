@@ -73,7 +73,7 @@ export default function AbsurdityScore() {
         <p className="text-white mt-4 md:mt-6 text-xs md:text-sm font-bold mono uppercase">
           8 METRICS | {updateDate} | UPDATED WEEKLY
         </p>
-        <p className="text-gray-400 mt-2 md:mt-3 text-xs font-bold uppercase">
+        <p className="text-white/60 mt-2 md:mt-3 text-xs font-bold uppercase">
           * Equal-weight average · See methodology for details
         </p>
       </div>
