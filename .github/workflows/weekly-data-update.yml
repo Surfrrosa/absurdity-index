@@ -28,7 +28,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install requests google-api-python-client pandas
+          pip install requests google-api-python-client pandas python-dotenv
 
       - name: Run YouTube collectors
         working-directory: data-collection

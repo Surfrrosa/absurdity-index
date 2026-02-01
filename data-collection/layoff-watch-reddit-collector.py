@@ -52,21 +52,30 @@ LEVEL_2_KEYWORDS = [
 ]
 
 def get_reddit_json(url, params=None):
-    """Fetch JSON from Reddit public endpoint"""
+    """Fetch JSON from Reddit public endpoint with retry logic"""
     headers = {
-        'User-Agent': 'AbsurdityIndexResearch/1.0 (Academic Research Project)'
+        'User-Agent': 'Mozilla/5.0 (compatible; AbsurdityIndexResearch/1.0; Academic Research Project)'
     }
 
-    try:
-        response = requests.get(url, headers=headers, params=params, timeout=10)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            print(f"  ✗ Error {response.status_code}: {url}")
+    for attempt in range(3):
+        try:
+            response = requests.get(url, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code in (403, 429):
+                wait = 10 * (attempt + 1)
+                print(f"  ⏳ {response.status_code} on attempt {attempt + 1}, retrying in {wait}s...")
+                time.sleep(wait)
+                continue
+            else:
+                print(f"  ✗ Error {response.status_code}: {url}")
+                return None
+        except Exception as e:
+            print(f"  ✗ Exception fetching {url}: {e}")
             return None
-    except Exception as e:
-        print(f"  ✗ Exception fetching {url}: {e}")
-        return None
+
+    print(f"  ✗ Failed after 3 attempts: {url}")
+    return None
 
 def search_subreddit(subreddit, query, limit=25):
     """Search a subreddit via JSON endpoint"""
@@ -214,9 +223,12 @@ def main():
     print("=" * 80)
     print(f"\nTotal unique posts: {total}")
     print(f"\nBreakdown:")
-    print(f"  Level 3 (Crisis):      {level_3} ({level_3/total*100:.1f}%)")
-    print(f"  Level 2 (Struggling):  {level_2} ({level_2/total*100:.1f}%)")
-    print(f"  Level 1 (Aware):       {level_1} ({level_1/total*100:.1f}%)")
+    if total > 0:
+        print(f"  Level 3 (Crisis):      {level_3} ({level_3/total*100:.1f}%)")
+        print(f"  Level 2 (Struggling):  {level_2} ({level_2/total*100:.1f}%)")
+        print(f"  Level 1 (Aware):       {level_1} ({level_1/total*100:.1f}%)")
+    else:
+        print("  No posts collected - Reddit may be blocking requests")
 
     crisis_ratio = (level_2 + level_3) / total * 100 if total > 0 else 0
     print(f"\n  Crisis ratio (L2+L3):  {crisis_ratio:.1f}%")
