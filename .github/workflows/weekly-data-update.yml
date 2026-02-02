@@ -43,26 +43,8 @@ jobs:
           python layoff-watch-youtube-collector.py || true
           python airline-chaos-youtube-collector.py || true
 
-      - name: Run Reddit collectors
-        working-directory: data-collection
-        run: |
-          echo "Running Reddit collectors..."
-          sleep 10
-          python healthcare-reddit-collector.py || true
-          sleep 15
-          python ai-psychosis-reddit-collector.py || true
-          sleep 15
-          python subscription-overload-reddit-collector.py || true
-          sleep 15
-          python wage-stagnation-reddit-collector.py || true
-          sleep 15
-          python housing-despair-reddit-collector.py || true
-          sleep 15
-          python dating-app-despair-reddit-collector.py || true
-          sleep 15
-          python layoff-watch-reddit-collector.py || true
-          sleep 15
-          python airline-chaos-reddit-collector.py || true
+      # Reddit collectors removed from CI - Reddit blocks GitHub Actions IPs (403).
+      # Run Reddit collection locally: python run_weekly_update.py --reddit-only
 
       - name: Run TikTok collector
         working-directory: data-collection
