@@ -51,30 +51,29 @@ LEVEL_2_KEYWORDS = [
 ]
 
 def get_reddit_json(url, params=None):
-    """Fetch JSON from Reddit public endpoint with retry logic"""
+    """Fetch JSON from Reddit public endpoint"""
     headers = {
         'User-Agent': 'Mozilla/5.0 (compatible; AbsurdityIndexResearch/1.0; Academic Research Project)'
     }
 
-    for attempt in range(3):
-        try:
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=15)
+        if response.status_code == 200:
+            return response.json()
+        elif response.status_code == 429:
+            print(f"  ⏳ Rate limited, waiting 10s...")
+            time.sleep(10)
             response = requests.get(url, headers=headers, params=params, timeout=15)
             if response.status_code == 200:
                 return response.json()
-            elif response.status_code in (403, 429):
-                wait = 10 * (attempt + 1)
-                print(f"  ⏳ {response.status_code} on attempt {attempt + 1}, retrying in {wait}s...")
-                time.sleep(wait)
-                continue
-            else:
-                print(f"  ✗ Error {response.status_code}: {url}")
-                return None
-        except Exception as e:
-            print(f"  ✗ Exception fetching {url}: {e}")
+            print(f"  ✗ Still rate limited: {url}")
             return None
-
-    print(f"  ✗ Failed after 3 attempts: {url}")
-    return None
+        else:
+            print(f"  ✗ Error {response.status_code}: {url}")
+            return None
+    except Exception as e:
+        print(f"  ✗ Exception fetching {url}: {e}")
+        return None
 
 def search_subreddit(subreddit, query, limit=25):
     """Search a subreddit via JSON endpoint"""
