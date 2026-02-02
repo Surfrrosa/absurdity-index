@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 49.38,
+    score: 50.78,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
     officialScore: 56.30,
-    crisisRatio: 44.77,
+    crisisRatio: 47.1,
     levelDistribution: {
-      level1: 284,
-      level2: 57,
-      level3: 45,
-      total: 386
+      level1: 111,
+      level2: 18,
+      level3: 30,
+      total: 159
     },
     sampleData: [
       {
@@ -114,7 +114,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 170,
+        current: 75,
         target: 160,
         percentage: 100
       },
@@ -135,25 +135,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 170 videos analyzing healthcare system failures",
+      "YouTube: 75 videos analyzing healthcare system failures",
       "Reddit: 132 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
       "TikTok: 84 videos via YouTube compilations"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 35.2,
+    score: 35.45,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 50.33,
+    crisisRatio: 50.75,
     levelDistribution: {
-      level1: 361,
-      level2: 57,
-      level3: 111,
-      total: 529
+      level1: 73,
+      level2: 2,
+      level3: 30,
+      total: 105
     },
     sampleData: [
       {
@@ -245,20 +245,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Google Trends: Search volume for AI companion terms"
     ],
     methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 41.58,
+    score: 41.66,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 39.16,
+    crisisRatio: 39.29,
     levelDistribution: {
-      level1: 230,
+      level1: 218,
       level2: 14,
       level3: 10,
-      total: 254
+      total: 242
     },
     sampleData: [
       {
@@ -346,20 +346,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 42.35,
+    score: 42.79,
     label: "Paycheck-to-Paycheck Normal",
     trend: "worsening",
     officialScore: 38.4,
-    crisisRatio: 44.99,
+    crisisRatio: 45.72,
     levelDistribution: {
-      level1: 204,
-      level2: 32,
-      level3: 31,
-      total: 267
+      level1: 145,
+      level2: 17,
+      level3: 29,
+      total: 191
     },
     sampleData: [
       {
@@ -436,20 +436,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 96 videos via YouTube compilations"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 43.38,
+    score: 43.74,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 47.24,
+    crisisRatio: 47.84,
     levelDistribution: {
-      level1: 269,
-      level2: 47,
-      level3: 65,
-      total: 381
+      level1: 150,
+      level2: 13,
+      level3: 50,
+      total: 213
     },
     sampleData: [
       {
@@ -536,20 +536,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 90 videos via YouTube compilations"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 37.46,
+    score: 38.45,
     label: "Expect Delays",
     trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 48.44,
+    crisisRatio: 50.09,
     levelDistribution: {
-      level1: 230,
-      level2: 49,
-      level3: 40,
-      total: 319
+      level1: 57,
+      level2: 2,
+      level3: 23,
+      total: 82
     },
     sampleData: [
       {
@@ -636,20 +636,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 29.95,
+    score: 30.83,
     label: "Swipe Fatigue Setting In",
     trend: "worsening",
     officialScore: 8.5,
-    crisisRatio: 44.25,
+    crisisRatio: 45.71,
     levelDistribution: {
-      level1: 245,
-      level2: 52,
+      level1: 144,
+      level2: 14,
       level3: 31,
-      total: 328
+      total: 189
     },
     sampleData: [
       {
@@ -736,20 +736,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 75 videos via YouTube compilations"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 59.1,
+    score: 56.99,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 47.49,
+    crisisRatio: 43.99,
     levelDistribution: {
-      level1: 252,
-      level2: 162,
-      level3: 34,
-      total: 448
+      level1: 131,
+      level2: 12,
+      level3: 26,
+      total: 169
     },
     sampleData: [
       {
@@ -835,7 +835,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 95 videos via YouTube compilations"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 1, 2026"
+    lastUpdated: "February 2, 2026"
   }
 };
 
