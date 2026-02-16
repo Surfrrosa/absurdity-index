@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 51.57,
+    score: 49.44,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
     officialScore: 56.30,
-    crisisRatio: 48.42,
+    crisisRatio: 44.86,
     levelDistribution: {
-      level1: 110,
-      level2: 19,
-      level3: 34,
-      total: 163
+      level1: 189,
+      level2: 23,
+      level3: 42,
+      total: 254
     },
     sampleData: [
       {
@@ -114,7 +114,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 75,
+        current: 170,
         target: 160,
         percentage: 100
       },
@@ -126,34 +126,34 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 88,
+        current: 84,
         target: 120,
-        percentage: 73
+        percentage: 70
       }
     ],
     dataSources: [
       "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 75 videos analyzing healthcare system failures",
+      "YouTube: 170 videos analyzing healthcare system failures",
       "Reddit: 132 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
-      "TikTok: 88 videos via YouTube compilations"
+      "TikTok: 84 videos via YouTube compilations"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 38.67,
+    score: 32.53,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 56.12,
+    crisisRatio: 45.88,
     levelDistribution: {
-      level1: 55,
-      level2: 4,
-      level3: 29,
-      total: 88
+      level1: 298,
+      level2: 39,
+      level3: 58,
+      total: 395
     },
     sampleData: [
       {
@@ -220,7 +220,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 289,
+        current: 290,
         target: 290,
         percentage: 100
       },
@@ -232,33 +232,33 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 88,
+        current: 105,
         target: 120,
-        percentage: 73
+        percentage: 87
       }
     ],
     dataSources: [
       "YouTube: 135 videos analyzing AI companion usage and addiction",
-      "Reddit: 289 posts from r/replika, r/CharacterAI, r/ChatGPT",
-      "TikTok: 88 videos via YouTube compilations",
+      "Reddit: 290 posts from r/replika, r/CharacterAI, r/ChatGPT",
+      "TikTok: 105 videos via YouTube compilations",
       "App Store: 0 reviews collected (pending)",
       "Google Trends: Search volume for AI companion terms"
     ],
     methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 41.6,
+    score: 41.81,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 39.2,
+    crisisRatio: 39.55,
     levelDistribution: {
-      level1: 197,
-      level2: 12,
-      level3: 9,
-      total: 218
+      level1: 236,
+      level2: 17,
+      level3: 11,
+      total: 264
     },
     sampleData: [
       {
@@ -325,13 +325,13 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "YouTube",
-        current: 160,
+        current: 150,
         target: 160,
         percentage: 100
       },
       {
         platform: "Reddit",
-        current: 12,
+        current: 32,
         target: 200,
         percentage: 6
       }
@@ -341,25 +341,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Streaming service pricing data: All major platforms tracked",
       "Google Trends: Subscription fatigue search volume",
       "Industry reports: 73% of services raised prices in 2025",
-      "YouTube: 160 videos analyzing subscription fatigue",
-      "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance",
-      "TikTok: 58 videos via YouTube compilations"
+      "YouTube: 150 videos analyzing subscription fatigue",
+      "Reddit: 32 posts from r/Frugal, r/personalfinance, r/povertyfinance",
+      "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 46.39,
+    score: 42.03,
     label: "Paycheck-to-Paycheck Normal",
     trend: "worsening",
     officialScore: 38.4,
-    crisisRatio: 51.71,
+    crisisRatio: 44.46,
     levelDistribution: {
-      level1: 173,
-      level2: 32,
-      level3: 48,
-      total: 253
+      level1: 203,
+      level2: 29,
+      level3: 27,
+      total: 259
     },
     sampleData: [
       {
@@ -410,7 +410,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 95,
+        current: 87,
         target: 100,
         percentage: 88
       },
@@ -422,34 +422,34 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 82,
+        current: 96,
         target: 100,
-        percentage: 82
+        percentage: 96
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "YouTube: 95 videos about wage stagnation and financial stress",
+      "YouTube: 87 videos about wage stagnation and financial stress",
       "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
-      "TikTok: 82 videos via YouTube compilations"
+      "TikTok: 96 videos via YouTube compilations"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 47.47,
+    score: 46.21,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 54.06,
+    crisisRatio: 51.95,
     levelDistribution: {
-      level1: 130,
-      level2: 17,
-      level3: 67,
-      total: 214
+      level1: 258,
+      level2: 40,
+      level3: 97,
+      total: 395
     },
     sampleData: [
       {
@@ -510,7 +510,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 123,
+        current: 137,
         target: 160,
         percentage: 86
       },
@@ -522,34 +522,34 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 91,
+        current: 90,
         target: 100,
-        percentage: 91
+        percentage: 90
       }
     ],
     dataSources: [
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 123 videos about housing crisis and homeownership despair",
+      "YouTube: 137 videos about housing crisis and homeownership despair",
       "Reddit: 168 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
-      "TikTok: 91 videos via YouTube compilations"
+      "TikTok: 90 videos via YouTube compilations"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 41.53,
+    score: 38.14,
     label: "Expect Delays",
     trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 55.21,
+    crisisRatio: 49.57,
     levelDistribution: {
-      level1: 51,
-      level2: 1,
-      level3: 31,
-      total: 83
+      level1: 87,
+      level2: 17,
+      level3: 25,
+      total: 129
     },
     sampleData: [
       {
@@ -616,15 +616,15 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 132,
+        current: 47,
         target: 200,
         percentage: 66
       },
       {
         platform: "TikTok",
-        current: 83,
+        current: 82,
         target: 120,
-        percentage: 69
+        percentage: 68
       }
     ],
     dataSources: [
@@ -632,24 +632,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 105 videos about airline chaos and travel nightmares",
-      "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines",
-      "TikTok: 83 videos via YouTube compilations"
+      "Reddit: 47 posts from r/travel, r/flights, r/delta, r/americanairlines",
+      "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 34.04,
+    score: 29.9,
     label: "Swipe Fatigue Setting In",
     trend: "worsening",
     officialScore: 8.5,
-    crisisRatio: 51.07,
+    crisisRatio: 44.16,
     levelDistribution: {
-      level1: 139,
-      level2: 21,
-      level3: 37,
-      total: 197
+      level1: 261,
+      level2: 54,
+      level3: 30,
+      total: 345
     },
     sampleData: [
       {
@@ -710,7 +710,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 114,
+        current: 131,
         target: 160,
         percentage: 82
       },
@@ -722,34 +722,34 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 83,
+        current: 75,
         target: 120,
-        percentage: 69
+        percentage: 62
       }
     ],
     dataSources: [
       "Pew Research: 45% frustrated, 79% burnout among dating app users",
       "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "YouTube: 114 videos about dating app burnout and despair",
+      "YouTube: 131 videos about dating app burnout and despair",
       "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble",
-      "TikTok: 83 videos via YouTube compilations"
+      "TikTok: 75 videos via YouTube compilations"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 60.46,
+    score: 56.99,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 49.77,
+    crisisRatio: 43.99,
     levelDistribution: {
-      level1: 226,
-      level2: 166,
-      level3: 35,
-      total: 427
+      level1: 131,
+      level2: 12,
+      level3: 26,
+      total: 169
     },
     sampleData: [
       {
@@ -822,9 +822,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 74,
+        current: 95,
         target: 100,
-        percentage: 74
+        percentage: 95
       }
     ],
     dataSources: [
@@ -832,10 +832,10 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "551 companies reported layoffs",
       "YouTube: 74 videos about layoffs and job search struggles",
       "Reddit: 279 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
-      "TikTok: 74 videos via YouTube compilations"
+      "TikTok: 95 videos via YouTube compilations"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 9, 2026"
+    lastUpdated: "February 16, 2026"
   }
 };
 
