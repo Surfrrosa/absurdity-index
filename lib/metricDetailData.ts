@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 49.44,
+    score: 51.84,
     label: "Prior Authorization Purgatory",
     trend: "worsening",
     officialScore: 56.30,
-    crisisRatio: 44.86,
+    crisisRatio: 48.87,
     levelDistribution: {
-      level1: 189,
-      level2: 23,
-      level3: 42,
-      total: 254
+      level1: 167,
+      level2: 18,
+      level3: 50,
+      total: 235
     },
     sampleData: [
       {
@@ -114,7 +114,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 170,
+        current: 150,
         target: 160,
         percentage: 100
       },
@@ -126,7 +126,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 84,
+        current: 85,
         target: 120,
         percentage: 70
       }
@@ -135,25 +135,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 170 videos analyzing healthcare system failures",
+      "YouTube: 150 videos analyzing healthcare system failures",
       "Reddit: 132 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
-      "TikTok: 84 videos via YouTube compilations"
+      "TikTok: 85 videos via YouTube compilations"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 32.53,
+    score: 37.51,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 45.88,
+    crisisRatio: 54.18,
     levelDistribution: {
-      level1: 298,
-      level2: 39,
-      level3: 58,
-      total: 395
+      level1: 125,
+      level2: 29,
+      level3: 64,
+      total: 218
     },
     sampleData: [
       {
@@ -214,7 +214,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 135,
+        current: 140,
         target: 160,
         percentage: 84
       },
@@ -232,33 +232,33 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 105,
+        current: 78,
         target: 120,
-        percentage: 87
+        percentage: 65
       }
     ],
     dataSources: [
-      "YouTube: 135 videos analyzing AI companion usage and addiction",
+      "YouTube: 140 videos analyzing AI companion usage and addiction",
       "Reddit: 290 posts from r/replika, r/CharacterAI, r/ChatGPT",
-      "TikTok: 105 videos via YouTube compilations",
+      "TikTok: 78 videos via YouTube compilations",
       "App Store: 0 reviews collected (pending)",
       "Google Trends: Search volume for AI companion terms"
     ],
     methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 41.81,
+    score: 41.55,
     label: "Quarterly Purge Required",
     trend: "worsening",
     officialScore: 45.2,
-    crisisRatio: 39.55,
+    crisisRatio: 39.12,
     levelDistribution: {
-      level1: 236,
+      level1: 152,
       level2: 17,
-      level3: 11,
-      total: 264
+      level3: 4,
+      total: 175
     },
     sampleData: [
       {
@@ -325,7 +325,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "YouTube",
-        current: 150,
+        current: 160,
         target: 160,
         percentage: 100
       },
@@ -341,25 +341,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Streaming service pricing data: All major platforms tracked",
       "Google Trends: Subscription fatigue search volume",
       "Industry reports: 73% of services raised prices in 2025",
-      "YouTube: 150 videos analyzing subscription fatigue",
+      "YouTube: 160 videos analyzing subscription fatigue",
       "Reddit: 32 posts from r/Frugal, r/personalfinance, r/povertyfinance",
-      "TikTok: 82 videos via YouTube compilations"
+      "TikTok: 15 videos via YouTube compilations"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 42.03,
+    score: 40.31,
     label: "Paycheck-to-Paycheck Normal",
     trend: "worsening",
     officialScore: 38.4,
-    crisisRatio: 44.46,
+    crisisRatio: 41.58,
     levelDistribution: {
-      level1: 203,
-      level2: 29,
-      level3: 27,
-      total: 259
+      level1: 132,
+      level2: 30,
+      level3: 9,
+      total: 171
     },
     sampleData: [
       {
@@ -410,7 +410,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 87,
+        current: 95,
         target: 100,
         percentage: 88
       },
@@ -422,34 +422,34 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 96,
+        current: 15,
         target: 100,
-        percentage: 96
+        percentage: 15
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "YouTube: 87 videos about wage stagnation and financial stress",
+      "YouTube: 95 videos about wage stagnation and financial stress",
       "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "TikTok: 96 videos via YouTube compilations"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 46.21,
+    score: 43.71,
     label: "Multiple Organs Required",
     trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 51.95,
+    crisisRatio: 47.78,
     levelDistribution: {
-      level1: 258,
-      level2: 40,
-      level3: 97,
-      total: 395
+      level1: 216,
+      level2: 38,
+      level3: 52,
+      total: 306
     },
     sampleData: [
       {
@@ -510,13 +510,13 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 137,
+        current: 122,
         target: 160,
         percentage: 86
       },
       {
         platform: "Reddit",
-        current: 168,
+        current: 184,
         target: 200,
         percentage: 93
       },
@@ -531,25 +531,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 137 videos about housing crisis and homeownership despair",
-      "Reddit: 168 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
+      "YouTube: 122 videos about housing crisis and homeownership despair",
+      "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "TikTok: 90 videos via YouTube compilations"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 38.14,
+    score: 36.66,
     label: "Expect Delays",
     trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 49.57,
+    crisisRatio: 47.1,
     levelDistribution: {
-      level1: 87,
-      level2: 17,
-      level3: 25,
-      total: 129
+      level1: 78,
+      level2: 26,
+      level3: 11,
+      total: 115
     },
     sampleData: [
       {
@@ -610,7 +610,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 105,
+        current: 115,
         target: 160,
         percentage: 61
       },
@@ -631,25 +631,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: 22% flight delay rate",
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "YouTube: 105 videos about airline chaos and travel nightmares",
+      "YouTube: 115 videos about airline chaos and travel nightmares",
       "Reddit: 47 posts from r/travel, r/flights, r/delta, r/americanairlines",
       "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 29.9,
+    score: 30.9,
     label: "Swipe Fatigue Setting In",
     trend: "worsening",
     officialScore: 8.5,
-    crisisRatio: 44.16,
+    crisisRatio: 45.83,
     levelDistribution: {
-      level1: 261,
-      level2: 54,
-      level3: 30,
-      total: 345
+      level1: 100,
+      level2: 12,
+      level3: 19,
+      total: 131
     },
     sampleData: [
       {
@@ -736,20 +736,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 75 videos via YouTube compilations"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 56.99,
+    score: 58.51,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 43.99,
+    crisisRatio: 46.52,
     levelDistribution: {
-      level1: 131,
-      level2: 12,
-      level3: 26,
-      total: 169
+      level1: 184,
+      level2: 160,
+      level3: 9,
+      total: 353
     },
     sampleData: [
       {
@@ -835,7 +835,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "TikTok: 95 videos via YouTube compilations"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "February 16, 2026"
+    lastUpdated: "February 19, 2026"
   }
 };
 
