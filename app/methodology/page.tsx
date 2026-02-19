@@ -7,12 +7,17 @@ function getSortedMetrics() {
     .map(([name, data]) => {
       const youtube = data.collectionProgress.find(p => p.platform === 'YouTube');
       const reddit = data.collectionProgress.find(p => p.platform === 'Reddit');
-      const tiktok = data.collectionProgress.find(p => p.platform === 'TikTok');
+      // Sum all non-YouTube/Reddit platforms (TikTok, Hacker News, CFPB, Bluesky, etc.)
+      const other = data.collectionProgress
+        .filter(p => p.platform !== 'YouTube' && p.platform !== 'Reddit')
+        .reduce((sum, p) => sum + p.current, 0);
+      const platforms = data.collectionProgress.length;
       return {
         name,
         youtube: youtube?.current ?? 0,
         reddit: reddit?.current ?? 0,
-        tiktok: tiktok?.current ?? 0,
+        other,
+        platforms,
         total: data.levelDistribution.total,
         dataSources: data.dataSources,
         methodology: data.methodology,
@@ -29,10 +34,10 @@ export default function Methodology() {
     (acc, m) => ({
       youtube: acc.youtube + m.youtube,
       reddit: acc.reddit + m.reddit,
-      tiktok: acc.tiktok + m.tiktok,
+      other: acc.other + m.other,
       total: acc.total + m.total,
     }),
-    { youtube: 0, reddit: 0, tiktok: 0, total: 0 }
+    { youtube: 0, reddit: 0, other: 0, total: 0 }
   );
 
   return (
@@ -80,7 +85,7 @@ export default function Methodology() {
             <div className="bg-white border-4 border-black p-6">
               <h3 className="text-xl font-black text-black mb-2 uppercase">Objectivity</h3>
               <p className="text-black font-bold">
-                Data is collected from official sources (BLS, Census, BTS) and public platforms without cherry-picking.
+                Data is collected from official sources (BLS, Census, BTS, FRED, CFPB) and public platforms without cherry-picking.
                 All sampling is systematic and documented.
               </p>
             </div>
@@ -143,7 +148,7 @@ export default function Methodology() {
                   <th className="text-left py-3 px-2 text-black">METRIC</th>
                   <th className="text-left py-3 px-2 text-black">YOUTUBE</th>
                   <th className="text-left py-3 px-2 text-black">REDDIT</th>
-                  <th className="text-left py-3 px-2 text-black">TIKTOK</th>
+                  <th className="text-left py-3 px-2 text-black">OTHER</th>
                   <th className="text-left py-3 px-2 text-black">TOTAL</th>
                 </tr>
               </thead>
@@ -153,7 +158,7 @@ export default function Methodology() {
                     <td className="py-3 px-2 font-black">{metric.name.toUpperCase()}</td>
                     <td className="py-3 px-2">{metric.youtube}</td>
                     <td className="py-3 px-2">{metric.reddit}</td>
-                    <td className="py-3 px-2">{metric.tiktok}</td>
+                    <td className="py-3 px-2">{metric.other}</td>
                     <td className="py-3 px-2 text-green-700 font-black">{metric.total.toLocaleString()}</td>
                   </tr>
                 ))}
@@ -161,11 +166,14 @@ export default function Methodology() {
                   <td className="py-3 px-2 font-black">TOTAL</td>
                   <td className="py-3 px-2 font-black">{totals.youtube.toLocaleString()}</td>
                   <td className="py-3 px-2 font-black">{totals.reddit.toLocaleString()}</td>
-                  <td className="py-3 px-2 font-black">{totals.tiktok.toLocaleString()}</td>
+                  <td className="py-3 px-2 font-black">{totals.other.toLocaleString()}</td>
                   <td className="py-3 px-2 text-green-700 font-black">{totals.total.toLocaleString()}</td>
                 </tr>
               </tbody>
             </table>
+            <p className="text-black/60 font-bold text-xs mono mt-3">
+              OTHER includes TikTok, Hacker News, CFPB complaints, and Bluesky where available per metric.
+            </p>
           </div>
         </div>
 
@@ -177,10 +185,10 @@ export default function Methodology() {
 
           <div className="bg-white border-4 border-black p-6">
             <p className="text-black font-bold mb-4">
-              Data is collected from multiple platforms to avoid platform-specific bias. Top and hot posts are sampled systematically (not cherry-picked). Keyword-based categorization reduces subjective judgment.
+              Data is collected from up to 7 platforms (YouTube, Reddit, TikTok, Hacker News, CFPB, Bluesky, and FRED) to avoid single-source bias. Content is sampled systematically via keyword search, not cherry-picked. Keyword-based severity categorization reduces subjective judgment.
             </p>
             <p className="text-black font-bold">
-              Government and industry data provides the foundation. Incomplete metrics are clearly labeled with completion percentages.
+              Government and industry data provides the foundation (40% weight). Social sentiment data spans multiple platform demographics. Incomplete metrics are clearly labeled with collection percentages.
             </p>
           </div>
         </div>
@@ -191,28 +199,22 @@ export default function Methodology() {
             Update Schedule
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-3 uppercase">Weekly</h3>
+              <h3 className="text-xl font-black text-black mb-3 uppercase">Weekly (Automated)</h3>
               <p className="text-black font-bold text-sm mono">
-                Google Trends, social media sentiment, layoff tracking
+                YouTube, TikTok, Hacker News, CFPB complaints, Bluesky. Scores recalculated and dashboard updated automatically every Monday.
               </p>
             </div>
             <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-3 uppercase">Monthly</h3>
+              <h3 className="text-xl font-black text-black mb-3 uppercase">Periodic (Manual)</h3>
               <p className="text-black font-bold text-sm mono">
-                Housing prices, airline stats, subscription trends
-              </p>
-            </div>
-            <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-xl font-black text-black mb-3 uppercase">Quarterly</h3>
-              <p className="text-black font-bold text-sm mono">
-                Wage data, CEO pay ratios, ACSI scores
+                Reddit collection (blocked from CI, run locally). FRED economic data (wage growth, housing prices, unemployment claims). Official score baselines.
               </p>
             </div>
           </div>
           <p className="text-white font-bold text-sm mono mt-4">
-            LAST DATA: {updateDate} | AUTOMATED WEEKLY UPDATES ENABLED
+            LAST DATA: {updateDate} | AUTOMATED WEEKLY PIPELINE VIA GITHUB ACTIONS
           </p>
         </div>
 
@@ -227,7 +229,7 @@ export default function Methodology() {
               This dashboard quantifies cultural sentiment and economic trends, not clinical diagnoses or policy recommendations.
             </p>
             <p className="text-black font-bold text-sm mono mb-3">
-              Platform demographics skew young and online. Reddit and TikTok users don't represent the general population. People experiencing crisis are more likely to post about it, creating self-selection bias.
+              Platform demographics skew young and online. Social media users don't represent the general population. People experiencing crisis are more likely to post about it, creating self-selection bias. Hacker News skews toward tech workers. CFPB complaints skew toward motivated filers.
             </p>
             <p className="text-black font-bold text-sm mono">
               Some metrics are preliminary and require more research. Scores are relative indicators, not absolute measures. All data is collected from public sources only.

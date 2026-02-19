@@ -129,6 +129,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
         current: 85,
         target: 120,
         percentage: 70
+      },
+      {
+        platform: "CFPB",
+        current: 100,
+        target: 120,
+        percentage: 83
       }
     ],
     dataSources: [
@@ -137,9 +143,10 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "JAMA Network: Claim denial rates and prior authorization burden research",
       "YouTube: 150 videos analyzing healthcare system failures",
       "Reddit: 132 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
-      "TikTok: 85 videos via YouTube compilations"
+      "TikTok: 85 videos via YouTube compilations",
+      "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
-    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Social media content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement (views). Final social score combines severity and reach to quantify lived experiences.",
+    methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Sources include YouTube, Reddit, TikTok, and CFPB consumer complaints. Content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement. Final social score combines severity and reach to quantify lived experiences.",
     lastUpdated: "February 19, 2026"
   },
   "AI Psychosis": {
@@ -225,26 +232,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
         percentage: 100
       },
       {
-        platform: "App Store",
-        current: 0,
-        target: 200,
-        percentage: 0
-      },
-      {
         platform: "TikTok",
         current: 78,
         target: 120,
         percentage: 65
+      },
+      {
+        platform: "Hacker News",
+        current: 120,
+        target: 150,
+        percentage: 80
       }
     ],
     dataSources: [
       "YouTube: 140 videos analyzing AI companion usage and addiction",
       "Reddit: 289 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 78 videos via YouTube compilations",
-      "App Store: 0 reviews collected (pending)",
-      "Google Trends: Search volume for AI companion terms"
+      "Hacker News: 120 stories about AI risks and companion addiction"
     ],
-    methodology: "Systematic collection from multiple platforms. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official app download data (40% weight).",
+    methodology: "Systematic collection from multiple platforms including YouTube, Reddit, TikTok, and Hacker News. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official data (40% weight).",
     lastUpdated: "February 19, 2026"
   },
   "Subscription Overload": {
@@ -318,16 +324,22 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     collectionProgress: [
       {
-        platform: "Industry Reports",
-        current: 100,
-        target: 100,
-        percentage: 100
-      },
-      {
         platform: "YouTube",
         current: 160,
         target: 160,
         percentage: 100
+      },
+      {
+        platform: "Hacker News",
+        current: 117,
+        target: 150,
+        percentage: 78
+      },
+      {
+        platform: "TikTok",
+        current: 15,
+        target: 120,
+        percentage: 12
       },
       {
         platform: "Reddit",
@@ -339,13 +351,13 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Consumer Reports: Average 12 subscriptions per household",
       "Streaming service pricing data: All major platforms tracked",
-      "Google Trends: Subscription fatigue search volume",
       "Industry reports: 73% of services raised prices in 2025",
       "YouTube: 160 videos analyzing subscription fatigue",
-      "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance",
-      "TikTok: 15 videos via YouTube compilations"
+      "Hacker News: 117 stories about subscription fatigue and pricing",
+      "TikTok: 15 videos via YouTube compilations",
+      "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
-    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
+    methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment from YouTube, Hacker News, TikTok, and Reddit (60% weight). Content categorized by severity and weighted by reach.",
     lastUpdated: "February 19, 2026"
   },
   "Wage Stagnation": {
@@ -421,21 +433,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
         percentage: 39
       },
       {
-        platform: "TikTok",
-        current: 15,
+        platform: "Hacker News",
+        current: 30,
         target: 100,
-        percentage: 15
+        percentage: 30
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
-      "Google Trends: Financial stress search volume",
       "YouTube: 87 videos about wage stagnation and financial stress",
       "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
-      "TikTok: 96 videos via YouTube compilations"
+      "Hacker News: 30 stories about wage stagnation and financial stress"
     ],
-    methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "February 19, 2026"
   },
   "Housing Despair": {
@@ -521,10 +532,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
         percentage: 93
       },
       {
-        platform: "TikTok",
-        current: 90,
-        target: 100,
-        percentage: 90
+        platform: "CFPB",
+        current: 100,
+        target: 120,
+        percentage: 83
+      },
+      {
+        platform: "Hacker News",
+        current: 97,
+        target: 120,
+        percentage: 80
       }
     ],
     dataSources: [
@@ -533,9 +550,10 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Census Bureau: Gen Z rent burden data (37.6%)",
       "YouTube: 137 videos about housing crisis and homeownership despair",
       "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
-      "TikTok: 90 videos via YouTube compilations"
+      "Hacker News: 97 stories about housing affordability crisis",
+      "CFPB: 100 complaints (mortgages, housing finance)"
     ],
-    methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, Hacker News, and CFPB complaints (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "February 19, 2026"
   },
   "Airline Chaos": {
@@ -619,12 +637,6 @@ export const metricDetails: Record<string, MetricDetailData> = {
         current: 132,
         target: 200,
         percentage: 66
-      },
-      {
-        platform: "TikTok",
-        current: 82,
-        target: 120,
-        percentage: 68
       }
     ],
     dataSources: [
@@ -632,8 +644,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 115 videos about airline chaos and travel nightmares",
-      "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines",
-      "TikTok: 82 videos via YouTube compilations"
+      "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "February 19, 2026"
@@ -719,21 +730,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
         current: 139,
         target: 200,
         percentage: 70
-      },
-      {
-        platform: "TikTok",
-        current: 75,
-        target: 120,
-        percentage: 62
       }
     ],
     dataSources: [
       "Pew Research: 45% frustrated, 79% burnout among dating app users",
-      "Google Trends: Dating app search volume",
-      "App store sentiment: Initial analysis",
       "YouTube: 131 videos about dating app burnout and despair",
-      "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble",
-      "TikTok: 75 videos via YouTube compilations"
+      "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "February 19, 2026"
@@ -821,20 +823,19 @@ export const metricDetails: Record<string, MetricDetailData> = {
         percentage: 94
       },
       {
-        platform: "TikTok",
-        current: 95,
-        target: 100,
-        percentage: 95
+        platform: "Hacker News",
+        current: 122,
+        target: 150,
+        percentage: 81
       }
     ],
     dataSources: [
-      "Layoffs.fyi: 152,922 tech workers laid off in 2025",
-      "551 companies reported layoffs",
+      "Layoffs.fyi: Tech layoff tracking data",
       "YouTube: 74 videos about layoffs and job search struggles",
       "Reddit: 279 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
-      "TikTok: 95 videos via YouTube compilations"
+      "Hacker News: 122 stories about tech layoffs and job market"
     ],
-    methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
+    methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "February 19, 2026"
   }
 };

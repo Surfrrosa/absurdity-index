@@ -335,13 +335,51 @@ def update_typescript_file(results):
             pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "TikTok",\s*current: )\d+'
             replacement = rf'\g<1>{tiktok_count}'
             content = re.sub(pattern, replacement, content, flags=re.DOTALL)
-            # Also update the percentage (assuming target of 100-120)
             pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "TikTok",\s*current: \d+,\s*target: )(\d+)(,\s*percentage: )\d+'
-            def calc_percentage(match):
+            def calc_tiktok_pct(match):
                 target = int(match.group(2))
                 pct = min(100, int(tiktok_count / target * 100))
                 return f'{match.group(1)}{target}{match.group(3)}{pct}'
-            content = re.sub(pattern, calc_percentage, content, flags=re.DOTALL)
+            content = re.sub(pattern, calc_tiktok_pct, content, flags=re.DOTALL)
+
+        # Update collectionProgress for Hacker News
+        hn_count = data.get('hackernews_count', 0)
+        if hn_count > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "Hacker News",\s*current: )\d+'
+            replacement = rf'\g<1>{hn_count}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "Hacker News",\s*current: \d+,\s*target: )(\d+)(,\s*percentage: )\d+'
+            def calc_hn_pct(match):
+                target = int(match.group(2))
+                pct = min(100, int(hn_count / target * 100))
+                return f'{match.group(1)}{target}{match.group(3)}{pct}'
+            content = re.sub(pattern, calc_hn_pct, content, flags=re.DOTALL)
+
+        # Update collectionProgress for CFPB
+        cfpb_count = data.get('cfpb_count', 0)
+        if cfpb_count > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "CFPB",\s*current: )\d+'
+            replacement = rf'\g<1>{cfpb_count}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "CFPB",\s*current: \d+,\s*target: )(\d+)(,\s*percentage: )\d+'
+            def calc_cfpb_pct(match):
+                target = int(match.group(2))
+                pct = min(100, int(cfpb_count / target * 100))
+                return f'{match.group(1)}{target}{match.group(3)}{pct}'
+            content = re.sub(pattern, calc_cfpb_pct, content, flags=re.DOTALL)
+
+        # Update collectionProgress for Bluesky
+        bluesky_count = data.get('bluesky_count', 0)
+        if bluesky_count > 0:
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "Bluesky",\s*current: )\d+'
+            replacement = rf'\g<1>{bluesky_count}'
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+            pattern = rf'(title: "{re.escape(metric_name)}".*?platform: "Bluesky",\s*current: \d+,\s*target: )(\d+)(,\s*percentage: )\d+'
+            def calc_bluesky_pct(match):
+                target = int(match.group(2))
+                pct = min(100, int(bluesky_count / target * 100))
+                return f'{match.group(1)}{target}{match.group(3)}{pct}'
+            content = re.sub(pattern, calc_bluesky_pct, content, flags=re.DOTALL)
 
         # Update dataSources counts (e.g., "YouTube: 170 videos" -> "YouTube: 135 videos")
         if data.get('youtube_count', 0) > 0:
