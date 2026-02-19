@@ -156,6 +156,12 @@ def main():
     # Remove duplicates (same video might appear in multiple searches)
     df_unique = df.drop_duplicates(subset=['video_id'])
 
+    # Skip writing if no data collected (preserves previous good data)
+    if len(df_unique) == 0:
+        print("\nWARNING: No videos collected. Skipping file write to preserve previous data.")
+        print("Check your YOUTUBE_API_KEY - it may be expired or invalid.")
+        return
+
     # Save to CSV
     output_file = f'collected-data/ai_psychosis_youtube_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
     df_unique.to_csv(output_file, index=False)

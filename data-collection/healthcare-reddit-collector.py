@@ -230,6 +230,12 @@ def main():
     crisis_ratio = (level_2 + level_3) / total * 100 if total > 0 else 0
     print(f"\n  Crisis ratio (L2+L3):  {crisis_ratio:.1f}%")
 
+    # Skip writing if no data collected (preserves previous good data)
+    if total == 0:
+        print("\nWARNING: No posts collected. Skipping file write to preserve previous data.")
+        print("Reddit may be blocking requests from this IP.")
+        return
+
     # Save to CSV
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     filename = f'collected-data/healthcare_reddit_{timestamp}.csv'

@@ -216,6 +216,12 @@ def main():
     # Remove duplicates (same video might appear in multiple searches)
     df_unique = df.drop_duplicates(subset=['video_id'])
 
+    # Skip writing if no data collected (preserves previous good data)
+    if len(df_unique) == 0:
+        print("\nWARNING: No videos collected. Skipping file write to preserve previous data.")
+        print("Check your YOUTUBE_API_KEY - it may be expired or invalid.")
+        return
+
     # Save to CSV
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = 'data-collection/collected-data'

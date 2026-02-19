@@ -28,7 +28,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install requests google-api-python-client pandas python-dotenv
+          pip install -r data-collection/requirements.txt
 
       - name: Run YouTube collectors
         working-directory: data-collection
@@ -52,25 +52,47 @@ jobs:
           echo "Running TikTok collector (via YouTube compilations)..."
           python tiktok-youtube-collector.py || true
 
+      - name: Check if new data was collected
+        id: check_data
+        working-directory: data-collection
+        run: |
+          # Count CSV files modified in the last 10 minutes (from this run)
+          NEW_FILES=$(find collected-data/ -name "*.csv" -newer /proc/1/cmdline -not -empty 2>/dev/null | wc -l)
+          # Also check file sizes - files under 200 bytes are likely header-only
+          GOOD_FILES=$(find collected-data/ -name "*.csv" -newer /proc/1/cmdline -size +200c 2>/dev/null | wc -l)
+          echo "New CSV files: $NEW_FILES (with data: $GOOD_FILES)"
+
+          if [ "$GOOD_FILES" -eq "0" ]; then
+            echo "WARNING: No new data collected in this run."
+            echo "All collectors may have failed (check API key, quotas, network)."
+            echo "has_new_data=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_new_data=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Deduplicate Reddit posts
+        if: steps.check_data.outputs.has_new_data == 'true'
         working-directory: data-collection
         run: |
           echo "Deduplicating Reddit posts across metrics..."
           python deduplicate_reddit_posts.py
 
       - name: Calculate new scores
+        if: steps.check_data.outputs.has_new_data == 'true'
         working-directory: data-collection
         run: |
           echo "Calculating social scores..."
           python calculate_all_social_scores.py
 
       - name: Update metricDetailData.ts
+        if: steps.check_data.outputs.has_new_data == 'true'
         working-directory: data-collection
         run: |
           echo "Updating TypeScript data file..."
           python update_metric_data.py
 
       - name: Update sample data
+        if: steps.check_data.outputs.has_new_data == 'true'
         working-directory: data-collection
         run: |
           echo "Updating sample data from collected entries..."
@@ -82,27 +104,31 @@ jobs:
           ls -la data-collection/collected-data/
 
       - name: Set up Node.js
+        if: steps.check_data.outputs.has_new_data == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies and build
+        if: steps.check_data.outputs.has_new_data == 'true'
         run: |
           npm ci
           npm run build
 
       - name: Configure Git
+        if: steps.check_data.outputs.has_new_data == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
       - name: Commit and push changes
+        if: steps.check_data.outputs.has_new_data == 'true'
         run: |
           git add data-collection/collected-data/
           git add lib/metricDetailData.ts
           git diff --staged --quiet || git commit -m "Weekly data update - $(date +'%Y-%m-%d')
 
-          Automated collection from YouTube and Reddit.
+          Automated collection from YouTube and TikTok.
           Updated scores and level distributions in metricDetailData.ts."
           git push
 
