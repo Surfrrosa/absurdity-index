@@ -143,7 +143,8 @@ def main():
         return
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = f'data-collection/collected-data/dating_app_despair_youtube_{timestamp}.csv'
+    os.makedirs('collected-data', exist_ok=True)
+    output_file = f'collected-data/dating_app_despair_youtube_{timestamp}.csv'
     df_unique.to_csv(output_file, index=False)
 
     print(f"\n{'=' * 70}")

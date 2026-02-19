@@ -172,7 +172,8 @@ def main():
         return
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = f'data-collection/collected-data/layoff_watch_youtube_{timestamp}.csv'
+    os.makedirs('collected-data', exist_ok=True)
+    output_file = f'collected-data/layoff_watch_youtube_{timestamp}.csv'
     df_unique.to_csv(output_file, index=False)
 
     print("\n" + "=" * 70)

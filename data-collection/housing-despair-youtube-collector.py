@@ -224,9 +224,8 @@ def main():
 
     # Save to CSV
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = 'data-collection/collected-data'
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = f'{output_dir}/housing_despair_youtube_{timestamp}.csv'
+    os.makedirs('collected-data', exist_ok=True)
+    output_file = f'collected-data/housing_despair_youtube_{timestamp}.csv'
     df_unique.to_csv(output_file, index=False)
 
     print("\n" + "=" * 70)
