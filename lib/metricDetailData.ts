@@ -46,7 +46,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "What Healthcare?",
     score: 51.84,
     label: "Prior Authorization Purgatory",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 56.30,
     crisisRatio: 48.87,
     levelDistribution: {
@@ -146,7 +146,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "AI Psychosis",
     score: 37.51,
     label: "Digital Stockholm Syndrome Setting In",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 12.5,
     crisisRatio: 54.18,
     levelDistribution: {
@@ -251,7 +251,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Subscription Overload",
     score: 41.55,
     label: "Quarterly Purge Required",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 45.2,
     crisisRatio: 39.12,
     levelDistribution: {
@@ -352,7 +352,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Wage Stagnation",
     score: 40.31,
     label: "Paycheck-to-Paycheck Normal",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 38.4,
     crisisRatio: 41.58,
     levelDistribution: {
@@ -440,16 +440,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 43.71,
+    score: 42.6,
     label: "Multiple Organs Required",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 47.78,
+    crisisRatio: 45.94,
     levelDistribution: {
-      level1: 216,
-      level2: 38,
-      level3: 52,
-      total: 306
+      level1: 217,
+      level2: 45,
+      level3: 45,
+      total: 307
     },
     sampleData: [
       {
@@ -510,7 +510,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 122,
+        current: 123,
         target: 160,
         percentage: 86
       },
@@ -531,7 +531,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 122 videos about housing crisis and homeownership despair",
+      "YouTube: 123 videos about housing crisis and homeownership despair",
       "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "TikTok: 90 videos via YouTube compilations"
     ],
@@ -540,16 +540,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 36.66,
+    score: 8.4,
     label: "Expect Delays",
-    trend: "worsening",
+    trend: "improving",
     officialScore: 21.0,
-    crisisRatio: 47.1,
+    crisisRatio: 0,
     levelDistribution: {
-      level1: 78,
-      level2: 26,
-      level3: 11,
-      total: 115
+      level1: 0,
+      level2: 0,
+      level3: 0,
+      total: 0
     },
     sampleData: [
       {
@@ -640,16 +640,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 30.9,
+    score: 32.04,
     label: "Swipe Fatigue Setting In",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 45.83,
+    crisisRatio: 47.74,
     levelDistribution: {
-      level1: 100,
-      level2: 12,
-      level3: 19,
-      total: 131
+      level1: 84,
+      level2: 10,
+      level3: 20,
+      total: 114
     },
     sampleData: [
       {
@@ -710,7 +710,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 131,
+        current: 114,
         target: 160,
         percentage: 82
       },
@@ -731,7 +731,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Pew Research: 45% frustrated, 79% burnout among dating app users",
       "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "YouTube: 131 videos about dating app burnout and despair",
+      "YouTube: 114 videos about dating app burnout and despair",
       "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble",
       "TikTok: 75 videos via YouTube compilations"
     ],
@@ -742,7 +742,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Layoff Watch",
     score: 58.51,
     label: "Resume At The Ready",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 76.5,
     crisisRatio: 46.52,
     levelDistribution: {
