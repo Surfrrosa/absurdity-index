@@ -1,0 +1,101 @@
+complaint_id,product,sub_product,issue,category,date_received,narrative_snippet,metric
+19560676,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19560421,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19558439,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19557456,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19555943,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19555929,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19554986,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19554373,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19553972,Debt collection,Telecommunications debt,Electronic communications,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19553680,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19552202,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19551398,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19550699,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19550008,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19549653,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19549635,Debt collection,Telecommunications debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19549448,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19549217,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19549130,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19548917,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19548600,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19548292,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19546517,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19546107,Debt collection,Auto debt,False statements or representation,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19545791,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544987,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544932,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544895,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544874,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544801,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544791,Debt collection,Medical debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544739,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544723,Debt collection,Medical debt,False statements or representation,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19544555,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19543440,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19543132,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19543105,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19542683,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19542418,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-17T12:00:00-05:00,,healthcare
+19542203,Debt collection,Other debt,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19541616,Debt collection,Telecommunications debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19541248,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19541208,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19540906,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19540898,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19540683,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539959,Debt collection,Auto debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539879,Debt collection,Other debt,Electronic communications,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539561,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539499,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539493,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539478,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539294,Debt collection,Auto debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539216,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19539082,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538885,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538691,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538381,Debt collection,I do not know,Written notification about debt,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538366,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538210,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538208,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19538007,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19537502,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536871,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536864,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536781,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536744,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536521,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19536223,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535540,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535480,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535426,Debt collection,Credit card debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535413,Debt collection,I do not know,Took or threatened to take negative or legal action,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535391,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535366,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535244,Debt collection,I do not know,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19535226,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534945,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534938,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534909,Debt collection,I do not know,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534834,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534831,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534829,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534734,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534732,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534728,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534704,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534696,Debt collection,Other debt,Written notification about debt,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534643,Debt collection,Telecommunications debt,False statements or representation,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534578,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534365,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534364,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534360,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534259,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534256,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534254,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534192,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19534188,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19533960,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare
+19533958,Debt collection,Other debt,Attempts to collect debt not owed,LEVEL_1_AWARE,2026-02-16T12:00:00-05:00,,healthcare

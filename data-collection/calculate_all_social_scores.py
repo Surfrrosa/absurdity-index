@@ -9,6 +9,7 @@ Usage:
 
 import csv
 import glob
+import json
 import math
 import os
 from datetime import datetime
@@ -17,59 +18,14 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(SCRIPT_DIR)
 
-# Metric configurations with file patterns (not hardcoded paths)
-METRICS = [
-    {
-        'name': 'What Healthcare?',
-        'slug': 'healthcare',
-        'official_score': 56.30
-    },
-    {
-        'name': 'AI Psychosis',
-        'slug': 'ai_psychosis',
-        'official_score': 12.5
-    },
-    {
-        'name': 'Subscription Overload',
-        'slug': 'subscription_overload',
-        'official_score': 45.2
-    },
-    {
-        'name': 'Wage Stagnation',
-        'slug': 'wage_stagnation',
-        'official_score': 38.4
-    },
-    {
-        'name': 'Housing Despair',
-        'slug': 'housing_despair',
-        'official_score': 37.6
-    },
-    {
-        'name': 'Dating App Despair',
-        'slug': 'dating_app_despair',
-        'official_score': 8.5
-    },
-    {
-        'name': 'Layoff Watch',
-        'slug': 'layoff_watch',
-        'official_score': 76.5
-    },
-    {
-        'name': 'Airline Chaos',
-        'slug': 'airline_chaos',
-        'official_score': 21.0
-    }
-]
+# Load centralized config
+with open('config.json', 'r') as f:
+    CONFIG = json.load(f)
 
-# Severity weights for scoring
-SEVERITY_WEIGHTS = {
-    'LEVEL_1_AWARE': 0.33,
-    'LEVEL_1_CASUAL': 0.33,
-    'LEVEL_2_STRUGGLING': 0.67,
-    'LEVEL_2_FRUSTRATED': 0.67,
-    'LEVEL_2_DEPENDENT': 0.67,
-    'LEVEL_3_CRISIS': 1.0
-}
+METRICS = CONFIG['metrics']
+SEVERITY_WEIGHTS = CONFIG['severity_weights']
+OFFICIAL_WEIGHT = CONFIG['formula']['official_weight']
+SOCIAL_WEIGHT = CONFIG['formula']['social_weight']
 
 
 def count_data_rows(filepath):
@@ -125,6 +81,24 @@ def find_metric_files(slug):
         files.append(reddit_file)
         sources_found.append('Reddit')
 
+    # Hacker News data
+    hn_file = find_latest_file(f'collected-data/{slug}_hackernews_*.csv')
+    if hn_file:
+        files.append(hn_file)
+        sources_found.append('Hacker News')
+
+    # CFPB complaint data
+    cfpb_file = find_latest_file(f'collected-data/{slug}_cfpb_*.csv')
+    if cfpb_file:
+        files.append(cfpb_file)
+        sources_found.append('CFPB')
+
+    # Bluesky data
+    bluesky_file = find_latest_file(f'collected-data/{slug}_bluesky_*.csv')
+    if bluesky_file:
+        files.append(bluesky_file)
+        sources_found.append('Bluesky')
+
     # TikTok data (collected via YouTube compilations)
     # TikTok files contain all metrics, so we'll handle them separately
 
@@ -160,9 +134,10 @@ def calculate_score_from_rows(rows):
     for row in rows:
         category = row.get('category', '')
 
-        # Get engagement value (views for YouTube/TikTok, score for Reddit)
+        # Get engagement value (views for YouTube/TikTok, score for Reddit,
+        # points for HN, like_count for Bluesky)
         view_count = 0
-        for field in ['view_count', 'views', 'score']:
+        for field in ['view_count', 'views', 'score', 'points', 'like_count']:
             try:
                 view_count = int(row.get(field, 0) or 0)
                 if view_count > 0:
@@ -198,7 +173,25 @@ def calculate_score_from_rows(rows):
     return social_score, level_counts
 
 
-def calculate_metric_score(metric):
+def load_fred_scores():
+    """Load FRED official scores if the file exists."""
+    fred_file = 'collected-data/official_scores.json'
+    if not os.path.exists(fred_file):
+        return {}
+    try:
+        with open(fred_file, 'r') as f:
+            data = json.load(f)
+        scores = {}
+        for slug, info in data.get('scores', {}).items():
+            if info.get('source') == 'fred':
+                scores[slug] = info['score']
+        return scores
+    except Exception as e:
+        print(f"  Warning: Could not load FRED scores: {e}")
+        return {}
+
+
+def calculate_metric_score(metric, fred_scores=None):
     """Calculate the full score for a metric using all available data sources."""
     slug = metric['slug']
     name = metric['name']
@@ -208,7 +201,7 @@ def calculate_metric_score(metric):
 
     all_rows = []
 
-    # Find YouTube and Reddit files
+    # Find YouTube, Reddit, HN, CFPB, and Bluesky files
     files, sources = find_metric_files(slug)
 
     for csv_file in files:
@@ -235,20 +228,28 @@ def calculate_metric_score(metric):
 
     # Calculate scores
     social_score, levels = calculate_score_from_rows(all_rows)
-    final_score = (metric['official_score'] * 0.4) + (social_score * 0.6)
+
+    # Use FRED official score when available, otherwise config fallback
+    official_score = metric['official_score']
+    if fred_scores and slug in fred_scores:
+        official_score = fred_scores[slug]
+        print(f"  Official Score: {official_score:.2f} (from FRED)")
+    else:
+        print(f"  Official Score: {official_score:.2f} (from config)")
+
+    final_score = (official_score * OFFICIAL_WEIGHT) + (social_score * SOCIAL_WEIGHT)
 
     total = len(all_rows)
     print(f"  Sources: {', '.join(sources)}")
     print(f"  Total entries: {total}")
     print(f"  Distribution: L1={levels['L1']}, L2={levels['L2']}, L3={levels['L3']}")
-    print(f"  Official Score: {metric['official_score']:.2f}")
     print(f"  Social Score: {social_score:.2f}")
     print(f"  Final Score: {final_score:.2f}")
 
     return {
         'name': name,
         'slug': slug,
-        'official': metric['official_score'],
+        'official': official_score,
         'social': social_score,
         'final': final_score,
         'total': total,
@@ -264,10 +265,17 @@ def main():
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 80)
 
+    # Load FRED official scores (if available)
+    fred_scores = load_fred_scores()
+    if fred_scores:
+        print(f"\nFRED official scores loaded for: {', '.join(fred_scores.keys())}")
+    else:
+        print("\nNo FRED official scores found, using config.json fallbacks.")
+
     results = []
 
     for metric in METRICS:
-        result = calculate_metric_score(metric)
+        result = calculate_metric_score(metric, fred_scores)
         if result:
             results.append(result)
 
@@ -280,7 +288,6 @@ def main():
     total_entries = sum(r['total'] for r in results)
 
     for r in results:
-        crisis_pct = (r['levels']['L2'] + r['levels']['L3']) / r['total'] * 100 if r['total'] > 0 else 0
         print(f"{r['name']:25} score: {r['final']:5.2f}  |  social: {r['social']:5.2f}  |  entries: {r['total']:4}")
 
     print()
@@ -301,6 +308,11 @@ def main():
     if tiktok_file:
         print(f"\nTikTok (all metrics):")
         print(f"  {os.path.basename(tiktok_file)}")
+
+    fred_file = 'collected-data/official_scores.json'
+    if os.path.exists(fred_file):
+        print(f"\nFRED official scores:")
+        print(f"  official_scores.json")
 
 
 if __name__ == '__main__':

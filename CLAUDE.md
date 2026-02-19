@@ -50,11 +50,16 @@ The Absurdity Index is a data-driven dashboard quantifying the absurdity of mode
 ### Data Collection (Python)
 | File | Purpose |
 |------|---------|
+| `data-collection/config.json` | Centralized config: weights, severity levels, metric definitions |
 | `data-collection/*-youtube-collector.py` | 8 YouTube collectors (one per metric) |
 | `data-collection/*-reddit-collector.py` | 8 Reddit collectors (blocked in CI, local only) |
 | `data-collection/tiktok-youtube-collector.py` | TikTok via YouTube compilations |
-| `data-collection/content_filters.py` | Clickbait/spam filter for YouTube |
-| `data-collection/calculate_all_social_scores.py` | Score calculator (skips files < 5 rows) |
+| `data-collection/hackernews-collector.py` | Hacker News (5 metrics, free Algolia API) |
+| `data-collection/cfpb-collector.py` | CFPB complaints (3 metrics, free API) |
+| `data-collection/bluesky-collector.py` | Bluesky posts (all 8 metrics, free AT Protocol) |
+| `data-collection/fred-collector.py` | FRED API official scores (4 metrics, needs API key) |
+| `data-collection/content_filters.py` | Shared clickbait/spam filter |
+| `data-collection/calculate_all_social_scores.py` | Score calculator (all sources, skips files < 5 rows) |
 | `data-collection/update_metric_data.py` | Updates metricDetailData.ts with computed scores + trend |
 | `data-collection/deduplicate_reddit_posts.py` | Cross-metric Reddit deduplication |
 | `data-collection/requirements.txt` | Python dependencies |
@@ -79,11 +84,14 @@ The Absurdity Index is a data-driven dashboard quantifying the absurdity of mode
 
 ## Data Collection Rules
 
+- **Config lives in `data-collection/config.json`.** Official scores, severity weights, formula weights, and metric definitions are centralized there. Both scoring scripts load from it.
 - All collectors have empty-data guards. If 0 results are collected, the CSV file is NOT written. This preserves previous good data.
-- The score calculator (`calculate_all_social_scores.py`) skips CSV files with fewer than 5 data rows.
+- File selection uses filename timestamps (not mtime) and skips files with fewer than 5 data rows.
 - The CI workflow has a validation gate: if no new data is collected, it skips score recalculation and commit.
 - Reddit collectors are blocked from GitHub Actions IPs. They only work locally.
 - `update_metric_data.py` calculates trend by comparing old vs new scores (2-point threshold).
+- **7 data platforms:** YouTube, Reddit (local only), TikTok (via YouTube), Hacker News (Algolia), CFPB (complaints), Bluesky (AT Protocol), FRED (official economic data).
+- **Engagement fields vary by source:** `view_count` (YouTube), `score` (Reddit), `views` (TikTok), `points` (HN), `like_count` (Bluesky). Scripts check all fields.
 
 ---
 
@@ -93,10 +101,14 @@ The Absurdity Index is a data-driven dashboard quantifying the absurdity of mode
 # Frontend
 npm run dev
 
-# Data collection (requires YOUTUBE_API_KEY in .env)
+# Data collection (requires YOUTUBE_API_KEY in .env, FRED_API_KEY optional)
 cd data-collection
 pip install -r requirements.txt
-python healthcare-youtube-collector.py  # example
+python healthcare-youtube-collector.py  # YouTube (needs API key)
+python hackernews-collector.py          # HN (no auth)
+python cfpb-collector.py                # CFPB (no auth)
+python bluesky-collector.py             # Bluesky (no auth)
+python fred-collector.py                # FRED (needs API key)
 
 # Score calculation
 python calculate_all_social_scores.py

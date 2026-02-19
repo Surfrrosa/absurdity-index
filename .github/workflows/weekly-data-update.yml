@@ -8,6 +8,7 @@ on:
 
 env:
   YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+  FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
 
 jobs:
   collect-data:
@@ -52,15 +53,39 @@ jobs:
           echo "Running TikTok collector (via YouTube compilations)..."
           python tiktok-youtube-collector.py || true
 
+      - name: Run FRED official scores collector
+        working-directory: data-collection
+        run: |
+          echo "Running FRED API collector for official scores..."
+          python fred-collector.py || true
+
+      - name: Run Hacker News collector
+        working-directory: data-collection
+        run: |
+          echo "Running Hacker News collector (no auth needed)..."
+          python hackernews-collector.py || true
+
+      - name: Run CFPB complaint collector
+        working-directory: data-collection
+        run: |
+          echo "Running CFPB complaint collector (no auth needed)..."
+          python cfpb-collector.py || true
+
+      - name: Run Bluesky collector
+        working-directory: data-collection
+        run: |
+          echo "Running Bluesky collector (no auth needed)..."
+          python bluesky-collector.py || true
+
       - name: Check if new data was collected
         id: check_data
         working-directory: data-collection
         run: |
-          # Count CSV files modified in the last 10 minutes (from this run)
-          NEW_FILES=$(find collected-data/ -name "*.csv" -newer /proc/1/cmdline -not -empty 2>/dev/null | wc -l)
+          # Count data files modified in the last 10 minutes (from this run)
+          NEW_FILES=$(find collected-data/ \( -name "*.csv" -o -name "*.json" \) -newer /proc/1/cmdline -not -empty 2>/dev/null | wc -l)
           # Also check file sizes - files under 200 bytes are likely header-only
-          GOOD_FILES=$(find collected-data/ -name "*.csv" -newer /proc/1/cmdline -size +200c 2>/dev/null | wc -l)
-          echo "New CSV files: $NEW_FILES (with data: $GOOD_FILES)"
+          GOOD_FILES=$(find collected-data/ \( -name "*.csv" -o -name "*.json" \) -newer /proc/1/cmdline -size +200c 2>/dev/null | wc -l)
+          echo "New data files: $NEW_FILES (with data: $GOOD_FILES)"
 
           if [ "$GOOD_FILES" -eq "0" ]; then
             echo "WARNING: No new data collected in this run."
@@ -128,7 +153,7 @@ jobs:
           git add lib/metricDetailData.ts
           git diff --staged --quiet || git commit -m "Weekly data update - $(date +'%Y-%m-%d')
 
-          Automated collection from YouTube and TikTok.
+          Automated collection from YouTube, TikTok, Hacker News, CFPB, Bluesky, and FRED.
           Updated scores and level distributions in metricDetailData.ts."
           git push
 

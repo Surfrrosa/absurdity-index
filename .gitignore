@@ -44,6 +44,7 @@ next-env.d.ts
 
 # data collection outputs (keep local, don't commit collected data)
 data-collection/*.json
+!data-collection/config.json
 data-collection/*.csv
 
 # python

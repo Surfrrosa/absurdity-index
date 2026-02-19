@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 51.84,
+    score: 51.19,
     label: "Prior Authorization Purgatory",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 48.87,
+    crisisRatio: 47.78,
     levelDistribution: {
-      level1: 167,
-      level2: 18,
-      level3: 50,
-      total: 235
+      level1: 362,
+      level2: 52,
+      level3: 53,
+      total: 467
     },
     sampleData: [
       {
@@ -144,16 +144,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 37.51,
+    score: 34.23,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "worsening",
     officialScore: 12.5,
-    crisisRatio: 54.18,
+    crisisRatio: 48.72,
     levelDistribution: {
-      level1: 125,
-      level2: 29,
-      level3: 64,
-      total: 218
+      level1: 468,
+      level2: 67,
+      level3: 92,
+      total: 627
     },
     sampleData: [
       {
@@ -220,7 +220,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 290,
+        current: 289,
         target: 290,
         percentage: 100
       },
@@ -239,7 +239,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     dataSources: [
       "YouTube: 140 videos analyzing AI companion usage and addiction",
-      "Reddit: 290 posts from r/replika, r/CharacterAI, r/ChatGPT",
+      "Reddit: 289 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 78 videos via YouTube compilations",
       "App Store: 0 reviews collected (pending)",
       "Google Trends: Search volume for AI companion terms"
@@ -249,16 +249,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 41.55,
+    score: 40.92,
     label: "Quarterly Purge Required",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 45.2,
-    crisisRatio: 39.12,
+    crisisRatio: 38.07,
     levelDistribution: {
-      level1: 152,
+      level1: 281,
       level2: 17,
       level3: 4,
-      total: 175
+      total: 304
     },
     sampleData: [
       {
@@ -331,7 +331,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 32,
+        current: 12,
         target: 200,
         percentage: 6
       }
@@ -342,7 +342,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Google Trends: Subscription fatigue search volume",
       "Industry reports: 73% of services raised prices in 2025",
       "YouTube: 160 videos analyzing subscription fatigue",
-      "Reddit: 32 posts from r/Frugal, r/personalfinance, r/povertyfinance",
+      "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance",
       "TikTok: 15 videos via YouTube compilations"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment analysis (60% weight). Content categorized by severity and weighted by reach.",
@@ -350,16 +350,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 40.31,
+    score: 39.22,
     label: "Paycheck-to-Paycheck Normal",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 41.58,
+    crisisRatio: 39.76,
     levelDistribution: {
-      level1: 132,
-      level2: 30,
-      level3: 9,
-      total: 171
+      level1: 161,
+      level2: 27,
+      level3: 5,
+      total: 193
     },
     sampleData: [
       {
@@ -410,7 +410,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 95,
+        current: 87,
         target: 100,
         percentage: 88
       },
@@ -431,7 +431,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
       "Google Trends: Financial stress search volume",
-      "YouTube: 95 videos about wage stagnation and financial stress",
+      "YouTube: 87 videos about wage stagnation and financial stress",
       "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "TikTok: 96 videos via YouTube compilations"
     ],
@@ -440,16 +440,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 43.71,
+    score: 45.89,
     label: "Multiple Organs Required",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 47.78,
+    crisisRatio: 51.41,
     levelDistribution: {
-      level1: 216,
-      level2: 38,
-      level3: 52,
-      total: 306
+      level1: 361,
+      level2: 71,
+      level3: 86,
+      total: 518
     },
     sampleData: [
       {
@@ -510,7 +510,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 122,
+        current: 137,
         target: 160,
         percentage: 86
       },
@@ -531,7 +531,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Redfin: Median home price $383,725",
       "Zillow Rent Index: $2,000/month median rent",
       "Census Bureau: Gen Z rent burden data (37.6%)",
-      "YouTube: 122 videos about housing crisis and homeownership despair",
+      "YouTube: 137 videos about housing crisis and homeownership despair",
       "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "TikTok: 90 videos via YouTube compilations"
     ],
@@ -540,16 +540,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 36.66,
+    score: 35.13,
     label: "Expect Delays",
     trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 47.1,
+    crisisRatio: 44.55,
     levelDistribution: {
-      level1: 78,
-      level2: 26,
-      level3: 11,
-      total: 115
+      level1: 175,
+      level2: 58,
+      level3: 14,
+      total: 247
     },
     sampleData: [
       {
@@ -616,7 +616,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 47,
+        current: 132,
         target: 200,
         percentage: 66
       },
@@ -632,7 +632,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Declining airline service quality",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 115 videos about airline chaos and travel nightmares",
-      "Reddit: 47 posts from r/travel, r/flights, r/delta, r/americanairlines",
+      "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines",
       "TikTok: 82 videos via YouTube compilations"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
@@ -640,16 +640,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 30.9,
+    score: 28.85,
     label: "Swipe Fatigue Setting In",
-    trend: "worsening",
+    trend: "improving",
     officialScore: 8.5,
-    crisisRatio: 45.83,
+    crisisRatio: 42.41,
     levelDistribution: {
-      level1: 100,
-      level2: 12,
+      level1: 201,
+      level2: 50,
       level3: 19,
-      total: 131
+      total: 270
     },
     sampleData: [
       {
@@ -740,16 +740,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 58.51,
+    score: 57.66,
     label: "Resume At The Ready",
     trend: "worsening",
     officialScore: 76.5,
-    crisisRatio: 46.52,
+    crisisRatio: 45.1,
     levelDistribution: {
-      level1: 184,
-      level2: 160,
-      level3: 9,
-      total: 353
+      level1: 299,
+      level2: 166,
+      level3: 10,
+      total: 475
     },
     sampleData: [
       {
