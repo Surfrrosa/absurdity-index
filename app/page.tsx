@@ -14,6 +14,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black">
+      <a
+        href="#metrics"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:font-black focus:border-4 focus:border-black"
+      >
+        Skip to metrics
+      </a>
       <Header />
 
       {selectedMetric && metricsWithLabels[selectedMetric] && (
@@ -51,7 +57,7 @@ export default function Home() {
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
         <AbsurdityScore />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
+        <div id="metrics" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
           {Object.entries(metricsWithLabels).map(([name, metric], index) => (
             <div
               key={name}

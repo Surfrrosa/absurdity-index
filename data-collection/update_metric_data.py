@@ -249,8 +249,41 @@ def calculate_metric_scores():
     return results
 
 
+def read_current_scores():
+    """Read current scores from the TypeScript file before overwriting."""
+    scores = {}
+    try:
+        with open(METRIC_DATA_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+        for metric_name in METRICS:
+            pattern = rf'title: "{re.escape(metric_name)}",\s*score: ([\d.]+)'
+            match = re.search(pattern, content)
+            if match:
+                scores[metric_name] = float(match.group(1))
+    except Exception as e:
+        print(f"  Could not read previous scores: {e}")
+    return scores
+
+
+def calculate_trend(old_score, new_score, threshold=2.0):
+    """Determine trend based on score change.
+
+    A threshold prevents noise from flipping the trend on tiny fluctuations.
+    """
+    if old_score is None:
+        return 'worsening'  # default for first run
+    diff = new_score - old_score
+    if diff > threshold:
+        return 'worsening'
+    elif diff < -threshold:
+        return 'improving'
+    return 'neutral'
+
+
 def update_typescript_file(results):
     """Update the metricDetailData.ts file with new scores."""
+    previous_scores = read_current_scores()
+
     with open(METRIC_DATA_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -268,6 +301,18 @@ def update_typescript_file(results):
         pattern = rf'(title: "{re.escape(metric_name)}",\s*score: [\d.]+,\s*label: "[^"]+",\s*trend: "[^"]+",\s*officialScore: [\d.]+,\s*crisisRatio: )[\d.]+'
         replacement = rf'\g<1>{data["crisisRatio"]}'
         content = re.sub(pattern, replacement, content)
+
+        # Update trend
+        old_score = previous_scores.get(metric_name)
+        trend = calculate_trend(old_score, data['score'])
+        data['trend'] = trend
+        pattern = rf'(title: "{re.escape(metric_name)}",\s*score: [\d.]+,\s*label: "[^"]+",\s*trend: )"[^"]+"'
+        replacement = rf'\g<1>"{trend}"'
+        content = re.sub(pattern, replacement, content)
+        if old_score is not None:
+            print(f"  Trend: {old_score:.2f} -> {data['score']:.2f} = {trend}")
+        else:
+            print(f"  Trend: no previous score, defaulting to {trend}")
 
         # Update levelDistribution
         pattern = rf'(title: "{re.escape(metric_name)}".*?levelDistribution: \{{\s*level1: )\d+'

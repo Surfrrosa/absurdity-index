@@ -1,6 +1,40 @@
 import Link from 'next/link';
+import { metricDetails, getLatestUpdateDate } from '@/lib/metricDetailData';
+
+// Order metrics by total entries (descending) for the table
+function getSortedMetrics() {
+  return Object.entries(metricDetails)
+    .map(([name, data]) => {
+      const youtube = data.collectionProgress.find(p => p.platform === 'YouTube');
+      const reddit = data.collectionProgress.find(p => p.platform === 'Reddit');
+      const tiktok = data.collectionProgress.find(p => p.platform === 'TikTok');
+      return {
+        name,
+        youtube: youtube?.current ?? 0,
+        reddit: reddit?.current ?? 0,
+        tiktok: tiktok?.current ?? 0,
+        total: data.levelDistribution.total,
+        dataSources: data.dataSources,
+        methodology: data.methodology,
+      };
+    })
+    .sort((a, b) => b.total - a.total);
+}
 
 export default function Methodology() {
+  const metrics = getSortedMetrics();
+  const updateDate = getLatestUpdateDate();
+
+  const totals = metrics.reduce(
+    (acc, m) => ({
+      youtube: acc.youtube + m.youtube,
+      reddit: acc.reddit + m.reddit,
+      tiktok: acc.tiktok + m.tiktok,
+      total: acc.total + m.total,
+    }),
+    { youtube: 0, reddit: 0, tiktok: 0, total: 0 }
+  );
+
   return (
     <main className="min-h-screen bg-black">
       {/* Header */}
@@ -76,82 +110,27 @@ export default function Methodology() {
           </div>
         </div>
 
-        {/* Data Sources */}
+        {/* Data Sources - dynamically generated */}
         <div className="mb-12">
           <h2 className="text-3xl font-black text-white mb-6 uppercase border-b-4 border-white pb-2">
             Data Sources by Metric
           </h2>
 
           <div className="space-y-6">
-            {/* AI Psychosis */}
-            <div className="bg-red-600 border-4 border-black p-6">
-              <h3 className="text-2xl font-black text-white mb-4 uppercase">AI Psychosis</h3>
-              <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 135 videos analyzed</p>
-                <p>REDDIT: 289 posts from r/replika + r/CharacterAI</p>
-                <p>TIKTOK: 88 videos via YouTube compilations</p>
-                <p>GOOGLE TRENDS: Search volume for AI companion terms</p>
-                <p className="pt-2 border-t-2 border-white/30">
-                  CATEGORIZATION: Level 3 (Crisis), Level 2 (Dependent), Level 1 (Casual)
-                </p>
+            {metrics.map((metric) => (
+              <div key={metric.name} className="bg-red-700 border-4 border-black p-6">
+                <h3 className="text-2xl font-black text-white mb-4 uppercase">{metric.name}</h3>
+                <div className="space-y-2 text-white font-bold mono text-sm">
+                  {metric.dataSources.map((source, i) => (
+                    <p key={i}>{source}</p>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* Subscription Overload */}
-            <div className="bg-red-600 border-4 border-black p-6">
-              <h3 className="text-2xl font-black text-white mb-4 uppercase">Subscription Overload</h3>
-              <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 160 videos analyzed</p>
-                <p>REDDIT: 12 posts from subscription-related subreddits</p>
-                <p>TIKTOK: 58 videos via YouTube compilations</p>
-                <p>CONSUMER REPORTS: Average 12 subscriptions per household</p>
-                <p>INDUSTRY REPORTS: 73% raised prices in 2025</p>
-              </div>
-            </div>
-
-            {/* Dating App Despair */}
-            <div className="bg-red-600 border-4 border-black p-6">
-              <h3 className="text-2xl font-black text-white mb-4 uppercase">Dating App Despair</h3>
-              <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 131 videos analyzed</p>
-                <p>REDDIT: 139 posts from r/dating, r/Tinder, r/Bumble, r/HingeApp</p>
-                <p>TIKTOK: 83 videos via YouTube compilations</p>
-                <p>GOOGLE TRENDS: Baseline sentiment tracking</p>
-                <p className="pt-2 border-t-2 border-white/30">
-                  CATEGORIZATION: Level 3 (Quit/Crisis), Level 2 (Frustrated/Exhausted), Level 1 (Mild Complaints)
-                </p>
-              </div>
-            </div>
-
-            {/* What Healthcare? */}
-            <div className="bg-red-600 border-4 border-black p-6">
-              <h3 className="text-2xl font-black text-white mb-4 uppercase">What Healthcare?</h3>
-              <div className="space-y-2 text-white font-bold mono text-sm">
-                <p>YOUTUBE: 170 videos analyzed</p>
-                <p>REDDIT: 134 posts from r/HealthInsurance, r/Insurance, r/povertyfinance</p>
-                <p>TIKTOK: 88 videos via YouTube compilations</p>
-                <p>KFF DATA: Premium increases, claim denial rates, coverage gaps</p>
-                <p>CENSUS: Medical debt statistics, bankruptcy data</p>
-                <p className="pt-2 border-t-2 border-white/30">
-                  CATEGORIZATION: Level 3 (Medical debt/denied life-saving care), Level 2 (Can't afford treatment/high premiums), Level 1 (Billing confusion/delays)
-                </p>
-              </div>
-            </div>
-
-            {/* Other Metrics */}
-            <div className="bg-white border-4 border-black p-6">
-              <h3 className="text-2xl font-black text-black mb-4 uppercase">Other Metrics</h3>
-              <div className="space-y-3 text-black font-bold text-sm">
-                <p><strong className="mono">WAGE STAGNATION:</strong> YouTube (88), Reddit (78), TikTok (82) + BLS Employment Cost Index, AFL-CIO CEO Pay Database</p>
-                <p><strong className="mono">HOUSING DESPAIR:</strong> YouTube (137), Reddit (185), TikTok (91) + Redfin, Zillow Rent Index, Census Bureau</p>
-                <p><strong className="mono">AIRLINE CHAOS:</strong> YouTube (98), Reddit (132), TikTok (83) + Bureau of Transportation Statistics, ACSI scores</p>
-                <p><strong className="mono">LAYOFF WATCH:</strong> YouTube (74), Reddit (282), TikTok (74) + Layoffs.fyi tracking</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Sample Size Standards */}
+        {/* Sample Size Standards - dynamically generated */}
         <div className="mb-12">
           <h2 className="text-3xl font-black text-white mb-6 uppercase border-b-4 border-white pb-2">
             Sample Size Standards
@@ -169,68 +148,21 @@ export default function Methodology() {
                 </tr>
               </thead>
               <tbody className="text-black">
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">AI PSYCHOSIS</td>
-                  <td className="py-3 px-2">135</td>
-                  <td className="py-3 px-2">289</td>
-                  <td className="py-3 px-2">88</td>
-                  <td className="py-3 px-2 text-green-700 font-black">512</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">LAYOFF WATCH</td>
-                  <td className="py-3 px-2">74</td>
-                  <td className="py-3 px-2">282</td>
-                  <td className="py-3 px-2">74</td>
-                  <td className="py-3 px-2 text-green-700 font-black">430</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">HOUSING DESPAIR</td>
-                  <td className="py-3 px-2">137</td>
-                  <td className="py-3 px-2">185</td>
-                  <td className="py-3 px-2">91</td>
-                  <td className="py-3 px-2 text-green-700 font-black">413</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">HEALTHCARE</td>
-                  <td className="py-3 px-2">170</td>
-                  <td className="py-3 px-2">134</td>
-                  <td className="py-3 px-2">88</td>
-                  <td className="py-3 px-2 text-green-700 font-black">392</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">DATING APP DESPAIR</td>
-                  <td className="py-3 px-2">131</td>
-                  <td className="py-3 px-2">139</td>
-                  <td className="py-3 px-2">83</td>
-                  <td className="py-3 px-2 text-green-700 font-black">353</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">AIRLINE CHAOS</td>
-                  <td className="py-3 px-2">98</td>
-                  <td className="py-3 px-2">132</td>
-                  <td className="py-3 px-2">83</td>
-                  <td className="py-3 px-2 text-green-700 font-black">313</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">WAGE STAGNATION</td>
-                  <td className="py-3 px-2">88</td>
-                  <td className="py-3 px-2">78</td>
-                  <td className="py-3 px-2">82</td>
-                  <td className="py-3 px-2 text-green-700 font-black">248</td>
-                </tr>
-                <tr className="border-b-2 border-black/20">
-                  <td className="py-3 px-2 font-black">SUBSCRIPTION OVERLOAD</td>
-                  <td className="py-3 px-2">160</td>
-                  <td className="py-3 px-2">12</td>
-                  <td className="py-3 px-2">58</td>
-                  <td className="py-3 px-2 text-green-700 font-black">230</td>
-                </tr>
+                {metrics.map((metric) => (
+                  <tr key={metric.name} className="border-b-2 border-black/20">
+                    <td className="py-3 px-2 font-black">{metric.name.toUpperCase()}</td>
+                    <td className="py-3 px-2">{metric.youtube}</td>
+                    <td className="py-3 px-2">{metric.reddit}</td>
+                    <td className="py-3 px-2">{metric.tiktok}</td>
+                    <td className="py-3 px-2 text-green-700 font-black">{metric.total.toLocaleString()}</td>
+                  </tr>
+                ))}
                 <tr className="border-t-4 border-black">
                   <td className="py-3 px-2 font-black">TOTAL</td>
-                  <td className="py-3 px-2 font-black">993</td>
-                  <td className="py-3 px-2 font-black">1,251</td>
-                  <td className="py-3 px-2 font-black">647</td>
-                  <td className="py-3 px-2 text-green-700 font-black">2,891</td>
+                  <td className="py-3 px-2 font-black">{totals.youtube.toLocaleString()}</td>
+                  <td className="py-3 px-2 font-black">{totals.reddit.toLocaleString()}</td>
+                  <td className="py-3 px-2 font-black">{totals.tiktok.toLocaleString()}</td>
+                  <td className="py-3 px-2 text-green-700 font-black">{totals.total.toLocaleString()}</td>
                 </tr>
               </tbody>
             </table>
@@ -280,7 +212,7 @@ export default function Methodology() {
             </div>
           </div>
           <p className="text-white font-bold text-sm mono mt-4">
-            CURRENT BASELINE: JANUARY 2026 | AUTOMATED WEEKLY UPDATES ENABLED
+            LAST DATA: {updateDate} | AUTOMATED WEEKLY UPDATES ENABLED
           </p>
         </div>
 
@@ -306,11 +238,11 @@ export default function Methodology() {
         {/* Footer */}
         <div className="border-t-4 border-white pt-8">
           <p className="text-white font-black text-sm mono mb-4">
-            LAST UPDATED: JANUARY 10, 2026 | VERSION 1.2
+            LAST UPDATED: {updateDate} | {totals.total.toLocaleString()} TOTAL DATA POINTS
           </p>
           <Link
             href="/"
-            className="inline-block px-8 py-4 bg-red-600 text-white font-black hover:bg-white hover:text-black transition-colors border-4 border-white text-lg uppercase tracking-wide"
+            className="inline-block px-8 py-4 bg-red-700 text-white font-black hover:bg-white hover:text-black transition-colors border-4 border-white text-lg uppercase tracking-wide"
           >
             BACK TO DASHBOARD
           </Link>

@@ -19,7 +19,7 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
   };
 
   // 50% threshold rule: cards flip to crisis mode at 50+
-  const bgColor = score < 50 ? 'bg-white' : 'bg-red-600';
+  const bgColor = score < 50 ? 'bg-white' : 'bg-red-700';
   const textColor = score < 50 ? 'text-black' : 'text-white';
   // Progress bar: red fill below 50%, white fill at 50%+. Track is always black.
   const barFillColor = score < 50 ? 'bg-red-600' : 'bg-white';
@@ -34,7 +34,13 @@ export default function MetricCard({ title, score, label, trend, data, onClick, 
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
+      aria-label={onClick ? `${title}: score ${score.toFixed(2)}, ${label}` : undefined}
+      onKeyDown={onClick ? (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      } : undefined}
     >
       <div className="flex justify-between items-start mb-3 md:mb-4">
         <h3 className={`text-lg md:text-xl font-black ${textColor} uppercase tracking-tight leading-tight`}>

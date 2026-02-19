@@ -1,6 +1,28 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Archivo_Black, Space_Grotesk, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+
+const archivoBlack = Archivo_Black({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-space",
+  display: "swap",
+});
+
+const robotoMono = Roboto_Mono({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://absurdity-index.vercel.app"),
@@ -49,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`antialiased ${archivoBlack.variable} ${spaceGrotesk.variable} ${robotoMono.variable}`}>
         {children}
         <Analytics />
       </body>

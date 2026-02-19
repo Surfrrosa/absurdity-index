@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 interface DataPoint {
   content: string;
@@ -46,14 +46,44 @@ interface MetricDetailProps {
 }
 
 export default function MetricDetail({ data, onClose }: MetricDetailProps) {
-  // Close on ESC key
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus trap: keep Tab cycling within the modal
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onClose();
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
+
+    const modal = modalRef.current;
+    if (!modal) return;
+
+    const focusable = modal.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }, [onClose]);
+
+  // Set up keyboard handling and initial focus
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    closeButtonRef.current?.focus();
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -70,17 +100,22 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
   return (
     <div
       className="fixed inset-0 bg-black/95 z-50 overflow-y-auto"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${data.title} metric details`}
       onClick={onClose}
     >
       <div
+        ref={modalRef}
         className="container mx-auto px-6 py-12 max-w-5xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
+          ref={closeButtonRef}
           onClick={onClose}
           className="fixed top-8 right-8 text-white hover:text-red-600 transition-colors text-4xl font-black z-50"
-          aria-label="Close"
+          aria-label="Close metric details"
         >
           ×
         </button>
@@ -120,7 +155,7 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
         </div>
 
         {/* Score Breakdown */}
-        <div className="bg-red-600 border-8 border-black p-8 mb-8">
+        <div className="bg-red-700 border-8 border-black p-8 mb-8">
           <h3 className="text-3xl font-black text-white mb-6 uppercase">Score Breakdown</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
@@ -222,12 +257,12 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
                       <div className="flex items-center gap-3 mt-3 pt-3 border-t-2 border-white/20">
                         {point.viewCount !== undefined && (
                           <span className="text-white/60 font-bold mono text-xs">
-                            👁 {point.viewCount.toLocaleString()} views
+                            {point.viewCount.toLocaleString()} VIEWS
                           </span>
                         )}
                         {point.commentCount !== undefined && (
                           <span className="text-white/60 font-bold mono text-xs">
-                            💬 {point.commentCount.toLocaleString()} comments
+                            {point.commentCount.toLocaleString()} COMMENTS
                           </span>
                         )}
                         <span className="text-white/40 font-bold mono text-xs">
@@ -270,7 +305,7 @@ export default function MetricDetail({ data, onClose }: MetricDetailProps) {
         </div>
 
         {/* Data Sources & Methodology */}
-        <div className="bg-red-600 border-8 border-black p-8 mb-8">
+        <div className="bg-red-700 border-8 border-black p-8 mb-8">
           <h3 className="text-3xl font-black text-white mb-6 uppercase">Methodology & Sources</h3>
           <div className="mb-6">
             <div className="text-white font-bold mono text-sm mb-3">DATA SOURCES:</div>
