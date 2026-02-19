@@ -146,7 +146,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "AI Psychosis",
     score: 34.23,
     label: "Digital Stockholm Syndrome Setting In",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 12.5,
     crisisRatio: 48.72,
     levelDistribution: {
@@ -542,7 +542,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Airline Chaos",
     score: 35.13,
     label: "Expect Delays",
-    trend: "worsening",
+    trend: "improving",
     officialScore: 21.0,
     crisisRatio: 44.55,
     levelDistribution: {
@@ -710,7 +710,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 131,
+        current: 114,
         target: 160,
         percentage: 82
       },
@@ -731,7 +731,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Pew Research: 45% frustrated, 79% burnout among dating app users",
       "Google Trends: Dating app search volume",
       "App store sentiment: Initial analysis",
-      "YouTube: 131 videos about dating app burnout and despair",
+      "YouTube: 114 videos about dating app burnout and despair",
       "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble",
       "TikTok: 75 videos via YouTube compilations"
     ],
@@ -742,7 +742,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Layoff Watch",
     score: 57.66,
     label: "Resume At The Ready",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 76.5,
     crisisRatio: 45.1,
     levelDistribution: {
