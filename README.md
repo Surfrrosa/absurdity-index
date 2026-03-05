@@ -60,7 +60,7 @@ The crisis ratio is calculated as (Level 3 count / Total count) × 100.
 
 ## Tech Stack
 
-- **Next.js 15** with App Router
+- **Next.js 16** with App Router
 - **React 19** with TypeScript
 - **Tailwind CSS 4** for styling
 - **Python 3** for data collection scripts

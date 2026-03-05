@@ -57,58 +57,48 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "One of the top reasons people go broke? Medical debt.",
+        content: "Insurance Denies Life-Saving Hysterectomy",
         platform: "youtube",
         level: 3,
-        date: "2025-10-31",
-        url: "https://www.youtube.com/watch?v=BKxGsIbBhnI",
-        videoId: "BKxGsIbBhnI",
-        viewCount: 23263,
-        commentCount: 274
-      },
-      {
-        content: "Medical #Bankruptcy Is an American Problem #america #medicaldebt #medicalinsurance #healthcare",
-        platform: "youtube",
-        level: 3,
-        date: "2025-11-25",
-        url: "https://www.youtube.com/watch?v=9rJZ17vjSWc",
-        videoId: "9rJZ17vjSWc",
-        viewCount: 18233,
-        commentCount: 61
-      },
-      {
-        content: "11 Investigates local woman denied life-saving cancer treatment",
-        platform: "youtube",
-        level: 3,
-        date: "2025-09-23",
-        url: "https://www.youtube.com/watch?v=spA2CT97xpA",
-        videoId: "spA2CT97xpA",
-        viewCount: 1522,
+        date: "2026-02-05",
+        url: "https://www.youtube.com/watch?v=Zvj3CPXeDzk",
+        videoId: "Zvj3CPXeDzk",
+        viewCount: 497084,
         commentCount: 0
       },
       {
-        content: "Medical Bills Are Still the #1 Cause of Bankruptcy- Here's Why Coverage Matters",
+        content: "Insurance Denies Life-Saving Heart Valve Replacement Because Patient Is 72",
         platform: "youtube",
         level: 3,
-        date: "2025-10-30",
-        url: "https://www.youtube.com/watch?v=jguj_sabgBY",
-        videoId: "jguj_sabgBY",
-        viewCount: 1065,
+        date: "2026-02-09",
+        url: "https://www.youtube.com/watch?v=2xtxNvwScGw",
+        videoId: "2xtxNvwScGw",
+        viewCount: 276243,
         commentCount: 0
       },
       {
-        content: "I ignored stomach pain for 8 months because I couldn't afford to be sick. Now I'm $12,000 in debt an",
+        content: "Drowning in huge medical bills after suicide attempt(s)",
         platform: "reddit",
-        level: 3,
-        date: "2025-12-15",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pndd3k/i_ignored_stomach_pain_for_8_months_because_i/"
+        level: 1,
+        date: "2025-12-26",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pw6u3e/drowning_in_huge_medical_bills_after_suicide/"
       },
       {
-        content: "My Dad doesn't understand how poor I am.",
+        content: "I can’t afford to live anymore after cancer",
         platform: "reddit",
-        level: 2,
-        date: "2025-12-10",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pjgumo/my_dad_doesnt_understand_how_poor_i_am/"
+        level: 1,
+        date: "2025-12-18",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pq13yz/i_cant_afford_to_live_anymore_after_cancer/"
+      },
+      {
+        content: "Healthcare NIGHTMARE As Nurses QUIT By The Thousands - THE SHOCKING TRUTH",
+        platform: "tiktok",
+        level: 3,
+        date: "2025-03-24",
+        url: "https://www.youtube.com/watch?v=fkoV5wA4pUc",
+        videoId: "fkoV5wA4pUc",
+        viewCount: 101627,
+        commentCount: 0
       }
     ],
     collectionProgress: [
@@ -164,58 +154,55 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "How Character.ai slowly destroys your mental health | The C.ai addiction iceberg",
+        content: "Why people are falling in love with A.I. companions | 60 Minutes Australia",
         platform: "youtube",
+        level: 3,
+        date: "2025-05-04",
+        url: "https://www.youtube.com/watch?v=_d08BZmdZu8",
+        videoId: "_d08BZmdZu8",
+        viewCount: 1748017,
+        commentCount: 0
+      },
+      {
+        content: "New Rule: In Love with A.I. | Real Time with Bill Maher (HBO)",
+        platform: "youtube",
+        level: 3,
+        date: "2025-02-15",
+        url: "https://www.youtube.com/watch?v=fDKaoUNLNLc",
+        videoId: "fDKaoUNLNLc",
+        viewCount: 956038,
+        commentCount: 0
+      },
+      {
+        content: "Rap battling ChatGPT is my new favorite sport.",
+        platform: "reddit",
+        level: 1,
+        date: "2023-03-26",
+        url: "https://www.reddit.com/r/ChatGPT/comments/122zfa6/rap_battling_chatgpt_is_my_new_favorite_sport/"
+      },
+      {
+        content: "Accused of using AI generation on my midterm, I didn’t and now my future is at stake",
+        platform: "reddit",
+        level: 1,
+        date: "2024-01-07",
+        url: "https://www.reddit.com/r/ChatGPT/comments/190kndt/accused_of_using_ai_generation_on_my_midterm_i/"
+      },
+      {
+        content: "How Character.ai slowly destroys your mental health | The C.ai addiction iceberg",
+        platform: "tiktok",
         level: 3,
         date: "2024-12-25",
         url: "https://www.youtube.com/watch?v=12waK-aDHV0",
         videoId: "12waK-aDHV0",
-        viewCount: 665497,
-        commentCount: 6293
-      },
-      {
-        content: "AI Made Him Delusional: The Case Nobody's Talking About",
-        platform: "youtube",
-        level: 3,
-        date: "2025-12-19",
-        url: "https://www.youtube.com/watch?v=TBD",
-        videoId: "TBD",
-        viewCount: 439,
+        viewCount: 762320,
         commentCount: 0
       },
       {
-        content: "People Are Getting ADDICTED To AI Chatbot Lovers (2025)",
-        platform: "youtube",
-        level: 3,
-        date: "2025-02-16",
-        url: "https://www.youtube.com/watch?v=fsHcHr7OqI0",
-        videoId: "fsHcHr7OqI0",
-        viewCount: 173374,
-        commentCount: 753
-      },
-      {
-        content: "We Ignored Her's Warning About AI Loneliness | Replika Reality Check",
-        platform: "youtube",
+        content: "Show HN: I built an AI companion to stop doomscrolling and regulate anxiety",
+        platform: "hackernews",
         level: 2,
-        date: "2025-10-24",
-        url: "https://www.youtube.com/watch?v=ftnbNaAMhYU",
-        videoId: "ftnbNaAMhYU",
-        viewCount: 944,
-        commentCount: 18
-      },
-      {
-        content: "GPT-4 Week 3. Chatbots are yesterdays news. AI Agents are the future. The beginning of the proto-agi",
-        platform: "reddit",
-        level: 3,
-        date: "2023-04-06",
-        url: "https://www.reddit.com/r/ChatGPT/comments/12diapw/gpt4_week_3_chatbots_are_yesterdays_news_ai/"
-      },
-      {
-        content: "PSA: CHAT GPT IS A TOOL. NOT YOUR FRIEND.",
-        platform: "reddit",
-        level: 2,
-        date: "2025-03-03",
-        url: "https://www.reddit.com/r/ChatGPT/comments/1j2lebf/psa_chat_gpt_is_a_tool_not_your_friend/"
+        date: "",
+        url: "https://mynomie.com/"
       }
     ],
     collectionProgress: [
@@ -268,58 +255,35 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Microsoft f*cked up real bad..",
-        platform: "youtube",
-        level: 1,
-        date: "2025-10-02",
-        url: "https://www.youtube.com/watch?v=lxJG6FBo9h8",
-        videoId: "lxJG6FBo9h8",
-        viewCount: 2383779,
-        commentCount: 12593
-      },
-      {
-        content: "why I'm cancelling ALL my subscription services",
+        content: "Subscriptions Are Getting Out of Control",
         platform: "youtube",
         level: 2,
-        date: "2025-11-30",
-        url: "https://www.youtube.com/watch?v=Xv6q3gcHro0",
-        videoId: "Xv6q3gcHro0",
-        viewCount: 9754,
-        commentCount: 217
+        date: "2026-01-31",
+        url: "https://www.youtube.com/watch?v=jRcqJkW44Lc",
+        videoId: "jRcqJkW44Lc",
+        viewCount: 574006,
+        commentCount: 0
       },
       {
-        content: "Subscription Fatigue Is Bleeding Americans Dry",
-        platform: "youtube",
-        level: 1,
-        date: "2025-12-16",
-        url: "https://www.youtube.com/watch?v=pc4MgspmiUs",
-        videoId: "pc4MgspmiUs",
-        viewCount: 8637,
-        commentCount: 174
-      },
-      {
-        content: "Streaming is OVERWHELMING! Why Netflix is LOSING Viewers! #shorts",
-        platform: "youtube",
-        level: 2,
-        date: "2025-10-23",
-        url: "https://www.youtube.com/watch?v=GZPr9fJG1wA",
-        videoId: "GZPr9fJG1wA",
-        viewCount: 1926,
-        commentCount: 2
-      },
-      {
-        content: "Is my father saying that my insurance is more than it is?",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-07",
-        url: "https://www.reddit.com/r/personalfinance/comments/1ph3qxd/is_my_father_saying_that_my_insurance_is_more/"
-      },
-      {
-        content: "Landlords have lost their minds",
+        content: "Did a subscription audit. Just gave myself a $2,058/year raise going into 2026",
         platform: "reddit",
         level: 1,
-        date: "2025-12-01",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pbgrff/landlords_have_lost_their_minds/"
+        date: "2025-12-23",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1pu5xpw/did_a_subscription_audit_just_gave_myself_a/"
+      },
+      {
+        content: "Subscriptions that offer discounts when you go to cancel pt 2",
+        platform: "reddit",
+        level: 1,
+        date: "2025-12-06",
+        url: "https://www.reddit.com/r/Frugal/comments/1pg6kk8/subscriptions_that_offer_discounts_when_you_go_to/"
+      },
+      {
+        content: "GitHub Actions for self-hosted runners price increase postponed",
+        platform: "hackernews",
+        level: 1,
+        date: "",
+        url: "https://pricetimeline.com/news/189"
       }
     ],
     collectionProgress: [
@@ -349,9 +313,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "Consumer Reports: Average 12 subscriptions per household",
+      "Consumer Reports: Average subscriptions per household, spending trends",
       "Streaming service pricing data: All major platforms tracked",
-      "Industry reports: 73% of services raised prices in 2025",
+      "Industry reports: Annual subscription price increase trends",
       "YouTube: 160 videos analyzing subscription fatigue",
       "Hacker News: 131 stories about subscription fatigue and pricing",
       "TikTok: 14 videos via YouTube compilations",
@@ -375,48 +339,55 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "When the employed are pushed into homelessness",
+        content: "Why Is Income Inequality So High in Canada? | Your Morning",
         platform: "youtube",
         level: 3,
-        date: "2025-11-16",
-        url: "https://www.youtube.com/watch?v=4loulWBN5Nw",
-        videoId: "4loulWBN5Nw",
-        viewCount: 909737,
-        commentCount: 7097
+        date: "2025-12-30",
+        url: "https://www.youtube.com/watch?v=9iRjWNq2-3U",
+        videoId: "9iRjWNq2-3U",
+        viewCount: 25948,
+        commentCount: 0
       },
       {
-        content: "3 Jobs Still Homeless: The Reality of Working America",
+        content: "40% of Americans Can’t Afford Rent — The Middle Class Collapse Fueling RV Homelessness (2026)",
         platform: "youtube",
         level: 3,
-        date: "2025-10-22",
-        url: "https://www.youtube.com/watch?v=NN3zMclcIVs",
-        videoId: "NN3zMclcIVs",
-        viewCount: 1176,
-        commentCount: 1
+        date: "2026-02-17",
+        url: "https://www.youtube.com/watch?v=eSly44yD8lU",
+        videoId: "eSly44yD8lU",
+        viewCount: 4118,
+        commentCount: 0
       },
       {
-        content: "Working Full-Time and Still Can't Eat",
-        platform: "youtube",
+        content: "If you are broke, it’s almost impossible to get a job",
+        platform: "reddit",
         level: 1,
-        date: "2025-11-03",
-        url: "https://www.youtube.com/watch?v=aBw582ctvOA",
-        videoId: "aBw582ctvOA",
-        viewCount: 495317,
-        commentCount: 2408
+        date: "2025-12-17",
+        url: "https://www.reddit.com/r/jobs/comments/1pp7xkk/if_you_are_broke_its_almost_impossible_to_get_a/"
       },
       {
-        content: "I ignored stomach pain for 8 months because I couldn't afford to be sick. Now I'm $12,000 in debt an",
+        content: "The poorest 50% in China is richer than the poorest 50% in USA (adjusted by buying power)",
         platform: "reddit",
+        level: 1,
+        date: "2025-12-28",
+        url: "https://www.reddit.com/r/economy/comments/1py0099/the_poorest_50_in_china_is_richer_than_the/"
+      },
+      {
+        content: "Real Struggle #child #poor #struggle #life #india #reels #viral #travel #garib #trending",
+        platform: "tiktok",
         level: 3,
-        date: "2025-12-15",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pndd3k/i_ignored_stomach_pain_for_8_months_because_i/"
+        date: "2024-02-10",
+        url: "https://www.youtube.com/watch?v=e8ZbeM4hDAE",
+        videoId: "e8ZbeM4hDAE",
+        viewCount: 364156,
+        commentCount: 0
       },
       {
-        content: "Today my supervisor asked me to either donate food or cook food for the office holiday party",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-05",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pf5yus/today_my_supervisor_asked_me_to_either_donate/"
+        content: "The new breed of 'zero bills' homes where you pay nothing for your energy",
+        platform: "hackernews",
+        level: 1,
+        date: "",
+        url: "https://news.sky.com/story/what-cost-of-living-crisis-why-elliott-pays-absolutely-nothing-to-power-his-home-13496916"
       }
     ],
     collectionProgress: [
@@ -441,7 +412,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
-      "AFL-CIO CEO Pay Database: 285:1 CEO-to-worker pay ratio",
+      "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
       "YouTube: 110 videos about wage stagnation and financial stress",
       "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "Hacker News: 40 stories about wage stagnation and financial stress"
@@ -464,58 +435,55 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "why i will never own a home (reality of being a gen Z)",
+        content: "How Homeless People Sleep In A Car Without Heating",
         platform: "youtube",
         level: 3,
-        date: "2025-09-24",
-        url: "https://www.youtube.com/watch?v=-w_kQ-4q8cc",
-        videoId: "-w_kQ-4q8cc",
-        viewCount: 62827,
-        commentCount: 1253
+        date: "2026-01-17",
+        url: "https://www.youtube.com/watch?v=awmWY5q1U1A",
+        videoId: "awmWY5q1U1A",
+        viewCount: 1478646,
+        commentCount: 0
       },
       {
-        content: "YOU WILL NEVER OWN A HOME, AMERICANS HAVE LOST HOPE, THEY ILL EVER BE ABLE TO AFFORD TO BUY A HOMR",
+        content: "How Homeless People Turn a Van Into a Comfortable Home",
         platform: "youtube",
         level: 3,
-        date: "2025-12-07",
-        url: "https://www.youtube.com/watch?v=BdN7wVBgd6Y",
-        videoId: "BdN7wVBgd6Y",
-        viewCount: 4061,
-        commentCount: 130
+        date: "2026-02-01",
+        url: "https://www.youtube.com/watch?v=aX7Tpu19QfU",
+        videoId: "aX7Tpu19QfU",
+        viewCount: 800561,
+        commentCount: 0
       },
       {
-        content: "The Housing Market Scam: Why You Will Never Own a Home 🏠📉",
-        platform: "youtube",
-        level: 3,
-        date: "2025-11-27",
-        url: "https://www.youtube.com/watch?v=GrF1MDQ-T0g",
-        videoId: "GrF1MDQ-T0g",
-        viewCount: 42,
-        commentCount: 2
-      },
-      {
-        content: "Why Nobody Can Afford a Home Anymore",
-        platform: "youtube",
+        content: "I am officially done with \"Starter Homes.\" It’s not an investment; it’s a bailout for the previous g",
+        platform: "reddit",
         level: 1,
-        date: "2025-10-26",
-        url: "https://www.youtube.com/watch?v=bqdPtjxzQaE",
-        videoId: "bqdPtjxzQaE",
-        viewCount: 397548,
-        commentCount: 1896
+        date: "2025-12-12",
+        url: "https://www.reddit.com/r/FirstTimeHomeBuyer/comments/1pkvxta/i_am_officially_done_with_starter_homes_its_not/"
       },
       {
-        content: "Scared to be homeless",
+        content: "I work in an apartment complex and 62.2% of the residents are late on rent and I’m so sad about it.",
         platform: "reddit",
-        level: 3,
-        date: "2025-12-18",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1prjn9p/scared_to_be_homeless/"
+        level: 1,
+        date: "2025-12-09",
+        url: "https://www.reddit.com/r/povertyfinance/comments/1piheez/i_work_in_an_apartment_complex_and_622_of_the/"
       },
       {
-        content: "How would you turn $300 into $2500 in 15 days to avoid eviction? Lost everything this year",
-        platform: "reddit",
+        content: "Linus Solves the Housing Crisis",
+        platform: "tiktok",
         level: 3,
-        date: "2025-12-17",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pr06i3/how_would_you_turn_300_into_2500_in_15_days_to/"
+        date: "2024-01-04",
+        url: "https://www.youtube.com/watch?v=IcgSu4ckb3E",
+        videoId: "IcgSu4ckb3E",
+        viewCount: 173056,
+        commentCount: 0
+      },
+      {
+        content: "'Can't sell house' searches are higher now than during the 2008 housing crisis",
+        platform: "hackernews",
+        level: 3,
+        date: "",
+        url: "https://www.morningstar.com/news/marketwatch/20260228147/cant-sell-house-searches-are-higher-now-than-during-the-2008-housing-crisis"
       }
     ],
     collectionProgress: [
@@ -545,9 +513,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "Redfin: Median home price $383,725",
-      "Zillow Rent Index: $2,000/month median rent",
-      "Census Bureau: Gen Z rent burden data (37.6%)",
+      "Redfin: Median home price tracking",
+      "Zillow Rent Index: National median rent trends",
+      "Census Bureau: Rent burden data by generation",
       "YouTube: 111 videos about housing crisis and homeownership despair",
       "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "Hacker News: 94 stories about housing affordability crisis",
@@ -574,55 +542,35 @@ export const metricDetails: Record<string, MetricDetailData> = {
         content: "Stranded For 10+ hours, Fliers Demand Action From Indigo Airlines For Cancelled Flights",
         platform: "youtube",
         level: 3,
-        date: "2025-12-17",
+        date: "",
         url: "https://www.youtube.com/watch?v=rxXzYPDl5jc",
         videoId: "rxXzYPDl5jc",
-        viewCount: 144801,
-        commentCount: 98
-      },
-      {
-        content: "I was stranded at the airport with my newborn baby, begging for help after my flight got...",
-        platform: "youtube",
-        level: 3,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=-NJwQ_I1Y_4",
-        videoId: "-NJwQ_I1Y_4",
-        viewCount: 441045,
-        commentCount: 84
-      },
-      {
-        content: "Black Soldier Ignored At The Airport—Then The Flight Got Delayed For Him",
-        platform: "youtube",
-        level: 2,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=gzBWU8ICkOA",
-        videoId: "gzBWU8ICkOA",
-        viewCount: 4385,
+        viewCount: 0,
         commentCount: 0
       },
       {
-        content: "Flight Delays, Fees & Fights: Is Flying Getting Worse?",
+        content: "1000+ Flights Cancelled: Indigo to Face Probe | Vantage with Palki Sharma | N18G",
         platform: "youtube",
+        level: 3,
+        date: "",
+        url: "https://www.youtube.com/watch?v=kqKOrynmWJw",
+        videoId: "kqKOrynmWJw",
+        viewCount: 0,
+        commentCount: 0
+      },
+      {
+        content: "Anyone headed through DFW today? Need cat food after cancelled flight...",
+        platform: "reddit",
         level: 1,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=X-ElLs6Xo-c",
-        videoId: "X-ElLs6Xo-c",
-        viewCount: 12,
-        commentCount: 0
+        date: "2026-01-01",
+        url: "https://www.reddit.com/r/americanairlines/comments/1q175vd/anyone_headed_through_dfw_today_need_cat_food/"
       },
       {
-        content: "Amtrak or Flying from Boston to Chicago",
+        content: "Delta One fail.",
         platform: "reddit",
-        level: 3,
-        date: "2025-12-01",
-        url: "https://www.reddit.com/r/travel/comments/1pbvfap/amtrak_or_flying_from_boston_to_chicago/"
-      },
-      {
-        content: "Spirit did not let me board flight at gate. The agent at gate told me to contact Customs & Borde",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-19",
-        url: "https://www.reddit.com/r/travel/comments/1pqofs3/spirit_did_not_let_me_board_flight_at_gate_the/"
+        level: 1,
+        date: "2025-12-13",
+        url: "https://www.reddit.com/r/delta/comments/1pm0f7y/delta_one_fail/"
       }
     ],
     collectionProgress: [
@@ -640,8 +588,8 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "Bureau of Transportation Statistics: 22% flight delay rate",
-      "ACSI satisfaction scores: Declining airline service quality",
+      "Bureau of Transportation Statistics: Flight delay and cancellation rates",
+      "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 91 videos about airline chaos and travel nightmares",
       "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines"
@@ -664,58 +612,38 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Why Gen Z is Quitting Dating Apps",
+        content: "When You Quit All Dating Apps",
         platform: "youtube",
         level: 3,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=OdjIW8IdbIM",
-        videoId: "OdjIW8IdbIM",
-        viewCount: 199804,
-        commentCount: 994
+        date: "",
+        url: "https://www.youtube.com/watch?v=Pl7FZr8AVgQ",
+        videoId: "Pl7FZr8AVgQ",
+        viewCount: 0,
+        commentCount: 0
       },
       {
-        content: "Dating App Fatigue & Mental Health",
+        content: "Women Are STRUGGLING Now That Men Have Quit Dating",
         platform: "youtube",
         level: 3,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=ygRO028UQUU",
-        videoId: "ygRO028UQUU",
-        viewCount: 1683,
-        commentCount: 77
+        date: "",
+        url: "https://www.youtube.com/watch?v=ezL7Iw1TaYE",
+        videoId: "ezL7Iw1TaYE",
+        viewCount: 0,
+        commentCount: 0
       },
       {
-        content: "Dating Apps Are Exhausting: Here's What's Happening",
-        platform: "youtube",
-        level: 2,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=fLYKy51jIVc",
-        videoId: "fLYKy51jIVc",
-        viewCount: 6,
-        commentCount: 1
-      },
-      {
-        content: "The Gen Z Dating Apocalypse",
-        platform: "youtube",
-        level: 1,
-        date: "2025-12-17",
-        url: "https://www.youtube.com/watch?v=dxxbcEGKs-c",
-        videoId: "dxxbcEGKs-c",
-        viewCount: 104738,
-        commentCount: 585
-      },
-      {
-        content: "I dated 15 men in 2025, this is what I learned.",
-        platform: "reddit",
-        level: 2,
-        date: "2025-12-15",
-        url: "https://www.reddit.com/r/dating/comments/1pngvgp/i_dated_15_men_in_2025_this_is_what_i_learned/"
-      },
-      {
-        content: "First time using any dating app, people are so strict",
+        content: "Dating a girl with severe hygiene issues (bad smell, hasn't showered in 6 days). How do I break up w",
         platform: "reddit",
         level: 1,
-        date: "2025-12-01",
-        url: "https://www.reddit.com/r/Tinder/comments/1pby2fk/first_time_using_any_dating_app_people_are_so/"
+        date: "2025-12-23",
+        url: "https://www.reddit.com/r/dating_advice/comments/1ptoziu/dating_a_girl_with_severe_hygiene_issues_bad/"
+      },
+      {
+        content: "I deleted dating apps & approached 30 women (this is what happened)",
+        platform: "reddit",
+        level: 1,
+        date: "2025-12-13",
+        url: "https://www.reddit.com/r/dating_advice/comments/1plo95q/i_deleted_dating_apps_approached_30_women_this_is/"
       }
     ],
     collectionProgress: [
@@ -733,7 +661,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       }
     ],
     dataSources: [
-      "Pew Research: 45% frustrated, 79% burnout among dating app users",
+      "Pew Research: Dating app frustration and burnout survey data",
       "YouTube: 111 videos about dating app burnout and despair",
       "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble"
     ],
@@ -755,58 +683,55 @@ export const metricDetails: Record<string, MetricDetailData> = {
     },
     sampleData: [
       {
-        content: "Job Search Nightmare: 1,000 Applications and Failure? #shorts",
-        platform: "youtube",
-        level: 3,
-        date: "2025-11-03",
-        url: "https://www.youtube.com/watch?v=-8rg1nPv-rc",
-        videoId: "-8rg1nPv-rc",
-        viewCount: 698,
-        commentCount: 5
-      },
-      {
-        content: "International students — 😓 200+ Job Applications, But No Response?",
+        content: "You're not broken. The job market is. | It's Been A Minute",
         platform: "youtube",
         level: 2,
-        date: "2025-10-17",
-        url: "https://www.youtube.com/watch?v=Xe-dHYhBwVk",
-        videoId: "Xe-dHYhBwVk",
-        viewCount: 780,
+        date: "2026-01-26",
+        url: "https://www.youtube.com/watch?v=vfi47X6dJzU",
+        videoId: "vfi47X6dJzU",
+        viewCount: 18993,
         commentCount: 0
       },
       {
-        content: "Unemployed @ 50 & was told I was overqualified",
+        content: "The 2026 Job Market is DOOMED — People Can't Get Hired",
         platform: "youtube",
         level: 2,
-        date: "2025-09-26",
-        url: "https://www.youtube.com/watch?v=4-UsaQaRiyA",
-        videoId: "4-UsaQaRiyA",
-        viewCount: 436,
-        commentCount: 2
+        date: "2026-01-21",
+        url: "https://www.youtube.com/watch?v=NhPvAieny9Y",
+        videoId: "NhPvAieny9Y",
+        viewCount: 12870,
+        commentCount: 0
       },
       {
-        content: "Why are Tech Layoffs Still Happening?",
-        platform: "youtube",
+        content: "Recruitment in 2025: you applied for 1000 jobs and none of them were actually hiring!",
+        platform: "reddit",
         level: 1,
-        date: "2025-11-03",
-        url: "https://www.youtube.com/watch?v=XerzK0QNhnM",
-        videoId: "XerzK0QNhnM",
-        viewCount: 45923,
-        commentCount: 184
+        date: "2025-12-24",
+        url: "https://www.reddit.com/r/recruitinghell/comments/1pusdk7/recruitment_in_2025_you_applied_for_1000_jobs_and/"
       },
       {
-        content: "Should I ask for feedback on a ridiculous rejection I received?",
+        content: "As a job seeker, I don’t think there’s a “talent shortage.” I think hiring is broken.",
         platform: "reddit",
+        level: 1,
+        date: "2025-12-15",
+        url: "https://www.reddit.com/r/recruitinghell/comments/1pn5wrn/as_a_job_seeker_i_dont_think_theres_a_talent/"
+      },
+      {
+        content: "Tech worker goes viral after posting her layoff on TikTok",
+        platform: "tiktok",
         level: 3,
-        date: "2025-12-19",
-        url: "https://www.reddit.com/r/careerguidance/comments/1pr3q8h/should_i_ask_for_feedback_on_a_ridiculous/"
+        date: "2024-03-29",
+        url: "https://www.youtube.com/watch?v=Ym3W_G_oLYw",
+        videoId: "Ym3W_G_oLYw",
+        viewCount: 68872,
+        commentCount: 0
       },
       {
-        content: "I was laid off on Monday via zoom, they asked me to write up a transition plan and sign separation d",
-        platform: "reddit",
+        content: "Laid Off After 25 Years in Tech:The Anxiety,Sacrifice,Reality No One Talks About [video]",
+        platform: "hackernews",
         level: 2,
-        date: "2025-11-26",
-        url: "https://www.reddit.com/r/careerguidance/comments/1p7mqfr/i_was_laid_off_on_monday_via_zoom_they_asked_me/"
+        date: "",
+        url: "https://www.youtube.com/watch?v=VeMA9WGKxOg"
       }
     ],
     collectionProgress: [
