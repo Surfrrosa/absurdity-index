@@ -16,7 +16,6 @@ Usage:
 
 import os
 import csv
-import glob
 import html
 import re
 import json
@@ -26,8 +25,15 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(SCRIPT_DIR)
 
+from data_utils import count_data_rows, get_latest_file as _get_latest_file
+
 DATA_DIR = 'collected-data'
 METRIC_DATA_FILE = '../lib/metricDetailData.ts'
+
+
+def get_latest_file(pattern, min_rows=5):
+    """Find latest file in DATA_DIR matching pattern."""
+    return _get_latest_file(os.path.join(DATA_DIR, pattern), min_rows=min_rows)
 
 # Metric configurations
 METRICS = {
@@ -135,31 +141,26 @@ RELEVANCE_KEYWORDS = {
     ],
 }
 
-# Emoji removal regex - covers most common emoji unicode ranges
+# Emoji removal regex - targeted ranges to avoid stripping legitimate characters.
+# Avoids overly broad ranges that would catch CJK text, (R), (C), etc.
 EMOJI_RE = re.compile(
     '['
     '\U0001F600-\U0001F64F'  # emoticons
     '\U0001F300-\U0001F5FF'  # symbols & pictographs
     '\U0001F680-\U0001F6FF'  # transport & map
     '\U0001F1E0-\U0001F1FF'  # flags
-    '\U00002702-\U000027B0'  # dingbats
-    '\U000024C2-\U0001F251'  # enclosed characters
     '\U0001F900-\U0001F9FF'  # supplemental symbols
     '\U0001FA00-\U0001FA6F'  # chess symbols
     '\U0001FA70-\U0001FAFF'  # symbols extended-A
-    '\U00002600-\U000026FF'  # misc symbols
-    '\U0000FE00-\U0000FE0F'  # variation selectors
-    '\U0000200D'             # zero width joiner
+    '\U00002600-\U000026FF'  # misc symbols (sun, cloud, etc.)
+    '\U00002702-\U000027B0'  # dingbats
+    '\U000023F0-\U000023FA'  # misc technical (hourglass, etc.)
+    '\U0000270A-\U0000270D'  # hands
     '\U00002B50'             # star
     '\U00002B55'             # circle
-    '\U000023F0-\U000023FA'  # misc technical
-    '\U0000203C-\U00003299'  # CJK and misc
     '\U00002639'             # frowning face
-    '\U0000267F'             # wheelchair
-    '\U00002702'             # scissors
-    '\U00002708'             # airplane
-    '\U0000270A-\U0000270D'  # hands
-    '\U0000FE0F'             # variation selector
+    '\U0000FE00-\U0000FE0F'  # variation selectors
+    '\U0000200D'             # zero width joiner
     ']+',
     flags=re.UNICODE
 )
@@ -183,30 +184,6 @@ def strip_emoji(text):
     # Collapse multiple spaces into one and strip
     return re.sub(r' +', ' ', cleaned).strip()
 
-
-def count_data_rows(filepath):
-    """Count non-header rows in a CSV file."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            next(reader, None)
-            return sum(1 for _ in reader)
-    except Exception:
-        return 0
-
-
-def get_latest_file(pattern, min_rows=5):
-    """Get the most recent file matching the pattern that has real data."""
-    files = glob.glob(os.path.join(DATA_DIR, pattern))
-    if not files:
-        return None
-    # Sort by filename descending (timestamps in filenames ensure chronological order)
-    files.sort(reverse=True)
-    for filepath in files:
-        rows = count_data_rows(filepath)
-        if rows >= min_rows:
-            return filepath
-    return None
 
 
 def read_csv_data(filepath):
@@ -234,41 +211,35 @@ def get_level_from_category(category):
     return 1
 
 
-def select_youtube_samples(data, metric_name, max_samples=2):
-    """Select representative YouTube samples prioritizing severity, then engagement.
+def _severity_sorted_candidates(data, engagement_field):
+    """Group rows by severity level and sort each group by engagement.
 
-    Picks from highest severity levels first (L3 > L2 > L1) to ensure
-    the most relevant content surfaces over viral but off-topic noise.
-    Filters by relevance keywords to exclude noise from broad API searches.
+    Returns candidates ordered L3 > L2 > L1, with highest engagement first
+    within each level.
     """
-    if not data:
-        return []
-
-    # Group by level, sort each group by views
     by_level = {3: [], 2: [], 1: []}
     for row in data:
-        category = row.get('category', '')
-        level = get_level_from_category(category)
+        level = get_level_from_category(row.get('category', ''))
         by_level[level].append(row)
 
     for level in by_level:
-        by_level[level].sort(key=lambda x: int(x.get('view_count', 0) or 0), reverse=True)
+        by_level[level].sort(key=lambda x: int(x.get(engagement_field, 0) or 0), reverse=True)
 
-    # Pick from L3 first, then L2, then L1
-    candidates = by_level[3] + by_level[2] + by_level[1]
+    return by_level[3] + by_level[2] + by_level[1]
 
+
+def select_youtube_samples(data, metric_name, max_samples=2):
+    """Select representative YouTube samples prioritizing severity, then views."""
+    if not data:
+        return []
+
+    candidates = _severity_sorted_candidates(data, 'view_count')
     samples = []
-    seen_levels = set()
 
     for row in candidates:
-        category = row.get('category', '')
-        level = get_level_from_category(category)
-
         title = strip_emoji(row.get('title', '')[:100])
         if not title:
             continue
-
-        # Filter out off-topic noise
         if not is_relevant(title, metric_name):
             continue
 
@@ -277,21 +248,19 @@ def select_youtube_samples(data, metric_name, max_samples=2):
         if not url and video_id:
             url = f'https://www.youtube.com/watch?v={video_id}'
 
-        # Skip entries with placeholder URLs
         if 'TBD' in video_id or 'TBD' in url:
             continue
 
         samples.append({
             'content': title,
             'platform': 'youtube',
-            'level': level,
+            'level': get_level_from_category(row.get('category', '')),
             'date': row.get('published_date', row.get('published', ''))[:10],
             'url': url,
             'videoId': video_id,
             'viewCount': int(row.get('view_count', 0) or 0),
             'commentCount': int(row.get('comment_count', row.get('comments', 0)) or 0)
         })
-        seen_levels.add(level)
 
         if len(samples) >= max_samples:
             break
@@ -310,14 +279,12 @@ def select_reddit_samples(data, metric_name, max_samples=2):
     seen_levels = set()
 
     for row in sorted_data:
-        category = row.get('category', '')
-        level = get_level_from_category(category)
+        level = get_level_from_category(row.get('category', ''))
 
         if level not in seen_levels or len(samples) < max_samples:
             title = strip_emoji(row.get('title', '')[:100])
             if not title:
                 continue
-
             if not is_relevant(title, metric_name):
                 continue
 
@@ -345,23 +312,13 @@ def select_tiktok_samples(all_tiktok_data, metric_slug, display_name, max_sample
     if not metric_data:
         return []
 
-    # Group by level, sort each group by views
-    by_level = {3: [], 2: [], 1: []}
-    for row in metric_data:
-        level = get_level_from_category(row.get('category', ''))
-        by_level[level].append(row)
-
-    for level in by_level:
-        by_level[level].sort(key=lambda x: int(x.get('views', 0) or 0), reverse=True)
-
-    candidates = by_level[3] + by_level[2] + by_level[1]
-
+    candidates = _severity_sorted_candidates(metric_data, 'views')
     samples = []
+
     for row in candidates:
         title = strip_emoji(row.get('title', '')[:100])
         if not title:
             continue
-
         if not is_relevant(title, display_name):
             continue
 
@@ -386,22 +343,13 @@ def select_hn_samples(data, metric_name, max_samples=1):
     if not data:
         return []
 
-    by_level = {3: [], 2: [], 1: []}
-    for row in data:
-        level = get_level_from_category(row.get('category', ''))
-        by_level[level].append(row)
-
-    for level in by_level:
-        by_level[level].sort(key=lambda x: int(x.get('points', 0) or 0), reverse=True)
-
-    candidates = by_level[3] + by_level[2] + by_level[1]
-
+    candidates = _severity_sorted_candidates(data, 'points')
     samples = []
+
     for row in candidates:
         title = strip_emoji(row.get('title', '')[:100])
         if not title:
             continue
-
         if not is_relevant(title, metric_name):
             continue
 
@@ -428,8 +376,7 @@ def select_cfpb_samples(data, max_samples=1):
     seen_levels = set()
 
     for row in data:
-        category = row.get('category', '')
-        level = get_level_from_category(category)
+        level = get_level_from_category(row.get('category', ''))
 
         if level not in seen_levels or len(samples) < max_samples:
             title = strip_emoji(row.get('title', row.get('narrative', ''))[:100])

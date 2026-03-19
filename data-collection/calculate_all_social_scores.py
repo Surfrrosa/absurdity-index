@@ -8,7 +8,6 @@ Usage:
 """
 
 import csv
-import glob
 import json
 import math
 import os
@@ -17,6 +16,8 @@ from datetime import datetime
 # Change to script directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(SCRIPT_DIR)
+
+from data_utils import count_data_rows, get_latest_file as _get_latest_file
 
 # Load centralized config
 with open('config.json', 'r') as f:
@@ -28,40 +29,9 @@ OFFICIAL_WEIGHT = CONFIG['formula']['official_weight']
 SOCIAL_WEIGHT = CONFIG['formula']['social_weight']
 
 
-def count_data_rows(filepath):
-    """Count non-header rows in a CSV file."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            next(reader, None)  # skip header
-            return sum(1 for _ in reader)
-    except Exception:
-        return 0
-
-
 def find_latest_file(pattern, min_rows=5):
-    """Find the most recent file matching a glob pattern that has real data.
-
-    Files are expected to have timestamps in format: *_YYYYMMDD_HHMMSS.csv
-    Skips files with fewer than min_rows data rows (likely failed collections).
-    Returns the path to the most recent file with data, or None if no matches.
-    """
-    matches = glob.glob(pattern)
-
-    if not matches:
-        return None
-
-    # Sort by filename (timestamps in filename ensure chronological order)
-    matches.sort(reverse=True)
-
-    for filepath in matches:
-        rows = count_data_rows(filepath)
-        if rows >= min_rows:
-            return filepath
-        else:
-            print(f"  Skipping {os.path.basename(filepath)} ({rows} rows, need >={min_rows})")
-
-    return None
+    """Find the most recent file matching a glob pattern that has real data."""
+    return _get_latest_file(pattern, min_rows=min_rows, verbose=True)
 
 
 def find_metric_files(slug):
