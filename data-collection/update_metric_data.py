@@ -12,12 +12,13 @@ import json
 import math
 import os
 import re
-import glob
 from datetime import datetime
 
 # Change to the script's directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(SCRIPT_DIR)
+
+from data_utils import count_data_rows, get_latest_file as _get_latest_file
 
 METRIC_DATA_FILE = '../lib/metricDetailData.ts'
 
@@ -43,32 +44,9 @@ SOCIAL_WEIGHT = CONFIG['formula']['social_weight']
 TIKTOK_PATTERN = 'tiktok_youtube_*.csv'
 
 
-def count_data_rows(filepath):
-    """Count non-header rows in a CSV file."""
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            next(reader, None)  # skip header
-            return sum(1 for _ in reader)
-    except Exception:
-        return 0
-
-
 def get_latest_file(pattern, min_rows=5):
-    """Get the most recent file matching the pattern that has real data.
-
-    Skips files with fewer than min_rows data rows (likely failed collections).
-    """
-    files = glob.glob(f'collected-data/{pattern}')
-    if not files:
-        return None
-    # Sort by filename descending (timestamps in filenames ensure chronological order)
-    files.sort(reverse=True)
-    for filepath in files:
-        rows = count_data_rows(filepath)
-        if rows >= min_rows:
-            return filepath
-    return None
+    """Get the most recent file matching the pattern that has real data."""
+    return _get_latest_file(f'collected-data/{pattern}', min_rows=min_rows)
 
 
 def get_tiktok_data_for_metric(metric_slug):
