@@ -9,6 +9,10 @@ on:
 env:
   YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
   FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+  BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+  BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
 
 jobs:
   collect-data:
@@ -44,8 +48,18 @@ jobs:
           python layoff-watch-youtube-collector.py || true
           python airline-chaos-youtube-collector.py || true
 
-      # Reddit collectors removed from CI - Reddit blocks GitHub Actions IPs (403).
-      # Run Reddit collection locally: python run_weekly_update.py --reddit-only
+      - name: Run Reddit collectors (OAuth2)
+        working-directory: data-collection
+        run: |
+          echo "Running Reddit collectors (OAuth2 authenticated)..."
+          python healthcare-reddit-collector.py || true
+          python ai-psychosis-reddit-collector.py || true
+          python subscription-overload-reddit-collector.py || true
+          python wage-stagnation-reddit-collector.py || true
+          python housing-despair-reddit-collector.py || true
+          python dating-app-despair-reddit-collector.py || true
+          python layoff-watch-reddit-collector.py || true
+          python airline-chaos-reddit-collector.py || true
 
       - name: Run TikTok collector
         working-directory: data-collection
@@ -74,7 +88,7 @@ jobs:
       - name: Run Bluesky collector
         working-directory: data-collection
         run: |
-          echo "Running Bluesky collector (no auth needed)..."
+          echo "Running Bluesky collector (authenticated via app password)..."
           python bluesky-collector.py || true
 
       - name: Check if new data was collected
