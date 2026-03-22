@@ -11,8 +11,6 @@ env:
   FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
   BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
   BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
 
 jobs:
   collect-data:
@@ -48,18 +46,8 @@ jobs:
           python layoff-watch-youtube-collector.py || true
           python airline-chaos-youtube-collector.py || true
 
-      - name: Run Reddit collectors (OAuth2)
-        working-directory: data-collection
-        run: |
-          echo "Running Reddit collectors (OAuth2 authenticated)..."
-          python healthcare-reddit-collector.py || true
-          python ai-psychosis-reddit-collector.py || true
-          python subscription-overload-reddit-collector.py || true
-          python wage-stagnation-reddit-collector.py || true
-          python housing-despair-reddit-collector.py || true
-          python dating-app-despair-reddit-collector.py || true
-          python layoff-watch-reddit-collector.py || true
-          python airline-chaos-reddit-collector.py || true
+      # Reddit collectors blocked from CI (403 from datacenter IPs).
+      # Run locally: python run_weekly_update.py --reddit-only
 
       - name: Run TikTok collector
         working-directory: data-collection
