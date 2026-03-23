@@ -44,15 +44,15 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 50.41,
+    score: 50.26,
     label: "Prior Authorization Purgatory",
     trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 46.48,
+    crisisRatio: 46.24,
     levelDistribution: {
-      level1: 359,
-      level2: 57,
-      level3: 56,
+      level1: 357,
+      level2: 61,
+      level3: 54,
       total: 472
     },
     sampleData: [
@@ -77,18 +77,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Drowning in huge medical bills after suicide attempt(s)",
+        content: "Denied $11,000 ER claim for \"Panic Disorder\" when I thought I was having a heart attack. I’m terrifi",
         platform: "reddit",
-        level: 1,
-        date: "2025-12-26",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pw6u3e/drowning_in_huge_medical_bills_after_suicide/"
+        level: 2,
+        date: "2026-03-14",
+        url: "https://www.reddit.com/r/HealthInsurance/comments/1rtatb6/denied_11000_er_claim_for_panic_disorder_when_i/"
       },
       {
-        content: "I can’t afford to live anymore after cancer",
+        content: "Anthem denied a 2-day ER admission after my wife lost consciousness — \"not medically necessary\"",
         platform: "reddit",
         level: 1,
-        date: "2025-12-18",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pq13yz/i_cant_afford_to_live_anymore_after_cancer/"
+        date: "2026-03-08",
+        url: "https://www.reddit.com/r/HealthInsurance/comments/1roeq1f/anthem_denied_a_2day_er_admission_after_my_wife/"
       },
       {
         content: "Healthcare NIGHTMARE As Nurses QUIT By The Thousands - THE SHOCKING TRUTH",
@@ -137,20 +137,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Sources include YouTube, Reddit, TikTok, and CFPB consumer complaints. Content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement. Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 36.19,
+    score: 38.24,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "neutral",
     officialScore: 12.5,
-    crisisRatio: 51.98,
+    crisisRatio: 55.39,
     levelDistribution: {
-      level1: 431,
-      level2: 58,
-      level3: 106,
-      total: 595
+      level1: 336,
+      level2: 29,
+      level3: 86,
+      total: 451
     },
     sampleData: [
       {
@@ -174,18 +174,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Rap battling ChatGPT is my new favorite sport.",
+        content: "Time to cancel ChatGPT Plus after three Years. Anthropic got nuked for having ethics, and Sam Altman",
         platform: "reddit",
         level: 1,
-        date: "2023-03-26",
-        url: "https://www.reddit.com/r/ChatGPT/comments/122zfa6/rap_battling_chatgpt_is_my_new_favorite_sport/"
+        date: "2026-02-28",
+        url: "https://www.reddit.com/r/ChatGPT/comments/1rgv7jx/time_to_cancel_chatgpt_plus_after_three_years/"
       },
       {
-        content: "Accused of using AI generation on my midterm, I didn’t and now my future is at stake",
+        content: "PEOPLE OF CHARACTER AI I COME WITH YOU WITH A STRAIGHT ANSWER ABT ADS IN CHAT. FINAL ANSWER IT’S A B",
         platform: "reddit",
         level: 1,
-        date: "2024-01-07",
-        url: "https://www.reddit.com/r/ChatGPT/comments/190kndt/accused_of_using_ai_generation_on_my_midterm_i/"
+        date: "2026-02-26",
+        url: "https://www.reddit.com/r/CharacterAI/comments/1rftiwb/people_of_character_ai_i_come_with_you_with_a/"
       },
       {
         content: "Trending chatgpt Prompts Photo Editing Prompts #shorts #viral #chatgpt #prompts",
@@ -214,7 +214,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 289,
+        current: 145,
         target: 290,
         percentage: 100
       },
@@ -233,25 +233,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     dataSources: [
       "YouTube: 135 videos analyzing AI companion usage and addiction",
-      "Reddit: 289 posts from r/replika, r/CharacterAI, r/ChatGPT",
+      "Reddit: 145 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 45 videos via YouTube compilations",
       "Hacker News: 126 stories about AI risks and companion addiction"
     ],
     methodology: "Systematic collection from multiple platforms including YouTube, Reddit, TikTok, and Hacker News. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official data (40% weight).",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 39.91,
+    score: 39.94,
     label: "Quarterly Purge Required",
     trend: "neutral",
     officialScore: 45.2,
-    crisisRatio: 36.39,
+    crisisRatio: 36.44,
     levelDistribution: {
-      level1: 293,
-      level2: 12,
-      level3: 2,
-      total: 307
+      level1: 406,
+      level2: 22,
+      level3: 3,
+      total: 431
     },
     sampleData: [
       {
@@ -265,18 +265,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Did a subscription audit. Just gave myself a $2,058/year raise going into 2026",
+        content: "What is a monthly subscription/service you ACTUALLY consider worth paying for?",
         platform: "reddit",
         level: 1,
-        date: "2025-12-23",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1pu5xpw/did_a_subscription_audit_just_gave_myself_a/"
+        date: "2026-02-20",
+        url: "https://www.reddit.com/r/Frugal/comments/1radc5q/what_is_a_monthly_subscriptionservice_you/"
       },
       {
-        content: "Subscriptions that offer discounts when you go to cancel pt 2",
+        content: "Cancel the subscriptions you like, too",
         platform: "reddit",
         level: 1,
-        date: "2025-12-06",
-        url: "https://www.reddit.com/r/Frugal/comments/1pg6kk8/subscriptions_that_offer_discounts_when_you_go_to/"
+        date: "2026-03-19",
+        url: "https://www.reddit.com/r/Frugal/comments/1ryfsu7/cancel_the_subscriptions_you_like_too/"
       },
       {
         content: "Subscriptions Are Ruining Our Lives. Here's Why They're Everywhere Now.",
@@ -317,7 +317,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 12,
+        current: 136,
         target: 200,
         percentage: 6
       }
@@ -329,23 +329,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "YouTube: 150 videos analyzing subscription fatigue",
       "Hacker News: 141 stories about subscription fatigue and pricing",
       "TikTok: 4 videos via YouTube compilations",
-      "Reddit: 12 posts from r/Frugal, r/personalfinance, r/povertyfinance"
+      "Reddit: 136 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment from YouTube, Hacker News, TikTok, and Reddit (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 38.75,
+    score: 38.48,
     label: "Paycheck-to-Paycheck Normal",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 38.99,
+    crisisRatio: 38.53,
     levelDistribution: {
-      level1: 175,
-      level2: 36,
-      level3: 3,
-      total: 214
+      level1: 309,
+      level2: 52,
+      level3: 5,
+      total: 366
     },
     sampleData: [
       {
@@ -369,18 +369,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "If you are broke, it’s almost impossible to get a job",
+        content: "Trump’s shutdown now hurting workers with 'paycheck-to-paycheck' jobs",
         platform: "reddit",
         level: 1,
-        date: "2025-12-17",
-        url: "https://www.reddit.com/r/jobs/comments/1pp7xkk/if_you_are_broke_its_almost_impossible_to_get_a/"
+        date: "2026-03-13",
+        url: "https://www.reddit.com/r/antiwork/comments/1rssdp5/trumps_shutdown_now_hurting_workers_with/"
       },
       {
-        content: "The poorest 50% in China is richer than the poorest 50% in USA (adjusted by buying power)",
+        content: "Apparently some customer(s) found my jacket offensive, so I'm no longer allowed to wear it.",
         platform: "reddit",
         level: 1,
-        date: "2025-12-28",
-        url: "https://www.reddit.com/r/economy/comments/1py0099/the_poorest_50_in_china_is_richer_than_the/"
+        date: "2026-03-19",
+        url: "https://www.reddit.com/r/antiwork/comments/1rxs4dj/apparently_some_customers_found_my_jacket/"
       },
       {
         content: "Built a 1.3M-line agent-native OS in Rust while homeless. What now?",
@@ -399,7 +399,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 76,
+        current: 228,
         target: 200,
         percentage: 39
       },
@@ -414,23 +414,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
       "YouTube: 101 videos about wage stagnation and financial stress",
-      "Reddit: 76 posts from r/antiwork, r/WorkReform, r/povertyfinance",
+      "Reddit: 228 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "Hacker News: 37 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 44.38,
+    score: 43.5,
     label: "Multiple Organs Required",
     trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 48.9,
+    crisisRatio: 47.43,
     levelDistribution: {
-      level1: 351,
-      level2: 65,
-      level3: 69,
+      level1: 366,
+      level2: 62,
+      level3: 57,
       total: 485
     },
     sampleData: [
@@ -455,18 +455,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "I am officially done with \"Starter Homes.\" It’s not an investment; it’s a bailout for the previous g",
+        content: "First in my family to own a home. 27M Upstate NY 160k 5.25",
         platform: "reddit",
-        level: 1,
-        date: "2025-12-12",
-        url: "https://www.reddit.com/r/FirstTimeHomeBuyer/comments/1pkvxta/i_am_officially_done_with_starter_homes_its_not/"
+        level: 2,
+        date: "2026-03-21",
+        url: "https://www.reddit.com/r/FirstTimeHomeBuyer/comments/1s08pfu/first_in_my_family_to_own_a_home_27m_upstate_ny/"
       },
       {
-        content: "I work in an apartment complex and 62.2% of the residents are late on rent and I’m so sad about it.",
+        content: "My landlord is selling. Does he have any benefit of selling to me at a discount?",
         platform: "reddit",
         level: 1,
-        date: "2025-12-09",
-        url: "https://www.reddit.com/r/povertyfinance/comments/1piheez/i_work_in_an_apartment_complex_and_622_of_the/"
+        date: "2026-03-20",
+        url: "https://www.reddit.com/r/personalfinance/comments/1rz2not/my_landlord_is_selling_does_he_have_any_benefit/"
       },
       {
         content: "Grocery Prices OUT OF CONTROL, People Can't Afford to Eat | TikTok Rant on America’s Grocery Crisis",
@@ -522,20 +522,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, Hacker News, and CFPB complaints (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 33.52,
+    score: 33.67,
     label: "Expect Delays",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 41.87,
+    crisisRatio: 42.11,
     levelDistribution: {
-      level1: 184,
-      level2: 48,
-      level3: 21,
-      total: 253
+      level1: 213,
+      level2: 70,
+      level3: 20,
+      total: 303
     },
     sampleData: [
       {
@@ -559,21 +559,21 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Anyone headed through DFW today? Need cat food after cancelled flight...",
+        content: "Do not travel alone through Cairo Airport for a connecting flight",
         platform: "reddit",
         level: 1,
-        date: "2026-01-01",
-        url: "https://www.reddit.com/r/americanairlines/comments/1q175vd/anyone_headed_through_dfw_today_need_cat_food/"
+        date: "2026-03-14",
+        url: "https://www.reddit.com/r/Flights/comments/1rtcy3l/do_not_travel_alone_through_cairo_airport_for_a/"
       },
       {
-        content: "Delta One fail.",
+        content: "Friend cancelled last minute on a 100 day trip",
         platform: "reddit",
         level: 1,
-        date: "2025-12-13",
-        url: "https://www.reddit.com/r/delta/comments/1pm0f7y/delta_one_fail/"
+        date: "2026-03-06",
+        url: "https://www.reddit.com/r/travel/comments/1rmzfvs/friend_cancelled_last_minute_on_a_100_day_trip/"
       },
       {
-        content: "At the airport, my flight got delayed… #fyp #viral #relatable #tiktok #trending #funny #music",
+        content: "At the airport, my flight got delayed… #fypシ #viral #relatable #tiktok #trending #funny #music",
         platform: "tiktok",
         level: 3,
         date: "2024-03-23",
@@ -592,7 +592,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 132,
+        current: 182,
         target: 200,
         percentage: 66
       }
@@ -602,23 +602,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 106 videos about airline chaos and travel nightmares",
-      "Reddit: 132 posts from r/travel, r/flights, r/delta, r/americanairlines"
+      "Reddit: 182 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 28.56,
+    score: 27.35,
     label: "Swipe Fatigue Setting In",
     trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 41.93,
+    crisisRatio: 39.91,
     levelDistribution: {
-      level1: 195,
-      level2: 45,
-      level3: 12,
-      total: 252
+      level1: 227,
+      level2: 43,
+      level3: 13,
+      total: 283
     },
     sampleData: [
       {
@@ -642,18 +642,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Dating a girl with severe hygiene issues (bad smell, hasn't showered in 6 days). How do I break up w",
+        content: "I don’t understand Muslim guys on dating apps",
         platform: "reddit",
         level: 1,
-        date: "2025-12-23",
-        url: "https://www.reddit.com/r/dating_advice/comments/1ptoziu/dating_a_girl_with_severe_hygiene_issues_bad/"
+        date: "2026-03-09",
+        url: "https://www.reddit.com/r/Bumble/comments/1rp1vuy/i_dont_understand_muslim_guys_on_dating_apps/"
       },
       {
-        content: "I deleted dating apps & approached 30 women (this is what happened)",
+        content: "She likes me. I like her. I swipe right. No match. What gives?",
         platform: "reddit",
         level: 1,
-        date: "2025-12-13",
-        url: "https://www.reddit.com/r/dating_advice/comments/1plo95q/i_deleted_dating_apps_approached_30_women_this_is/"
+        date: "2026-03-20",
+        url: "https://www.reddit.com/r/Tinder/comments/1rz07mq/she_likes_me_i_like_her_i_swipe_right_no_match/"
       }
     ],
     collectionProgress: [
@@ -665,7 +665,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 139,
+        current: 170,
         target: 200,
         percentage: 70
       }
@@ -673,23 +673,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Pew Research: Dating app frustration and burnout survey data",
       "YouTube: 113 videos about dating app burnout and despair",
-      "Reddit: 139 posts from r/dating, r/Tinder, r/Bumble"
+      "Reddit: 170 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 57.79,
+    score: 58.22,
     label: "Resume At The Ready",
     trend: "neutral",
     officialScore: 76.5,
-    crisisRatio: 45.32,
+    crisisRatio: 46.03,
     levelDistribution: {
-      level1: 315,
-      level2: 164,
-      level3: 10,
-      total: 489
+      level1: 330,
+      level2: 168,
+      level3: 12,
+      total: 510
     },
     sampleData: [
       {
@@ -713,18 +713,18 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Recruitment in 2025: you applied for 1000 jobs and none of them were actually hiring!",
+        content: "Job search on LinkedIn",
         platform: "reddit",
         level: 1,
-        date: "2025-12-24",
-        url: "https://www.reddit.com/r/recruitinghell/comments/1pusdk7/recruitment_in_2025_you_applied_for_1000_jobs_and/"
+        date: "2026-03-14",
+        url: "https://www.reddit.com/r/jobs/comments/1rtxijj/job_search_on_linkedin/"
       },
       {
-        content: "As a job seeker, I don’t think there’s a “talent shortage.” I think hiring is broken.",
+        content: "Recruiter hung up on me because I didn’t “remember” the job I applied for??",
         platform: "reddit",
         level: 1,
-        date: "2025-12-15",
-        url: "https://www.reddit.com/r/recruitinghell/comments/1pn5wrn/as_a_job_seeker_i_dont_think_theres_a_talent/"
+        date: "2026-02-24",
+        url: "https://www.reddit.com/r/recruitinghell/comments/1rdpu4e/recruiter_hung_up_on_me_because_i_didnt_remember/"
       },
       {
         content: "Laid Off After 25 Years in Tech:The Anxiety,Sacrifice,Reality No One Talks About [video]",
@@ -743,7 +743,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 279,
+        current: 300,
         target: 300,
         percentage: 94
       },
@@ -757,11 +757,11 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
       "YouTube: 65 videos about layoffs and job search struggles",
-      "Reddit: 279 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
+      "Reddit: 300 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
       "Hacker News: 145 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 16, 2026"
+    lastUpdated: "March 22, 2026"
   }
 };
 

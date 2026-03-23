@@ -51,7 +51,7 @@ def run_collector(script_name, delay_after=0):
             [sys.executable, script_name],
             capture_output=False,
             text=True,
-            timeout=300  # 5 minute timeout per script
+            timeout=600  # 10 minute timeout per script
         )
         if result.returncode == 0:
             print(f"SUCCESS: {script_name}")
