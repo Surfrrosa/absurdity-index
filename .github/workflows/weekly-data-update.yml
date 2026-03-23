@@ -139,7 +139,7 @@ jobs:
       - name: Install dependencies and build
         if: steps.check_data.outputs.has_new_data == 'true'
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npm run build
 
       - name: Configure Git
