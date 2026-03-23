@@ -139,6 +139,7 @@ jobs:
       - name: Install dependencies and build
         if: steps.check_data.outputs.has_new_data == 'true'
         run: |
+          ls package-lock.json && head -3 package-lock.json
           npm ci
           npm run build
 
