@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 50.26,
+    score: 45.21,
     label: "Prior Authorization Purgatory",
-    trend: "neutral",
+    trend: "improving",
     officialScore: 56.30,
-    crisisRatio: 46.24,
+    crisisRatio: 46.29,
     levelDistribution: {
-      level1: 357,
-      level2: 61,
+      level1: 354,
+      level2: 60,
       level3: 54,
-      total: 472
+      total: 468
     },
     sampleData: [
       {
@@ -110,7 +110,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 132,
+        current: 128,
         target: 200,
         percentage: 67
       },
@@ -132,25 +132,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
       "YouTube: 160 videos analyzing healthcare system failures",
-      "Reddit: 132 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
+      "Reddit: 128 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
       "TikTok: 80 videos via YouTube compilations",
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Sources include YouTube, Reddit, TikTok, and CFPB consumer complaints. Content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement. Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 38.24,
+    score: 38.18,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "neutral",
     officialScore: 12.5,
-    crisisRatio: 55.39,
+    crisisRatio: 55.3,
     levelDistribution: {
-      level1: 336,
+      level1: 342,
       level2: 29,
       level3: 86,
-      total: 451
+      total: 457
     },
     sampleData: [
       {
@@ -226,32 +226,32 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 126,
+        current: 132,
         target: 150,
-        percentage: 84
+        percentage: 88
       }
     ],
     dataSources: [
       "YouTube: 135 videos analyzing AI companion usage and addiction",
       "Reddit: 145 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 45 videos via YouTube compilations",
-      "Hacker News: 126 stories about AI risks and companion addiction"
+      "Hacker News: 132 stories about AI risks and companion addiction"
     ],
     methodology: "Systematic collection from multiple platforms including YouTube, Reddit, TikTok, and Hacker News. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official data (40% weight).",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 39.94,
+    score: 39.95,
     label: "Quarterly Purge Required",
     trend: "neutral",
     officialScore: 45.2,
-    crisisRatio: 36.44,
+    crisisRatio: 36.45,
     levelDistribution: {
-      level1: 406,
+      level1: 401,
       level2: 22,
       level3: 3,
-      total: 431
+      total: 426
     },
     sampleData: [
       {
@@ -289,11 +289,11 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "GitHub Actions for self-hosted runners price increase postponed",
+        content: "Covering electricity price increases from our data centers",
         platform: "hackernews",
         level: 1,
         date: "",
-        url: "https://pricetimeline.com/news/189"
+        url: "https://www.anthropic.com/news/covering-electricity-price-increases"
       }
     ],
     collectionProgress: [
@@ -305,9 +305,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 141,
+        current: 136,
         target: 150,
-        percentage: 94
+        percentage: 90
       },
       {
         platform: "TikTok",
@@ -327,25 +327,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Streaming service pricing data: All major platforms tracked",
       "Industry reports: Annual subscription price increase trends",
       "YouTube: 150 videos analyzing subscription fatigue",
-      "Hacker News: 141 stories about subscription fatigue and pricing",
+      "Hacker News: 136 stories about subscription fatigue and pricing",
       "TikTok: 4 videos via YouTube compilations",
       "Reddit: 136 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment from YouTube, Hacker News, TikTok, and Reddit (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 38.48,
+    score: 34.53,
     label: "Paycheck-to-Paycheck Normal",
-    trend: "neutral",
+    trend: "improving",
     officialScore: 38.4,
-    crisisRatio: 38.53,
+    crisisRatio: 38.28,
     levelDistribution: {
-      level1: 309,
-      level2: 52,
-      level3: 5,
-      total: 366
+      level1: 299,
+      level2: 51,
+      level3: 3,
+      total: 353
     },
     sampleData: [
       {
@@ -399,38 +399,38 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 228,
+        current: 217,
         target: 200,
         percentage: 39
       },
       {
         platform: "Hacker News",
-        current: 37,
+        current: 35,
         target: 100,
-        percentage: 37
+        percentage: 35
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
       "YouTube: 101 videos about wage stagnation and financial stress",
-      "Reddit: 228 posts from r/antiwork, r/WorkReform, r/povertyfinance",
-      "Hacker News: 37 stories about wage stagnation and financial stress"
+      "Reddit: 217 posts from r/antiwork, r/WorkReform, r/povertyfinance",
+      "Hacker News: 35 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 43.5,
+    score: 47.29,
     label: "Multiple Organs Required",
-    trend: "neutral",
+    trend: "worsening",
     officialScore: 37.6,
-    crisisRatio: 47.43,
+    crisisRatio: 47.09,
     levelDistribution: {
-      level1: 366,
-      level2: 62,
-      level3: 57,
+      level1: 369,
+      level2: 61,
+      level3: 55,
       total: 485
     },
     sampleData: [
@@ -495,7 +495,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 184,
+        current: 177,
         target: 200,
         percentage: 93
       },
@@ -507,9 +507,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 79,
+        current: 86,
         target: 120,
-        percentage: 65
+        percentage: 71
       }
     ],
     dataSources: [
@@ -517,12 +517,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Zillow Rent Index: National median rent trends",
       "Census Bureau: Rent burden data by generation",
       "YouTube: 107 videos about housing crisis and homeownership despair",
-      "Reddit: 184 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
-      "Hacker News: 79 stories about housing affordability crisis",
+      "Reddit: 177 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
+      "Hacker News: 86 stories about housing affordability crisis",
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, Hacker News, and CFPB complaints (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
@@ -605,7 +605,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 182 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
@@ -676,20 +676,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 170 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 58.22,
+    score: 36.77,
     label: "Resume At The Ready",
-    trend: "neutral",
+    trend: "improving",
     officialScore: 76.5,
-    crisisRatio: 46.03,
+    crisisRatio: 45.95,
     levelDistribution: {
-      level1: 330,
-      level2: 168,
-      level3: 12,
-      total: 510
+      level1: 329,
+      level2: 165,
+      level3: 11,
+      total: 505
     },
     sampleData: [
       {
@@ -743,25 +743,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 300,
+        current: 297,
         target: 300,
         percentage: 94
       },
       {
         platform: "Hacker News",
-        current: 145,
+        current: 143,
         target: 150,
-        percentage: 96
+        percentage: 95
       }
     ],
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
       "YouTube: 65 videos about layoffs and job search struggles",
-      "Reddit: 300 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
-      "Hacker News: 145 stories about tech layoffs and job market"
+      "Reddit: 297 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
+      "Hacker News: 143 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 22, 2026"
+    lastUpdated: "March 23, 2026"
   }
 };
 

@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-03-23T05:16:35.207997Z",
+  "fred_series_used": {
+    "avg_hourly_earnings": "CES0500000003",
+    "cpi": "CPIAUCSL",
+    "median_home_price": "MSPUS",
+    "median_household_income": "MEHOINUSA672N",
+    "initial_claims": "ICSA",
+    "consumer_sentiment": "UMCSENT"
+  },
+  "scores": {
+    "healthcare": {
+      "score": 43.6,
+      "source": "fred"
+    },
+    "ai_psychosis": {
+      "score": 12.5,
+      "source": "config_fallback"
+    },
+    "subscription_overload": {
+      "score": 45.2,
+      "source": "config_fallback"
+    },
+    "wage_stagnation": {
+      "score": 28.9,
+      "source": "fred"
+    },
+    "housing_despair": {
+      "score": 47.6,
+      "source": "fred"
+    },
+    "dating_app_despair": {
+      "score": 8.5,
+      "source": "config_fallback"
+    },
+    "layoff_watch": {
+      "score": 23.0,
+      "source": "fred"
+    },
+    "airline_chaos": {
+      "score": 21.0,
+      "source": "config_fallback"
+    }
+  }
+}
