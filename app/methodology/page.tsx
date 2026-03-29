@@ -1,5 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { metricDetails, getLatestUpdateDate } from '@/lib/metricDetailData';
+
+export const metadata: Metadata = {
+  title: 'Methodology & Data Transparency',
+  description: 'How The Absurdity Index quantifies modern absurdity: scoring formulas, data sources, social sentiment analysis, and collection progress across 8 metrics.',
+  alternates: {
+    canonical: '/methodology',
+  },
+  openGraph: {
+    title: 'Methodology & Data Transparency',
+    description: 'How we quantify the absurd: scoring formulas, data sources, and transparent methodology.',
+    url: 'https://absurdity-index.vercel.app/methodology',
+  },
+};
 
 // Order metrics by total entries (descending) for the table
 function getSortedMetrics() {

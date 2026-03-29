@@ -1,5 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { metricDetails, getLatestUpdateDate } from '@/lib/metricDetailData';
+
+export const metadata: Metadata = {
+  title: 'Pipeline Status',
+  description: 'Data collection health for The Absurdity Index: platform coverage, freshness, and collection progress across YouTube, Reddit, and other sources.',
+  alternates: {
+    canonical: '/status',
+  },
+  openGraph: {
+    title: 'Pipeline Status',
+    description: 'Data collection health and platform coverage for The Absurdity Index.',
+    url: 'https://absurdity-index.vercel.app/status',
+  },
+};
 
 function getDaysSince(dateStr: string): number {
   const date = new Date(dateStr);
