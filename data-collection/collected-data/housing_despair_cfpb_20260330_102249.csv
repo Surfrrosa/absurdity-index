@@ -1,0 +1,101 @@
+complaint_id,product,sub_product,issue,category,date_received,narrative_snippet,metric
+20565833,Mortgage,Conventional home mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-25T12:00:00-05:00,,housing_despair
+20564493,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-25T12:00:00-05:00,,housing_despair
+20550680,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-24T12:00:00-05:00,,housing_despair
+20546798,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-24T12:00:00-05:00,,housing_despair
+20516584,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-23T12:00:00-05:00,,housing_despair
+20501167,Mortgage,VA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-23T12:00:00-05:00,,housing_despair
+20498163,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-23T12:00:00-05:00,,housing_despair
+20496182,Mortgage,Home equity loan or line of credit (HELOC),Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-23T12:00:00-05:00,,housing_despair
+20489983,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-22T12:00:00-05:00,,housing_despair
+20489477,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-22T12:00:00-05:00,,housing_despair
+20488801,Mortgage,Manufactured home loan,Trouble during payment process,LEVEL_1_AWARE,2026-03-22T12:00:00-05:00,,housing_despair
+20484836,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-22T12:00:00-05:00,,housing_despair
+20481808,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-21T12:00:00-05:00,,housing_despair
+20481674,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-21T12:00:00-05:00,,housing_despair
+20481075,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-21T12:00:00-05:00,,housing_despair
+20478241,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-21T12:00:00-05:00,,housing_despair
+20470817,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-21T12:00:00-05:00,,housing_despair
+20466538,Mortgage,FHA mortgage,Incorrect information on your report,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20466135,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20461718,Mortgage,FHA mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20456785,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20452431,Mortgage,VA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20450670,Mortgage,Other type of mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20449287,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-20T12:00:00-05:00,,housing_despair
+20449269,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20444134,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-20T12:00:00-05:00,,housing_despair
+20438520,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-20T12:00:00-05:00,,housing_despair
+20430515,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20428165,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20427017,Mortgage,VA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20426280,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-19T12:00:00-05:00,,housing_despair
+20424106,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20424001,Mortgage,Reverse mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20423313,Mortgage,Home equity loan or line of credit (HELOC),Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20422607,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20422050,Mortgage,Conventional home mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20419777,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20418658,Mortgage,FHA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20418131,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20418054,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-19T12:00:00-05:00,,housing_despair
+20415073,Mortgage,FHA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20414510,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-19T12:00:00-05:00,,housing_despair
+20412197,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-19T12:00:00-05:00,,housing_despair
+20412088,Mortgage,Conventional home mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20398816,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20398512,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-19T12:00:00-05:00,,housing_despair
+20398091,Mortgage,Conventional home mortgage,Incorrect information on your report,LEVEL_1_AWARE,2026-03-19T12:00:00-05:00,,housing_despair
+20409317,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20394302,Mortgage,USDA mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20393892,Mortgage,Home equity loan or line of credit (HELOC),Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-18T12:00:00-05:00,,housing_despair
+20393824,Mortgage,FHA mortgage,Credit monitoring or identity theft protection services,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20393718,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20391384,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20388489,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20385555,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20385519,Mortgage,Other type of mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20382219,Mortgage,Conventional home mortgage,Incorrect information on your report,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20381976,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-18T12:00:00-05:00,,housing_despair
+20378901,Mortgage,Conventional home mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20378438,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-18T12:00:00-05:00,,housing_despair
+20377681,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-18T12:00:00-05:00,,housing_despair
+20377489,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20376715,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20370083,Mortgage,Conventional home mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20367847,Mortgage,Conventional home mortgage,Incorrect information on your report,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20366737,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20366226,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20362808,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20356400,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-18T12:00:00-05:00,,housing_despair
+20371370,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-17T12:00:00-05:00,,housing_despair
+20356607,Mortgage,Reverse mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-17T12:00:00-05:00,,housing_despair
+20348783,Mortgage,FHA mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20347643,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20344722,Mortgage,FHA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20343620,Mortgage,FHA mortgage,Closing on a mortgage,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20339623,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20339055,Mortgage,VA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20338679,Mortgage,Home equity loan or line of credit (HELOC),Incorrect information on your report,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20333420,Mortgage,VA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-17T12:00:00-05:00,,housing_despair
+20333184,Mortgage,Home equity loan or line of credit (HELOC),Problem with a company's investigation into an existing problem,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20330630,Mortgage,Home equity loan or line of credit (HELOC),Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20328612,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20326624,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20323036,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-17T12:00:00-05:00,,housing_despair
+20322230,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20318957,Mortgage,Conventional home mortgage,Incorrect information on your report,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20318925,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20317777,Mortgage,FHA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-17T12:00:00-05:00,,housing_despair
+20317632,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20316820,Mortgage,FHA mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-17T12:00:00-05:00,,housing_despair
+20332919,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
+20314257,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
+20311775,Mortgage,VA mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-16T12:00:00-05:00,,housing_despair
+20311766,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-16T12:00:00-05:00,,housing_despair
+20311450,Mortgage,Conventional home mortgage,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-16T12:00:00-05:00,,housing_despair
+20310627,Mortgage,FHA mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
+20309487,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
+20308863,Mortgage,Conventional home mortgage,Trouble during payment process,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
+20308207,Mortgage,Manufactured home loan,Struggling to pay mortgage,LEVEL_2_FRUSTRATED,2026-03-16T12:00:00-05:00,,housing_despair
+20307667,Mortgage,Conventional home mortgage,Applying for a mortgage or refinancing an existing mortgage,LEVEL_1_AWARE,2026-03-16T12:00:00-05:00,,housing_despair
