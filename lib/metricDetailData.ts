@@ -44,16 +44,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 44.44,
+    score: 44.68,
     label: "Prior Authorization Purgatory",
     trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 45.13,
+    crisisRatio: 45.53,
     levelDistribution: {
-      level1: 371,
-      level2: 63,
-      level3: 48,
-      total: 482
+      level1: 351,
+      level2: 62,
+      level3: 49,
+      total: 462
     },
     sampleData: [
       {
@@ -63,7 +63,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-03-03",
         url: "https://www.youtube.com/watch?v=V5BPOKtssgQ",
         videoId: "V5BPOKtssgQ",
-        viewCount: 150587,
+        viewCount: 159023,
         commentCount: 0
       },
       {
@@ -73,7 +73,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-02-24",
         url: "https://www.youtube.com/watch?v=WUujzQ_jMI8",
         videoId: "WUujzQ_jMI8",
-        viewCount: 50160,
+        viewCount: 50175,
         commentCount: 0
       },
       {
@@ -97,14 +97,14 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2024-03-11",
         url: "https://www.youtube.com/watch?v=-lgzaL1zans",
         videoId: "-lgzaL1zans",
-        viewCount: 194919,
+        viewCount: 194943,
         commentCount: 0
       }
     ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 160,
+        current: 150,
         target: 160,
         percentage: 100
       },
@@ -116,9 +116,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 95,
+        current: 85,
         target: 120,
-        percentage: 79
+        percentage: 70
       },
       {
         platform: "CFPB",
@@ -131,28 +131,38 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "KFF (Kaiser Family Foundation): Premium increase data, coverage statistics, uninsured rate",
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
-      "YouTube: 160 videos analyzing healthcare system failures",
+      "YouTube: 150 videos analyzing healthcare system failures",
       "Reddit: 127 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
-      "TikTok: 95 videos via YouTube compilations",
+      "TikTok: 85 videos via YouTube compilations",
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Sources include YouTube, Reddit, TikTok, and CFPB consumer complaints. Content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement. Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 36.15,
+    score: 36.67,
     label: "Digital Stockholm Syndrome Setting In",
     trend: "neutral",
     officialScore: 12.5,
-    crisisRatio: 51.91,
+    crisisRatio: 52.79,
     levelDistribution: {
-      level1: 360,
+      level1: 343,
       level2: 32,
-      level3: 80,
-      total: 472
+      level3: 74,
+      total: 449
     },
     sampleData: [
+      {
+        content: "Addicted To Her AI Boyfriend",
+        platform: "youtube",
+        level: 3,
+        date: "2026-04-01",
+        url: "https://www.youtube.com/watch?v=0WS68I6PY-4",
+        videoId: "0WS68I6PY-4",
+        viewCount: 2254624,
+        commentCount: 0
+      },
       {
         content: "Why people are falling in love with A.I. companions | 60 Minutes Australia",
         platform: "youtube",
@@ -160,17 +170,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-05-04",
         url: "https://www.youtube.com/watch?v=_d08BZmdZu8",
         videoId: "_d08BZmdZu8",
-        viewCount: 1842360,
-        commentCount: 0
-      },
-      {
-        content: "Grieving mum speaks out about teen son falling in love with an AI bot | 60 Minutes Australia",
-        platform: "youtube",
-        level: 3,
-        date: "2025-12-07",
-        url: "https://www.youtube.com/watch?v=yz4zfBnHksU",
-        videoId: "yz4zfBnHksU",
-        viewCount: 1085564,
+        viewCount: 1861885,
         commentCount: 0
       },
       {
@@ -194,7 +194,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2024-12-25",
         url: "https://www.youtube.com/watch?v=12waK-aDHV0",
         videoId: "12waK-aDHV0",
-        viewCount: 784203,
+        viewCount: 792470,
         commentCount: 0
       },
       {
@@ -208,7 +208,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 134,
+        current: 135,
         target: 160,
         percentage: 84
       },
@@ -220,38 +220,38 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 68,
+        current: 45,
         target: 120,
-        percentage: 56
+        percentage: 37
       },
       {
         platform: "Hacker News",
-        current: 125,
+        current: 124,
         target: 150,
-        percentage: 83
+        percentage: 82
       }
     ],
     dataSources: [
-      "YouTube: 134 videos analyzing AI companion usage and addiction",
+      "YouTube: 135 videos analyzing AI companion usage and addiction",
       "Reddit: 145 posts from r/replika, r/CharacterAI, r/ChatGPT",
-      "TikTok: 68 videos via YouTube compilations",
-      "Hacker News: 125 stories about AI risks and companion addiction"
+      "TikTok: 45 videos via YouTube compilations",
+      "Hacker News: 124 stories about AI risks and companion addiction"
     ],
     methodology: "Systematic collection from multiple platforms including YouTube, Reddit, TikTok, and Hacker News. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official data (40% weight).",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 40.2,
+    score: 40.13,
     label: "Quarterly Purge Required",
     trend: "neutral",
     officialScore: 45.2,
-    crisisRatio: 36.86,
+    crisisRatio: 36.75,
     levelDistribution: {
-      level1: 402,
-      level2: 20,
-      level3: 4,
-      total: 426
+      level1: 390,
+      level2: 22,
+      level3: 3,
+      total: 415
     },
     sampleData: [
       {
@@ -261,7 +261,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-01-31",
         url: "https://www.youtube.com/watch?v=jRcqJkW44Lc",
         videoId: "jRcqJkW44Lc",
-        viewCount: 593497,
+        viewCount: 597692,
         commentCount: 0
       },
       {
@@ -289,15 +289,15 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 160,
+        current: 150,
         target: 160,
         percentage: 100
       },
       {
         platform: "Hacker News",
-        current: 138,
+        current: 137,
         target: 150,
-        percentage: 92
+        percentage: 91
       },
       {
         platform: "TikTok",
@@ -316,28 +316,38 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Consumer Reports: Average subscriptions per household, spending trends",
       "Streaming service pricing data: All major platforms tracked",
       "Industry reports: Annual subscription price increase trends",
-      "YouTube: 160 videos analyzing subscription fatigue",
-      "Hacker News: 138 stories about subscription fatigue and pricing",
+      "YouTube: 150 videos analyzing subscription fatigue",
+      "Hacker News: 137 stories about subscription fatigue and pricing",
       "TikTok: 4 videos via YouTube compilations",
       "Reddit: 128 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment from YouTube, Hacker News, TikTok, and Reddit (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 34.39,
+    score: 37.6,
     label: "Paycheck-to-Paycheck Normal",
-    trend: "neutral",
+    trend: "worsening",
     officialScore: 38.4,
-    crisisRatio: 38.05,
+    crisisRatio: 40.13,
     levelDistribution: {
-      level1: 295,
+      level1: 294,
       level2: 43,
-      level3: 4,
-      total: 342
+      level3: 10,
+      total: 347
     },
     sampleData: [
+      {
+        content: "40% of Americans Can’t Afford Rent — The Middle Class Collapse Fueling RV Homelessness (2026)",
+        platform: "youtube",
+        level: 3,
+        date: "2026-02-17",
+        url: "https://www.youtube.com/watch?v=eSly44yD8lU",
+        videoId: "eSly44yD8lU",
+        viewCount: 4744,
+        commentCount: 0
+      },
       {
         content: "Why Americans Are Working 3 Jobs and Still Poor",
         platform: "youtube",
@@ -346,16 +356,6 @@ export const metricDetails: Record<string, MetricDetailData> = {
         url: "https://www.youtube.com/watch?v=bOopXHk6nT8",
         videoId: "bOopXHk6nT8",
         viewCount: 189,
-        commentCount: 0
-      },
-      {
-        content: "\"I’m 53, exhausted, and still living paycheck to paycheck\"",
-        platform: "youtube",
-        level: 2,
-        date: "2026-03-24",
-        url: "https://www.youtube.com/watch?v=wQ4qZypCB80",
-        videoId: "wQ4qZypCB80",
-        viewCount: 120902,
         commentCount: 0
       },
       {
@@ -373,13 +373,13 @@ export const metricDetails: Record<string, MetricDetailData> = {
         url: "https://www.reddit.com/r/antiwork/comments/1rxs4dj/apparently_some_customers_found_my_jacket/"
       },
       {
-        content: "America's Crisis: The Truth About Living Paycheck To Paycheck in 2026",
+        content: "Americans Are Giving Up From The INSANE Cost Of Living",
         platform: "tiktok",
         level: 3,
-        date: "2025-12-04",
-        url: "https://www.youtube.com/watch?v=Vzhpqp4inPU",
-        videoId: "Vzhpqp4inPU",
-        viewCount: 70110,
+        date: "2025-08-29",
+        url: "https://www.youtube.com/watch?v=NvxP4_plscU",
+        videoId: "NvxP4_plscU",
+        viewCount: 1788377,
         commentCount: 0
       },
       {
@@ -393,7 +393,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 82,
+        current: 86,
         target: 100,
         percentage: 88
       },
@@ -405,33 +405,33 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 30,
+        current: 31,
         target: 100,
-        percentage: 30
+        percentage: 31
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
-      "YouTube: 82 videos about wage stagnation and financial stress",
+      "YouTube: 86 videos about wage stagnation and financial stress",
       "Reddit: 217 posts from r/antiwork, r/WorkReform, r/povertyfinance",
-      "Hacker News: 30 stories about wage stagnation and financial stress"
+      "Hacker News: 31 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 46.75,
+    score: 47.67,
     label: "Multiple Organs Required",
     trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 46.19,
+    crisisRatio: 47.71,
     levelDistribution: {
-      level1: 370,
-      level2: 68,
-      level3: 54,
-      total: 492
+      level1: 350,
+      level2: 64,
+      level3: 61,
+      total: 475
     },
     sampleData: [
       {
@@ -441,7 +441,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-01-17",
         url: "https://www.youtube.com/watch?v=awmWY5q1U1A",
         videoId: "awmWY5q1U1A",
-        viewCount: 1551686,
+        viewCount: 1570329,
         commentCount: 0
       },
       {
@@ -451,7 +451,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-02-01",
         url: "https://www.youtube.com/watch?v=aX7Tpu19QfU",
         videoId: "aX7Tpu19QfU",
-        viewCount: 842722,
+        viewCount: 847276,
         commentCount: 0
       },
       {
@@ -479,7 +479,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 140,
+        current: 110,
         target: 160,
         percentage: 86
       },
@@ -497,35 +497,35 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 75,
+        current: 88,
         target: 120,
-        percentage: 62
+        percentage: 73
       }
     ],
     dataSources: [
       "Redfin: Median home price tracking",
       "Zillow Rent Index: National median rent trends",
       "Census Bureau: Rent burden data by generation",
-      "YouTube: 140 videos about housing crisis and homeownership despair",
+      "YouTube: 110 videos about housing crisis and homeownership despair",
       "Reddit: 177 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
-      "Hacker News: 75 stories about housing affordability crisis",
+      "Hacker News: 88 stories about housing affordability crisis",
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, Hacker News, and CFPB complaints (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 34.95,
+    score: 35.09,
     label: "Expect Delays",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 44.25,
+    crisisRatio: 44.49,
     levelDistribution: {
-      level1: 220,
-      level2: 77,
-      level3: 15,
-      total: 312
+      level1: 191,
+      level2: 73,
+      level3: 14,
+      total: 278
     },
     sampleData: [
       {
@@ -539,12 +539,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Stranded at an airport, a man survives on cookies！#movie #hearttouching #adventure #funny",
+        content: "Lady Stranded at airport in Arizona l",
         platform: "youtube",
         level: 3,
         date: "",
-        url: "https://www.youtube.com/watch?v=pZwKUeypmkA",
-        videoId: "pZwKUeypmkA",
+        url: "https://www.youtube.com/watch?v=RTV0J9AT7H0",
+        videoId: "RTV0J9AT7H0",
         viewCount: 0,
         commentCount: 0
       },
@@ -566,7 +566,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 130,
+        current: 96,
         target: 160,
         percentage: 61
       },
@@ -581,24 +581,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: Flight delay and cancellation rates",
       "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "YouTube: 130 videos about airline chaos and travel nightmares",
+      "YouTube: 96 videos about airline chaos and travel nightmares",
       "Reddit: 182 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 27.38,
+    score: 27.45,
     label: "Swipe Fatigue Setting In",
     trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 39.96,
+    crisisRatio: 40.08,
     levelDistribution: {
-      level1: 219,
-      level2: 43,
-      level3: 13,
-      total: 275
+      level1: 218,
+      level2: 45,
+      level3: 14,
+      total: 277
     },
     sampleData: [
       {
@@ -639,7 +639,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 105,
+        current: 107,
         target: 160,
         percentage: 82
       },
@@ -652,22 +652,22 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     dataSources: [
       "Pew Research: Dating app frustration and burnout survey data",
-      "YouTube: 105 videos about dating app burnout and despair",
+      "YouTube: 107 videos about dating app burnout and despair",
       "Reddit: 170 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 37.8,
+    score: 36.34,
     label: "Resume At The Ready",
     trend: "neutral",
     officialScore: 76.5,
-    crisisRatio: 45.67,
+    crisisRatio: 46.43,
     levelDistribution: {
-      level1: 333,
-      level2: 161,
+      level1: 331,
+      level2: 163,
       level3: 11,
       total: 505
     },
@@ -679,17 +679,17 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-01-26",
         url: "https://www.youtube.com/watch?v=vfi47X6dJzU",
         videoId: "vfi47X6dJzU",
-        viewCount: 19466,
+        viewCount: 19559,
         commentCount: 0
       },
       {
-        content: "The 2026 Job Market is DOOMED — People Can't Get Hired",
+        content: "The Job Market is Officially Broken in 2026",
         platform: "youtube",
         level: 2,
-        date: "2026-01-21",
-        url: "https://www.youtube.com/watch?v=NhPvAieny9Y",
-        videoId: "NhPvAieny9Y",
-        viewCount: 13717,
+        date: "2026-03-23",
+        url: "https://www.youtube.com/watch?v=MFzuybsykKI",
+        videoId: "MFzuybsykKI",
+        viewCount: 4719,
         commentCount: 0
       },
       {
@@ -717,7 +717,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 64,
+        current: 56,
         target: 100,
         percentage: 74
       },
@@ -729,19 +729,19 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 144,
+        current: 152,
         target: 150,
-        percentage: 96
+        percentage: 100
       }
     ],
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
-      "YouTube: 64 videos about layoffs and job search struggles",
+      "YouTube: 56 videos about layoffs and job search struggles",
       "Reddit: 297 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
-      "Hacker News: 144 stories about tech layoffs and job market"
+      "Hacker News: 152 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "March 30, 2026"
+    lastUpdated: "April 6, 2026"
   }
 };
 
