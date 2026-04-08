@@ -1,44 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
-
-interface DataPoint {
-  content: string;
-  platform: string;
-  level: number;
-  date: string;
-  url?: string;
-  viewCount?: number;
-  videoId?: string;
-  commentCount?: number;
-}
-
-interface CollectionProgress {
-  platform: string;
-  current: number;
-  target: number;
-  percentage: number;
-}
-
-interface MetricDetailData {
-  title: string;
-  score: number;
-  label: string;
-  trend: 'improving' | 'neutral' | 'worsening';
-  officialScore: number;
-  crisisRatio: number;
-  levelDistribution: {
-    level1: number;
-    level2: number;
-    level3: number;
-    total: number;
-  };
-  sampleData: DataPoint[];
-  collectionProgress: CollectionProgress[];
-  dataSources: string[];
-  methodology: string;
-  lastUpdated: string;
-}
+import type { MetricDetailData } from '@/lib/metricDetailData';
 
 interface MetricDetailProps {
   data: MetricDetailData;

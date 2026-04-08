@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { metricDetails, getLatestUpdateDate } from '@/lib/metricDetailData';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Pipeline Status',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pipeline Status',
     description: 'Data collection health and platform coverage for The Absurdity Index.',
-    url: 'https://absurdity-index.vercel.app/status',
+    url: `${SITE_URL}/status`,
   },
 };
 

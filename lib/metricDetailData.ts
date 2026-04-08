@@ -1,6 +1,3 @@
-// Sample detailed data for metrics
-// In production, this would be loaded from the data collection JSON files
-
 import { getMetricLabel } from './metricLabels';
 
 export interface DataPoint {
@@ -754,19 +751,6 @@ export const metricDetails: Record<string, MetricDetailData> = {
     lastUpdated: "March 23, 2026"
   }
 };
-
-/**
- * Get a single metric with its dynamically calculated label
- */
-export function getMetricWithLabel(metricName: string): MetricDetailData | undefined {
-  const metric = metricDetails[metricName];
-  if (!metric) return undefined;
-
-  return {
-    ...metric,
-    label: getMetricLabel(metricName, metric.score)
-  };
-}
 
 /**
  * Get all metrics with their dynamically calculated labels

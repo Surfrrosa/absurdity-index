@@ -215,7 +215,7 @@ class LayoffWatchCollector:
             return "Welcome To The Gig Economy Hellscape"
 
     def get_stats(self) -> Dict:
-        """Calculate comprehensive statistics"""
+        """Calculate score statistics."""
         total = len(self.entries)
         if total == 0:
             return {

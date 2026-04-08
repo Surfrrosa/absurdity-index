@@ -3,12 +3,12 @@
  * Each metric has 5 labels corresponding to severity levels
  */
 
-export interface LabelThreshold {
+interface LabelThreshold {
   max: number;
   label: string;
 }
 
-export interface MetricLabels {
+interface MetricLabels {
   [metricName: string]: LabelThreshold[];
 }
 

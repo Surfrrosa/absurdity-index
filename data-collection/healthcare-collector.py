@@ -187,7 +187,7 @@ class HealthcareDataCollector:
             return "Healthcare Is A Right (In Other Countries)"
 
     def get_stats(self) -> Dict:
-        """Calculate comprehensive statistics"""
+        """Calculate score statistics."""
         total = len(self.entries)
         if total == 0:
             return {

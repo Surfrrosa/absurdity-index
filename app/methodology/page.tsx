@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { metricDetails, getLatestUpdateDate } from '@/lib/metricDetailData';
+import { SITE_URL } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Methodology & Data Transparency',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Methodology & Data Transparency',
     description: 'How we quantify the absurd: scoring formulas, data sources, and transparent methodology.',
-    url: 'https://absurdity-index.vercel.app/methodology',
+    url: `${SITE_URL}/methodology`,
   },
 };
 
@@ -84,8 +85,7 @@ export default function Methodology() {
         {/* Intro */}
         <div className="bg-white border-4 border-black p-8 mb-8">
           <p className="text-black text-lg font-bold leading-relaxed">
-            The Absurdity Index quantifies the absurdity of modern existence through rigorous data collection
-            and transparent methodology. All data sources, calculations, and sampling methods are documented below.
+            The Absurdity Index measures 8 metrics of modern life. All data sources, formulas, and sampling methods are documented below.
           </p>
         </div>
 

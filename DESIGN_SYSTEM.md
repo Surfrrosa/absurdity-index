@@ -27,10 +27,8 @@ The Absurdity Index uses **brutalist design** to match its unflinching examinati
 | **Space Grotesk** | 700 (bold) | Body text, labels, UI elements | Default `font-family` on `body` |
 | **Roboto Mono** | 700 (bold) | Numbers, data, scores, dates | `.mono` class |
 
-### Font Import (globals.css)
-```css
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@700&family=Roboto+Mono:wght@700&display=swap');
-```
+### Font Loading (layout.tsx)
+Fonts are loaded via `next/font/google` in `app/layout.tsx` using CSS variable injection (`--font-archivo`, `--font-space-grotesk`, `--font-roboto-mono`).
 
 ### Automatic Styling
 Headlines (`h1`-`h6`) automatically receive:

@@ -206,7 +206,7 @@ class WageStagnationCollector:
             return "Late Stage Capitalism Achievement Unlocked"
 
     def get_stats(self) -> Dict:
-        """Calculate comprehensive statistics"""
+        """Calculate score statistics."""
         total = len(self.entries)
         if total == 0:
             return {

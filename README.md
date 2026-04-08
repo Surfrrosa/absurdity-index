@@ -2,7 +2,7 @@
 
 **A data-driven dashboard quantifying the absurdity of modern existence.**
 
-Live at: [absurdity-index.vercel.app](https://absurdity-index.vercel.app) *(coming soon)*
+Live at: [absurdity-index.vercel.app](https://absurdity-index.vercel.app)
 
 ---
 
@@ -140,8 +140,6 @@ See `/data-collection/COLLECTION_QUICKSTART.md` for detailed instructions.
 
 ## Deployment
 
-This project is optimized for deployment on Vercel:
-
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shainarazavi/absurdity-index)
 
 ### Manual Deployment
@@ -167,23 +165,6 @@ This project is optimized for deployment on Vercel:
 - Verifiable sources only
 
 ---
-
-## Policy Change Monitoring
-
-The Absurdity Index tracks major policy changes affecting metrics. When policy changes occur, baselines are recalculated and documented with effective dates.
-
-Healthcare (ACA modifications, Medicare/Medicaid changes, prior authorization rules), Wage & Labor (minimum wage legislation, NLRB rulings, tax policy), Housing (interest rates, zoning reform, rent control, tenant protections), Airlines (DOT passenger rights, FAA safety regulations, merger approvals), Tech & AI (AI safety regulations, antitrust enforcement, privacy laws), Labor Market (unemployment insurance, job training, WARN Act enforcement).
-
----
-
-## Contributing
-
-This is a personal research project by Shaina Pauley. Data collection contributions are welcome:
-
-1. Follow the methodology in `/data-collection/METHODOLOGY_FORMULAS.md`
-2. Use provided Python scripts for categorization
-3. Include verifiable URLs for all data points
-4. Submit pull requests with documented sources
 
 ---
 

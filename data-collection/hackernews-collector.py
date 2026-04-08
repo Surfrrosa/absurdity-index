@@ -26,7 +26,7 @@ from content_filters import filter_content
 BASE_URL = "https://hn.algolia.com/api/v1/search"
 
 HEADERS = {
-    "User-Agent": "AbsurdityIndexResearch/1.0 (Academic Research Project)"
+    "User-Agent": "AbsurdityIndexResearch/1.0 (personal research; absurdity-index.vercel.app)"
 }
 
 # 90-day lookback window

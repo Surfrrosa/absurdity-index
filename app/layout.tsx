@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Archivo_Black, Space_Grotesk, Roboto_Mono } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/siteConfig";
 import "./globals.css";
 
 const archivoBlack = Archivo_Black({
@@ -26,7 +27,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://absurdity-index.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "The Absurdity Index | Quantifying Modern Existence",
     template: "%s | The Absurdity Index",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://absurdity-index.vercel.app",
+    url: SITE_URL,
     title: "The Absurdity Index | Quantifying Modern Existence",
     description: "Active research project tracking 8 metrics of modern absurdity through systematic data collection and transparent methodology.",
     siteName: "The Absurdity Index",

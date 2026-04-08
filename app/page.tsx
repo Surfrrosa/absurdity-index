@@ -7,6 +7,8 @@ import AbsurdityScore from '@/components/AbsurdityScore';
 import MetricDetail from '@/components/MetricDetail';
 import { getAllMetricsWithLabels, getLatestUpdateDate } from '@/lib/metricDetailData';
 
+const truncate = (s: string, n = 50) => s.length > n ? s.slice(0, n) + '..' : s;
+
 export default function Home() {
   const [selectedMetric, setSelectedMetric] = useState<string | null>(null);
   const metricsWithLabels = getAllMetricsWithLabels();
@@ -70,16 +72,9 @@ export default function Home() {
                 label={metric.label}
                 trend={metric.trend}
                 data={{
-                  // Create summary from data sources with ellipsis if truncated
-                  source1: metric.dataSources[0]
-                    ? (metric.dataSources[0].length > 50 ? metric.dataSources[0].substring(0, 50) + ".." : metric.dataSources[0])
-                    : "",
-                  source2: metric.dataSources[1]
-                    ? (metric.dataSources[1].length > 50 ? metric.dataSources[1].substring(0, 50) + ".." : metric.dataSources[1])
-                    : "",
-                  source3: metric.dataSources[2]
-                    ? (metric.dataSources[2].length > 50 ? metric.dataSources[2].substring(0, 50) + ".." : metric.dataSources[2])
-                    : ""
+                  source1: metric.dataSources[0] ? truncate(metric.dataSources[0]) : "",
+                  source2: metric.dataSources[1] ? truncate(metric.dataSources[1]) : "",
+                  source3: metric.dataSources[2] ? truncate(metric.dataSources[2]) : ""
                 }}
                 onClick={() => setSelectedMetric(name)}
                 entryCount={metric.levelDistribution.total}
@@ -100,7 +95,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="border-b-2 border-white hover:border-red-600 hover:text-red-600 transition-colors"
             >
-              ♡ SUPPORT THIS PROJECT
+              SUPPORT THIS PROJECT
             </a>
           </p>
         </footer>
