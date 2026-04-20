@@ -41,16 +41,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 44.42,
+    score: 43.27,
     label: "Prior Authorization Purgatory",
     trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 45.09,
+    crisisRatio: 43.18,
     levelDistribution: {
-      level1: 354,
-      level2: 61,
-      level3: 47,
-      total: 462
+      level1: 769,
+      level2: 122,
+      level3: 61,
+      total: 953
     },
     sampleData: [
       {
@@ -60,17 +60,17 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-03-03",
         url: "https://www.youtube.com/watch?v=V5BPOKtssgQ",
         videoId: "V5BPOKtssgQ",
-        viewCount: 164807,
+        viewCount: 167367,
         commentCount: 0
       },
       {
-        content: "Insurance Denied a Life-Saving Stroke Treatment… for “Cost Optimization”",
+        content: "“They Called FDA-Approved Cancer Treatment ‘Experimental’… Then Denied It.”",
         platform: "youtube",
         level: 3,
-        date: "2026-02-24",
-        url: "https://www.youtube.com/watch?v=WUujzQ_jMI8",
-        videoId: "WUujzQ_jMI8",
-        viewCount: 50197,
+        date: "2026-04-18",
+        url: "https://www.youtube.com/watch?v=JioBoGBSHCg",
+        videoId: "JioBoGBSHCg",
+        viewCount: 72413,
         commentCount: 0
       },
       {
@@ -94,7 +94,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2024-03-11",
         url: "https://www.youtube.com/watch?v=-lgzaL1zans",
         videoId: "-lgzaL1zans",
-        viewCount: 194973,
+        viewCount: 194996,
         commentCount: 0
       }
     ],
@@ -113,9 +113,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "TikTok",
-        current: 85,
+        current: 87,
         target: 120,
-        percentage: 70
+        percentage: 72
       },
       {
         platform: "CFPB",
@@ -130,24 +130,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "JAMA Network: Claim denial rates and prior authorization burden research",
       "YouTube: 150 videos analyzing healthcare system failures",
       "Reddit: 127 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
-      "TikTok: 85 videos via YouTube compilations",
+      "TikTok: 87 videos via YouTube compilations",
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
     methodology: "Multi-source data collection combining official healthcare statistics (40% weight) with engagement-weighted social media sentiment analysis (60% weight). Sources include YouTube, Reddit, TikTok, and CFPB consumer complaints. Content categorized into three severity levels (L1=0.33, L2=0.67, L3=1.0) and weighted by logarithmic engagement. Final social score combines severity and reach to quantify lived experiences.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 37.8,
+    score: 33.6,
     label: "Digital Stockholm Syndrome Setting In",
-    trend: "neutral",
+    trend: "improving",
     officialScore: 12.5,
-    crisisRatio: 54.66,
+    crisisRatio: 47.66,
     levelDistribution: {
-      level1: 345,
-      level2: 32,
-      level3: 83,
-      total: 460
+      level1: 735,
+      level2: 33,
+      level3: 75,
+      total: 843
     },
     sampleData: [
       {
@@ -157,7 +157,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-04-01",
         url: "https://www.youtube.com/watch?v=0WS68I6PY-4",
         videoId: "0WS68I6PY-4",
-        viewCount: 2939377,
+        viewCount: 3152158,
         commentCount: 0
       },
       {
@@ -167,7 +167,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2025-05-04",
         url: "https://www.youtube.com/watch?v=_d08BZmdZu8",
         videoId: "_d08BZmdZu8",
-        viewCount: 1876704,
+        viewCount: 1899567,
         commentCount: 0
       },
       {
@@ -185,13 +185,13 @@ export const metricDetails: Record<string, MetricDetailData> = {
         url: "https://www.reddit.com/r/CharacterAI/comments/1rftiwb/people_of_character_ai_i_come_with_you_with_a/"
       },
       {
-        content: "Trending chatgpt Prompts Photo Editing Prompts #shorts #viral #chatgpt #prompts",
+        content: "DO NOT Call The Ai Bot Version of ME ...it Sounds JUST LIKE ME & Now I’m Traumatized",
         platform: "tiktok",
         level: 3,
-        date: "2025-06-30",
-        url: "https://www.youtube.com/watch?v=21EseaiPb38",
-        videoId: "21EseaiPb38",
-        viewCount: 6124064,
+        date: "2024-10-19",
+        url: "https://www.youtube.com/watch?v=HkU0kz0NBz0",
+        videoId: "HkU0kz0NBz0",
+        viewCount: 1715235,
         commentCount: 0
       },
       {
@@ -205,7 +205,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 135,
+        current: 134,
         target: 160,
         percentage: 84
       },
@@ -223,32 +223,32 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 122,
+        current: 119,
         target: 150,
-        percentage: 81
+        percentage: 79
       }
     ],
     dataSources: [
-      "YouTube: 135 videos analyzing AI companion usage and addiction",
+      "YouTube: 134 videos analyzing AI companion usage and addiction",
       "Reddit: 145 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 58 videos via YouTube compilations",
-      "Hacker News: 122 stories about AI risks and companion addiction"
+      "Hacker News: 119 stories about AI risks and companion addiction"
     ],
     methodology: "Systematic collection from multiple platforms including YouTube, Reddit, TikTok, and Hacker News. Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by engagement. Social score (60% weight) combined with official data (40% weight).",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Subscription Overload": {
     title: "Subscription Overload",
-    score: 42.3,
+    score: 40.22,
     label: "Quarterly Purge Required",
-    trend: "worsening",
+    trend: "improving",
     officialScore: 45.2,
-    crisisRatio: 40.37,
+    crisisRatio: 36.9,
     levelDistribution: {
-      level1: 404,
-      level2: 24,
-      level3: 12,
-      total: 440
+      level1: 744,
+      level2: 88,
+      level3: 2,
+      total: 834
     },
     sampleData: [
       {
@@ -258,7 +258,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-01-31",
         url: "https://www.youtube.com/watch?v=jRcqJkW44Lc",
         videoId: "jRcqJkW44Lc",
-        viewCount: 601060,
+        viewCount: 603132,
         commentCount: 0
       },
       {
@@ -282,7 +282,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2024-08-18",
         url: "https://www.youtube.com/watch?v=G8UX3NfOWs4",
         videoId: "G8UX3NfOWs4",
-        viewCount: 9982,
+        viewCount: 10170,
         commentCount: 0
       },
       {
@@ -302,15 +302,15 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 135,
+        current: 139,
         target: 150,
-        percentage: 90
+        percentage: 92
       },
       {
         platform: "TikTok",
-        current: 27,
+        current: 29,
         target: 120,
-        percentage: 22
+        percentage: 24
       },
       {
         platform: "Reddit",
@@ -324,25 +324,25 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Streaming service pricing data: All major platforms tracked",
       "Industry reports: Annual subscription price increase trends",
       "YouTube: 150 videos analyzing subscription fatigue",
-      "Hacker News: 135 stories about subscription fatigue and pricing",
-      "TikTok: 27 videos via YouTube compilations",
+      "Hacker News: 139 stories about subscription fatigue and pricing",
+      "TikTok: 29 videos via YouTube compilations",
       "Reddit: 128 posts from r/Frugal, r/personalfinance, r/povertyfinance"
     ],
     methodology: "Official data on average subscriptions, spending, and price increases (40% weight) combined with engagement-weighted social sentiment from YouTube, Hacker News, TikTok, and Reddit (60% weight). Content categorized by severity and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 41.49,
+    score: 42.0,
     label: "Paycheck-to-Paycheck Normal",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 38.14,
+    crisisRatio: 39.01,
     levelDistribution: {
-      level1: 288,
-      level2: 44,
-      level3: 3,
-      total: 335
+      level1: 592,
+      level2: 125,
+      level3: 4,
+      total: 721
     },
     sampleData: [
       {
@@ -352,17 +352,17 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-02-17",
         url: "https://www.youtube.com/watch?v=eSly44yD8lU",
         videoId: "eSly44yD8lU",
-        viewCount: 5085,
+        viewCount: 5235,
         commentCount: 0
       },
       {
-        content: "\"I’m 53, exhausted, and still living paycheck to paycheck\"",
+        content: "Why 1 in 5 Americans Work 3 Jobs and Still Go Broke!",
         platform: "youtube",
-        level: 2,
-        date: "2026-03-24",
-        url: "https://www.youtube.com/watch?v=wQ4qZypCB80",
-        videoId: "wQ4qZypCB80",
-        viewCount: 145813,
+        level: 3,
+        date: "2026-04-18",
+        url: "https://www.youtube.com/watch?v=0fQjfvnegQo",
+        videoId: "0fQjfvnegQo",
+        viewCount: 2,
         commentCount: 0
       },
       {
@@ -380,17 +380,17 @@ export const metricDetails: Record<string, MetricDetailData> = {
         url: "https://www.reddit.com/r/antiwork/comments/1rxs4dj/apparently_some_customers_found_my_jacket/"
       },
       {
-        content: "The new breed of 'zero bills' homes where you pay nothing for your energy",
+        content: "Cory Doctorow on the High Cost of Living with the Ultra-Rich",
         platform: "hackernews",
         level: 1,
         date: "",
-        url: "https://news.sky.com/story/what-cost-of-living-crisis-why-elliott-pays-absolutely-nothing-to-power-his-home-13496916"
+        url: "https://www.newyorker.com/books/book-currents/cory-doctorow-on-the-high-cost-of-living-with-the-ultra-rich"
       }
     ],
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 86,
+        current: 83,
         target: 100,
         percentage: 88
       },
@@ -402,45 +402,35 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 32,
+        current: 35,
         target: 100,
-        percentage: 32
+        percentage: 35
       }
     ],
     dataSources: [
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
-      "YouTube: 86 videos about wage stagnation and financial stress",
+      "YouTube: 83 videos about wage stagnation and financial stress",
       "Reddit: 217 posts from r/antiwork, r/WorkReform, r/povertyfinance",
-      "Hacker News: 32 stories about wage stagnation and financial stress"
+      "Hacker News: 35 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 48.33,
+    score: 49.15,
     label: "Multiple Organs Required",
     trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 48.82,
+    crisisRatio: 50.18,
     levelDistribution: {
-      level1: 354,
-      level2: 57,
-      level3: 66,
-      total: 477
+      level1: 549,
+      level2: 190,
+      level3: 131,
+      total: 870
     },
     sampleData: [
-      {
-        content: "How Homeless People Sleep In A Car Without Heating",
-        platform: "youtube",
-        level: 3,
-        date: "2026-01-17",
-        url: "https://www.youtube.com/watch?v=awmWY5q1U1A",
-        videoId: "awmWY5q1U1A",
-        viewCount: 1578662,
-        commentCount: 0
-      },
       {
         content: "How Homeless People Turn a Van Into a Comfortable Home",
         platform: "youtube",
@@ -448,7 +438,17 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-02-01",
         url: "https://www.youtube.com/watch?v=aX7Tpu19QfU",
         videoId: "aX7Tpu19QfU",
-        viewCount: 850166,
+        viewCount: 853712,
+        commentCount: 0
+      },
+      {
+        content: "How Homeless People Sleep in a Car Without a Heating System",
+        platform: "youtube",
+        level: 3,
+        date: "2026-02-23",
+        url: "https://www.youtube.com/watch?v=6Sg63ks_4Zc",
+        videoId: "6Sg63ks_4Zc",
+        viewCount: 148358,
         commentCount: 0
       },
       {
@@ -464,16 +464,6 @@ export const metricDetails: Record<string, MetricDetailData> = {
         level: 1,
         date: "2026-03-20",
         url: "https://www.reddit.com/r/personalfinance/comments/1rz2not/my_landlord_is_selling_does_he_have_any_benefit/"
-      },
-      {
-        content: "Grocery Prices OUT OF CONTROL, People Can't Afford to Eat | TikTok Rant on America’s Grocery Crisis",
-        platform: "tiktok",
-        level: 3,
-        date: "2025-04-23",
-        url: "https://www.youtube.com/watch?v=W4CxBZnzfao",
-        videoId: "W4CxBZnzfao",
-        viewCount: 382,
-        commentCount: 0
       },
       {
         content: "'Can't sell house' searches are higher now than during the 2008 housing crisis",
@@ -504,9 +494,9 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 75,
+        current: 86,
         target: 120,
-        percentage: 62
+        percentage: 71
       }
     ],
     dataSources: [
@@ -515,24 +505,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Census Bureau: Rent burden data by generation",
       "YouTube: 111 videos about housing crisis and homeownership despair",
       "Reddit: 177 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
-      "Hacker News: 75 stories about housing affordability crisis",
+      "Hacker News: 86 stories about housing affordability crisis",
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
     methodology: "Official housing price/rent burden data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, Hacker News, and CFPB complaints (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 35.24,
+    score: 43.38,
     label: "Expect Delays",
-    trend: "neutral",
+    trend: "worsening",
     officialScore: 21.0,
-    crisisRatio: 44.73,
+    crisisRatio: 58.3,
     levelDistribution: {
-      level1: 187,
-      level2: 74,
-      level3: 16,
-      total: 277
+      level1: 295,
+      level2: 268,
+      level3: 102,
+      total: 665
     },
     sampleData: [
       {
@@ -546,12 +536,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "Stranded at Istanbul Airport! All Flights Cancelled–Total Chaos #IstanbulAirport #FlightCancelled",
+        content: "Largest Cargo Plane Stranded",
         platform: "youtube",
         level: 3,
         date: "",
-        url: "https://www.youtube.com/watch?v=Phi0ws484Dc",
-        videoId: "Phi0ws484Dc",
+        url: "https://www.youtube.com/watch?v=t9QNZXwXbts",
+        videoId: "t9QNZXwXbts",
         viewCount: 0,
         commentCount: 0
       },
@@ -573,7 +563,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 95,
+        current: 91,
         target: 160,
         percentage: 61
       },
@@ -588,24 +578,24 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Bureau of Transportation Statistics: Flight delay and cancellation rates",
       "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
-      "YouTube: 95 videos about airline chaos and travel nightmares",
+      "YouTube: 91 videos about airline chaos and travel nightmares",
       "Reddit: 182 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 27.37,
+    score: 27.9,
     label: "Swipe Fatigue Setting In",
     trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 39.95,
+    crisisRatio: 40.83,
     levelDistribution: {
-      level1: 221,
-      level2: 43,
-      level3: 13,
-      total: 277
+      level1: 344,
+      level2: 124,
+      level3: 16,
+      total: 484
     },
     sampleData: [
       {
@@ -619,12 +609,12 @@ export const metricDetails: Record<string, MetricDetailData> = {
         commentCount: 0
       },
       {
-        content: "When You Quit All Dating Apps",
+        content: "why i quit dating apps",
         platform: "youtube",
         level: 3,
         date: "",
-        url: "https://www.youtube.com/watch?v=Pl7FZr8AVgQ",
-        videoId: "Pl7FZr8AVgQ",
+        url: "https://www.youtube.com/watch?v=SpUJUnKN7As",
+        videoId: "SpUJUnKN7As",
         viewCount: 0,
         commentCount: 0
       },
@@ -663,20 +653,20 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Reddit: 170 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 40.51,
+    score: 39.04,
     label: "Resume At The Ready",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 76.5,
-    crisisRatio: 46.58,
+    crisisRatio: 48.93,
     levelDistribution: {
-      level1: 331,
-      level2: 163,
+      level1: 460,
+      level2: 290,
       level3: 11,
-      total: 505
+      total: 761
     },
     sampleData: [
       {
@@ -686,7 +676,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-01-26",
         url: "https://www.youtube.com/watch?v=vfi47X6dJzU",
         videoId: "vfi47X6dJzU",
-        viewCount: 19742,
+        viewCount: 19864,
         commentCount: 0
       },
       {
@@ -696,7 +686,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
         date: "2026-03-23",
         url: "https://www.youtube.com/watch?v=MFzuybsykKI",
         videoId: "MFzuybsykKI",
-        viewCount: 4940,
+        viewCount: 5150,
         commentCount: 0
       },
       {
@@ -724,7 +714,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     collectionProgress: [
       {
         platform: "YouTube",
-        current: 59,
+        current: 58,
         target: 100,
         percentage: 74
       },
@@ -736,19 +726,19 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Hacker News",
-        current: 149,
+        current: 145,
         target: 150,
-        percentage: 99
+        percentage: 96
       }
     ],
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
-      "YouTube: 59 videos about layoffs and job search struggles",
+      "YouTube: 58 videos about layoffs and job search struggles",
       "Reddit: 297 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
-      "Hacker News: 149 stories about tech layoffs and job market"
+      "Hacker News: 145 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
-    lastUpdated: "April 13, 2026"
+    lastUpdated: "April 20, 2026"
   }
 };
 
