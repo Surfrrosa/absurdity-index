@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
 Bluesky Post Collector - All Metrics
-Uses the free AT Protocol public API (no auth needed) to collect posts
-relevant to Absurdity Index metrics.
+Authenticates via AT Protocol createSession (app password) and collects
+posts relevant to Absurdity Index metrics.
 
-Endpoint: https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts
+Requires env vars: BLUESKY_HANDLE, BLUESKY_APP_PASSWORD
+Create an app password at https://bsky.app/settings/app-passwords
 """
 
+import os
 import requests
 import time
 import csv
+import sys
 from datetime import datetime
 from content_filters import filter_content
 
@@ -238,26 +241,62 @@ METRICS = {
 # API / categorization helpers
 # ---------------------------------------------------------------------------
 
-BLUESKY_SEARCH_URL = "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts"
+BLUESKY_PDS = "https://bsky.social"
+BLUESKY_SEARCH_URL = f"{BLUESKY_PDS}/xrpc/app.bsky.feed.searchPosts"
+BLUESKY_SESSION_URL = f"{BLUESKY_PDS}/xrpc/com.atproto.server.createSession"
 
 
-def search_bluesky(query, limit=100):
-    """Search Bluesky public API for posts matching a query."""
+def authenticate():
+    """Create a session with Bluesky and return the access JWT."""
+    handle = os.getenv("BLUESKY_HANDLE")
+    password = os.getenv("BLUESKY_APP_PASSWORD")
+
+    if not handle or not password:
+        print("ERROR: BLUESKY_HANDLE and BLUESKY_APP_PASSWORD must be set.")
+        return None
+
+    try:
+        response = requests.post(
+            BLUESKY_SESSION_URL,
+            json={"identifier": handle, "password": password},
+            timeout=15,
+        )
+        if response.status_code != 200:
+            print(f"ERROR: Auth failed HTTP {response.status_code}: {response.text[:200]}")
+            return None
+        token = response.json().get("accessJwt")
+        if not token:
+            print("ERROR: Auth response missing accessJwt")
+            return None
+        print(f"Authenticated as {handle}")
+        return token
+    except Exception as e:
+        print(f"ERROR: Auth exception: {e}")
+        return None
+
+
+def search_bluesky(query, token, limit=100):
+    """Search Bluesky for posts matching a query."""
     params = {
         "q": query,
         "limit": limit,
         "sort": "top",
     }
+    headers = {"Authorization": f"Bearer {token}"}
 
     try:
-        response = requests.get(BLUESKY_SEARCH_URL, params=params, timeout=15)
+        response = requests.get(
+            BLUESKY_SEARCH_URL, params=params, headers=headers, timeout=15
+        )
         if response.status_code == 200:
             data = response.json()
             return data.get("posts", [])
         elif response.status_code == 429:
             print("    Rate limited, waiting 10s...")
             time.sleep(10)
-            response = requests.get(BLUESKY_SEARCH_URL, params=params, timeout=15)
+            response = requests.get(
+                BLUESKY_SEARCH_URL, params=params, headers=headers, timeout=15
+            )
             if response.status_code == 200:
                 data = response.json()
                 return data.get("posts", [])
@@ -304,7 +343,7 @@ def categorize_post(text, metric_cfg):
 # Per-metric collection
 # ---------------------------------------------------------------------------
 
-def collect_metric(metric_slug, metric_cfg):
+def collect_metric(metric_slug, metric_cfg, token):
     """Collect and categorize Bluesky posts for a single metric."""
     print(f"\n{'- ' * 35}")
     print(f"METRIC: {metric_slug}")
@@ -315,7 +354,7 @@ def collect_metric(metric_slug, metric_cfg):
 
     for term in metric_cfg["search_terms"]:
         print(f"  Searching: '{term}'")
-        raw_posts = search_bluesky(term, limit=100)
+        raw_posts = search_bluesky(term, token, limit=100)
         new_count = 0
 
         for post in raw_posts:
@@ -383,13 +422,17 @@ def main():
     print("=" * 70)
     print("BLUESKY POST COLLECTOR - ALL ABSURDITY INDEX METRICS")
     print("=" * 70)
-    print(f"\nUsing public AT Protocol API (no auth needed)")
     print(f"Metrics to collect: {len(METRICS)}")
+
+    token = authenticate()
+    if not token:
+        print("\nFATAL: Authentication failed. Exiting without writing data.")
+        sys.exit(1)
 
     summary = {}
 
     for metric_slug, metric_cfg in METRICS.items():
-        posts = collect_metric(metric_slug, metric_cfg)
+        posts = collect_metric(metric_slug, metric_cfg, token)
 
         total = len(posts)
         if total == 0:
