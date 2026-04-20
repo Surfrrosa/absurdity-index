@@ -41,16 +41,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 43.27,
+    score: 43.5,
     label: "Prior Authorization Purgatory",
     trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 43.18,
+    crisisRatio: 43.57,
     levelDistribution: {
-      level1: 769,
-      level2: 122,
-      level3: 61,
-      total: 953
+      level1: 782,
+      level2: 129,
+      level3: 68,
+      total: 980
     },
     sampleData: [
       {
@@ -107,7 +107,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 127,
+        current: 154,
         target: 200,
         percentage: 67
       },
@@ -129,7 +129,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
       "YouTube: 150 videos analyzing healthcare system failures",
-      "Reddit: 127 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
+      "Reddit: 154 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
       "TikTok: 87 videos via YouTube compilations",
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
@@ -138,16 +138,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "AI Psychosis": {
     title: "AI Psychosis",
-    score: 33.6,
+    score: 33.71,
     label: "Digital Stockholm Syndrome Setting In",
-    trend: "improving",
+    trend: "neutral",
     officialScore: 12.5,
-    crisisRatio: 47.66,
+    crisisRatio: 47.85,
     levelDistribution: {
-      level1: 735,
-      level2: 33,
-      level3: 75,
-      total: 843
+      level1: 737,
+      level2: 39,
+      level3: 74,
+      total: 850
     },
     sampleData: [
       {
@@ -211,7 +211,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 145,
+        current: 152,
         target: 290,
         percentage: 100
       },
@@ -230,7 +230,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     ],
     dataSources: [
       "YouTube: 134 videos analyzing AI companion usage and addiction",
-      "Reddit: 145 posts from r/replika, r/CharacterAI, r/ChatGPT",
+      "Reddit: 152 posts from r/replika, r/CharacterAI, r/ChatGPT",
       "TikTok: 58 videos via YouTube compilations",
       "Hacker News: 119 stories about AI risks and companion addiction"
     ],
@@ -241,7 +241,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     title: "Subscription Overload",
     score: 40.22,
     label: "Quarterly Purge Required",
-    trend: "improving",
+    trend: "neutral",
     officialScore: 45.2,
     crisisRatio: 36.9,
     levelDistribution: {
@@ -333,16 +333,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 42.0,
+    score: 42.66,
     label: "Paycheck-to-Paycheck Normal",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 39.01,
+    crisisRatio: 40.1,
     levelDistribution: {
-      level1: 592,
-      level2: 125,
-      level3: 4,
-      total: 721
+      level1: 517,
+      level2: 113,
+      level3: 9,
+      total: 639
     },
     sampleData: [
       {
@@ -396,7 +396,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 217,
+        current: 135,
         target: 200,
         percentage: 39
       },
@@ -411,7 +411,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
       "YouTube: 83 videos about wage stagnation and financial stress",
-      "Reddit: 217 posts from r/antiwork, r/WorkReform, r/povertyfinance",
+      "Reddit: 135 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "Hacker News: 35 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
@@ -419,16 +419,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 49.15,
+    score: 48.86,
     label: "Multiple Organs Required",
     trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 50.18,
+    crisisRatio: 49.7,
     levelDistribution: {
-      level1: 549,
+      level1: 544,
       level2: 190,
       level3: 131,
-      total: 870
+      total: 865
     },
     sampleData: [
       {
@@ -482,7 +482,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 177,
+        current: 172,
         target: 200,
         percentage: 93
       },
@@ -504,7 +504,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Zillow Rent Index: National median rent trends",
       "Census Bureau: Rent burden data by generation",
       "YouTube: 111 videos about housing crisis and homeownership despair",
-      "Reddit: 177 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
+      "Reddit: 172 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "Hacker News: 86 stories about housing affordability crisis",
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
@@ -513,16 +513,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 43.38,
+    score: 42.35,
     label: "Expect Delays",
-    trend: "worsening",
+    trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 58.3,
+    crisisRatio: 56.58,
     levelDistribution: {
-      level1: 295,
-      level2: 268,
-      level3: 102,
-      total: 665
+      level1: 311,
+      level2: 257,
+      level3: 101,
+      total: 669
     },
     sampleData: [
       {
@@ -569,7 +569,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 182,
+        current: 186,
         target: 200,
         percentage: 66
       }
@@ -579,23 +579,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 91 videos about airline chaos and travel nightmares",
-      "Reddit: 182 posts from r/travel, r/flights, r/delta, r/americanairlines"
+      "Reddit: 186 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "April 20, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 27.9,
+    score: 27.97,
     label: "Swipe Fatigue Setting In",
     trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 40.83,
+    crisisRatio: 40.94,
     levelDistribution: {
-      level1: 344,
-      level2: 124,
+      level1: 306,
+      level2: 114,
       level3: 16,
-      total: 484
+      total: 436
     },
     sampleData: [
       {
@@ -642,7 +642,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 170,
+        current: 122,
         target: 200,
         percentage: 70
       }
@@ -650,23 +650,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Pew Research: Dating app frustration and burnout survey data",
       "YouTube: 107 videos about dating app burnout and despair",
-      "Reddit: 170 posts from r/dating, r/Tinder, r/Bumble"
+      "Reddit: 122 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "April 20, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 39.04,
+    score: 38.79,
     label: "Resume At The Ready",
     trend: "neutral",
     officialScore: 76.5,
-    crisisRatio: 48.93,
+    crisisRatio: 48.52,
     levelDistribution: {
-      level1: 460,
+      level1: 465,
       level2: 290,
-      level3: 11,
-      total: 761
+      level3: 10,
+      total: 765
     },
     sampleData: [
       {
@@ -720,7 +720,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 297,
+        current: 301,
         target: 300,
         percentage: 94
       },
@@ -734,7 +734,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
       "YouTube: 58 videos about layoffs and job search struggles",
-      "Reddit: 297 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
+      "Reddit: 301 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
       "Hacker News: 145 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
