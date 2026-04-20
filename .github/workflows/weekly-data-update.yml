@@ -19,13 +19,17 @@ jobs:
       contents: write
 
     steps:
+      - name: Record start time for freshness check
+        id: start_time
+        run: echo "timestamp=$(date +%s)" >> $GITHUB_OUTPUT
+
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -81,20 +85,43 @@ jobs:
           echo "Running Bluesky collector (authenticated via app password)..."
           python bluesky-collector.py || true
 
-      - name: Check if new data was collected
+      - name: Per-platform freshness gate
         id: check_data
         working-directory: data-collection
+        env:
+          RUN_START: ${{ steps.start_time.outputs.timestamp }}
         run: |
-          # Count data files modified in the last 10 minutes (from this run)
-          NEW_FILES=$(find collected-data/ \( -name "*.csv" -o -name "*.json" \) -newer /proc/1/cmdline -not -empty 2>/dev/null | wc -l)
-          # Also check file sizes - files under 200 bytes are likely header-only
-          GOOD_FILES=$(find collected-data/ \( -name "*.csv" -o -name "*.json" \) -newer /proc/1/cmdline -size +200c 2>/dev/null | wc -l)
-          echo "New data files: $NEW_FILES (with data: $GOOD_FILES)"
+          # Count new CSVs per platform produced during this run (mtime >= RUN_START)
+          count_new() {
+            find collected-data/ -name "$1" -size +200c -printf '%T@\n' 2>/dev/null \
+              | awk -v start="$RUN_START" '$1 >= start' | wc -l
+          }
 
-          if [ "$GOOD_FILES" -eq "0" ]; then
-            echo "WARNING: No new data collected in this run."
-            echo "All collectors may have failed (check API key, quotas, network)."
+          YT=$(count_new "*_youtube_*.csv")
+          HN=$(count_new "*_hackernews_*.csv")
+          CFPB=$(count_new "*_cfpb_*.csv")
+          BSKY=$(count_new "*_bluesky_*.csv")
+
+          echo "Platform freshness report:"
+          echo "  YouTube:    $YT new files (threshold >=5)"
+          echo "  HackerNews: $HN new files (threshold >=3)"
+          echo "  CFPB:       $CFPB new files (threshold >=1)"
+          echo "  Bluesky:    $BSKY new files (threshold >=5)"
+
+          FAILED=""
+          [ "$YT"   -lt 5 ] && FAILED="$FAILED youtube($YT)"
+          [ "$HN"   -lt 3 ] && FAILED="$FAILED hackernews($HN)"
+          [ "$CFPB" -lt 1 ] && FAILED="$FAILED cfpb($CFPB)"
+          [ "$BSKY" -lt 5 ] && FAILED="$FAILED bluesky($BSKY)"
+
+          TOTAL=$((YT + HN + CFPB + BSKY))
+          echo "failed_platforms=$FAILED" >> $GITHUB_OUTPUT
+          if [ "$TOTAL" -eq 0 ]; then
             echo "has_new_data=false" >> $GITHUB_OUTPUT
+            echo "::error::No new data collected from any platform."
+          elif [ -n "$FAILED" ]; then
+            echo "has_new_data=true" >> $GITHUB_OUTPUT
+            echo "::warning::Platforms below threshold (will proceed with partial data):$FAILED"
           else
             echo "has_new_data=true" >> $GITHUB_OUTPUT
           fi
@@ -134,7 +161,7 @@ jobs:
 
       - name: Set up Node.js
         if: steps.check_data.outputs.has_new_data == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'npm'
@@ -162,11 +189,36 @@ jobs:
           Updated scores and level distributions in metricDetailData.ts."
           git push
 
+      - name: Fail job if any platform was below threshold
+        if: steps.check_data.outputs.failed_platforms != ''
+        run: |
+          echo "::error::Platforms below threshold this run: ${{ steps.check_data.outputs.failed_platforms }}"
+          exit 1
+
   notify-on-failure:
     needs: collect-data
     if: failure()
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - name: Notify failure
+      - name: Open GitHub issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          echo "Data collection failed. Check workflow logs for details."
+          DATE=$(date -u +'%Y-%m-%d')
+          gh issue create \
+            --title "Weekly data collection failed ($DATE)" \
+            --label "automated,data-pipeline" \
+            --body "The weekly data collection workflow failed or produced partial data.
+
+          **Run:** $RUN_URL
+
+          Check the \`Per-platform freshness gate\` step for which platforms fell below threshold. Common causes:
+          - YouTube: API quota exhausted or key revoked
+          - Bluesky: app password expired or account rate-limited
+          - CFPB/HN: external API down (usually self-resolves)
+
+          This issue was auto-created by the weekly-data-update workflow." \
+            --repo "${{ github.repository }}"
