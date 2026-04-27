@@ -41,16 +41,16 @@ export interface MetricDetailData {
 export const metricDetails: Record<string, MetricDetailData> = {
   "What Healthcare?": {
     title: "What Healthcare?",
-    score: 43.96,
+    score: 43.77,
     label: "Prior Authorization Purgatory",
     trend: "neutral",
     officialScore: 56.30,
-    crisisRatio: 42.13,
+    crisisRatio: 41.82,
     levelDistribution: {
-      level1: 795,
-      level2: 122,
-      level3: 58,
-      total: 975
+      level1: 799,
+      level2: 120,
+      level3: 57,
+      total: 976
     },
     sampleData: [
       {
@@ -107,7 +107,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 153,
+        current: 154,
         target: 200,
         percentage: 67
       },
@@ -129,7 +129,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "U.S. Census Bureau: Medical debt and bankruptcy statistics",
       "JAMA Network: Claim denial rates and prior authorization burden research",
       "YouTube: 150 videos analyzing healthcare system failures",
-      "Reddit: 153 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
+      "Reddit: 154 posts from r/HealthInsurance, r/povertyfinance, r/Insurance",
       "TikTok: 87 videos via YouTube compilations",
       "CFPB: 100 complaints (medical debt, billing disputes)"
     ],
@@ -142,10 +142,10 @@ export const metricDetails: Record<string, MetricDetailData> = {
     label: "Digital Stockholm Syndrome Setting In",
     trend: "neutral",
     officialScore: 12.5,
-    crisisRatio: 48.92,
+    crisisRatio: 48.91,
     levelDistribution: {
-      level1: 731,
-      level2: 37,
+      level1: 732,
+      level2: 36,
       level3: 82,
       total: 850
     },
@@ -323,16 +323,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Wage Stagnation": {
     title: "Wage Stagnation",
-    score: 42.31,
+    score: 42.09,
     label: "Paycheck-to-Paycheck Normal",
     trend: "neutral",
     officialScore: 38.4,
-    crisisRatio: 39.51,
+    crisisRatio: 39.15,
     levelDistribution: {
-      level1: 505,
-      level2: 106,
-      level3: 6,
-      total: 617
+      level1: 585,
+      level2: 124,
+      level3: 7,
+      total: 716
     },
     sampleData: [
       {
@@ -386,7 +386,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 129,
+        current: 228,
         target: 200,
         percentage: 39
       },
@@ -401,7 +401,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "BLS Employment Cost Index: Real wage growth data",
       "AFL-CIO CEO Pay Database: CEO-to-worker pay ratio tracking",
       "YouTube: 76 videos about wage stagnation and financial stress",
-      "Reddit: 129 posts from r/antiwork, r/WorkReform, r/povertyfinance",
+      "Reddit: 228 posts from r/antiwork, r/WorkReform, r/povertyfinance",
       "Hacker News: 27 stories about wage stagnation and financial stress"
     ],
     methodology: "Official wage/CEO pay data (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
@@ -409,16 +409,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Housing Despair": {
     title: "Housing Despair",
-    score: 48.82,
+    score: 48.74,
     label: "Multiple Organs Required",
     trend: "neutral",
     officialScore: 37.6,
-    crisisRatio: 49.64,
+    crisisRatio: 49.5,
     levelDistribution: {
-      level1: 539,
-      level2: 186,
+      level1: 548,
+      level2: 181,
       level3: 129,
-      total: 854
+      total: 858
     },
     sampleData: [
       {
@@ -472,7 +472,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 172,
+        current: 176,
         target: 200,
         percentage: 93
       },
@@ -494,7 +494,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "Zillow Rent Index: National median rent trends",
       "Census Bureau: Rent burden data by generation",
       "YouTube: 113 videos about housing crisis and homeownership despair",
-      "Reddit: 172 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
+      "Reddit: 176 posts from r/FirstTimeHomeBuyer, r/RealEstate, r/povertyfinance",
       "Hacker News: 75 stories about housing affordability crisis",
       "CFPB: 100 complaints (mortgages, housing finance)"
     ],
@@ -503,16 +503,16 @@ export const metricDetails: Record<string, MetricDetailData> = {
   },
   "Airline Chaos": {
     title: "Airline Chaos",
-    score: 42.09,
+    score: 44.03,
     label: "Expect Delays",
     trend: "neutral",
     officialScore: 21.0,
-    crisisRatio: 56.15,
+    crisisRatio: 59.38,
     levelDistribution: {
-      level1: 315,
-      level2: 254,
-      level3: 100,
-      total: 669
+      level1: 251,
+      level2: 240,
+      level3: 99,
+      total: 590
     },
     sampleData: [
       {
@@ -559,7 +559,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 186,
+        current: 107,
         target: 200,
         percentage: 66
       }
@@ -569,23 +569,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
       "ACSI satisfaction scores: Airline service quality tracking",
       "FAA safety incident data: Emergency landings, equipment failures",
       "YouTube: 89 videos about airline chaos and travel nightmares",
-      "Reddit: 186 posts from r/travel, r/flights, r/delta, r/americanairlines"
+      "Reddit: 107 posts from r/travel, r/flights, r/delta, r/americanairlines"
     ],
     methodology: "Official delay/safety data (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "April 27, 2026"
   },
   "Dating App Despair": {
     title: "Dating App Despair",
-    score: 27.92,
+    score: 28.16,
     label: "Swipe Fatigue Setting In",
     trend: "neutral",
     officialScore: 8.5,
-    crisisRatio: 40.87,
+    crisisRatio: 41.27,
     levelDistribution: {
-      level1: 304,
-      level2: 115,
-      level3: 14,
-      total: 433
+      level1: 335,
+      level2: 127,
+      level3: 13,
+      total: 475
     },
     sampleData: [
       {
@@ -632,7 +632,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 122,
+        current: 164,
         target: 200,
         percentage: 70
       }
@@ -640,23 +640,23 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Pew Research: Dating app frustration and burnout survey data",
       "YouTube: 103 videos about dating app burnout and despair",
-      "Reddit: 122 posts from r/dating, r/Tinder, r/Bumble"
+      "Reddit: 164 posts from r/dating, r/Tinder, r/Bumble"
     ],
     methodology: "Pew Research data on dating app frustration (40% weight) combined with engagement-weighted social sentiment (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
     lastUpdated: "April 27, 2026"
   },
   "Layoff Watch": {
     title: "Layoff Watch",
-    score: 39.61,
+    score: 39.43,
     label: "Resume At The Ready",
     trend: "neutral",
     officialScore: 76.5,
-    crisisRatio: 47.08,
+    crisisRatio: 46.79,
     levelDistribution: {
-      level1: 482,
-      level2: 278,
-      level3: 10,
-      total: 770
+      level1: 493,
+      level2: 270,
+      level3: 13,
+      total: 776
     },
     sampleData: [
       {
@@ -710,7 +710,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
       },
       {
         platform: "Reddit",
-        current: 299,
+        current: 305,
         target: 300,
         percentage: 94
       },
@@ -724,7 +724,7 @@ export const metricDetails: Record<string, MetricDetailData> = {
     dataSources: [
       "Layoffs.fyi: Tech layoff tracking data",
       "YouTube: 62 videos about layoffs and job search struggles",
-      "Reddit: 299 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
+      "Reddit: 305 posts from r/jobs, r/careerguidance, r/cscareerquestions, r/Layoffs",
       "Hacker News: 147 stories about tech layoffs and job market"
     ],
     methodology: "Official layoff numbers (40% weight) combined with engagement-weighted social sentiment from YouTube, Reddit, and Hacker News (60% weight). Content categorized by severity (L1=0.33, L2=0.67, L3=1.0) and weighted by reach.",
