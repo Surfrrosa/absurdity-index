@@ -82,6 +82,31 @@ The Absurdity Index is a data-driven dashboard quantifying the absurdity of mode
 
 ---
 
+## Before Writing New Code
+
+Before adding a component, helper, schema, or collector, search for
+existing ones first:
+
+- `rg "<symbol>" app/ components/ lib/ data-collection/` for similar
+  names or near-duplicates
+- TypeScript: `lib/siteConfig.ts` exports `SITE_URL` and `SITE_NAME`
+  — never hardcode the URL. Components in `components/` are small
+  and well-isolated; extend rather than duplicate
+- Python collectors: there are TWO shared modules already —
+  `data-collection/reddit_collector_base.py` (Reddit) and
+  `data-collection/content_filters.py` (clickbait/spam filter). For
+  a new Reddit collector, extend the base. For YouTube, the per-metric
+  collectors are still copy-paste — that's accepted tech debt, but
+  don't add to the pile without flagging it
+- `data-collection/config.json` is the centralized config for weights,
+  severity levels, and metric definitions. Don't hardcode these
+- `update_metric_data.py` already has a shared `_read_rows_with_levels`
+  helper for CSV-with-level-counting. Reuse it for any source
+
+Don't add a new collector or component for a one-off variant of an
+existing pattern. If you're about to copy-paste a file and tweak two
+values, extract a helper instead.
+
 ## Data Collection Rules
 
 - **Config lives in `data-collection/config.json`.** Official scores, severity weights, formula weights, and metric definitions are centralized there. Both scoring scripts load from it.
