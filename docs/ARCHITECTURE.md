@@ -6,7 +6,7 @@ The Absurdity Index is a data-driven dashboard quantifying modern absurdity thro
 
 For visual design specs, see [DESIGN_SYSTEM.md](../DESIGN_SYSTEM.md).
 For scoring formulas, see [data-collection/METHODOLOGY_FORMULAS.md](../data-collection/METHODOLOGY_FORMULAS.md).
-For running collectors, see [data-collection/COLLECTION_QUICKSTART.md](../data-collection/COLLECTION_QUICKSTART.md).
+For running collectors, see [README.md#data-collection](../README.md#data-collection).
 
 ## System Overview
 

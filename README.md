@@ -84,13 +84,17 @@ absurdity-index/
 │   └── metricDetailData.ts   # Detailed metric data and types
 └── data-collection/
     ├── METHODOLOGY_FORMULAS.md         # Full methodology documentation
-    ├── COLLECTION_QUICKSTART.md        # Data collection guide
-    ├── healthcare-collector.py         # What Healthcare? data script
-    ├── dating-app-despair-collector.py # Dating App Despair script
-    ├── airline-chaos-collector.py      # Airline Chaos script
-    ├── wage-stagnation-collector.py    # Wage Stagnation script
-    ├── housing-despair-collector.py    # Housing Despair script
-    └── layoff-watch-collector.py       # Layoff Watch script
+    ├── config.json                     # Centralized weights, severity, metric defs
+    ├── run_weekly_update.py            # Master script: runs all collectors
+    ├── *-youtube-collector.py          # 8 per-metric YouTube collectors
+    ├── *-reddit-collector.py           # 8 per-metric Reddit collectors (local only)
+    ├── reddit_collector_base.py        # Shared base class for Reddit collectors
+    ├── bluesky-collector.py            # Bluesky (all metrics, AT Protocol)
+    ├── cfpb-collector.py               # CFPB complaints (3 metrics)
+    ├── fred-collector.py               # FRED official economic data
+    ├── hackernews-collector.py         # Hacker News (Algolia API)
+    ├── calculate_all_social_scores.py  # Score calculator
+    └── update_metric_data.py           # Updates metricDetailData.ts
 ```
 
 ---
@@ -117,24 +121,27 @@ Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
 ## Data Collection
 
-Each metric has a dedicated Python collection script in `/data-collection/`.
+Per-source collectors run weekly via GitHub Actions and write CSVs to `data-collection/collected-data/`. Scoring runs after collection and updates `lib/metricDetailData.ts` automatically.
 
-### Quick Start
+### Local Run
 
-1. Install Python 3
-2. Navigate to data collection directory:
-   ```bash
-   cd "absurdity-index/data-collection"
-   ```
-3. Run a collector script:
-   ```bash
-   python3 healthcare-collector.py
-   ```
-4. Add entries following the documented format
-5. Export to JSON
-6. Update `/lib/metricDetailData.ts` with collected data
+```bash
+cd data-collection
+pip install -r requirements.txt
 
-See `/data-collection/COLLECTION_QUICKSTART.md` for detailed instructions.
+# Set API keys in .env (see .env.example)
+# YOUTUBE_API_KEY required for YouTube collectors
+# FRED_API_KEY optional for FRED collector
+
+# Run all collectors + scoring + TS update
+python3 run_weekly_update.py
+
+# Or run a single source
+python3 hackernews-collector.py
+python3 bluesky-collector.py
+```
+
+Reddit collectors only work locally (Reddit blocks datacenter IPs). All other sources work in CI. See `CLAUDE.md` for the full pipeline.
 
 ---
 

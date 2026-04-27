@@ -49,32 +49,34 @@ def get_latest_file(pattern, min_rows=5):
     return _get_latest_file(f'collected-data/{pattern}', min_rows=min_rows)
 
 
-def get_tiktok_data_for_metric(metric_slug):
-    """Extract TikTok data for a specific metric from the combined file."""
-    tiktok_file = get_latest_file(TIKTOK_PATTERN)
-    if not tiktok_file:
-        return [], {'L1': 0, 'L2': 0, 'L3': 0}, 0
-
+def _read_rows_with_levels(csv_file, filter_metric=None):
+    """Read a category CSV, count L1/L2/L3 distribution; optionally filter by 'metric' column."""
     rows = []
     level_counts = {'L1': 0, 'L2': 0, 'L3': 0}
-
+    if not csv_file:
+        return rows, level_counts, 0
     try:
-        with open(tiktok_file, 'r', encoding='utf-8') as f:
+        with open(csv_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                if row.get('metric', '') == metric_slug:
-                    rows.append(row)
-                    category = row.get('category', '')
-                    if 'LEVEL_1' in category:
-                        level_counts['L1'] += 1
-                    elif 'LEVEL_2' in category:
-                        level_counts['L2'] += 1
-                    elif 'LEVEL_3' in category:
-                        level_counts['L3'] += 1
+                if filter_metric is not None and row.get('metric', '') != filter_metric:
+                    continue
+                rows.append(row)
+                category = row.get('category', '')
+                if 'LEVEL_1' in category:
+                    level_counts['L1'] += 1
+                elif 'LEVEL_2' in category:
+                    level_counts['L2'] += 1
+                elif 'LEVEL_3' in category:
+                    level_counts['L3'] += 1
     except Exception as e:
-        print(f"  Error reading TikTok data: {e}")
-
+        print(f"  Error reading {csv_file}: {e}")
     return rows, level_counts, len(rows)
+
+
+def get_tiktok_data_for_metric(metric_slug):
+    """Extract TikTok data for a specific metric from the combined file."""
+    return _read_rows_with_levels(get_latest_file(TIKTOK_PATTERN), filter_metric=metric_slug)
 
 
 def get_engagement_value(row):
@@ -91,29 +93,7 @@ def get_engagement_value(row):
 
 def get_source_data(pattern):
     """Read rows, level counts, and total from the latest file matching pattern."""
-    csv_file = get_latest_file(pattern)
-    if not csv_file:
-        return [], {'L1': 0, 'L2': 0, 'L3': 0}, 0
-
-    rows = []
-    level_counts = {'L1': 0, 'L2': 0, 'L3': 0}
-
-    try:
-        with open(csv_file, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                rows.append(row)
-                category = row.get('category', '')
-                if 'LEVEL_1' in category:
-                    level_counts['L1'] += 1
-                elif 'LEVEL_2' in category:
-                    level_counts['L2'] += 1
-                elif 'LEVEL_3' in category:
-                    level_counts['L3'] += 1
-    except Exception as e:
-        print(f"  Error reading {csv_file}: {e}")
-
-    return rows, level_counts, len(rows)
+    return _read_rows_with_levels(get_latest_file(pattern))
 
 
 def load_fred_scores():
