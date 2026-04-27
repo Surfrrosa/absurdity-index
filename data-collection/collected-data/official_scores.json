@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T10:54:08.283139Z",
+  "generated_at": "2026-04-27T11:09:22.429839Z",
   "fred_series_used": {
     "avg_hourly_earnings": "CES0500000003",
     "cpi": "CPIAUCSL",
@@ -10,7 +10,7 @@
   },
   "scores": {
     "healthcare": {
-      "score": 43.4,
+      "score": 46.7,
       "source": "fred"
     },
     "ai_psychosis": {
@@ -34,7 +34,7 @@
       "source": "config_fallback"
     },
     "layoff_watch": {
-      "score": 24.2,
+      "score": 28.4,
       "source": "fred"
     },
     "airline_chaos": {
