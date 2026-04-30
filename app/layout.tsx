@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Archivo_Black, Space_Grotesk, Roboto_Mono } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
@@ -25,6 +25,11 @@ const robotoMono = Roboto_Mono({
   variable: "--font-mono",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

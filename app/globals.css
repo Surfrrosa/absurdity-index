@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark;
   --background: #000000;
   --foreground: #ffffff;
+}
+
+html {
+  background: #000;
 }
 
 @theme inline {
@@ -48,4 +53,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Custom transition for duration-2000 */
 .duration-2000 {
   transition-duration: 2000ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
